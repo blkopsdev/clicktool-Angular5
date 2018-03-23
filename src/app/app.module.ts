@@ -29,7 +29,12 @@ import { HttpModule } from '@angular/http';
 import { CookieService } from 'ngx-cookie-service';
 
 import { AuthGuard } from './shared/guards/auth.guard'
-import { IsLoggedInGuard } from './shared/guards/is-logged-in.guard'
+import { IsLoggedInGuard } from './shared/guards/is-logged-in.guard';
+import { HomepageHeaderComponent } from './homepage/shared/homepage-header/homepage-header.component';
+import { LoginComponent } from './login/login.component';
+import { LoginFormComponent } from './shared/forms/login-form/login-form.component';
+
+
 
 @NgModule({
   declarations: [
@@ -46,7 +51,10 @@ import { IsLoggedInGuard } from './shared/guards/is-logged-in.guard'
     DashboardHeaderComponent,
     DashboardNavComponent,
     TransactionsComponent,
-    PasswordComponent
+    PasswordComponent,
+    HomepageHeaderComponent,
+    LoginComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,

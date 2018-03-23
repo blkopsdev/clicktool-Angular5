@@ -11,20 +11,21 @@ import { PasswordComponent } from './password/password.component';
 
 import { AuthGuard } from './shared/guards/auth.guard'
 import { IsLoggedInGuard } from './shared/guards/is-logged-in.guard'
+import { LoginComponent } from './login/login.component';
 
 export const router: Routes = [
 
 	{ path: '', component: HomepageComponent, canActivate:[IsLoggedInGuard]},
-	
+	{ path: 'login', component: LoginComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup', component: AgreementsComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/account', component: AccountInfoComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/contribution', component: ContributionComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/identification', component: IdentificationComponent, canActivate:[IsLoggedInGuard] },
-	
+
 	{ path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
 	{ path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard] },
 	{ path: 'user/:id/password', component: PasswordComponent, canActivate: [AuthGuard] },
-	
+
 	{ path: '**', redirectTo: '', pathMatch: 'full' }
 ]
 
