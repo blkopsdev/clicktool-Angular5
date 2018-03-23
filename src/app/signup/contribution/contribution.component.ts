@@ -3,6 +3,7 @@ import { User } from '../../shared/models/user'
 import { Util } from '../../shared/util/util'
 import { Router } from '@angular/router'
 
+
 @Component({
   selector: 'app-contribution',
   templateUrl: './contribution.component.html',

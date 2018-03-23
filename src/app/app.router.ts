@@ -9,20 +9,23 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { PasswordComponent } from './password/password.component';
 
+import { AuthGuard } from './shared/guards/auth.guard'
+import { IsLoggedInGuard } from './shared/guards/is-logged-in.guard'
+
 export const router: Routes = [
 
-	{ path: '', component: HomepageComponent},
+	{ path: '', component: HomepageComponent, canActivate:[IsLoggedInGuard]},
 	
-	{ path: 'signup', component: AgreementsComponent },
-	{ path: 'signup/account', component: AccountInfoComponent },
-	{ path: 'signup/contribution', component: ContributionComponent },
-	{ path: 'signup/identification', component: IdentificationComponent },
-	{ path: 'dashboard', component: DashboardComponent },
-	{ path: 'transactions', component: TransactionsComponent },
-	{ path: 'user/:id/password', component: PasswordComponent },
+	{ path: 'signup', component: AgreementsComponent, canActivate:[IsLoggedInGuard] },
+	{ path: 'signup/account', component: AccountInfoComponent, canActivate:[IsLoggedInGuard] },
+	{ path: 'signup/contribution', component: ContributionComponent, canActivate:[IsLoggedInGuard] },
+	{ path: 'signup/identification', component: IdentificationComponent, canActivate:[IsLoggedInGuard] },
+	
+	{ path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+	{ path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard] },
+	{ path: 'user/:id/password', component: PasswordComponent, canActivate: [AuthGuard] },
+	
 	{ path: '**', redirectTo: '', pathMatch: 'full' }
-
-
 ]
 
 export const routes:ModuleWithProviders = RouterModule.forRoot(router)

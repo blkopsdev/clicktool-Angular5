@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler  } from '@angular/core';
 import { routes } from './app.router';
 
 import { AppComponent } from './app.component';
@@ -18,6 +18,18 @@ import { DashboardHeaderComponent } from './shared/common/dashboard-header/dashb
 import { DashboardNavComponent } from './shared/common/dashboard-nav/dashboard-nav.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { PasswordComponent } from './password/password.component';
+import { ApiService, HTTPmethod } from './api.service'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { HttpInterceptorServiceService  } from './shared/services/http-interceptor-service.service'
+import { ErrorHandlerService } from './shared/services/error-handler-service.service'
+
+import { MemberService } from './shared/services/member.service'
+import { HttpModule } from '@angular/http';
+import { CookieService } from 'ngx-cookie-service';
+
+import { AuthGuard } from './shared/guards/auth.guard'
+import { IsLoggedInGuard } from './shared/guards/is-logged-in.guard'
 
 @NgModule({
   declarations: [
@@ -39,9 +51,20 @@ import { PasswordComponent } from './password/password.component';
   imports: [
     BrowserModule,
     routes,
-    FormsModule
+    FormsModule,
+    HttpModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    MemberService,
+    ApiService,
+    AppComponent,
+    AuthGuard,
+    IsLoggedInGuard,
+    CookieService,
+    { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorServiceService, multi: true },
+    { provide: ErrorHandler, useClass: ErrorHandlerService, }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
