@@ -75,7 +75,9 @@ export class HomepageComponent implements OnInit {
     var countDownDate = new Date("Jul 1, 2018 12:00:00").getTime();
     var secondsDegree = 0;
     var minutesDegree = 15;
-    window.addEventListener('blur', x);
+   
+    //window.addEventListener('blur', x); TODO fix it
+   
     // Update the count down every 1 second
     var x = setInterval(function() {
 
@@ -95,10 +97,10 @@ export class HomepageComponent implements OnInit {
     minutesDegree -= 30;
 
     // Display the result in the element with id="demo"
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
+    document.getElementById("days").innerHTML = String(days);
+    document.getElementById("hours").innerHTML = String(hours);
+    document.getElementById("minutes").innerHTML = String(minutes);
+    document.getElementById("seconds").innerHTML = String(seconds);
 
     // If the count down is finished, write some text
     if (distance < 0) {
@@ -157,14 +159,16 @@ export class HomepageComponent implements OnInit {
         e.preventDefault();
         $( '#' + $(this).data('modal-id') ).modal();
         if ($( $(this).data('modal-id')).modal().selector == 'modal-video1') {
-          document.getElementById('video-frame1').play();
+          
+          //  document.getElementById('video-frame1').play(); TODO fix it
+
         } else if ($( $(this).data('modal-id')).modal().selector == 'modal-video2') {
-          document.getElementById('video-frame2').play();
+          // document.getElementById('video-frame2').play(); TODO fix it
         }
       });
       $(".modal-video-div").on("hidden.bs.modal", function () {
-        document.getElementById('video-frame1').pause();
-        document.getElementById('video-frame2').pause();
+        // document.getElementById('video-frame1').pause(); TODO fix it
+        // document.getElementById('video-frame2').pause(); TODO fix it
       });
 
 
@@ -345,9 +349,11 @@ export class HomepageComponent implements OnInit {
       });
 
       // Get the time and mouse X position when the big gear is clicked
-      $('.directions-lg, .instructions').mousedown(function() {
+      $('.directions-lg, .instructions').mousedown(function(event) {
         endAnimations();
+        
         start_x = event.pageX;
+        
         last_mouse = start_x;
         start_time = now_time;
         now_time = new Date().getTime();
