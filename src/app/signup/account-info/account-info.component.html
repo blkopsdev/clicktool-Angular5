@@ -1,0 +1,60 @@
+<app-header></app-header>
+
+<div class="container-fluid reg-container first-form" style="height: 1200px;">
+  
+  <div class="reg-image hidden-sm hidden-xs">
+    <img src="../../assets/Animated-Clicktool2 a.gif">
+  </div>
+  <div class="reg-form">
+    <div class="reg-active reg-border">
+      <h1>Step 2.</h1>
+      <h3>Sign Up</h3>
+      <hr>
+      <div class="reginr"> <span><i class="fa fa-user"></i></span>
+        <input [(ngModel)]="user.firstname" type="text" required="" autocomplete="off" placeholder="First Name">
+      </div>
+      <div class="reginr"> <span><i class="fa fa-user"></i></span>
+        <input [(ngModel)]="user.lastname" type="text" required="" autocomplete="off" placeholder="Last Name">
+      </div>
+      <div class="reginr"> <span><i class="far fa-calendar-alt"></i></span>
+        <input [(ngModel)]="user.dob" type="text" required="" autocomplete="off" placeholder="Date of Birth">
+      </div>
+      <div class="reginr"> <span><i class="fas fa-envelope"></i></span>
+        <input [(ngModel)]="user.email" type="text" required="" autocomplete="off" placeholder="Email">
+      </div>
+      <div class="reginr"> <span><i class="fas fa-phone"></i></span>
+        <input [(ngModel)]="user.phone" type="text" required="" autocomplete="off" placeholder="Phone Number">
+      </div>
+      <div class="reginr"> <span><i class="fas fa-map-marker-alt"></i></span>
+        <input [(ngModel)]="user.country" type="text" required="" autocomplete="off" placeholder="Country of Residence">
+      </div>
+      <div class="reginr"> <span><i class="fas fa-suitcase"></i></span>
+        <input [(ngModel)]="user.publicWalletAddress" type="text" required="" autocomplete="off" placeholder="Public Wallet Address">
+      </div>
+      <div class="reginr"> <span><i class="fas fa-building"></i></span>
+        <input [(ngModel)]="user.company" type="text" required="" autocomplete="off" placeholder="Company">
+      </div>
+      <div class="reginr"> <span><i class="fa fa-unlock-alt"></i></span>
+        <input [(ngModel)]="user.password" type="text" required="" autocomplete="off" placeholder="Password">
+      </div>
+      <div class="reginr"> <span><i class="fa fa-lock"></i></span>
+        <input [(ngModel)]="user.passwordConfirm"  type="text" required="" autocomplete="off" placeholder="Confirm Password">
+      </div>
+
+      <div routerLink="/signup/contribution" class="btn btn-info reg-button" id="continue">
+        <p><i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;&nbsp;Continue</p>
+      </div>
+      <div routerLink="/signup" class="btn btn-info reg-button back" id="back">
+        <p><i class="fa fa-chevron-circle-left"></i>&nbsp;&nbsp;&nbsp;Back</p>
+      </div>
+      <div class="btn btn-info reg-button sign-in" id="sign-in2">
+        <p><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;Sign In</p>
+      </div>
+    </div> 
+
+  </div>
+  <div class="reg-image2 hidden-xs">
+    <img src="../../assets/Animated-Clicktool2 a.gif">
+  </div>
+</div>
+<app-footer></app-footer>

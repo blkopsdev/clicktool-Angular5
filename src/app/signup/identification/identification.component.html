@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+<div id="identification-form" class="container-fluid reg-container first-form" style="height: 1200px;">
+  
+  <div class="reg-image hidden-sm hidden-xs">
+    <img src="../../assets/Animated-Clicktool2 a.gif">
+  </div>
+  <div class="reg-form">
+ 
+    <div class="reg-active reg-border">
+      <h1>Your ID</h1>
+      <h3>Almost There!</h3>
+      <hr>
+      <div> <span><i class="fas"></i></span>
+       <app-uploader label="Drag/Drop Password/ID"></app-uploader>
+      </div>
+      <div> <span><i class="fas"></i></span>
+       <app-uploader label="Drag/Drop selfie with ID"></app-uploader>
+      </div>
+      <div> <span><i class="fas"></i></span>
+        <app-uploader label="Drag/Drop Proof of residence"></app-uploader>
+      </div>
+      <div class="chckbx mt-4 mb-4">
+        <span><p><input type="checkbox" required="" autocomplete="off">
+        I am not a robot.</p>
+      </span>
+      </div>
+      <div routerLink="/dashboard" class="btn btn-info reg-button" id="finish">
+        <p><i class="fa fa-check-circle"></i>&nbsp;&nbsp;&nbsp;Finish</p>
+      </div>
+      <div routerLink="/signup/contribution" class="btn btn-info reg-button back" id="back2">
+        <p><i class="fa fa-chevron-circle-left"></i>&nbsp;&nbsp;&nbsp;Back</p>
+      </div>
+      <div class="btn btn-info reg-button sign-in" id="sign-in3">
+        <p><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;Sign In</p>
+      </div>
+    </div> 
+
+
+  </div>
+  <div class="reg-image2 hidden-xs">
+    <img src="../../assets/Animated-Clicktool2 a.gif">
+  </div>
+</div>
+<app-footer></app-footer>
