@@ -8,4 +8,8 @@ export class Util {
 		let obj = localStorage.getItem(keyname)
 		return obj ? JSON.parse(obj) : {}
 	}
+
+	deleteLocalObject(keyname:string) : void {
+		localStorage.removeItem(keyname);
+	}
 }

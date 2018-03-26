@@ -58,7 +58,7 @@
       
       <button 
       [disabled]="!user.isCitizen || !user.didAgreeToTerms || !user.didAgreeToPrivacyPolicy || !user.didReadWhitePaper" 
-      routerLink="/signup/account"  
+      (click)="goToNext()" 
       class="btn btn-info reg-button" 
       id="sign-up2">
         <p>

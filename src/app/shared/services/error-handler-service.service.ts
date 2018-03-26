@@ -15,7 +15,7 @@ export class ErrorHandlerService {
         let memberService:MemberService = this.injector.get(MemberService)
         memberService.afterLogout()
       }else{
-      	//alert(error.message);
+      	alert(error.message);
       }     
       throw error
   }

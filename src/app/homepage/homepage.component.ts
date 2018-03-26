@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Util } from '../shared/util/util'
 
 declare var $:any
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+  styleUrls: ['./homepage.component.css'],
+  providers: [Util]
 })
-export class HomepageComponent implements OnInit {
+export class HomepageComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  constructor(private u:Util) { }
 
   ngOnInit() {
     // Dynamic Headline - https://css-tricks.com/snippets/css/typewriter-effect/
@@ -722,5 +724,9 @@ export class HomepageComponent implements OnInit {
 
     });
   } // End ngOnInit
+
+  ngOnDestroy() {
+    this.u.deleteLocalObject("user")
+  }
 
 }

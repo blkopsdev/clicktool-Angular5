@@ -1,3 +1,15 @@
-<p>
-  login-form works!
-</p>
+<div class="reg-form">
+  <div class="reg-active reg-border">
+    <h3>Log In</h3>
+    <hr>
+    <div class="reginr"> <span><i class="fa fa-user"></i></span>
+      <input [(ngModel)]="user.email" type="email" required="" autocomplete="off" placeholder="enter email">
+    </div>
+    <div class="reginr"> <span><i class="fa fa-user"></i></span>
+      <input [(ngModel)]="user.password" type="password" required="" autocomplete="off" placeholder="enter password">
+    </div>
+    <button (click)="login()" [disabled]="!user.password && !user.email" style="margin-top: 25px;" class="btn btn-info reg-button" id="continue">
+      <p><i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;&nbsp;Continue</p>
+    </button>
+  </div> 
+</div>

@@ -20,21 +20,22 @@ export class ContributionComponent implements OnInit, OnDestroy {
   	this.user = this.util.getLocalObject("user") as User
   }
 
-  ngOnDestroy() {
-  	this.util.setLocalObject("user", this.user)
-  }
+  ngOnDestroy() {}
 
   moreThenTwelve() {
+    this.util.setLocalObject("user", this.user)
   	this.user.isContributionMoreThenTwelve = true
   	this.router.navigate(['/signup/identification'])
   }
 
   lessThenTwelve() {
+    this.util.setLocalObject("user", this.user)
   	this.user.isContributionMoreThenTwelve = false
   	this.router.navigate(['/signup/identification'])
   }
 
   usdCurrency() {
+    this.util.setLocalObject("user", this.user)
   	this.user.isContributionUsd = true
   	this.router.navigate(['/signup/identification'])
   }

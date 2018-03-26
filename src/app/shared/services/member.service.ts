@@ -70,7 +70,7 @@ export class MemberService {
 
   afterLogout() {
     this.deleteLocalCookieSession();
-    this.router.navigate(["/login"])    
+    this.router.navigate(["/"])    
   }
 
   login(email:string, password:string) {    
