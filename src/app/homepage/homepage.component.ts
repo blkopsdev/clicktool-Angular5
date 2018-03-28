@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Util } from '../shared/util/util'
 
-declare var $:any;
+declare var $: any;
 
 @Component({
   selector: 'app-homepage',
@@ -11,7 +11,7 @@ declare var $:any;
 })
 export class HomepageComponent implements OnInit, OnDestroy {
 
-  constructor(private u:Util) { 
+  constructor(private u:Util) {
 
   }
 
@@ -21,14 +21,48 @@ export class HomepageComponent implements OnInit, OnDestroy {
 
 
   // On Scroll event
-  onScroll() {
-    console.log('SCROLLING')
-  }
+  // onScroll() {
+  //   var offset = this.document.scrollTop();
+  //   offset = 75 + (offset * 0.2);
+  //   console.log(offset);
+
+  //   $('.wrench').css({
+  //     '-moz-transform': 'rotate(' + offset + 'deg)',
+  //     '-webkit-transform': 'rotate(' + offset + 'deg)',
+  //     '-o-transform': 'rotate(' + offset + 'deg)',
+  //     '-ms-transform': 'rotate(' + offset + 'deg)',
+  //     'transform': 'rotate(' + offset + 'deg)',
+  //   });
+
+  //   $('#yellow-gear').css({
+  //     '-moz-transform': 'rotate(' + offset + 'deg)',
+  //     '-webkit-transform': 'rotate(' + offset + 'deg)',
+  //     '-o-transform': 'rotate(' + offset + 'deg)',
+  //     '-ms-transform': 'rotate(' + offset + 'deg)',
+  //     'transform': 'rotate(' + offset + 'deg)',
+  //   });
+
+  //   offset = 360 - offset;
+  //   $('.multigray-circle').css({
+  //     '-moz-transform': 'rotate(' + offset + 'deg)',
+  //     '-webkit-transform': 'rotate(' + offset + 'deg)',
+  //     '-o-transform': 'rotate(' + offset + 'deg)',
+  //     '-ms-transform': 'rotate(' + offset + 'deg)',
+  //     'transform': 'rotate(' + offset + 'deg)',
+  //   });
+
+  //   $('#pink-gear').css({
+  //     '-moz-transform': 'rotate(' + offset + 'deg)',
+  //     '-webkit-transform': 'rotate(' + offset + 'deg)',
+  //     '-o-transform': 'rotate(' + offset + 'deg)',
+  //     '-ms-transform': 'rotate(' + offset + 'deg)',
+  //     'transform': 'rotate(' + offset + 'deg)',
+  //   });
+  // }
 
   ngOnInit() {
 
-
-    // Scoll implemenation  
+    // Scoll implemenation
     window.addEventListener('scroll', this.onScroll, true )
 
     // Dynamic Headline - https://css-tricks.com/snippets/css/typewriter-effect/
@@ -128,47 +162,6 @@ export class HomepageComponent implements OnInit, OnDestroy {
         }
     }, 1000);
 
-    $(document).ready(function(){
-    // Scrolling Wrench -------------------
-      $(window).scroll(function() {
-        console.log('test');
-        var offset = $(window).scrollTop();
-        offset     = 75 + (offset * 0.2);
-
-        $('.wrench').css({
-          '-moz-transform': 'rotate(' + offset + 'deg)',
-          '-webkit-transform': 'rotate(' + offset + 'deg)',
-          '-o-transform': 'rotate(' + offset + 'deg)',
-          '-ms-transform': 'rotate(' + offset + 'deg)',
-          'transform': 'rotate(' + offset + 'deg)',
-        });
-
-        $('#yellow-gear').css({
-          '-moz-transform': 'rotate(' + offset + 'deg)',
-          '-webkit-transform': 'rotate(' + offset + 'deg)',
-          '-o-transform': 'rotate(' + offset + 'deg)',
-          '-ms-transform': 'rotate(' + offset + 'deg)',
-          'transform': 'rotate(' + offset + 'deg)',
-        });
-
-        offset = 360 - offset;
-        $('.multigray-circle').css({
-          '-moz-transform': 'rotate(' + offset + 'deg)',
-          '-webkit-transform': 'rotate(' + offset + 'deg)',
-          '-o-transform': 'rotate(' + offset + 'deg)',
-          '-ms-transform': 'rotate(' + offset + 'deg)',
-          'transform': 'rotate(' + offset + 'deg)',
-        });
-
-        $('#pink-gear').css({
-          '-moz-transform': 'rotate(' + offset + 'deg)',
-          '-webkit-transform': 'rotate(' + offset + 'deg)',
-          '-o-transform': 'rotate(' + offset + 'deg)',
-          '-ms-transform': 'rotate(' + offset + 'deg)',
-          'transform': 'rotate(' + offset + 'deg)',
-        });
-        });
-      });
 
     } // End ngOnInit
 

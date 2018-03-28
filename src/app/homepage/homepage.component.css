@@ -5,12 +5,6 @@
   min-height: 60vw;
 }
 
-.top-ani {
-  position: absolute;
-  top: -130px;
-  width: 95vw;
-}
-
 .top-ani-mobile {
   position: absolute;
   top: -20vw;
@@ -44,6 +38,345 @@
 
 .dynamic-headline h1 {
   height: 8vw;
+}
+
+/* Top Animation Components */
+.top-design {
+  position: relative;
+  height: 700px;
+  width: 1200px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.top-design img {
+  position: absolute;
+}
+
+.top-design div {
+  position: absolute;
+}
+
+.top-ani {
+  position: absolute;
+  top: -18%;
+  right: 0%;
+  width: 100%;
+  z-index: 2;
+}
+
+.blue-logo-gear {
+  position: absolute;
+  right: 64.9%;
+  top: 21.92%;
+  width: 6.4%;
+  z-index: 3;
+  animation: rotate 6s reverse linear infinite;
+}
+
+.exclamation {
+  position: absolute;
+  width: 5%;
+  right: 58.295%;
+  top: 19.4%;
+  z-index: 3;
+  animation: exclamation 1s linear infinite;
+}
+
+@keyframes exclamation {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.stack {
+  width: 11%;
+  top: 0%;
+  right: 89.5%;
+  z-index: 1;
+  animation: stack 2s ease infinite;
+}
+
+@keyframes stack {
+  0% {
+    top: 0%;
+  }
+  45% {
+    top: 0%;
+  }
+  70% {
+    top: 2%;
+  }
+  75% {
+    top: 2%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+.arrow-drop {
+  height: 11.4%;
+  width: 9%;
+  top: -9.4%;
+  right: 90.5%;
+  overflow: hidden;
+}
+
+.yellow-arrow {
+  width: 60%;
+  top: -70%;
+  right: 23%;
+  animation: yellowArrow 2s linear infinite;
+}
+
+@keyframes yellowArrow {
+  0% {
+    top: -70%;
+  }
+  10% {
+    top: -70%;
+  }
+  38% {
+    top: 90%;
+  }
+  100% {
+    top: 90%;
+  }
+}
+
+.train-holder {
+  height: 5%;
+  width: 39.6%;
+  overflow: hidden;
+  right: 9.4%;
+  top: 34.3%;
+  z-index: 3;
+}
+
+.top-train {
+  width: 65%;
+  top: 20%;
+  right: -65%;
+  animation: train 6s linear infinite;
+}
+
+@keyframes train {
+  0% {
+    right: -65%;
+  }
+  80% {
+    right: 100%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+.car-holder1 {
+  overflow: hidden;
+  height: 5%;
+  width: 16.8%;
+  top: 45.8%;
+  right: 29.45%;
+  z-index: 3;
+}
+
+.car1 {
+  width: 25%;
+  top: 24%;
+  right: -25%;
+  animation: carOne 5s linear infinite;
+}
+
+@keyframes carOne {
+  0% {
+    right: -25%;
+  }
+  80% {
+    right: 100%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+.car-holder2 {
+  overflow: hidden;
+  height: 5%;
+  width: 21.75%;
+  top: 45.8%;
+  right: 2.65%;
+  z-index: 3;
+}
+
+.car2 {
+  width: 20%;
+  top: 12%;
+  right: 100%;
+  animation: carTwo 4s linear infinite;
+}
+
+@keyframes carTwo {
+  0% {
+    right: 100%;
+  }
+  80% {
+    right: -25%;
+  }
+  100% {
+    right: -25%;
+  }
+}
+
+.car-holder3 {
+  overflow: hidden;
+  height: 5%;
+  width: 32.25%;
+  top: 61.3%;
+  right: 18.55%;
+  z-index: 3;
+}
+
+.car3 {
+  width: 15%;
+  top: 5%;
+  right: 100%;
+  animation: carTwo 6.5s linear infinite;
+  animation-delay: 1s;
+}
+
+.car4 {
+  width: 15%;
+  top: -4%;
+  right: 100%;
+  animation: carTwo 6.5s linear infinite;
+}
+
+.curvy-pipe-holder {
+  overflow: hidden;
+  height: 54%;
+  width: 10%;
+  right: -1.5%;
+  top: 3%;
+  z-index: 3;
+}
+
+.curvy-pipe {
+  width: 70%;
+  right: 7.5%;
+  top: 50%;
+  z-index: 3;
+  animation: curvyPipe 6.2s ease infinite;
+}
+
+@keyframes curvyPipe {
+  0% {
+    top: 50%;
+  }
+  25% {
+    top: 53%;
+  }
+  50% {
+    top: 50%;
+  }
+  75% {
+    top: 57%;
+  }
+  100% {
+    top: 50%;
+  }
+}
+
+.pink-pipe {
+  width: 35%;
+  right: 24%;
+  top: 15%;
+  z-index: 3;
+  animation: pinkPipe 6.2s ease infinite;
+}
+
+@keyframes pinkPipe {
+  0% {
+    top: 15%;
+  }
+  25% {
+    top: 21%;
+  }
+  50% {
+    top: 15%;
+  }
+  75% {
+    top: 26%;
+  }
+  100% {
+    top: 15%;
+  }
+}
+
+.knob {
+  width: 4%;
+  right: 22.88%;
+  top: -17%;
+  z-index: 3;
+  animation: knob 4.5s ease infinite;
+}
+
+@keyframes knob {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(70deg);
+  }
+  30% {
+    transform: rotate(45deg);
+  }
+  45% {
+    transform: rotate(110deg);
+  }
+  55% {
+    transform: rotate(80deg);
+  }
+  70% {
+    transform: rotate(120deg);
+  }
+  90% {
+    transform: rotate(80deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.meter-needle {
+  width: 1.5%;
+  right: 63.3%;
+  top: 0.5%;
+  z-index: 3;
+  animation: needle 3s ease infinite;
+}
+
+@keyframes needle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(40deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 /* New Timer */
