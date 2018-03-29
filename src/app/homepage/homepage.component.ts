@@ -63,7 +63,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
   ngOnInit() {
 
     // Scoll implemenation
-    window.addEventListener('scroll', this.onScroll, true )
+    // window.addEventListener('scroll', this.onScroll, true )
 
     // Dynamic Headline - https://css-tricks.com/snippets/css/typewriter-effect/
     var TxtType = function(el, toRotate, period) {

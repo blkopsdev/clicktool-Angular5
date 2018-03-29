@@ -680,6 +680,44 @@
   }
 }
 
+.light-flash {
+  width: 0%;
+  height: 0%;
+  border-radius: 50%;
+  top: 11.4%;
+  z-index: 1;
+  opacity: 0;
+  animation: lightFlash 2.5s ease infinite;
+}
+
+.red-flash {
+  box-shadow: 0px 0px 50px 25px #fd8a66;
+  right: 84.1%;
+  background-color: #fd8a66;
+  animation-delay: 0.75s;
+}
+
+.yellow-flash {
+  box-shadow: 0px 0px 50px 25px #fbc943;
+  right: 88.4%;
+  background-color: #fbc943;
+}
+
+@keyframes lightFlash {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .red-button {
   width: 2%;
   top: 19.7%;
