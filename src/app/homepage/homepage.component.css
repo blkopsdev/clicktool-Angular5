@@ -694,7 +694,7 @@
   box-shadow: 0px 0px 50px 25px #fd8a66;
   right: 84.1%;
   background-color: #fd8a66;
-  animation-delay: 0.75s;
+  animation-delay: 0.5s;
 }
 
 .yellow-flash {
@@ -2274,6 +2274,8 @@ margin: 20px;
 .vid-container {
   position: relative;
   min-height: 700px;
+  width: 1200px;
+  height: 600px;
 }
 
 .vid-text {
@@ -2283,20 +2285,247 @@ margin: 20px;
   right: 30%;
   top: 10%;
   text-align: center;
-  z-index: 2;
+  z-index: 6;
 }
 
-.vid-ani {
+.vid-container img {
   position: absolute;
-  width: 100%;
 }
 
-#vid-ani1 {
+.vid-container div {
+  position: absolute;
+}
+
+.vid-background {
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  z-index: 1;
+}
+
+.vid-screen {
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  z-index: 5;
+}
+
+.electricity-holder {
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  right: 0%;
+  z-index: 4;
   opacity: 1;
 }
 
-#vid-ani2 {
-  opacity: 0;
+.vid-electricity {
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  clip-path: circle(5% at 15% 110%);
+  animation: electricity 3s linear infinite;
+}
+
+@keyframes electricity {
+  0% {
+    clip-path: circle(5% at 15% 110%);
+  }
+  35% {
+    clip-path: circle(5% at 15% 28%);
+  }
+  53% {
+    clip-path: circle(5% at 30% 12%);
+  }
+  100% {
+    clip-path: circle(5% at 30% 12%);
+  }
+}
+
+.vid-electricity2 {
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  clip-path: circle(2% at 90% 54%);
+  animation: electricityTwo 4.5s linear infinite;
+}
+
+@keyframes electricityTwo {
+  0% {
+    clip-path: circle(2% at 86% 110%);
+  }
+  18% {
+    clip-path: circle(2% at 86% 58%);
+  }
+  19% {
+    clip-path: circle(2% at 83% 58%);
+  }
+  21% {
+    clip-path: circle(2% at 83% 52%);
+  }
+  27% {
+    clip-path: circle(2% at 91% 52%);
+  }
+  28% {
+    clip-path: circle(2% at 91% 48%);
+  }
+  34% {
+    clip-path: circle(2% at 83% 48%);
+  }
+  35% {
+    clip-path: circle(2% at 83% 44%);
+  }
+  42% {
+    clip-path: circle(2% at 91% 44%);
+  }
+  43% {
+    clip-path: circle(2% at 91% 40%);
+  }
+  54% {
+    clip-path: circle(2% at 70% 40%);
+  }
+  100% {
+    clip-path: circle(2% at 70% 40%);
+  }
+}
+
+.vid-lines {
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  z-index: 3;
+}
+
+.vid-cloud-left {
+  width: 5%;
+  top: 60%;
+  right: 93.5%;
+  z-index: 3;
+  animation: vidCloud 3.5s ease-in-out infinite;
+}
+
+.vid-cloud-center {
+  width: 5%;
+  top: 51%;
+  right: 15%;
+  z-index: 3;
+  animation: vidCloud 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.vid-cloud-right {
+  width: 7%;
+  top: 55%;
+  right: 7%;
+  z-index: 3;
+  animation: vidCloud 2.5s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+@keyframes vidCloud {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(25%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.vid-gear-up-light-blue {
+  width: 10%;
+  top: 42.57%;
+  right: 75.705%;
+  z-index: 2;
+  animation: rotate 6s reverse linear infinite;
+}
+
+.small-red-gear-holder {
+  width: 5%;
+  height: 6%;
+  top: 81.65%;
+  right: 85%;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.vid-gear-small-red {
+  width: 105%;
+  right: -10%;
+  top: 23%;
+  animation: rotate 7s reverse linear infinite;
+}
+
+.left-gear-holder {
+  width: 20%;
+  height: 14%;
+  top: 71.6%;
+  right: 66%;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.vid-gear-small-turquoise {
+  width: 35%;
+  right: 62%;
+  top: 55%;
+  animation: rotate 7s reverse linear infinite;
+}
+
+.vid-gear-left-yellow {
+  width: 35%;
+  right: 39.2%;
+  top: 12.5%;
+  animation: rotate 7s linear infinite;
+}
+
+.vid-gear-down-light-blue {
+  width: 35%;
+  right: 21.2%;
+  top: 68.2%;
+  animation: rotate 7s reverse linear infinite;
+}
+
+.big-red-gear-holder {
+  width: 10%;
+  height: 14%;
+  top: 73.8%;
+  right: 20%;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.vid-gear-big-red {
+  width: 105%;
+  right: 0%;
+  top: 30%;
+  animation: rotate 7s linear infinite;
+}
+
+.vid-gear-big-turquoise {
+  width: 11%;
+  right: 10.62%;
+  top: 64.47%;
+  z-index: 2;
+  animation: rotate 8s reverse linear infinite;
+}
+
+.vid-gear-right-yellow {
+  width: 7%;
+  right: 5%;
+  top: 73%;
+  z-index: 2;
+  animation: rotate 6.7s linear infinite;
+}
+
+.vid-gear-blue {
+  width: 4%;
+  right: 7.4%;
+  top: 67.3%;
+  z-index: 2;
+  animation: rotate 5.8s reverse linear infinite;
 }
 
 /*.faqandvideo {
