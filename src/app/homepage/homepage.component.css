@@ -2324,7 +2324,7 @@ margin: 20px;
   top: 0%;
   right: 0%;
   clip-path: circle(5% at 15% 110%);
-  animation: electricity 3s linear infinite;
+  animation: electricity 2.9s linear infinite;
 }
 
 @keyframes electricity {
@@ -2347,7 +2347,7 @@ margin: 20px;
   top: 0%;
   right: 0%;
   clip-path: circle(2% at 90% 54%);
-  animation: electricityTwo 4.5s linear infinite;
+  animation: electricityTwo 4.4s linear infinite;
 }
 
 @keyframes electricityTwo {
@@ -2643,15 +2643,386 @@ margin: 20px;
 }
 
 /* Call to Action */
-.reg-ani {
-  width: 100%;
+.action-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .indresgsec {
-  width: 90%;
-  margin: 0 auto;
+  width: 550px;
+  margin: 0px auto;
+  margin-top: 80px !important;
 }
+
+
+.clicktool-city {
+  margin: 0 auto;
+  width: 550px;
+  min-width: 550px;
+  position: relative;
+}
+
+.clicktool-city img {
+  position: absolute;
+}
+
+.clicktool-city div {
+  position: absolute;
+}
+
+.city-background {
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  z-index: 1;
+}
+
+.city-cloud-medium {
+  width: 4.5%;
+}
+
+.city-cloud-lg {
+  width: 6%;
+}
+
+.city-cloud-top-left1 {
+  top: 33%;
+  right: 93%;
+  z-index: 2;
+  animation: cloud 3s ease-in-out infinite;
+}
+
+.city-cloud-top-left2 {
+  top: 20%;
+  right: 75%;
+  z-index: 2;
+  animation: cloud 3.2s ease-in-out infinite;
+}
+
+.city-cloud-top-left3 {
+  top: 23%;
+  right: 70%;
+  z-index: 2;
+  animation: cloud 3.2s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+.city-cloud-top-center {
+  top: 39%;
+  right: 34%;
+  z-index: 2;
+  animation: cloud 3.3s ease-in-out infinite;
+}
+
+.city-cloud-top-right1 {
+  top: 17%;
+  right: 17%;
+  z-index: 2;
+  animation: cloud 3.3s ease-in-out infinite;
+}
+
+.city-cloud-top-right2 {
+  top: 13%;
+  right: 15%;
+  z-index: 2;
+  animation: cloud 3.1s ease-in-out infinite;
+}
+
+.city-cloud-top-right3 {
+  top: 24%;
+  right: 3%;
+  z-index: 2;
+  animation: cloud 3s ease-in-out infinite;
+}
+
+.city-cloud-bottom-right {
+  top: 82%;
+  right: 4%;
+  z-index: 2;
+  animation: cloud 3s ease-in-out infinite;
+}
+
+.city-cloud-bottom-left1 {
+  top: 81%;
+  right: 57%;
+  z-index: 2;
+  animation: cloud 3s ease-in-out infinite;
+}
+
+.city-cloud-bottom-left2 {
+  width: 3%;
+  top: 79%;
+  right: 56%;
+  z-index: 2;
+  animation: cloud 2.9s ease-in-out infinite;
+}
+
+.city-bird {
+  width: 3%;
+  animation: bird 2s ease-in-out infinite;
+}
+
+.city-bird-left {
+  top: 84%;
+  right: 45%;
+  z-index: 2;
+}
+
+.city-bird-right {
+  top: 86%;
+  right: 42%;
+  z-index: 2;
+  animation-delay: 0.5s;
+}
+
+@keyframes bird {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(25%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.city-boat-holder-left {
+  height: 8%;
+  width: 7%;
+  top: 103.8%;
+  right: 78%;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.city-boat-holder-left img {
+  width: 90%;
+  top: 44%;
+  right: 18%;
+  animation: boat 2s ease-in-out infinite;
+}
+
+.city-boat-holder-center {
+  height: 9%;
+  width: 7%;
+  top: 102.8%;
+  right: 46%;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.city-boat-holder-center img {
+  width: 68%;
+  top: 5%;
+  right: 4%;
+  animation: boat 1.9s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+.city-boat-holder-right {
+  height: 9%;
+  width: 7%;
+  top: 99.9%;
+  right: 17%;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.city-boat-holder-right img {
+  width: 68%;
+  top: 39%;
+  right: 26%;
+  animation: boat 2.1s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+.windmill {
+  width: 8%;
+  top: 38%;
+  right: 48%;
+  z-index: 2;
+  animation: rotate 5s linear infinite;
+}
+
+.city-train-holder {
+  width: 50.5%;
+  height: 10%;
+  top: 51.8%;
+  right: 19%;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.city-train-holder img {
+  width: 50%;
+  top: 65%;
+  right: -50%;
+  animation: cityTrain 5s linear infinite;
+}
+
+@keyframes cityTrain {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-400%);
+  }
+}
+
+.city-car-holder-top-left {
+  height: 8%;
+  width: 22%;
+  top: 70%;
+  right: 43%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.city-car-holder-top-left img {
+  width: 20%;
+  top: 50%;
+  right: -20%;
+  animation: cityCarOne 6s linear infinite;
+}
+
+@keyframes cityCarOne {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-800%);
+  }
+}
+
+.city-car-holder-top-right {
+  height: 8%;
+  width: 13.2%;
+  top: 70%;
+  right: 22.8%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.city-car-holder-top-right img {
+  width: 40%;
+  top: 27%;
+  right: 100%;
+  animation: cityCarTwo 4s linear infinite;
+}
+
+@keyframes cityCarTwo {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(600%);
+  }
+}
+
+.city-car-holder-bottom {
+  height: 8%;
+  width: 50%;
+  top: 92.8%;
+  right: 18.25%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.city-car-holder-bottom img {
+  width: 10%;
+  top: 28%;
+  right: 100%;
+  animation: cityCarThree 7s linear infinite;
+}
+
+.city-car-holder-bottom img:first-child {
+  animation-delay: 4s;
+}
+
+@keyframes cityCarThree {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(1400%);
+  }
+}
+
+.city-logo {
+  width: 3.8%;
+  top: 27.5%;
+  right: 57.9%;
+  z-index: 3;
+}
+.city-logo2 {
+  width: 4%;
+  top: 26.8%;
+  right: 57.91%;
+  z-index: 2;
+  animation: rotate 5s linear infinite;
+}
+
+.city-gear-bottom-right1 {
+  width: 5.5%;
+  top: 89.3%;
+  right: 7.8%;
+  z-index: 2;
+  animation: rotate 5s reverse linear infinite;
+}
+
+.city-gear-bottom-left1 {
+  height: 15%;
+  width: 12%;
+  top: 87.25%;
+  right: 70%;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.city-gear-bottom-left1 img {
+  width: 80%;
+  top: 36%;
+  right: 15%;
+  animation: rotate 6s reverse linear infinite;
+}
+
+.city-gear-bottom-right2 {
+  height: 15%;
+  width: 12%;
+  top: 86.8%;
+  right: 10%;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.city-gear-bottom-right2 img {
+  width: 75%;
+  top: 46%;
+  right: 4%;
+  animation: rotate 8s linear infinite;
+}
+
+.city-gear-top-left {
+  height: 12%;
+  width: 8%;
+  top: 43.1%;
+  right: 87.9%;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.city-gear-top-left img {
+  width: 80%;
+  top: 49%;
+  right: -12%;
+  animation: rotate 7s reverse linear infinite;
+}
+
+/* Sign Up */
 
 .sign-up {
   text-align: center;
