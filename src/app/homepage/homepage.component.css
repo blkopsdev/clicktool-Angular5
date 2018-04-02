@@ -15,15 +15,15 @@
 .dynamic-headline {
   position: absolute;
   right: 11%;
-  top: 4%;
-  width: 35vw;
+  top: 3%;
+  width: 35%;
 }
 
 .dynamic-headline a {
   color: #205184;
   border-right: 3px solid #1db8d3;
   text-decoration: none;
-  font-size: 2.5vw;
+  font-size: 32px;
 }
 
 .dynamic-headline a:hover {
@@ -32,7 +32,7 @@
 }
 
 .dynamic-headline p {
-  font-size: 1.2vw;
+  font-size: 16px;
   margin-top: -8%;
 }
 
@@ -2286,6 +2286,13 @@ margin: 20px;
   top: 10%;
   text-align: center;
   z-index: 6;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.vid-text a {
+  margin-right: 45% !important;
 }
 
 .vid-container img {
@@ -3020,6 +3027,89 @@ margin: 20px;
   top: 49%;
   right: -12%;
   animation: rotate 7s reverse linear infinite;
+}
+
+.city-gear-bottom-left2 {
+  height: 16%;
+  width: 15%;
+  top: 84.6%;
+  right: 82%;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.city-gear-bottom-left2 img {
+  width: 40%;
+  animation: rotate 7s linear infinite;
+}
+
+.city-gear-bottom-left2 img:first-child {
+  top: 64%;
+  right: 50%;
+}
+
+.city-gear-bottom-left2 img:nth-child(2) {
+  top: 29%;
+  right: 24%;
+  animation-direction: reverse;
+}
+
+.city-gear-bottom-left2 img:nth-child(3) {
+  top: 73.3%;
+  right: 3.2%;
+}
+
+.city-gear-middle {
+  width: 12%;
+  height: 10%;
+  top: 68%;
+  right: 69%;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.city-gear-middle img:first-child {
+  width: 50%;
+  top: 40%;
+  right: 48%;
+  animation: rotate 7s reverse linear infinite;
+}
+
+.city-gear-middle img:nth-child(2) {
+  width: 30%;
+  top: 68%;
+  right: 24%;
+  animation: rotate 5.5s linear infinite;
+}
+
+.city-gear-top-center {
+  width: 10%;
+  height: 12%;
+  top: 43%;
+  right: 41%;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.city-gear-top-center img:first-child {
+  width: 48%;
+  top: 65%;
+  right: 40%;
+  animation: rotate 5.5s linear infinite;
+}
+
+.city-gear-top-center img:nth-child(2) {
+  width: 33%;
+  top: 75%;
+  right: 13%;
+  animation: rotate 7s reverse linear infinite;
+}
+
+.city-gear-top-center img:nth-child(3) {
+  width: 40%;
+  top: 22%;
+  right: 19%;
+  animation: rotate 6s reverse linear infinite;
 }
 
 /* Sign Up */
