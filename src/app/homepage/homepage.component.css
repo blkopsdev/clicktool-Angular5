@@ -33,11 +33,11 @@
 
 .dynamic-headline p {
   font-size: 16px;
-  margin-top: -8%;
+  margin-top: 16px;
 }
 
 .dynamic-headline h1 {
-  height: 8vw;
+  height: 50px;
 }
 
 /* Top Animation Components */
@@ -3282,26 +3282,21 @@ margin: 20px;
   }
 }
 
-/*@media only screen and (min-width: 1600px){
-  .chart1 {
-    height: 20vw;
-    width: 20vw;
-  } .chart2 {
-    height: 20vw;
-    width: 20vw;
-  }
-}*/
+/* Media Queries */
 
-@media only screen and (min-width: 1300px){
+@media only screen and (max-width: 1052px) {
   .dynamic-headline {
-    top: 11%;
+    top: 80%;
+    left: 5%;
+    width: 80vw;
+  } .countdown {
+    top: 10px;
+    margin-bottom: 300px;
   }
 }
 
 @media only screen and (max-width: 991px) {
-  .dynamic-headline {
-    top: -2%;
-  } .countdown {
+  .countdown {
     width: 600px;
   } .countdown p {
     font-size: 20px;
@@ -3326,17 +3321,12 @@ margin: 20px;
 @media only screen and (max-width: 767px){
   .machine-box {
     top: 23%;
-  } .page-top {
-    min-height: 160vw;
-  } .dynamic-headline {
-    top: 70%;
-    width: 90vw;
-    right: -5%;
-  } .dynamic-headline a {
-    font-size: 5vw;
-  } .dynamic-headline p {
-    margin-top: 4%;
-    font-size: 2vw;
+  } .top-design {
+    top: 80px;
+    width: 900px;
+    height: 600px;
+  } .countdown {
+    top: 120px;
   } .milestone-container {
     width: 280vw;
     left: -104%;
@@ -3367,9 +3357,11 @@ margin: 20px;
 }
 
 @media only screen and (max-width: 600px){
-  .countdown {
+  .dynamic-headline p {
+    margin-top: 60px;
+  } .countdown {
     width: 420px;
-    margin-bottom: 350px;
+    margin-bottom: 500px;
   } .count-machine {
     opacity: 0;
   } .count-machine-tablet1 {
@@ -3398,7 +3390,10 @@ margin: 20px;
 }
 
 @media only screen and (max-width: 420px){
-  .info-icon {
+  .dynamic-headline {
+    left: 2%;
+    width: 95vw;
+  } .info-icon {
     height: 50vw;
   } .countdown {
     width: 300px;
