@@ -114,24 +114,6 @@
   animation-delay: 4s;
 }
 
-@keyframes blueButtons {
-  0% {
-    filter: opacity(0%);
-  }
-  5% {
-    filter: opacity(100%);
-  }
-  20% {
-    filter: opacity(100%);
-  }
-  25% {
-    filter: opacity(0%);
-  }
-  100% {
-    filter: opacity(0%);
-  }
-}
-
 .exclamation {
   position: absolute;
   width: 5%;
@@ -141,45 +123,12 @@
   animation: exclamation 1s linear infinite;
 }
 
-@keyframes exclamation {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 .stack {
   width: 11%;
   top: -2%;
   right: 89.5%;
   z-index: 1;
   animation: stack 2s ease infinite;
-}
-
-@keyframes stack {
-  0% {
-    top: -2%;
-  }
-  45% {
-    top: -2%;
-  }
-  70% {
-    top: 0%;
-  }
-  75% {
-    top: 0%;
-  }
-  100% {
-    top: -2%;
-  }
 }
 
 .arrow-drop {
@@ -195,21 +144,6 @@
   top: -70%;
   right: 23%;
   animation: yellowArrow 2s linear infinite;
-}
-
-@keyframes yellowArrow {
-  0% {
-    top: -70%;
-  }
-  10% {
-    top: -70%;
-  }
-  38% {
-    top: 90%;
-  }
-  100% {
-    top: 90%;
-  }
 }
 
 .train-holder {
@@ -228,18 +162,6 @@
   animation: train 6s linear infinite;
 }
 
-@keyframes train {
-  0% {
-    right: -65%;
-  }
-  80% {
-    right: 100%;
-  }
-  100% {
-    right: 100%;
-  }
-}
-
 .car-holder1 {
   overflow: hidden;
   height: 5%;
@@ -256,18 +178,6 @@
   animation: carOne 5s linear infinite;
 }
 
-@keyframes carOne {
-  0% {
-    right: -25%;
-  }
-  80% {
-    right: 100%;
-  }
-  100% {
-    right: 100%;
-  }
-}
-
 .car-holder2 {
   overflow: hidden;
   height: 5%;
@@ -282,18 +192,6 @@
   top: 12%;
   right: 100%;
   animation: carTwo 4s linear infinite;
-}
-
-@keyframes carTwo {
-  0% {
-    right: 100%;
-  }
-  80% {
-    right: -25%;
-  }
-  100% {
-    right: -25%;
-  }
 }
 
 .car-holder3 {
@@ -337,48 +235,12 @@
   animation: curvyPipe 6.2s ease infinite;
 }
 
-@keyframes curvyPipe {
-  0% {
-    top: 50%;
-  }
-  25% {
-    top: 53%;
-  }
-  50% {
-    top: 50%;
-  }
-  75% {
-    top: 57%;
-  }
-  100% {
-    top: 50%;
-  }
-}
-
 .pink-pipe {
   width: 35%;
   right: 24%;
   top: 15%;
   z-index: 3;
   animation: pinkPipe 6.2s ease infinite;
-}
-
-@keyframes pinkPipe {
-  0% {
-    top: 15%;
-  }
-  25% {
-    top: 21%;
-  }
-  50% {
-    top: 15%;
-  }
-  75% {
-    top: 26%;
-  }
-  100% {
-    top: 15%;
-  }
 }
 
 .knob {
@@ -389,51 +251,12 @@
   animation: knob 7s ease infinite;
 }
 
-@keyframes knob {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(70deg);
-  }
-  30% {
-    transform: rotate(45deg);
-  }
-  45% {
-    transform: rotate(110deg);
-  }
-  55% {
-    transform: rotate(80deg);
-  }
-  70% {
-    transform: rotate(120deg);
-  }
-  90% {
-    transform: rotate(50deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
 .meter-needle {
   width: 1.5%;
   right: 63.3%;
   top: -1.8%;
   z-index: 3;
   animation: needle 3s ease infinite;
-}
-
-@keyframes needle {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(40deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
 }
 
 .gray-fill-holder {
@@ -470,27 +293,6 @@
   animation-direction: reverse;
 }
 
-@keyframes grayFill {
-  0% {
-    transform: translateY(0%);
-  }
-  20% {
-    transform: translateY(20%);
-  }
-  40% {
-    transform: translateY(10%);
-  }
-  60% {
-    transform: translateY(30%);
-  }
-  80% {
-    transform: translateY(40%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
-
 .blue-slider {
   width: 1.75%;
   top: 16.7%;
@@ -512,27 +314,6 @@
 .blue-slider3 {
   right: 57.03%;
   animation: blueSlider 4s ease-in-out infinite;
-}
-
-@keyframes blueSlider {
-  0% {
-    transform: translateY(0%);
-  }
-  20% {
-    transform: translateY(50%);
-  }
-  40% {
-    transform: translateY(20%);
-  }
-  60% {
-    transform: translateY(70%);
-  }
-  80% {
-    transform: translateY(90%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
 }
 
 .cloud-up-left {
@@ -591,30 +372,6 @@
   animation: cloudTwo 3s ease-in-out infinite;
 }
 
-@keyframes cloud {
-  0% {
-    transform: translateX(0%);
-  }
-  50% {
-    transform: translateX(20%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-
-@keyframes cloudTwo {
-  0% {
-    transform: translateX(0%);
-  }
-  50% {
-    transform: translateX(-20%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-
 .boat-holder1 {
   height: 5%;
   width: 5%;
@@ -668,18 +425,6 @@
   animation-delay: 0.3s;
 }
 
-@keyframes boat {
-  0% {
-    transform: translateY(0%);
-  }
-  50% {
-    transform: translateY(6%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
-
 .light-flash {
   width: 0%;
   height: 0%;
@@ -703,21 +448,6 @@
   background-color: #fbc943;
 }
 
-@keyframes lightFlash {
-  0% {
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 .red-button {
   width: 2%;
   top: 19.7%;
@@ -734,30 +464,6 @@
   animation: button 7s ease-in-out infinite;
   animation-direction: reverse;
   animation-delay: 0.5s;
-}
-
-@keyframes button {
-  0% {
-    transform: translateX(0%);
-  }
-  20% {
-    transform: translateX(300%);
-  }
-  40% {
-    transform: translateX(0%);
-  }
-  60% {
-    transform: translateX(300%);
-  }
-  75% {
-    transform: translateX(80%);
-  }
-  90% {
-    transform: translateX(150%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
 }
 
 .machine-knob-red {
@@ -818,24 +524,6 @@
   animation-delay: 6s
 }
 
-@keyframes machineScreen {
-  0% {
-    opacity: 0;
-  }
-  5% {
-    opacity: 1;
-  }
-  15% {
-    opacity: 1;
-  }
-  20% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 .static-holder {
   height: 11.5%;
   width: 8.4%;
@@ -852,15 +540,6 @@
   top: -40%;
   z-index: 4;
   animation: static 1.5s linear infinite;
-}
-
-@keyframes static {
-  0% {
-    transform: translateY(0%);
-  }
-  100% {
-    transform: translateY(400%);
-  }
 }
 
 .top-gear {
@@ -979,17 +658,6 @@
   animation-delay: 8.75s
 }
 
-
-
-@keyframes coin {
-  0% {
-    transform: translateX(0%) rotate(0deg);
-  }
-  100% {
-    transform: translateX(1400%) rotate(1080deg);
-  }
-}
-
 /* New Timer */
 .countdown {
   width: 950px;
@@ -1001,12 +669,114 @@
   font-weight: bold;
 }
 
-.countdown p {
-/*  position: absolute;*/
+.countdown-right {
+  right: 3%;
+  width: 45%;
+  z-index: 2;
+}
+
+.countdown-left {
+  left: 3%;
+  width: 45%;
+  z-index: 2;
+}
+
+.countdown-wires {
+  right: 47%;
+  width: 5.2%;
+  top: 28px !important;
+  z-index: 1;
+}
+
+.countdown-handle {
+  width: 10%;
+  left: 0%;
+  top: 40px;
+  animation: handle 6s ease-in-out infinite;
+}
+
+.countdown h2 {
+  position: absolute;
   text-align: center;
-/*  font-family: 'Ubuntu';*/
+  color: #24537f;
+  right: 59.7%;
+  top: 142px;
+  z-index: 4;
+}
+
+.countdown-btn {
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  z-index: 4;
+  position: absolute;
+  top: 55px;
+  animation: countdownBtn 2.1s ease-in-out infinite;
+}
+
+.countdown-btn-left {
+  right: 60%;
+  background-color: #fbc943;
+}
+
+.countdown-btn-middle {
+  right: 58%;
+  background-color: #fd8a66;
+  animation-delay: 0.7s;
+}
+
+.countdown-btn-right {
+  right: 56%;
+  background-color: #2cb8d1;
+  animation-delay: 1.4s;
+}
+
+.countdown-chart {
+  height: 48px;
+  width: 56px;
+  overflow: hidden;
+  z-index: 4;
+  top: 48px;
+  right: 85.3%;
+}
+
+.countdown-chart img {
+  animation: countdownChart 18s linear infinite;
+  left: 105%;
+}
+
+.countdown-chart img:nth-child(2) {
+  animation-delay: 9s;
+}
+
+.countdown-gear {
+  width: 11%;
+  top: 16px;
+  z-index: 3;
+  animation: rotate 6s linear infinite;
+}
+
+.countdown-gear1 {
+  right: 5%;
+}
+
+.countdown-gear2 {
+  right: 15%;
+  animation-direction: reverse;
+}
+
+.countdown-gear3 {
+  right: 25%;
+}
+
+.countdown-gear4 {
+  right: 35%;
+  animation-direction: reverse;
+}
+
+.countdown p {
+  text-align: center;
   font-size: 31px;
-/*  top: 32px;*/
 }
 
 /*.countdown span {
@@ -1029,7 +799,7 @@ margin: 20px;
   width: 100%;
 }
 
-.count-machine-tablet1 {
+/*.count-machine-tablet1 {
   opacity: 0;
   clip: rect(0px,1050px,120px,444px);
   right: 0%;
@@ -1048,158 +818,36 @@ margin: 20px;
 .count-machine-mobile {
   opacity: 0;
   width: 100%;
-}
+}*/
 
 .timer-div {
-  top: 30px;
+  top: 35px;
   width: 90px;
   height: 60px;
   text-align: center;
+  z-index: 4;
 }
 
 .timer-text {
-  font-size: 16px !important;
+  font-size: 14px !important;
   margin-top: -10px;
 }
 
 #day-div {
-  right: 331px;
+  right: 338px;
 }
 
 #hour-div {
-  right: 234px;
+  right: 244px;
 }
 
 #minute-div {
-  right: 136px;
+  right: 150px;
 }
 
 #second-div {
-  right: 37px;
+  right: 54px;
 }
-
-/*#days {
-  right: 354px;
-}
-
-#days span {
-  right: 3px;
-}*/
-
-/*#hours {
-  right: 268px;
-}
-
-#hours span {
-  right: -16px;
-}
-
-#minutes {
-  right: 164px;
-}
-
-#minutes span {
-  right: -14px;
-}
-
-#seconds {
-  right: 65px;
-}
-
-#seconds span {
-  right: -14px;
-}*/
-
-/* Old Timer */
-
-/*.timer {
-  margin-left: -25px;
-  margin-top: -25px;
-  text-align: center;
-  position: relative;
-  font-weight: bold;
-  font-size: 16px;
-  color: white;
-}
-
-.timer div {
-  position: absolute;
-}
-
-.timer-text {
-  display: inline-block;
-}
-
-.timer div p {
-  margin-top: -148px !important;
-  position: absolute;
-  z-index: 3;
-  font-size: 60px;
-}
-
-.timer div p span {
-  font-size: 18px;
-}
-
-#timer-days p {
-  margin-left: 50px;
-}
-
-#timer-hours {
-  left: 174px;
-}
-
-#timer-hours p {
-  margin-left: 59px;
-}
-
-#timer-hours img {
-  transform: rotate(345deg);
-  -moz-transform: rotate(345deg);
-  -webkit-transform: rotate(345deg);
-  -o-transform: rotate(345deg);
-  -ms-transform: rotate(345deg);
-}
-
-#timer-minutes {
-  left: 348px;
-}
-
-#timer-minutes p {
-  margin-left: 52px;
-}
-
-#timer-seconds {
-  left: 523px;
-}
-
-#timer-seconds p {
-  margin-left: 48px;
-}
-
-#timer-seconds img {
-  transform: rotate(345deg);
-  -moz-transform: rotate(345deg);
-  -webkit-transform: rotate(345deg);
-  -o-transform: rotate(345deg);
-  -ms-transform: rotate(345deg);
-}
-
-.timer-gear {
-  height: 186px;
-}
-
-.timer2 {
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-  color: white;
-  font-weight: 600;
-  align-items: center;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  background-color: #2cb8d1;
-}*/
 
 /* About Section */
 
@@ -1631,18 +1279,6 @@ margin: 20px;
   top: 10%;
 }
 
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .yellow-light1 {
   right: 5%;
   animation: blink 1s ease-in-out infinite;
@@ -1671,18 +1307,6 @@ margin: 20px;
 .yellow-bar1 {
   top: 10%;
   animation: 3s yellowBar ease infinite;
-}
-
-@keyframes yellowBar {
-  0% {
-    width: 10%;
-  }
-  50% {
-    width: 40%;
-  }
-  100% {
-    width: 10%;
-  }
 }
 
 .yellow-bar2 {
@@ -2334,66 +1958,12 @@ margin: 20px;
   animation: electricity 2.9s linear infinite;
 }
 
-@keyframes electricity {
-  0% {
-    clip-path: circle(5% at 15% 110%);
-  }
-  35% {
-    clip-path: circle(5% at 15% 28%);
-  }
-  53% {
-    clip-path: circle(5% at 30% 12%);
-  }
-  100% {
-    clip-path: circle(5% at 30% 12%);
-  }
-}
-
 .vid-electricity2 {
   width: 100%;
   top: 0%;
   right: 0%;
   clip-path: circle(2% at 90% 54%);
   animation: electricityTwo 4.4s linear infinite;
-}
-
-@keyframes electricityTwo {
-  0% {
-    clip-path: circle(2% at 86% 110%);
-  }
-  18% {
-    clip-path: circle(2% at 86% 58%);
-  }
-  19% {
-    clip-path: circle(2% at 83% 58%);
-  }
-  21% {
-    clip-path: circle(2% at 83% 52%);
-  }
-  27% {
-    clip-path: circle(2% at 91% 52%);
-  }
-  28% {
-    clip-path: circle(2% at 91% 48%);
-  }
-  34% {
-    clip-path: circle(2% at 83% 48%);
-  }
-  35% {
-    clip-path: circle(2% at 83% 44%);
-  }
-  42% {
-    clip-path: circle(2% at 91% 44%);
-  }
-  43% {
-    clip-path: circle(2% at 91% 40%);
-  }
-  54% {
-    clip-path: circle(2% at 70% 40%);
-  }
-  100% {
-    clip-path: circle(2% at 70% 40%);
-  }
 }
 
 .vid-lines {
@@ -2427,18 +1997,6 @@ margin: 20px;
   z-index: 3;
   animation: vidCloud 2.5s ease-in-out infinite;
   animation-delay: 1.5s;
-}
-
-@keyframes vidCloud {
-  0% {
-    transform: translateY(0%);
-  }
-  50% {
-    transform: translateY(25%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
 }
 
 .vid-gear-up-light-blue {
@@ -2785,18 +2343,6 @@ margin: 20px;
   animation-delay: 0.5s;
 }
 
-@keyframes bird {
-  0% {
-    transform: translateY(0%);
-  }
-  50% {
-    transform: translateY(25%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
-
 .city-boat-holder-left {
   height: 8%;
   width: 7%;
@@ -2871,15 +2417,6 @@ margin: 20px;
   animation: cityTrain 5s linear infinite;
 }
 
-@keyframes cityTrain {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-400%);
-  }
-}
-
 .city-car-holder-top-left {
   height: 8%;
   width: 22%;
@@ -2896,15 +2433,6 @@ margin: 20px;
   animation: cityCarOne 6s linear infinite;
 }
 
-@keyframes cityCarOne {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-800%);
-  }
-}
-
 .city-car-holder-top-right {
   height: 8%;
   width: 13.2%;
@@ -2919,15 +2447,6 @@ margin: 20px;
   top: 27%;
   right: 100%;
   animation: cityCarTwo 4s linear infinite;
-}
-
-@keyframes cityCarTwo {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(600%);
-  }
 }
 
 .city-car-holder-bottom {
@@ -2948,15 +2467,6 @@ margin: 20px;
 
 .city-car-holder-bottom img:first-child {
   animation-delay: 4s;
-}
-
-@keyframes cityCarThree {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(1400%);
-  }
 }
 
 .city-logo {
@@ -3272,6 +2782,8 @@ margin: 20px;
   padding: 7px 0 0;
 }
 
+/* Media Queries */
+
 @media only screen and (min-width: 1866px){
   .info-icon {
     height: 300px;
@@ -3282,51 +2794,71 @@ margin: 20px;
   }
 }
 
-/* Media Queries */
-
 @media only screen and (max-width: 1052px) {
   .dynamic-headline {
     top: 80%;
     left: 5%;
     width: 80vw;
   } .countdown {
-    top: 10px;
-    margin-bottom: 300px;
+    top: 20px;
+    margin-bottom: 280px;
   }
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 927px) {
   .countdown {
-    width: 600px;
-  } .countdown p {
+    width: 650px;
+    top: 10px;
+    margin-bottom: 200px;
+  } .countdown-handle {
+    top: 28px;
+  } .countdown h2 {
     font-size: 20px;
-  } .timer-div {
-    top: 20px;
+    top: 97px;
+    right: 60%;
+  } .countdown-chart img {
+    width: 500%;
+  } .countdown-chart {
+    top: 35px;
+    height: 40px;
+    width: 44px;
+    right: 85%;
+  } .countdown-chart img {
+    animation: countdownChartMobile 18s linear infinite;
+  } .countdown-btn {
+    top: 35px;
+  } .countdown-wires {
+    top: 22px !important;
   } .timer-text {
-    font-size: 9px !important;
+    font-size: 10px !important;
     margin-top: -5px;
+  } .timer-div p {
+    font-size: 18px;
   } #day-div {
-    right: 192px;
+    right: 217px;
   } #hour-div {
-    right: 131px;
+    right: 152px;
   } #minute-div {
-    right: 69px;
+    right: 86px;
   } #second-div {
-    right: 7px;
-  } .vid-text {
-    top: 3%;
+    right: 23px;
+  } .timer-div {
+    top: 28px;
+  } .countdown-gear {
+    top: 12px;
   }
 }
 
 @media only screen and (max-width: 767px){
-  .machine-box {
+  .countdown {
+    top: 100px;
+    margin-bottom: 300px;
+  } .machine-box {
     top: 23%;
   } .top-design {
     top: 80px;
     width: 900px;
     height: 600px;
-  } .countdown {
-    top: 120px;
   } .milestone-container {
     width: 280vw;
     left: -104%;
@@ -3356,33 +2888,64 @@ margin: 20px;
   }
 }
 
-@media only screen and (max-width: 600px){
-  .dynamic-headline p {
-    margin-top: 60px;
-  } .countdown {
-    width: 420px;
-    margin-bottom: 500px;
-  } .count-machine {
+@media only screen and (max-width: 680px){
+  .countdown {
+    top: 170px;
+    width: 320px;
+    margin-bottom: 470px;
+  } .countdown-wires {
     opacity: 0;
-  } .count-machine-tablet1 {
-    opacity: 1;
-  } .count-machine-tablet2 {
-    opacity: 1;
-  } .timer-div {
-    top: 85px;
+  } .countdown-left {
+    width: 100%;
+    top: 100px;
+    left: -5%;
+  } .countdown-right {
+    width: 100%;
+  } .countdown-chart {
+    right: 78%;
+    top: 140px;
+  } .countdown h2 {
+    top: 210px;
+    right: 23%;
+  } .countdown-handle {
+    left: -11%;
+    width: 20%;
+    top: 131px;
+  } .countdown-btn {
+    top: 140px;
+  } .countdown-btn-left {
+    right: 40%;
+  } .countdown-btn-middle {
+    right: 30%;
+  } .countdown-btn-right {
+    right: 20%;
+  } .countdown-gear {
+    width: 25%;
+  } .countdown-gear1 {
+    right: 7%;
+  } .countdown-gear2 {
+    right: 29%;
+  } .countdown-gear3 {
+    right: 51%;
+  } .countdown-gear4 {
+    right: 73%;
   } #day-div {
-    right: 288px;
+    right: 228px;
   } #hour-div {
-    right: 201px;
+    right: 158px;
   } #minute-div {
-    right: 115px;
+    right: 86px;
   } #second-div {
-    right: 27px;
+    right: 16px;
+  } .timer-div {
+    top: 30px;
   }
 }
 
 @media only screen and (max-width: 520px){
-  .vid-text {
+  .dynamic-headline p {
+    margin-top: 60px !important;
+  } .vid-text {
     top: 8vw;
   } .vid-text h3 {
     font-size: 14px;
@@ -3395,23 +2958,5 @@ margin: 20px;
     width: 95vw;
   } .info-icon {
     height: 50vw;
-  } .countdown {
-    width: 300px;
-  } .count-machine-mobile {
-    opacity: 1;
-  } .count-machine-tablet1 {
-    opacity: 0;
-  } .count-machine-tablet2 {
-    opacity: 0;
-  } .timer-div {
-    right: 105px !important;
-  } #day-div {
-    top: 80px;
-  } #hour-div {
-    top: 158px;
-  } #minute-div {
-    top: 235px;
-  } #second-div {
-    top: 310px;
   }
 }
