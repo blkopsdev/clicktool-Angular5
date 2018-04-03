@@ -16,7 +16,7 @@ export const enum HTTPmethod {
 @Injectable()
 export class ApiService{
 
-  private apiUrl:String = "http://localhost:3000/api"
+  private apiUrl:String = "http://18.221.203.247/api"
   public instanceName:String 
   public params:Object = {}
   public options:Object = {}
@@ -96,11 +96,7 @@ export class ApiService{
   }
 
   createAuthorizationHeader(headers: HttpHeaders):HttpHeaders {
-    if(this.accessToken == null && this.app.getAccessToken()){
-      return headers.set('Authorization', this.app.getAccessToken())
-    }else if(this.accessToken){
-      return headers.set('Authorization', this.accessToken)
-    }
+    return headers.set('Authorization', this.app.getAccessToken())
   }
 
 

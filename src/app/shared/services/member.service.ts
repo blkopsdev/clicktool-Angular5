@@ -71,7 +71,6 @@ export class MemberService {
 
   afterLogout() {
     this.deleteLocalCookieSession();
-    console.log('direct to home')
     this.router.navigate(["/"])    
   }
 
@@ -85,6 +84,8 @@ export class MemberService {
   }
 
   afterLogin(res:Response):Response {
+    console.log(res);
+    this.deleteLocalCookieSession();
     this.saveAccessToken(res)
     this.setLocalMemberObj(res)
     this.afterLoginRoute();
@@ -96,12 +97,10 @@ export class MemberService {
   }
 
   saveAccessToken(body){
-    console.log('Save access token: ', body)
     this.cookieService.set("session", JSON.stringify(body))  
   }
 
   deleteLocalCookieSession(){
-    console.log('Removed access tokens.')
     this.cookieService.delete("member");
     this.cookieService.delete("session");
   }

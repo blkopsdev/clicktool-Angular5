@@ -13,7 +13,7 @@ declare var $:any
 
 export class AppComponent {
 
-  host:String = "http://localhost:3000"
+  host:String = "http://18.221.203.247"
   apiUrl:String = this.host + "/api"
   isMenuOpen:boolean = false;
   
