@@ -9,6 +9,15 @@ body{font-family: 'Montserrat', sans-serif; overflow-x: hidden; width: 100vw;}
 html,body{margin:0;padding:0;width:100%;height:100%;}
 wrapper{ width:100%;}
 
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+.text-danger {
+  color: red;
+}
+input.has-danger {
+  border: thin solid red !important;  
+}
 
 
 .btn-default{ transition:.3s;background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 30%, rgba(255,255,255,0) 75%, rgba(255,255,255,1) 100%);
@@ -171,7 +180,6 @@ border:none;}
 }
 
 header {
-  position: absolute;
   top: 0;
   width: 100%;
   z-index: 2;
@@ -265,10 +273,10 @@ header .navbar-header a img{ display: inline-block;}
   max-width: 800px !important;
 }
 
-.banners {
+/*.banners {
   padding: 106px 0;
   position: relative;
-}
+}*/
 
 
 /* Non-index page classes and unused classes */
@@ -2231,7 +2239,7 @@ body {
 
 }
 
-.reg-form div {
+.reg-form > div {
   margin-top: 30px;
 }
 
@@ -2371,6 +2379,7 @@ body {
 }
 
 
+
 #sign-up2 {
   margin-top: 20px;
 }
@@ -2378,7 +2387,7 @@ body {
 /* Dashboard */
 
 .member-container {
-  margin-top: -139px;
+  
   background-color: #F5F5F5;
   min-height: 100vh;
 }

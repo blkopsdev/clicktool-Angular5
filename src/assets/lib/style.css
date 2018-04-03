@@ -177,7 +177,6 @@ border:none;}
 }
 
 header {
-  position: absolute;
   top: 0;
   width: 100%;
   z-index: 2;
@@ -258,8 +257,8 @@ header .navbar-header a img{ display: inline-block;}
 }
 
 .banners {
-  padding: 106px 0;
-  position: relative;
+/*  height: 100px;
+  position: relative;*/
 }
 
 /* Non-index page classes and unused classes */

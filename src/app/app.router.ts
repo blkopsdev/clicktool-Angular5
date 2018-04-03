@@ -12,6 +12,8 @@ import { PasswordComponent } from './password/password.component';
 import { AuthGuard } from './shared/guards/auth.guard'
 import { IsLoggedInGuard } from './shared/guards/is-logged-in.guard'
 import { LoginComponent } from './login/login.component';
+import { UsersComponent } from './users/users.component';
+import { DocumentsComponent } from './documents/documents.component';
 
 export const router: Routes = [
 
@@ -26,6 +28,9 @@ export const router: Routes = [
 	{ path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
 	{ path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard] },
 	{ path: 'user/:id/password', component: PasswordComponent, canActivate: [AuthGuard] },
+
+	{ path: 'users', component: UsersComponent, canActivate: [AuthGuard] },
+	{ path: 'user/:id/documents', component: DocumentsComponent, canActivate: [AuthGuard] },
 
 	{ path: '**', redirectTo: '', pathMatch: 'full' }
 ]

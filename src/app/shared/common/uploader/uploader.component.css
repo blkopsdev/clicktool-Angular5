@@ -4,3 +4,22 @@
     margin-top: 0 !important;
     border-radius: 3px;
 }
+.uploader.nv-file-over {
+	border-color: #22c322;
+	color: #22c322;
+}
+.upload-over-label {
+	color: #22c322;
+}
+
+.uploaded-image-container {
+	max-width: 100%;
+	max-height: 100px;
+	overflow: hidden;
+	border-radius: 10px;
+	border: thin solid #efefef78;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.16);
+}
+.uploaded-image-container img {
+	width: 100%;
+}

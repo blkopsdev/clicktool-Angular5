@@ -1,0 +1,27 @@
+<app-dashboard-header></app-dashboard-header>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table" style="margin-top: 50px;">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">First</th>
+			      <th scope="col">Last</th>
+			      <th scope="col">Documents</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr *ngFor="let user of users">
+			      <td>{{ user.id }}</td>
+			      <td>{{ user.firstname }}</td>
+			      <td>{{ user.lastname }}</td>
+			      <td>
+			      	<button class="btn btn-secondary btn-sm" routerLink="/user/{{user.id}}/documents">View Doucments</button>
+			      </td>
+			    </tr>
+			  </tbody>
+			</table>			
+		</div>
+	</div>
+</div>

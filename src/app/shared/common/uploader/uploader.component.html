@@ -1,3 +1,25 @@
-<div class="uploader">
-	{{ label }}
+<div ng2FileDrop
+	[ngClass]="{'nv-file-over': hasBaseDropZoneOver}"              
+	(fileOver)="fileOverAnother($event)"
+	[uploader]="uploader"
+	(click)="file.click()" class="uploader">
+
+	<div [hidden]="!showAfterDropImage" class="row">
+		<div class="col-xs-6 col-md-6">
+			{{ name }}<br>
+			<img style="margin-top: 10px;" width="35" src="assets/success.png">
+		</div>
+		<div class="col-xs-6 col-md-6">
+			<div class="uploaded-image-container">
+				<img #AddedImage >
+			</div>
+			<span>{{ fileName }}</span>
+		</div>
+	</div>
+	 <span [hidden]="showAfterDropImage">Drag drop your {{ name }} here</span>
+
 </div>
+
+<div class="upload-over-label" [hidden]="!hasBaseDropZoneOver">Drop your {{ name }} here</div>
+<input style="display: none;" accept="image/*" type="file" ng2FileSelect [uploader]="uploader" #file/>	
+

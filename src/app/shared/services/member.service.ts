@@ -61,6 +61,7 @@ export class MemberService {
   }
 
   logout(accessToken:string) {
+
     this.api.id = null
     this.api.filter = null
     this.api.accessToken = accessToken
@@ -70,10 +71,12 @@ export class MemberService {
 
   afterLogout() {
     this.deleteLocalCookieSession();
+    console.log('direct to home')
     this.router.navigate(["/"])    
   }
 
   login(email:string, password:string) {    
+    this.deleteLocalCookieSession()
     this.api.filter = null
     this.api.id = null
     this.api.setInstanceName("Members/login?include=user")
@@ -83,18 +86,28 @@ export class MemberService {
 
   afterLogin(res:Response):Response {
     this.saveAccessToken(res)
-    this.cookieService.set("member", JSON.stringify(res["user"]))  
-    this.router.navigate(["/dashboard"]) 
+    this.setLocalMemberObj(res)
+    this.afterLoginRoute();
     return res;
   }
 
-  private saveAccessToken(body){
+  setLocalMemberObj(res:any) {
+    this.cookieService.set("member", JSON.stringify(res["user"])) 
+  }
+
+  saveAccessToken(body){
+    console.log('Save access token: ', body)
     this.cookieService.set("session", JSON.stringify(body))  
   }
 
   deleteLocalCookieSession(){
+    console.log('Removed access tokens.')
     this.cookieService.delete("member");
     this.cookieService.delete("session");
+  }
+
+  afterLoginRoute() {
+    this.router.navigate(['/dashboard'])
   }
 
   createAccount(user:User) {
@@ -106,5 +119,38 @@ export class MemberService {
   afterCreateAccount(email:string, password:string) {
     return this.login(email, password)
   }
+
+  updateAccountBtId(userId:string, member:User) {
+    this.api.filter = null;
+    this.api.id = null;
+    this.api.params = member
+    this.api.setInstanceName("Members/" + userId );
+    return this.api.fire(HTTPmethod.UPDATE, true, true)
+  }
+
+  resetPassword(oldpassword:string, newPassword:string) {
+    this.api.id = null
+    this.api.filter = null
+    this.api.params = {oldPassword:oldpassword, newPassword:newPassword}
+    this.api.setInstanceName("Members/change-password")
+    return this.api.fire(HTTPmethod.CREATE, true, true)  
+  }
+
+  getAll() {
+    this.api.id = null
+    this.api.filter = null
+    this.api.params = null
+    this.api.setInstanceName("Members")
+    return this.api.fire(HTTPmethod.GET, true, true)    
+  }
+
+  getMemberDocuments(userId:string) {
+    this.api.id = null
+    this.api.filter = null
+    this.api.params = null
+    this.api.setInstanceName("FileUploads/" + userId + "/files")
+    return this.api.fire(HTTPmethod.GET, true, true)     
+  }
+
 
 }

@@ -8,12 +8,12 @@ declare var $:any
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 
 export class AppComponent {
 
-  host:String = "https://api.clicktool.com"
+  host:String = "http://localhost:3000"
   apiUrl:String = this.host + "/api"
   isMenuOpen:boolean = false;
   

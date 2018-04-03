@@ -1,0 +1,23 @@
+<app-dashboard-header></app-dashboard-header>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table" style="margin-top: 50px;">
+			  <thead>
+			    <tr>
+			      <th width="150" scope="col">Name</th>
+			      <th scope="col">Size</th>
+			      <th scope="col">Preview</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr *ngFor="let doc of documents">
+			      <td>{{ doc.name }}</td>
+			      <td>{{ doc.size }}</td>
+			      <td> <a target="_blank" href="{{ app.host }}/storage/{{doc.container}}/{{doc.name}}"><img width="100" src="{{ app.host }}/storage/{{doc.container}}/{{doc.name}}"> </a></td>
+			    </tr>
+			  </tbody>
+			</table>			
+		</div>
+	</div>
+</div>

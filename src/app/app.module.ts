@@ -12,7 +12,9 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { ContributionComponent } from './signup/contribution/contribution.component';
 import { UploaderComponent } from './shared/common/uploader/uploader.component';
 import { IdentificationComponent } from './signup/identification/identification.component';
-import { FormsModule } from '@angular/forms';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardHeaderComponent } from './shared/common/dashboard-header/dashboard-header.component';
 import { DashboardNavComponent } from './shared/common/dashboard-nav/dashboard-nav.component';
@@ -33,7 +35,12 @@ import { IsLoggedInGuard } from './shared/guards/is-logged-in.guard';
 import { HomepageHeaderComponent } from './homepage/shared/homepage-header/homepage-header.component';
 import { LoginComponent } from './login/login.component';
 import { LoginFormComponent } from './shared/forms/login-form/login-form.component';
+import { AlertComponent } from './shared/common/alert/alert.component';
 
+import { FileUploadModule } from 'ng2-file-upload';
+import { IfAdminDirective } from './shared/directives/if-admin.directive';
+import { UsersComponent } from './users/users.component';
+import { DocumentsComponent } from './documents/documents.component';
 
 
 @NgModule({
@@ -54,14 +61,20 @@ import { LoginFormComponent } from './shared/forms/login-form/login-form.compone
     PasswordComponent,
     HomepageHeaderComponent,
     LoginComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    AlertComponent,
+    IfAdminDirective,
+    UsersComponent,
+    DocumentsComponent
   ],
   imports: [
     BrowserModule,
     routes,
     FormsModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    FileUploadModule,
+    ReactiveFormsModule
   ],
   providers: [
     MemberService,
@@ -71,7 +84,7 @@ import { LoginFormComponent } from './shared/forms/login-form/login-form.compone
     IsLoggedInGuard,
     CookieService,
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorServiceService, multi: true },
-    { provide: ErrorHandler, useClass: ErrorHandlerService, }
+    { provide: ErrorHandler, useClass: ErrorHandlerService }
     ],
   bootstrap: [AppComponent]
 })

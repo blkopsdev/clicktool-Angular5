@@ -66,7 +66,7 @@
   margin-top: -500px;
 }
 
-.reg-form div {
+.reg-form > div {
   margin-top: 30px;
 }
 

@@ -13,6 +13,7 @@ export class DashboardNavComponent implements OnInit {
   constructor(private app:AppComponent, private memberSerivce:MemberService) { }
 
   ngOnInit() {
+  	console.log(this.app.getUserRole())
   }
 
   logout() {

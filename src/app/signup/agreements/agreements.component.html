@@ -56,7 +56,8 @@
       </span>
       </div>
       
-      <button 
+      <button
+      style="margin-bottom: 50px !important;" 
       [disabled]="!user.isCitizen || !user.didAgreeToTerms || !user.didAgreeToPrivacyPolicy || !user.didReadWhitePaper" 
       (click)="goToNext()" 
       class="btn btn-info reg-button" 
@@ -66,7 +67,7 @@
         </p>
       </button>
 
-      <div class="btn btn-info reg-button sign-in" id="sign-in">
+      <div style="margin-bottom: 50px !important;" class="btn btn-info reg-button sign-in" id="sign-in">
         <p>
           <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;Sign In
         </p>

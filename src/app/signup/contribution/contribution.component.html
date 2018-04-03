@@ -11,15 +11,15 @@
       <h1>How much would you like to contribute?</h1>
       <h3>Choose an option.</h3>
       <hr>
-      <div (click)="moreThenTwelve()" class="btn btn-info reg-button" id="12ethereum">
+      <button [disabled]="user.isContributionMoreThenTwelve == true && user.isContributionUsd == false" style="margin-bottom: 50px !important;" (click)="moreThenTwelve()" class="btn btn-info reg-button" id="12ethereum">
         <p><i class="fab fa-ethereum"></i>&nbsp;&nbsp;&nbsp;More Than 12 Ethereum</p>
-      </div>
-      <div (click)="lessThenTwelve()" class="btn btn-info reg-button back">
+      </button>
+      <button [disabled]="user.isContributionMoreThenTwelve == false && user.isContributionUsd == false" style="margin-bottom: 50px !important;" (click)="lessThenTwelve()" class="btn btn-info reg-button back">
         <p><i class="fab fa-ethereum"></i>&nbsp;&nbsp;&nbsp;Less Than 12 Ethereum</p>
-      </div>
-      <div (click)="usdCurrency()" class="btn btn-info reg-button sign-in">
+      </button>
+      <button [disabled]="user.isContributionUsd == true" style="margin-bottom: 50px !important;" (click)="usdCurrency()" class="btn btn-info reg-button sign-in">
         <p><i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;&nbsp;USD/EUR/GBP</p>
-      </div>
+      </button>
       <div routerLink="/signup/account" class="btn btn-info reg-button back3" id="back3">
         <p><i class="fa fa-chevron-circle-left"></i>&nbsp;&nbsp;&nbsp;Back</p>
       </div>

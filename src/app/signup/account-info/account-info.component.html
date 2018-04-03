@@ -1,75 +1,249 @@
 <app-header></app-header>
 
-<div class="container-fluid reg-container first-form" style="height: 1200px;">
+<div class="container-fluid reg-container first-form" style="height: 1600px;">
   
   <div class="reg-image hidden-sm hidden-xs">
     <img src="../../assets/Animated-Clicktool2 a.gif">
   </div>
   <div class="reg-form">
 
-    <form #accountForm="ngForm" ngSubmit="(signup)">
-       <div class="reg-active reg-border">
+    <form [formGroup]="form">
+      <div class="reg-active reg-border">
           <h1>Step 2.</h1>
           <h3>Sign Up</h3>
           <hr>
-          <div class="reginr"> <span><i class="fa fa-user"></i></span>
-            <input name="firstname" required minlength="4" maxlength="24" #firstname="ngModel" [(ngModel)]="user.firstname" type="text" required="" autocomplete="off" placeholder="First Name">
+          
+
+          <div class="reginr"> 
+            <span><i class="fa fa-user"></i></span>
+            <input [ngClass]="{'has-danger':!this.form.get('firstname').valid && this.form.get('firstname').touched}"  formControlName="firstname" name="firstname" required minlength="4" maxlength="24" [(ngModel)]="user.firstname" type="text" autocomplete="off" placeholder="First Name">            
           </div>
+
+  
+          <div 
+          class="text-danger" 
+          style="margin-bottom: 20px; text-align: left;"  
+          *ngIf="!this.form.get('firstname').valid && this.form.get('firstname').touched"
+          >
+                <div [hidden]="!form.get('firstname').hasError('required')">
+                  <div class="">Firstname required</div>
+                </div>
+                <div [hidden]="!form.get('firstname').hasError('minlength')">
+                  <div class="">Firstname must be at least 4 characters long.</div>
+                </div>
+                <div [hidden]="!form.get('firstname').hasError('maxlength')">
+                  <div class="">Firstname cannot be more than 24 characters long.</div>
+                </div>
+
+            </div>              
+
+
+
           <div class="reginr"> <span><i class="fa fa-user"></i></span>
-            <input name="lastname" [(ngModel)]="user.lastname" type="text" required="" autocomplete="off" placeholder="Last Name">
+            <input [ngClass]="{'has-danger':!this.form.get('lastname').valid && this.form.get('lastname').touched}"  formControlName="lastname" name="lastname" required minlength="4" maxlength="24" [(ngModel)]="user.lastname" type="text" autocomplete="off" placeholder="Last Name">
           </div>
+
+          <div 
+          class="text-danger" 
+          style="margin-bottom: 20px; text-align: left;"  
+          *ngIf="!this.form.get('lastname').valid && this.form.get('lastname').touched"
+          >
+                <div [hidden]="!form.get('lastname').hasError('required')">
+                  <div class="">Lastname required</div>
+                </div>
+                <div [hidden]="!form.get('lastname').hasError('minlength')">
+                  <div class="">Lastname must be at least 4 characters long.</div>
+                </div>
+                <div [hidden]="!form.get('lastname').hasError('maxlength')">
+                  <div class="">Lastname cannot be more than 24 characters long.</div>
+                </div>
+            </div> 
+
           <div class="reginr"> <span><i class="far fa-calendar-alt"></i></span>
-            <input name="dob" [(ngModel)]="user.dob" type="text" required="" autocomplete="off" placeholder="Date of Birth">
+            <input [ngClass]="{'has-danger':!this.form.get('dob').valid && this.form.get('dob').touched}"  formControlName="dob" class="_datepicker"  name="dob" required minlength="4" maxlength="24" [(ngModel)]="user.dob" type="text" required="" autocomplete="off" placeholder="Date of Birth">
           </div>
+
+          <div 
+          class="text-danger" 
+          style="margin-bottom: 20px; text-align: left;"  
+          *ngIf="!this.form.get('dob').valid && this.form.get('dob').touched"
+          >
+                <div [hidden]="!form.get('dob').hasError('required')">
+                  <div class="">DOB required</div>
+                </div>
+                <div [hidden]="!form.get('dob').hasError('minlength')">
+                  <div class="">DOB must be at least 4 characters long.</div>
+                </div>
+                <div [hidden]="!form.get('dob').hasError('maxlength')">
+                  <div class="">DOB cannot be more than 24 characters long.</div>
+                </div>
+            </div> 
+
           <div class="reginr"> <span><i class="fas fa-envelope"></i></span>
-            <input name="email" [(ngModel)]="user.email" type="text" required="" autocomplete="off" placeholder="Email">
+            <input [ngClass]="{'has-danger':!this.form.get('email').valid && this.form.get('email').touched}"  formControlName="email" name="email" required minlength="4" maxlength="70" [(ngModel)]="user.email" type="text" required="" autocomplete="off" placeholder="Email">
           </div>
+          
+
+          <div 
+          class="text-danger" 
+          style="margin-bottom: 20px; text-align: left;"  
+          *ngIf="!this.form.get('email').valid && this.form.get('email').touched"
+          >
+                <div [hidden]="!form.get('email').hasError('required')">
+                  <div class="">Email required</div>
+                </div>
+                <div [hidden]="!form.get('email').hasError('minlength')">
+                  <div class="">Email must be at least 4 characters long.</div>
+                </div>
+                <div [hidden]="!form.get('email').hasError('maxlength')">
+                  <div class="">Email cannot be more than 24 characters long.</div>
+                </div>
+            </div> 
+
           <div class="reginr"> <span><i class="fas fa-phone"></i></span>
-            <input name="phone" [(ngModel)]="user.phone" type="text" required="" autocomplete="off" placeholder="Phone Number">
+            <input [ngClass]="{'has-danger':!this.form.get('phone').valid && this.form.get('phone').touched}"  formControlName="phone" name="phone" required minlength="4" maxlength="24" [(ngModel)]="user.phone" type="text" required="" autocomplete="off" placeholder="Phone Number">
           </div>
+        
+
+          <div 
+          class="text-danger" 
+          style="margin-bottom: 20px; text-align: left;"  
+          *ngIf="!this.form.get('phone').valid && this.form.get('phone').touched"
+          >
+                <div [hidden]="!form.get('phone').hasError('required')">
+                  <div class="">Phone required</div>
+                </div>
+                <div [hidden]="!form.get('phone').hasError('minlength')">
+                  <div class="">Phone must be at least 4 characters long.</div>
+                </div>
+                <div [hidden]="!form.get('phone').hasError('maxlength')">
+                  <div class="">Phone cannot be more than 24 characters long.</div>
+                </div>
+            </div> 
+
           <div class="reginr"> <span><i class="fas fa-map-marker-alt"></i></span>
-            <input name="country" [(ngModel)]="user.country" type="text" required="" autocomplete="off" placeholder="Country of Residence">
+            <input [ngClass]="{'has-danger':!this.form.get('country').valid && this.form.get('country').touched}"  formControlName="country" name="country" required minlength="3" maxlength="24" [(ngModel)]="user.country" type="text" required="" autocomplete="off" placeholder="Country of Residence">
           </div>
+
+
+
+          <div 
+          class="text-danger" 
+          style="margin-bottom: 20px; text-align: left;"  
+          *ngIf="!this.form.get('country').valid && this.form.get('country').touched"
+          >
+                <div [hidden]="!form.get('country').hasError('required')">
+                  <div class="">Country required</div>
+                </div>
+                <div [hidden]="!form.get('country').hasError('minlength')">
+                  <div class="">Country must be at least 4 characters long.</div>
+                </div>
+                <div [hidden]="!form.get('country').hasError('maxlength')">
+                  <div class="">Country cannot be more than 24 characters long.</div>
+                </div>
+            </div> 
+
+         
           <div class="reginr"> <span><i class="fas fa-suitcase"></i></span>
-            <input name="publicWalletAddress" [(ngModel)]="user.publicWalletAddress" type="text" required="" autocomplete="off" placeholder="Public Wallet Address">
+            <input [ngClass]="{'has-danger':!this.form.get('publicWalletAddress').valid && this.form.get('publicWalletAddress').touched}"  formControlName="publicWalletAddress" name="publicWalletAddress" required minlength="4" maxlength="24" [(ngModel)]="user.publicWalletAddress" type="text" required="" autocomplete="off" placeholder="Public Wallet Address">
           </div>
+         
+
+
+          <div 
+          class="text-danger" 
+          style="margin-bottom: 20px; text-align: left;"  
+          *ngIf="!this.form.get('publicWalletAddress').valid && this.form.get('publicWalletAddress').touched"
+          >
+                <div [hidden]="!form.get('publicWalletAddress').hasError('required')">
+                  <div class="">Public wallet address required</div>
+                </div>
+                <div [hidden]="!form.get('publicWalletAddress').hasError('minlength')">
+                  <div class="">Public wallet address must be at least 4 characters long.</div>
+                </div>
+                <div [hidden]="!form.get('publicWalletAddress').hasError('maxlength')">
+                  <div class="">Public wallet address cannot be more than 24 characters long.</div>
+                </div>
+            </div> 
+
+
           <div class="reginr"> <span><i class="fas fa-building"></i></span>
-            <input name="company" [(ngModel)]="user.company" type="text" required="" autocomplete="off" placeholder="Company">
+            <input [ngClass]="{'has-danger':!this.form.get('company').valid && this.form.get('company').touched}"  formControlName="company" name="company" required minlength="4" maxlength="24" [(ngModel)]="user.company" type="text" required="" autocomplete="off" placeholder="Company">
           </div>
+         
+
+          <div 
+          class="text-danger" 
+          style="margin-bottom: 20px; text-align: left;"  
+          *ngIf="!this.form.get('company').valid && this.form.get('company').touched"
+          >
+                <div [hidden]="!form.get('company').hasError('required')">
+                  <div class="">Company required</div>
+                </div>
+                <div [hidden]="!form.get('company').hasError('minlength')">
+                  <div class="">Company must be at least 4 characters long.</div>
+                </div>
+                <div [hidden]="!form.get('company').hasError('maxlength')">
+                  <div class="">Company cannot be more than 24 characters long.</div>
+                </div>
+            </div>
+
           <div class="reginr"> <span><i class="fa fa-unlock-alt"></i></span>
-            <input name="password" [(ngModel)]="user.password" type="text" required="" autocomplete="off" placeholder="Password">
+            <input [ngClass]="{'has-danger':!this.form.get('password').valid && this.form.get('password').touched}"  formControlName="password" name="password" required minlength="4" maxlength="24" [(ngModel)]="user.password" type="password" required="" autocomplete="off" placeholder="Password">
           </div>
+         
+
+          <div 
+          class="text-danger" 
+          style="margin-bottom: 20px; text-align: left;"  
+          *ngIf="!this.form.get('password').valid && this.form.get('password').touched"
+          >
+                <div [hidden]="!form.get('password').hasError('required')">
+                  <div class="">Password required</div>
+                </div>
+                <div [hidden]="!form.get('password').hasError('minlength')">
+                  <div class="">Password must be at least 4 characters long.</div>
+                </div>
+                <div [hidden]="!form.get('password').hasError('maxlength')">
+                  <div class="">Password cannot be more than 24 characters long.</div>
+                </div>
+            </div>
+
           <div class="reginr"> <span><i class="fa fa-lock"></i></span>
-            <input name="passwordConfirm" [(ngModel)]="user.passwordConfirm"  type="text" required="" autocomplete="off" placeholder="Confirm Password">
+            <input [ngClass]="{'has-danger':!this.form.get('passwordConfirm').valid && this.form.get('passwordConfirm').touched}"  formControlName="passwordConfirm" name="passwordConfirm" required minlength="4" maxlength="24" [(ngModel)]="user.passwordConfirm"  type="password" required="" autocomplete="off" placeholder="Confirm Password">
           </div>
+
+          <div 
+          class="text-danger" 
+          style="margin-bottom: 20px; text-align: left;"  
+          *ngIf="!this.form.get('passwordConfirm').valid && this.form.get('passwordConfirm').touched"
+          >
+                <div [hidden]="!form.get('passwordConfirm').hasError('required')">
+                  <div class="">Password cofirm required</div>
+                </div>
+                <div [hidden]="!form.get('passwordConfirm').hasError('minlength')">
+                  <div class="">Password confirm must be at least 4 characters long.</div>
+                </div>
+                <div [hidden]="!form.get('passwordConfirm').hasError('maxlength')">
+                  <div class="">Password confirm cannot be more than 24 characters long.</div>
+                </div>
+            </div>
 
           <button 
-          [disabled]="
-            !user.firstname ||
-            !user.lastname ||
-            !user.dob ||
-            !user.email ||
-            !user.phone ||
-            !user.country ||
-            !user.publicWalletAddress ||
-            !user.password ||
-            !user.passwordConfirm
-          "
-
           (click)="goToNext()"
-
-          routerLink="/signup/contribution" style="margin-top: 6rem;" class="btn btn-info reg-button" id="continue">
+          
+          style="margin-top: 6rem; margin-bottom: 50px !important;" class="btn btn-info reg-button" id="continue">
             <p><i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;&nbsp;Continue</p>
           </button>
-          <div routerLink="/signup" class="btn btn-info reg-button back" id="back">
+          <div style="margin-bottom: 50px !important;" routerLink="/signup" class="btn btn-info reg-button back" id="back">
             <p><i class="fa fa-chevron-circle-left"></i>&nbsp;&nbsp;&nbsp;Back</p>
           </div>
-          <div class="btn btn-info reg-button sign-in" id="sign-in2">
+          <div style="margin-bottom: 50px !important;" class="btn btn-info reg-button sign-in" id="sign-in2">
             <p><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;Sign In</p>
           </div>
-        </div>   
+        </div>         
     </form>
-
+ 
   </div>
   <div class="reg-image2 hidden-xs">
     <img src="../../assets/Animated-Clicktool2 a.gif">

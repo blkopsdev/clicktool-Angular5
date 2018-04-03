@@ -8,16 +8,45 @@ export class ErrorHandlerService {
 
   constructor(private injector:Injector) {  }
 
-  handleError(error: Error) {
-      console.log('Error is: ', error);
-      	
-      if (error["status"] === 401){ 
-        let memberService:MemberService = this.injector.get(MemberService)
-        memberService.afterLogout()
-      }else{
-      	alert(error.message);
-      }     
-      throw error
+  handleError(err: Error) {
+
+  	console.log("Error: ", err)
+  	let routerInjector = this.injector.get(Router) as Router;
+
+ 	// loopback error object
+ 	let errorObj = err["error"] ? err["error"]["error"] : null
+	 	if(errorObj){
+	 		let code = errorObj["statusCode"]
+	 		let message = errorObj["message"]
+	 	
+	 		let details = errorObj["details"]
+	 	
+		
+
+	 	// Unauthorized
+	 	if(code == 401 || code == 400) {
+	 		alert(message)
+
+	 	// Form valiation error code	
+	 	}else if(code == 422) {
+	 		let errMessObj = details["messages"] as Object
+	 		let keys = Object.keys(errMessObj)
+
+	 		console.log(errMessObj)
+
+	 		keys.filter($key => {
+	 			console.log($key)
+	 			let firstErrorMess = errMessObj[$key][0]
+	 			alert($key + " " + firstErrorMess)
+	 		})
+	 	// Bad request error code	
+	 	}
+ 	}
+
+  }
+
+  getErrorMessage(err:any) {
+
   }
 
 }

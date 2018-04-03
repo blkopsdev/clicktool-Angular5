@@ -1,4 +1,5 @@
 export class User {
+	id:string
 	isCitizen:boolean
 	didAgreeToTerms:boolean
 	didAgreeToPrivacyPolicy:boolean

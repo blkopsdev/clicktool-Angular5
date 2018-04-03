@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { Util } from '../shared/util/util'
 
 declare var $:any;
@@ -7,9 +7,13 @@ declare var $:any;
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css'],
-  providers: [Util]
+  providers: [Util],
+  host: {'(window:scroll)': 'track($event)'},
 })
 export class HomepageComponent implements OnInit, OnDestroy {
+
+  scrollP:string = "vdvfbfdbf"   
+
 
   constructor(private u:Util) { 
 
@@ -21,15 +25,16 @@ export class HomepageComponent implements OnInit, OnDestroy {
 
 
   // On Scroll event
-  onScroll() {
-    console.log('SCROLLING')
+  onScroll(this:any) {
+      //console.log(typeof this.scrollP);
+
   }
 
   ngOnInit() {
 
 
     // Scoll implemenation  
-    window.addEventListener('scroll', this.onScroll, true )
+    //window.addEventListener('scroll', this.onScroll(this), true )
 
     // Dynamic Headline - https://css-tricks.com/snippets/css/typewriter-effect/
     var TxtType = function(el, toRotate, period) {
@@ -116,10 +121,10 @@ export class HomepageComponent implements OnInit, OnDestroy {
       minutesDegree -= 30;
 
       // Display the result in the element with id="demo"
-      document.getElementById("days").innerHTML = String(days);
-      document.getElementById("hours").innerHTML = String(hours);
-      document.getElementById("minutes").innerHTML = String(minutes);
-      document.getElementById("seconds").innerHTML = String(seconds);
+     // document.getElementById("days").innerHTML = String(days);
+      // document.getElementById("hours").innerHTML = String(hours);
+      // document.getElementById("minutes").innerHTML = String(minutes);
+      // document.getElementById("seconds").innerHTML = String(seconds);
 
       // If the count down is finished, write some text
       if (distance < 0) {

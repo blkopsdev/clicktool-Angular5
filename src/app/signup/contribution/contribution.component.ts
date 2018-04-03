@@ -14,29 +14,41 @@ export class ContributionComponent implements OnInit, OnDestroy {
 
   private user:User = new User()
 
+  nextStepUrl:string = "/signup/identification"
+  previousUrl:string = "/signup/account"
+
   constructor(private util:Util, private router:Router) { }
 
   ngOnInit() {
   	this.user = this.util.getLocalObject("user") as User
+    console.log(this.user)
   }
 
-  ngOnDestroy() {}
+  ngOnDestroy() {
+
+    if( this.router.url == this.nextStepUrl || this.router.url == this.previousUrl ) { }else{
+      this.util.deleteLocalObject("user");
+    }     
+  }
 
   moreThenTwelve() {
-    this.util.setLocalObject("user", this.user)
   	this.user.isContributionMoreThenTwelve = true
+    this.user.isContributionUsd = false
+    this.util.setLocalObject("user", this.user)
   	this.router.navigate(['/signup/identification'])
   }
 
   lessThenTwelve() {
-    this.util.setLocalObject("user", this.user)
   	this.user.isContributionMoreThenTwelve = false
+    this.user.isContributionUsd = false
+    this.util.setLocalObject("user", this.user)
   	this.router.navigate(['/signup/identification'])
   }
 
   usdCurrency() {
-    this.util.setLocalObject("user", this.user)
   	this.user.isContributionUsd = true
+    this.user.isContributionMoreThenTwelve = false
+    this.util.setLocalObject("user", this.user)
   	this.router.navigate(['/signup/identification'])
   }
 
