@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
-import { User } from './shared/models/User'
+import { User } from './shared/models/user'
 import { CookieService } from 'ngx-cookie-service';
 
 declare var $:any
