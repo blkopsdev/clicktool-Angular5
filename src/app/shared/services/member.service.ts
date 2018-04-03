@@ -6,6 +6,8 @@ import { Router } from '@angular/router'
 import {Response} from '@angular/http'
 import { User } from '../models/user'
 
+
+
 export enum Roles {
 	ADMIN,
 	OWNER,
@@ -70,7 +72,8 @@ export class MemberService {
   }
 
   afterLogout() {
-    this.deleteLocalCookieSession();
+    this.cookieService.delete("member");
+    this.cookieService.delete("session");
     this.router.navigate(["/"])    
   }
 

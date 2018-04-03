@@ -22,11 +22,7 @@
         I am not a robot.</p>
       </span>
       </div>
-      <button [disabled]="
-        !uploadPanels[0]['addedUpload'] ||
-        !uploadPanels[1]['addedUpload'] ||
-        !uploadPanels[2]['addedUpload']
-        " style="margin-bottom: 20px !important;" (click)="signup()" class="btn btn-info reg-button" id="finish">
+      <button style="margin-bottom: 20px !important;" (click)="signup()" class="btn btn-info reg-button" id="finish">
         <p><i class="fa fa-check-circle"></i>&nbsp;&nbsp;&nbsp;Finish</p>
       </button>
       <div style="margin-bottom: 20px !important;" routerLink="/signup/contribution" class="btn btn-info reg-button back" id="back2">
