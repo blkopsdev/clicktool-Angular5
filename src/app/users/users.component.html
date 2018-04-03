@@ -14,7 +14,7 @@
 			  <tbody>
 			    <tr *ngFor="let user of users">
 			      <td>{{ user.id }}</td>
-			      <td>{{ user.firstname }}</td>
+			      <td>{{ user.firstname }} <strong style="color: red;" *ngIf="user.id == app.getUserId()">YOU</strong> </td>
 			      <td>{{ user.lastname }}</td>
 			      <td>
 			      	<button class="btn btn-secondary btn-sm" routerLink="/user/{{user.id}}/documents">View Doucments</button>
