@@ -2,7 +2,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<table class="table" style="margin-top: 50px;">
+			<table *ngIf="documents && documents.length > 0" class="table" style="margin-top: 50px;">
 			  <thead>
 			    <tr>
 			      <th width="150" scope="col">Name</th>
@@ -17,7 +17,8 @@
 			      <td> <a target="_blank" href="{{ app.host }}/storage/{{doc.container}}/{{doc.name}}"><img width="100" src="{{ app.host }}/storage/{{doc.container}}/{{doc.name}}"> </a></td>
 			    </tr>
 			  </tbody>
-			</table>			
+			</table>	
+			<h1 style="margin-top: 20px;" *ngIf="documents && documents.length == 0">No Documents</h1>		
 		</div>
 	</div>
 </div>
