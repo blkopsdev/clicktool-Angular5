@@ -24,7 +24,7 @@ export class PasswordComponent implements OnInit {
 
   afterUpdateAccount(currentPassword:string, newPassword:string) {
   	if(this.confirmNewPassword != newPassword){return alert('Confirm password dont match') }
-  	this.memberService.resetPassword(currentPassword, newPassword).subscribe(res => this.afterUpdatePassword(res))
+  	this.memberService.changePassword(currentPassword, newPassword).subscribe(res => this.afterUpdatePassword(res))
   }
 
   afterUpdatePassword(res:Response) {

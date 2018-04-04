@@ -14,6 +14,8 @@ import { IsLoggedInGuard } from './shared/guards/is-logged-in.guard'
 import { LoginComponent } from './login/login.component';
 import { UsersComponent } from './users/users.component';
 import { DocumentsComponent } from './documents/documents.component';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
+
 
 export const router: Routes = [
 
@@ -24,6 +26,8 @@ export const router: Routes = [
 	{ path: 'signup/account', component: AccountInfoComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/contribution', component: ContributionComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/identification', component: IdentificationComponent, canActivate:[IsLoggedInGuard] },
+
+	{ path: 'password/reset', component: PasswordResetComponent, canActivate:[IsLoggedInGuard] },
 
 	{ path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
 	{ path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard] },

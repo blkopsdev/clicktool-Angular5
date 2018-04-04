@@ -24,7 +24,7 @@ export class ErrorHandlerService {
 		
 
 	 	// Unauthorized
-	 	if(code == 401 || code == 400) {
+	 	if(code == 401 || code == 400 || code == 404) {
 	 		alert(message)
 
 	 	// Form valiation error code	

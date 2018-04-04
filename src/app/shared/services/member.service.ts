@@ -130,7 +130,7 @@ export class MemberService {
     return this.api.fire(HTTPmethod.UPDATE, true, true)
   }
 
-  resetPassword(oldpassword:string, newPassword:string) {
+  changePassword(oldpassword:string, newPassword:string) {
     this.api.id = null
     this.api.filter = null
     this.api.params = {oldPassword:oldpassword, newPassword:newPassword}
@@ -152,6 +152,14 @@ export class MemberService {
     this.api.params = null
     this.api.setInstanceName("FileUploads/" + userId + "/files")
     return this.api.fire(HTTPmethod.GET, true, true)     
+  }
+
+  resetPassword(email:string) {
+    this.api.id = null
+    this.api.filter = null
+    this.api.params = {email:email}
+    this.api.setInstanceName("Members/reset")
+    return this.api.fire(HTTPmethod.CREATE, false, true)     
   }
 
 

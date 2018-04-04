@@ -41,6 +41,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { IfAdminDirective } from './shared/directives/if-admin.directive';
 import { UsersComponent } from './users/users.component';
 import { DocumentsComponent } from './documents/documents.component';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { DocumentsComponent } from './documents/documents.component';
     AlertComponent,
     IfAdminDirective,
     UsersComponent,
-    DocumentsComponent
+    DocumentsComponent,
+    PasswordResetComponent
   ],
   imports: [
     BrowserModule,
