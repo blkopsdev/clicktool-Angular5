@@ -63,6 +63,7 @@ describe('Signup', () => {
 
   it('Click finish button', () => {
     element(by.id('finish')).click()
+    browser.pause()
   })
 
 });
