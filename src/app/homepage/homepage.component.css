@@ -661,12 +661,14 @@
 /* New Timer */
 .countdown {
   width: 950px;
+  height: 250px;
   position: relative;
   margin: 0 auto;
   top: -170px;
   color: white;
   font-size: 24px;
   font-weight: bold;
+  margin-bottom: -200px;
 }
 
 .countdown-right {
@@ -710,7 +712,7 @@
   border-radius: 5px;
   z-index: 4;
   position: absolute;
-  top: 55px;
+  top: 20%;
   animation: countdownBtn 2.1s ease-in-out infinite;
 }
 
@@ -798,27 +800,6 @@ margin: 20px;
 .count-machine {
   width: 100%;
 }
-
-/*.count-machine-tablet1 {
-  opacity: 0;
-  clip: rect(0px,1050px,120px,444px);
-  right: 0%;
-  top: 50px;
-  width: 200%;
-}
-
-.count-machine-tablet2 {
-  opacity: 0;
-  clip: rect(0px,402px,200px,0px);
-  right: -100%;
-  top: 170px;
-  width: 200%;
-}
-
-.count-machine-mobile {
-  opacity: 0;
-  width: 100%;
-}*/
 
 .timer-div {
   top: 35px;
@@ -1217,9 +1198,6 @@ margin: 20px;
   color: #737373;
 }
 
-.milestone-container:hover {
-
-}
 
 .milestone-container img {
   -webkit-user-drag: none;
@@ -1235,7 +1213,7 @@ margin: 20px;
   top: 0;
   margin-left: -2%;
   position: relative;
-  z-index: -5 !important;
+  z-index: 1 !important;
 }
 
 .conveyor {
@@ -1245,7 +1223,7 @@ margin: 20px;
   top: 52%;
   position: absolute;
   width: 100%;
-  z-index: -2;
+  z-index: 2;
 }
 
 .machine {
@@ -1253,14 +1231,14 @@ margin: 20px;
   top: -55%;
   position: absolute;
   width: 140%;
-  z-index: -1;
+  z-index: 4;
 }
 
 .machine-box {
   top: 28%;
   position: absolute;
   width: 700%;
-  z-index: -2;
+  z-index: 3;
 }
 
 .machine-screen {
@@ -1269,6 +1247,7 @@ margin: 20px;
   width: 15%;
   left: 42.8%;
   height: 26%;
+  z-index: 5;
 }
 
 .yellow-light {
@@ -1319,7 +1298,6 @@ margin: 20px;
   top: -7%;
   position: absolute;
   width: 700%;
-  z-index: 5;
 }
 
 .directions {
@@ -1439,6 +1417,7 @@ margin: 20px;
   top: 73%;
   position: absolute;
   width: 30%;
+  z-index: 3;
 }
 
 .gear-spinning {
@@ -1897,9 +1876,9 @@ margin: 20px;
 /* Video Section */
 .vid-container {
   position: relative;
-  min-height: 700px;
   width: 1200px;
-  height: 600px;
+  height: 700px;
+  left: 0%;
 }
 
 .vid-text {
@@ -1916,7 +1895,9 @@ margin: 20px;
 }
 
 .vid-text a {
-  margin-right: 45% !important;
+  right: 71%;
+  top: 90%;
+  position: absolute;
 }
 
 .vid-container img {
@@ -1932,6 +1913,13 @@ margin: 20px;
   top: 0%;
   right: 0%;
   z-index: 1;
+}
+
+.vid-components {
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  z-index: 5;
 }
 
 .vid-screen {
@@ -2227,6 +2215,10 @@ margin: 20px;
   margin: 0 auto;
   width: 550px;
   min-width: 550px;
+  max-width: 550px;
+  height: 309.5px;
+  min-height: 309.5px;
+  max-height: 309.5px;
   position: relative;
 }
 
@@ -2477,7 +2469,7 @@ margin: 20px;
 }
 .city-logo2 {
   width: 4%;
-  top: 26.8%;
+  top: 26.9%;
   right: 57.91%;
   z-index: 2;
   animation: rotate 5s linear infinite;
@@ -2486,7 +2478,7 @@ margin: 20px;
 .city-gear-bottom-right1 {
   width: 5.5%;
   top: 89.3%;
-  right: 7.8%;
+  right: 7.7%;
   z-index: 2;
   animation: rotate 5s reverse linear infinite;
 }
@@ -2801,20 +2793,35 @@ margin: 20px;
     width: 80vw;
   } .countdown {
     top: 20px;
-    margin-bottom: 280px;
+    margin-bottom: 80px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .vid-screen {
+    width: 85%;
+    left: -10%;
+  } .vid-text {
+    width: 25%;
+    left: 20%;
+  } .vid-text h3 {
+    font-size: 18px;
+  } .vid-text a {
+    right: 83% !important;
   }
 }
 
 @media only screen and (max-width: 927px) {
   .countdown {
-    width: 650px;
+    width: 633.3px;
+    height: 166.7px;
     top: 10px;
-    margin-bottom: 200px;
+    margin-bottom: 70px;
   } .countdown-handle {
     top: 28px;
   } .countdown h2 {
     font-size: 20px;
-    top: 97px;
+    top: 95px;
     right: 60%;
   } .countdown-chart img {
     width: 500%;
@@ -2835,17 +2842,23 @@ margin: 20px;
   } .timer-div p {
     font-size: 18px;
   } #day-div {
-    right: 217px;
+    right: 212px;
   } #hour-div {
-    right: 152px;
+    right: 148px;
   } #minute-div {
-    right: 86px;
+    right: 84px;
   } #second-div {
-    right: 23px;
+    right: 22px;
   } .timer-div {
-    top: 28px;
+    top: 26px;
   } .countdown-gear {
     top: 12px;
+  }
+}
+
+@media only screen and (max-width: 800px){
+  .team-section {
+    margin-top: 0px;
   }
 }
 
@@ -2873,26 +2886,10 @@ margin: 20px;
 }
 
 @media only screen and (max-width: 680px){
-  .vid-text {
-    width: 60% !important;
-    right: 20%;
-    top: 12vw;
-  } #vid-ani1 {
-    opacity: 0;
-  } #vid-ani2 {
-    opacity: 1;
-  }.vid-text h3 {
-    font-size: 20px;
-  } .vid-container {
-    min-height: 980px;
-  }
-}
-
-@media only screen and (max-width: 680px){
   .countdown {
     top: 170px;
     width: 320px;
-    margin-bottom: 470px;
+    margin-bottom: 300px;
   } .countdown-wires {
     opacity: 0;
   } .countdown-left {
@@ -2934,21 +2931,37 @@ margin: 20px;
   } #hour-div {
     right: 158px;
   } #minute-div {
-    right: 86px;
+    right: 88px;
   } #second-div {
-    right: 16px;
+    right: 17px;
   } .timer-div {
     top: 30px;
+  } .vid-screen {
+    width: 75%;
+    left: -19%;
+  } .vid-text {
+    left: 9%;
+    top: 0%;
+    width: 20% !important;
+  } .vid-text a {
+    right: 94% !important;
   }
 }
 
 @media only screen and (max-width: 520px){
   .dynamic-headline p {
     margin-top: 60px !important;
+  }
+}
+
+@media only screen and (max-width: 460px){
+  .vid-screen {
+    width: 57%;
+    left: -13%;
   } .vid-text {
-    top: 8vw;
-  } .vid-text h3 {
-    font-size: 14px;
+    left: 6%;
+  } .vid-text a {
+    right: 92% !important;
   }
 }
 
