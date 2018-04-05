@@ -15,7 +15,8 @@ import { LoginComponent } from './login/login.component';
 import { UsersComponent } from './users/users.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
-
+import { TextActionComponent } from './shared/common/text-action/text-action.component';
+import { UpdatePasswordComponent } from './update-password/update-password.component';
 
 export const router: Routes = [
 
@@ -28,6 +29,8 @@ export const router: Routes = [
 	{ path: 'signup/identification', component: IdentificationComponent, canActivate:[IsLoggedInGuard] },
 
 	{ path: 'password/reset', component: PasswordResetComponent, canActivate:[IsLoggedInGuard] },
+	{ path: 'password/reset/checkemail', component: TextActionComponent, canActivate:[IsLoggedInGuard] },
+	{ path: 'reset-password/:token', component: UpdatePasswordComponent, canActivate:[IsLoggedInGuard] },
 
 	{ path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
 	{ path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard] },

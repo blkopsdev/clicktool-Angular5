@@ -23,15 +23,15 @@
           <div 
           class="text-danger" 
           style="margin-bottom: 20px; text-align: left;"  
-          *ngIf="!this.form.get('firstname').valid && this.form.get('firstname').touched"
+          *ngIf="!this.form.get('email').valid && this.form.get('email').touched"
           >
-                <div [hidden]="!form.get('firstname').hasError('required')">
+                <div [hidden]="!form.get('email').hasError('required')">
                   <div class="">Firstname required</div>
                 </div>
-                <div [hidden]="!form.get('firstname').hasError('minlength')">
+                <div [hidden]="!form.get('email').hasError('minlength')">
                   <div class="">Firstname must be at least 4 characters long.</div>
                 </div>
-                <div [hidden]="!form.get('firstname').hasError('maxlength')">
+                <div [hidden]="!form.get('email').hasError('maxlength')">
                   <div class="">Firstname cannot be more than 24 characters long.</div>
                 </div>
 
@@ -60,7 +60,7 @@
             </div> 
 
           <div class="reginr"> <span><i class="far fa-calendar-alt"></i></span>
-            <input [ngClass]="{'has-danger':!this.form.get('dob').valid && this.form.get('dob').touched}"  formControlName="dob" class="_datepicker"  name="dob" required minlength="4" maxlength="24" [(ngModel)]="user.dob" type="text" required="" autocomplete="off" placeholder="Date of Birth">
+            <input [ngClass]="{'has-danger':!this.form.get('dob').valid && this.form.get('dob').touched}"  formControlName="dob" class="datepicker"  name="dob" required minlength="4" maxlength="24" [(ngModel)]="user.dob" type="text" required="" autocomplete="off" placeholder="Date of Birth">
           </div>
 
           <div 

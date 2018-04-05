@@ -42,6 +42,9 @@ import { IfAdminDirective } from './shared/directives/if-admin.directive';
 import { UsersComponent } from './users/users.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
+import { TextActionComponent } from './shared/common/text-action/text-action.component';
+import { UpdatePasswordComponent } from './update-password/update-password.component';
+
 
 
 @NgModule({
@@ -67,7 +70,9 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
     IfAdminDirective,
     UsersComponent,
     DocumentsComponent,
-    PasswordResetComponent
+    PasswordResetComponent,
+    TextActionComponent,
+    UpdatePasswordComponent
   ],
   imports: [
     BrowserModule,

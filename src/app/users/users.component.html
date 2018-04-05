@@ -8,6 +8,7 @@
 			      <th scope="col">#</th>
 			      <th scope="col">First</th>
 			      <th scope="col">Last</th>
+			      <th scope="col">Contribution</th>
 			      <th scope="col">Documents</th>
 			    </tr>
 			  </thead>
@@ -16,6 +17,10 @@
 			      <td>{{ user.id }}</td>
 			      <td>{{ user.firstname }} <strong style="color: red;" *ngIf="user.id == app.getUserId()">YOU</strong> </td>
 			      <td>{{ user.lastname }}</td>
+			      <td>
+			      	<span *ngIf="!user.isContributionUsd"> {{ user.isContributionMoreThenTwelve ? 'OVER 12' : 'LESS THEN 12' }} </span>
+			      	<span *ngIf="user.isContributionUsd">USD</span>
+			      </td>
 			      <td>
 			      	<button class="btn btn-secondary btn-sm" routerLink="/user/{{user.id}}/documents">View Doucments</button>
 			      </td>

@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { User } from '../../shared/models/user'
 import { Util } from '../../shared/util/util'
 import { Router } from '@angular/router'
-
+import { MemberService } from '../../shared/services/member.service'
 
 @Component({
   selector: 'app-contribution',
@@ -17,7 +17,7 @@ export class ContributionComponent implements OnInit, OnDestroy {
   nextStepUrl:string = "/signup/identification"
   previousUrl:string = "/signup/account"
 
-  constructor(private util:Util, private router:Router) { }
+  constructor(private util:Util, private router:Router, private memberService:MemberService) { }
 
   ngOnInit() {
   	this.user = this.util.getLocalObject("user") as User
@@ -35,6 +35,7 @@ export class ContributionComponent implements OnInit, OnDestroy {
   	this.user.isContributionMoreThenTwelve = true
     this.user.isContributionUsd = false
     this.util.setLocalObject("user", this.user)
+    // Identification
   	this.router.navigate(['/signup/identification'])
   }
 
@@ -42,14 +43,28 @@ export class ContributionComponent implements OnInit, OnDestroy {
   	this.user.isContributionMoreThenTwelve = false
     this.user.isContributionUsd = false
     this.util.setLocalObject("user", this.user)
-  	this.router.navigate(['/signup/identification'])
+    // Go straight to dashboard and create account
+    this.memberService.createAccount(this.user).subscribe(res=>this.afterCreateAccount(res))
   }
 
   usdCurrency() {
   	this.user.isContributionUsd = true
     this.user.isContributionMoreThenTwelve = false
     this.util.setLocalObject("user", this.user)
+    // Provide wire information
   	this.router.navigate(['/signup/identification'])
   }
+
+  afterCreateAccount(res:Response) {
+    this.memberService.afterCreateAccount(this.user.email, this.user.password)
+    .subscribe(session => this.afterLogin(session))
+  }
+
+  afterLogin(session:Response) {
+    this.memberService.saveAccessToken(session)
+    this.memberService.setLocalMemberObj(session)
+    this.memberService.afterLoginRoute()
+  }
+
 
 }

@@ -162,5 +162,13 @@ export class MemberService {
     return this.api.fire(HTTPmethod.CREATE, false, true)     
   }
 
+  resetLostPassword(newPassword:string, accessToken:string) {
+    this.api.id = null
+    this.api.filter = null
+    this.api.params = {newPassword:newPassword}
+    this.api.setInstanceName("Members/reset-password?access_token=" + accessToken)
+    return this.api.fire(HTTPmethod.CREATE, false, true)       
+  }
+
 
 }

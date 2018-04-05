@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberService } from '../shared/services/member.service'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-password-reset',
@@ -10,7 +11,7 @@ export class PasswordResetComponent implements OnInit {
 
   email:string
 
-  constructor(private memberService:MemberService) { }
+  constructor(private memberService:MemberService, private router:Router) { }
 
   ngOnInit() {
   }
@@ -20,8 +21,7 @@ export class PasswordResetComponent implements OnInit {
   }
 
   afterResetPassword(res:any) {
-    console.log('CHECK EMAILs')
-    console.log(res);
+    this.router.navigate(['/password/reset/checkemail', { title: 'Please check your email', subTitle: 'Please check your email '+ this.email +' for a link to reset your password', actionRouter:'/login', buttonLabel: 'Sign In'} ]);
   }
 
 }

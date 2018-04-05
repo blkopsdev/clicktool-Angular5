@@ -41,7 +41,12 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
       passwordConfirm:[null, Validators.required]
     })
 
-    $( ".datepicker" ).datepicker();
+    $( ".datepicker" ).datepicker({
+      onSelect: (date) => {
+        this.user.dob = date;
+        this.onSelectDate()
+      }
+    });
   	this.user = this.util.getLocalObject("user") as User
   }
 
@@ -51,7 +56,12 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
     }    
   }
 
+  onSelectDate() {
+     this.form.controls["dob"].setErrors(null)
+  }
+
   goToNext() {
+    console.log(this.user)
     this.form.updateValueAndValidity();
 
     if(this.form.valid){
