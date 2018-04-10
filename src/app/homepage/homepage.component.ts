@@ -148,11 +148,11 @@ export class HomepageComponent implements OnInit, OnDestroy {
       secondsDegree += 30;
       minutesDegree -= 30;
 
-      // Display the result in the element with id="demo"
-     // document.getElementById("days").innerHTML = String(days);
-      // document.getElementById("hours").innerHTML = String(hours);
-      // document.getElementById("minutes").innerHTML = String(minutes);
-      // document.getElementById("seconds").innerHTML = String(seconds);
+      // Display the result
+     document.getElementById("days").innerHTML = String(days);
+      document.getElementById("hours").innerHTML = String(hours);
+      document.getElementById("minutes").innerHTML = String(minutes);
+      document.getElementById("seconds").innerHTML = String(seconds);
 
       // If the count down is finished, write some text
       if (distance < 0) {
