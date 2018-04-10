@@ -1,22 +1,5 @@
 /* Top Section */
 
-.page-top {
-  position: relative;
-  min-height: 60vw;
-}
-
-.top-ani {
-  position: absolute;
-  width: 95vw;
-}
-
-.top-ani-mobile {
-  position: absolute;
-  top: -20vw;
-  width: 105vw;
-  right: -5vw;
-}
-
 .dynamic-headline {
   position: absolute;
   right: 11%;
@@ -52,7 +35,7 @@
   width: 1200px;
   left: 0;
   right: 0;
-  top: 20px;
+  top: 150px;
   margin: auto;
 }
 
@@ -669,7 +652,7 @@
   height: 250px;
   position: relative;
   margin: 0 auto;
-  top: -170px;
+  top: -40px;
   color: white;
   font-size: 24px;
   font-weight: bold;
@@ -2805,11 +2788,13 @@ margin: 20px;
   flex-wrap: wrap;
   max-width: 1400px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .indresgsec {
   width: 550px;
   margin: 0px auto;
+  padding: 16px;
   margin-top: 80px !important;
 }
 
@@ -3549,6 +3534,8 @@ margin: 20px;
     width: 20% !important;
   } .vid-text a {
     right: 94% !important;
+  } .sign-up h1 {
+    margin-top: -20px;
   }
 }
 
