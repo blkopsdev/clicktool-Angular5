@@ -19,7 +19,6 @@ export class UsersComponent implements OnInit {
   }
 
   afterGetUsers(res:User[]) {
-    console.log(res)
   	this.users = res
   }
 
