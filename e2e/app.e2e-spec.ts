@@ -1,11 +1,27 @@
 import { AppPage } from './app.po';
 import { browser, by, element, protractor, $ } from 'protractor';
+const nodemailer = require('nodemailer');
 var randomstring = require("randomstring");
 var path = require('path');
 var email = randomstring.generate(7) + "@gmail.com";
 
-describe('Signup', () => {
+// create reusable transporter object using the default SMTP transport
+let transporter = nodemailer.createTransport({
+  servic: "Gmail",
+  host: "smtp.gmail.com",
+  auth: {
+    user: "noreply@clicktool.com",
+    pass: "click$toolz312"
+  }
+});
+
+var resultsHtml = []
+
+
+describe('Signup a new user', () => {
   let page: AppPage;
+
+  describeItTitle("Signup a new user")
 
   beforeEach(() => {
     page = new AppPage();
@@ -15,7 +31,7 @@ describe('Signup', () => {
   	browser.ignoreSynchronization = true
     page.navigateTo();
     expect(page.getTitle()).toEqual('Clicktool');
-    element(by.xpath('//*[@id="myNavbar"]/ul/li[6]/a')).click()
+    element(by.xpath('/html/body/app-root/app-homepage/app-homepage-header/div[2]/header/div/div/div/nav/div[3]/a[2]')).click()
   });
 
   it('Check agreements checkboxes', () => {
@@ -61,9 +77,89 @@ describe('Signup', () => {
 
   })
 
-  it('Click finish button', () => {
+  it('Click finish button and complete signup', () => {
     element(by.id('finish')).click()
-    browser.pause()
+    browser.driver.sleep(3000)
   })
 
 });
+
+describe('Change password', () => {
+
+  describeItTitle("Change user password")
+
+  afterAll(() => {
+
+
+
+  })
+
+  it('Click change password in navbar', () => {
+    element(by.css('#myNavbar > app-dashboard-nav > ul > li:nth-child(4) > a')).click()
+  })
+  it('Enter in old password', () => {
+    element(by.xpath('/html/body/app-root/app-password/div/div/div[1]/input')).sendKeys('password')
+  })
+
+  it('Enter in new password', () => {
+    element(by.xpath('/html/body/app-root/app-password/div/div/div[2]/input')).sendKeys('newpassword')
+  })
+
+  it('Enter in new password again', () => {
+    element(by.xpath('/html/body/app-root/app-password/div/div/div[3]/input')).sendKeys('newpassword')
+  })
+
+  it('Click update password button', () => {
+    element(by.xpath('/html/body/app-root/app-password/div/div/button')).click()
+    browser.driver.sleep(3000)
+  })
+
+  it('Click confirm box', () => {
+    browser.switchTo().alert().accept();
+
+    console.log('Sending Email.....')
+    let htmlContent = resultsHtml.join(" ")
+    console.log(htmlContent)
+
+    // setup email data with unicode symbols
+    let mailOptions = {
+        from: '"noreply@clicktool.com', // sender address
+        to: 'chris@clicktool.com, ', // list of receivers
+        subject: 'Test Results ✔', // Subject line
+        html: htmlContent // html body
+    };
+
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+      console.log(error, info)
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message sent: %s', info.messageId);
+        // Preview only available when sending through an Ethereal account
+        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+
+        // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+        // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+    });
+    browser.driver.sleep(10000)
+
+  })
+
+})
+
+
+
+
+function describeItTitle(title:string) {
+  resultsHtml.push('<h3>'+ title +'</h3><br>')
+}
+
+function addItToList(it:string) {
+
+}
+
+
+
+
