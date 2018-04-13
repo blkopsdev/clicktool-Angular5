@@ -127,6 +127,7 @@ export class MachineAnimationComponent implements OnInit {
 
     this.milestoneGear(this.degree, 1000);
     this.smallMilestoneGear(this.degree, 1000);
+    console.log(this.degree)
 
     this.firstYellowbox(this.box_start, 1000);
     this.secondYellowbox(this.box_start_two, 1000);
@@ -190,7 +191,7 @@ export class MachineAnimationComponent implements OnInit {
 
   // Stop the animation when the mouse enters the big gear at the bottom
   stopSpin() {
-    $('.directions, .directions-lg, .instructions').mouseenter(() => {
+    $('.directions, .instructions').mouseenter(() => {
       this.spinning = false;
       this.endAnimations()
       clearInterval(this.interval)
@@ -200,7 +201,7 @@ export class MachineAnimationComponent implements OnInit {
 
   // Restart the animation after 1.2s when the mouse leaves the big gear
   startSpin() {
-    $('.directions, .directions-lg, .instructions').mouseleave(() => {
+    $('.directions').mouseleave(() => {
       this.endAnimations();
       setTimeout(() => {
         this.first_click = true;
@@ -219,7 +220,7 @@ export class MachineAnimationComponent implements OnInit {
 
   // Get the time and mouse X position when the big gear is clicked
   mouseInfo() {
-    $('.directions-lg, .instructions').mousedown((event) => {
+    $('.directions, .instructions').mousedown((event) => {
       this.endAnimations();
 
       this.start_x = event.pageX;
@@ -255,8 +256,16 @@ export class MachineAnimationComponent implements OnInit {
 
           this.finished = false;
 
-          this.milestoneGear((this.degree+45), 500);
-          this.smallMilestoneGear((this.degree+45), 500);
+          if(!this.first_click){
+            this.degree = this.degree + 45
+            this.box_start = this.box_start - 139.5
+            this.box_start_two = this.box_start_two - 139.5
+          }
+
+          this.first_click = false;
+          console.log(this.degree)
+          this.milestoneGear((this.degree), 500);
+          this.smallMilestoneGear((this.degree), 500);
 
           if (this.box_start < -1000) {
             this.box_start = 391;
@@ -268,10 +277,10 @@ export class MachineAnimationComponent implements OnInit {
             this.secondYellowbox(391, .0001);
           }
 
-          this.firstYellowbox((this.box_start-139.5), 500);
-          this.secondYellowbox((this.box_start_two-139.5), 500);
+          this.firstYellowbox((this.box_start), 500);
+          this.secondYellowbox((this.box_start_two), 500);
 
-          setTimeout(function() {
+          setTimeout(() => {
             this.finished = true;
           }, 500);
 
@@ -279,8 +288,16 @@ export class MachineAnimationComponent implements OnInit {
 
           this.finished = false;
 
-          this.milestoneGear((this.degree-45), 500);
-          this.smallMilestoneGear((this.degree-45), 500);
+          if(!this.first_click){
+            this.degree = this.degree - 45
+            this.box_start = this.box_start + 139.5
+            this.box_start_two = this.box_start_two + 139.5
+          }
+
+          this.first_click = false;
+
+          this.milestoneGear((this.degree), 500);
+          this.smallMilestoneGear((this.degree), 500);
 
           if (this.box_start > 380) {
             this.firstYellowbox(-1009, .0001);
@@ -290,10 +307,10 @@ export class MachineAnimationComponent implements OnInit {
             this.secondYellowbox(-1009, .0001);
           }
 
-          this.firstYellowbox((this.box_start+139.5), 500);
-          this.secondYellowbox((this.box_start_two+139.5), 500);
+          this.firstYellowbox((this.box_start), 500);
+          this.secondYellowbox((this.box_start_two), 500);
 
-          setTimeout(function() {
+          setTimeout(() => {
             this.finished = true;
           }, 500);
         }
