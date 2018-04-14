@@ -39,6 +39,8 @@ export class MachineAnimationComponent implements OnInit {
     this.mouseInfo();
     this.mouseUpTimeline();
     this.clickAndDrag();
+    this.leftMobile();
+    this.rightMobile();
   }
 
   // Move the 2 Yellowbox images to their starting positions
@@ -127,7 +129,6 @@ export class MachineAnimationComponent implements OnInit {
 
     this.milestoneGear(this.degree, 1000);
     this.smallMilestoneGear(this.degree, 1000);
-    console.log(this.degree)
 
     this.firstYellowbox(this.box_start, 1000);
     this.secondYellowbox(this.box_start_two, 1000);
@@ -215,7 +216,7 @@ export class MachineAnimationComponent implements OnInit {
   startInterval() {
     this.interval = setInterval(()=>{
       this.spin()
-    }, 2000);
+    }, 2050);
   }
 
   // Get the time and mouse X position when the big gear is clicked
@@ -245,25 +246,100 @@ export class MachineAnimationComponent implements OnInit {
 
   // Click and drag interactivity
   clickAndDrag() {
-    $(document).mousemove((e) => {
+    $('.milestone-container').mousemove((e) => {
       // Only allow another move after the previous animation has finished and mouse is pressed down
       if (this.dragging && this.now_time > this.start_time + 550) {
         this.endAnimations();
         this.mouse_x = e.pageX;
-        this.mouse_y = e.pageY;
 
         if (e.pageX > this.last_mouse + 20 && this.finished) {
-
+          console.log(this.degree);
           this.finished = false;
 
           if(!this.first_click){
-            this.degree = this.degree + 45
-            this.box_start = this.box_start - 139.5
-            this.box_start_two = this.box_start_two - 139.5
+            this.degree = this.degree + 45;
           }
 
+          if (this.box_start < -1000) {
+            this.box_start = 391;
+            $('.yellowbox').css({'right': '391%';});
+          }
+
+          if (this.box_start_two < -1000) {
+            this.box_start_two = 391;
+            $('.yellowbox2').css({'right': '391%';});
+          }
+
+          this.milestoneGear((this.degree), 500);
+          this.smallMilestoneGear((this.degree), 500);
+
+
+
+          if(!this.first_click){
+            this.box_start = this.box_start - 139.5;
+            this.box_start_two = this.box_start_two - 139.5;
+          }
+
+
+          this.firstYellowbox((this.box_start), 500);
+          this.secondYellowbox((this.box_start_two), 500);
+
+          setTimeout(() => {
+            this.first_click = false;
+            this.finished = true;
+          }, 600);
+
+        } else if (e.pageX < this.last_mouse - 20 && this.finished) {
+
+          this.finished = false;
+
           this.first_click = false;
-          console.log(this.degree)
+
+          if(!this.first_click){
+            this.degree = this.degree - 45;
+          }
+
+          this.milestoneGear((this.degree), 500);
+          this.smallMilestoneGear((this.degree), 500);
+
+          if (this.box_start > 380) {
+            this.box_start = -1009;
+            $('.yellowbox').css({'right': '-1009%';});
+          }
+
+          if (this.box_start_two > 380) {
+            this.box_start_two = -1009;
+            $('.yellowbox2').css({'right': '-1009%';});
+          }
+
+          if(!this.first_click){
+            this.box_start = this.box_start + 139.5;
+            this.box_start_two = this.box_start_two + 139.5;
+          }
+
+          this.firstYellowbox((this.box_start), 500);
+          this.secondYellowbox((this.box_start_two), 500);
+
+          setTimeout(() => {
+            this.finished = true;
+          }, 600);
+        }
+        this.last_mouse = e.pageX;
+      }
+    });
+    }
+
+        // Mobile arrow click
+    rightMobile() {
+      $('.right-mobile').mousedown(() => {
+        this.stopSpin();
+        this.endAnimations();
+        this.spinning = false;
+        this.finished = false;
+
+          if(!this.first_click){
+            this.degree = this.degree + 45;
+          }
           this.milestoneGear((this.degree), 500);
           this.smallMilestoneGear((this.degree), 500);
 
@@ -277,34 +353,54 @@ export class MachineAnimationComponent implements OnInit {
             this.secondYellowbox(391, .0001);
           }
 
+          if(!this.first_click){
+            this.box_start = this.box_start - 139.5;
+            this.box_start_two = this.box_start_two - 139.5;
+          }
+
+
           this.firstYellowbox((this.box_start), 500);
           this.secondYellowbox((this.box_start_two), 500);
 
           setTimeout(() => {
+            this.first_click = false;
             this.finished = true;
-          }, 500);
+          }, 501);
+        this.first_click = false;
+      });
+    }
 
-        } else if (e.pageX < this.last_mouse - 20 && this.finished) {
+    // Mobile arrow click
+    leftMobile() {
+      $('.left-mobile').mousedown(() =>  {
+        this.stopSpin();
+        this.spinning = false;
+        this.endAnimations();
 
-          this.finished = false;
-
-          if(!this.first_click){
-            this.degree = this.degree - 45
-            this.box_start = this.box_start + 139.5
-            this.box_start_two = this.box_start_two + 139.5
-          }
+        this.finished = false;
 
           this.first_click = false;
+
+          if(!this.first_click){
+            this.degree = this.degree - 45;
+          }
 
           this.milestoneGear((this.degree), 500);
           this.smallMilestoneGear((this.degree), 500);
 
           if (this.box_start > 380) {
+            this.box_start = -1009;
             this.firstYellowbox(-1009, .0001);
           }
 
           if (this.box_start_two > 380) {
+            this.box_start_two = -1009;
             this.secondYellowbox(-1009, .0001);
+          }
+
+          if(!this.first_click){
+            this.box_start = this.box_start + 139.5;
+            this.box_start_two = this.box_start_two + 139.5;
           }
 
           this.firstYellowbox((this.box_start), 500);
@@ -313,9 +409,8 @@ export class MachineAnimationComponent implements OnInit {
           setTimeout(() => {
             this.finished = true;
           }, 500);
-        }
-        this.last_mouse = e.pageX;
-      }
-    });
+         this.first_click = false;
+      });
+    }
   }
 }

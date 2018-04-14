@@ -391,12 +391,12 @@ export class HomepageComponent implements OnInit, OnDestroy {
           // document.getElementById('video-frame1').play();
 
         } else if ($( $(this).data('modal-id')).modal().selector == 'modal-video2') {
-          // document.getElementById('video-frame2').play(); TODO fix it
+          // document.getElementById('video-frame2').play();
         }
       });
       $(".modal-video-div").on("hidden.bs.modal", function () {
-        // document.getElementById('video-frame1').pause(); TODO fix it
-        // document.getElementById('video-frame2').pause(); TODO fix it
+          // document.getElementById('video-frame1').pause();
+          // document.getElementById('video-frame2').pause();
       });
 
     } // End ngOnInit
@@ -416,65 +416,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
       // Timeline -------------------
 
 
-      // // Mobile arrow click
-      // $('.right-mobile').mousedown(function(){
-      //   spinning = false;
-      //   endAnimations();
 
-      //   finished = false;
-
-      //   if (!first_click) {
-      //     milestoneGear((degree+45), 500);
-      //     smallMilestoneGear((degree+45), 500);
-
-      //     if (box_start < -1000) {
-      //       box_start = 391;
-      //       firstYellowbox(391, .0001);
-      //     }
-
-      //     if (box_start_two < -1000) {
-      //       box_start_two = 391;
-      //       secondYellowbox(391, .0001);
-      //     }
-
-      //     firstYellowbox((box_start-139.5), 500);
-      //     secondYellowbox((box_start_two-139.5), 500);
-
-      //     setTimeout(function() {
-      //       finished = true;
-      //     }, 500);
-      //   }
-      //   first_click = false;
-      // });
-
-      // // Mobile arrow click
-      // $('.left-mobile').mousedown(function() {
-      //   spinning = false;
-      //   endAnimations();
-
-      //   finished = false;
-
-      //   if (!first_click) {
-      //     milestoneGear((degree-45), 500);
-      //     smallMilestoneGear((degree-45), 500);
-
-      //     if (box_start > 380) {
-      //       firstYellowbox(-1009, .0001);
-      //     }
-
-      //     if (box_start_two > 380) {
-      //       secondYellowbox(-1009, .0001);
-      //     }
-
-      //     firstYellowbox((box_start+139.5), 500);
-      //     secondYellowbox((box_start_two+139.5), 500);
-
-      //     setTimeout(function() {
-      //       finished = true;
-      //     }, 500);
-      //   }
-      //   first_click = false;
-      // });
 
       // if (spinning) {
       //   spin();

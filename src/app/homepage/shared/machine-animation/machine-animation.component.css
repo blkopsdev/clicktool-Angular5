@@ -7,10 +7,10 @@
   -webkit-user-select: none;
   user-select: none;
   position: relative;
-  width: 100vw;
-  height: calc(100vw / 2.02);
+  width: 100.5vw;
+  height: calc(101vw / 2.02);
   top: 0;
-  right: 0;
+  right: 1.6vw;
   margin: auto;
 }
 
@@ -295,6 +295,7 @@
   width: 108%;
   height: 110%;
   top: 0;
+  z-index: 3;
   right: -0.4%;
   animation: movingPipe 3s ease-in-out infinite;
 }
@@ -726,26 +727,28 @@
   height: 100%;
   width: 50%;
   position: absolute;
-  z-index: 3;
+  z-index: -1;
   bottom: 0;
   left: 0;
   display: flex;
   justify-content: center;
-  font-size: 8vw;
+  font-size: 6vw;
   padding-right: -15%;
+  visibility: hidden;
 }
 
 .right {
   height: 100%;
   width: 50%;
   position: absolute;
-  z-index: 3;
+  z-index: -1;
   bottom: 0;
   right: 0;
   display: flex;
   justify-content: center;
-  font-size: 8vw;
+  font-size: 6vw;
   padding-left: -15%;
+  visibility: hidden;
 }
 
 .blue-arrow {
@@ -847,4 +850,21 @@
 
 .reverse {
   animation-direction: reverse;
+}
+
+@media only screen and (max-width: 767px){
+  .milestone-container {
+    width: 280vw;
+    height: calc(280vw / 2.02);
+    left: -101%;
+    overflow: hidden;
+  } .right {
+    visibility: visible;
+    z-index: 4;
+  } .left {
+    visibility: visible;
+    z-index: 4;
+  } .instructions {
+    display: none;
+  }
 }
