@@ -260,20 +260,18 @@ export class MachineAnimationComponent implements OnInit {
             this.degree = this.degree + 45;
           }
 
+          this.milestoneGear((this.degree), 500);
+          this.smallMilestoneGear((this.degree), 500);
+
           if (this.box_start < -1000) {
             this.box_start = 391;
-            $('.yellowbox').css({'right': '391%';});
+            $('.yellowbox').css({'right': '391%'});
           }
 
           if (this.box_start_two < -1000) {
             this.box_start_two = 391;
-            $('.yellowbox2').css({'right': '391%';});
+            $('.yellowbox2').css({'right': '391%'});
           }
-
-          this.milestoneGear((this.degree), 500);
-          this.smallMilestoneGear((this.degree), 500);
-
-
 
           if(!this.first_click){
             this.box_start = this.box_start - 139.5;
@@ -304,12 +302,12 @@ export class MachineAnimationComponent implements OnInit {
 
           if (this.box_start > 380) {
             this.box_start = -1009;
-            $('.yellowbox').css({'right': '-1009%';});
+            $('.yellowbox').css({'right': '-1009%'});
           }
 
           if (this.box_start_two > 380) {
             this.box_start_two = -1009;
-            $('.yellowbox2').css({'right': '-1009%';});
+            $('.yellowbox2').css({'right': '-1009%'});
           }
 
           if(!this.first_click){
@@ -412,5 +410,5 @@ export class MachineAnimationComponent implements OnInit {
          this.first_click = false;
       });
     }
-  }
+
 }

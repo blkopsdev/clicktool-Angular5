@@ -387,14 +387,17 @@ export class HomepageComponent implements OnInit, OnDestroy {
         e.preventDefault();
         $( '#' + $(this).data('modal-id') ).modal();
         if ($( $(this).data('modal-id')).modal().selector == 'modal-video1') {
-
+          $('#video-frame1').attr("src","https://youtube.com/embed/r43LhSUUGTQ?version=3&enablejsapi=1");
           // document.getElementById('video-frame1').play();
 
         } else if ($( $(this).data('modal-id')).modal().selector == 'modal-video2') {
+          $('#video-frame2').attr("src","https://youtube.com/embed/r43LhSUUGTQ?version=3&enablejsapi=1");
           // document.getElementById('video-frame2').play();
         }
       });
       $(".modal-video-div").on("hidden.bs.modal", function () {
+        $('#video-frame1').attr("src","");
+        $('#video-frame2').attr("src","");
           // document.getElementById('video-frame1').pause();
           // document.getElementById('video-frame2').pause();
       });
