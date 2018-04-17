@@ -44,6 +44,7 @@ import { DocumentsComponent } from './documents/documents.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 import { TextActionComponent } from './shared/common/text-action/text-action.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
+import { MachineAnimationComponent } from './homepage/shared/machine-animation/machine-animation.component';
 
 
 
@@ -72,7 +73,8 @@ import { UpdatePasswordComponent } from './update-password/update-password.compo
     DocumentsComponent,
     PasswordResetComponent,
     TextActionComponent,
-    UpdatePasswordComponent
+    UpdatePasswordComponent,
+    MachineAnimationComponent
   ],
   imports: [
     BrowserModule,
