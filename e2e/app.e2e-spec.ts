@@ -49,18 +49,28 @@ describe('Signup a new user', () => {
   	element(by.xpath('/html/body/app-root/app-account-info/div/div[2]/form/div/div[1]/input')).sendKeys('Christopher')
   	element(by.xpath('/html/body/app-root/app-account-info/div/div[2]/form/div/div[2]/input')).sendKeys('Kendrick')
   	element(by.xpath('/html/body/app-root/app-account-info/div/div[2]/form/div/div[3]/input')).sendKeys('07/30/88')
+
+
   	element(by.xpath('/html/body/app-root/app-account-info/div/div[2]/form/div/div[4]/input')).sendKeys(email)
   	element(by.xpath('/html/body/app-root/app-account-info/div/div[2]/form/div/div[5]/input')).sendKeys('3233587954')
   	element(by.xpath('/html/body/app-root/app-account-info/div/div[2]/form/div/div[6]/input')).sendKeys('USA')
+
   	element(by.xpath('/html/body/app-root/app-account-info/div/div[2]/form/div/div[7]/input')).sendKeys('123456789')
   	element(by.css('[formcontrolname=company]')).sendKeys('New Company')
   	element(by.css('[formcontrolname=password]')).sendKeys('password')
   	element(by.css('[formcontrolname=passwordConfirm]')).sendKeys('password')
+
+
+
   	element(by.id('continue')).click()
+
+
   })
 
   it('Click contribution option', () => {
+    //browser.pause()
   	element(by.id('12ethereum')).click()
+
   });
 
   it('Upload identication documents', () => {
