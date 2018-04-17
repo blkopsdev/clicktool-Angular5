@@ -62,7 +62,7 @@ describe('Signup a new user', () => {
 
 
 
-  	element(by.id('continue')).click()
+  	element(by.xpath('//*[@id="continue"]')).click()
 
 
   })
@@ -97,15 +97,15 @@ describe('Signup a new user', () => {
 
 describe('Change password', () => {
 
+
   describeItTitle("Change user password")
 
   afterAll(() => {
-
-
-
+    
   })
 
   it('Click change password in navbar', () => {
+    browser.pause()
     element(by.css('#myNavbar > app-dashboard-nav > ul > li:nth-child(4) > a')).click()
   })
   it('Enter in old password', () => {
