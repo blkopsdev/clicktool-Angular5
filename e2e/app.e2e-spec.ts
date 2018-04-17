@@ -28,11 +28,12 @@ describe('Signup a new user', () => {
   });
 
   it('Click signup button', () => {
+    addItToList("Click signup button")
   	browser.ignoreSynchronization = true
     page.navigateTo();
     expect(page.getTitle()).toEqual('Clicktool');
     element(by.xpath('/html/body/app-root/app-homepage/app-homepage-header/div[2]/header/div/div/div/nav/div[3]/a[2]')).click()
-  });
+  })
 
   it('Check agreements checkboxes', () => {
   	expect(page.getTitle()).toEqual('Clicktool');
@@ -117,33 +118,28 @@ describe('Change password', () => {
   it('Click confirm box', () => {
     browser.switchTo().alert().accept();
 
-    console.log('Sending Email.....')
-    let htmlContent = resultsHtml.join(" ")
-    console.log(htmlContent)
-
-    // setup email data with unicode symbols
-    let mailOptions = {
-        from: '"noreply@clicktool.com', // sender address
-        to: 'chris@clicktool.com, ', // list of receivers
-        subject: 'Test Results ✔', // Subject line
-        html: htmlContent // html body
-    };
+    // // setup email data with unicode symbols
+    // let mailOptions = {
+    //     from: '"noreply@clicktool.com', // sender address
+    //     to: 'chris@clicktool.com, ', // list of receivers
+    //     subject: 'Test Results ✔', // Subject line
+    //     html: htmlContent // html body
+    // };
 
 
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, (error, info) => {
-      console.log(error, info)
-        if (error) {
-            return console.log(error);
-        }
-        console.log('Message sent: %s', info.messageId);
-        // Preview only available when sending through an Ethereal account
-        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+    // // send mail with defined transport object
+    // transporter.sendMail(mailOptions, (error, info) => {
+    //   console.log(error, info)
+    //     if (error) {
+    //         return console.log(error);
+    //     }
+    //     console.log('Message sent: %s', info.messageId);
+    //     // Preview only available when sending through an Ethereal account
+    //     console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
-        // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-        // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-    });
-    browser.driver.sleep(10000)
+    //     // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+    //     // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+    // });
 
   })
 
@@ -157,7 +153,7 @@ function describeItTitle(title:string) {
 }
 
 function addItToList(it:string) {
-
+  resultsHtml.push('<strong>'+ it +'</srong><br>')
 }
 
 

@@ -72,7 +72,7 @@ export class IdentificationComponent implements OnInit, OnDestroy {
   setUploadContainerName(userId:string) {
     this.uploader.setOptions({
       authTokenHeader:this.app.getAccessToken(),
-      url: this.app.apiUrl + '/FileUploads/' + userId + '/upload?access_token=' + this.app.getAccessToken()
+      url: this.app.apiUrl + '/FileUploads/clicktooluploads/upload?access_token=' + this.app.getAccessToken()
     })    
   }
 
