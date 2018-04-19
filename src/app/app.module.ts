@@ -45,6 +45,8 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
 import { TextActionComponent } from './shared/common/text-action/text-action.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { MachineAnimationComponent } from './homepage/shared/machine-animation/machine-animation.component';
+import { TimelimeComponent } from './homepage/shared/timelime/timelime.component';
+import { YellowboxComponent } from './homepage/shared/timelime/yellowbox/yellowbox.component';
 
 
 
@@ -74,7 +76,9 @@ import { MachineAnimationComponent } from './homepage/shared/machine-animation/m
     PasswordResetComponent,
     TextActionComponent,
     UpdatePasswordComponent,
-    MachineAnimationComponent
+    MachineAnimationComponent,
+    TimelimeComponent,
+    YellowboxComponent
   ],
   imports: [
     BrowserModule,

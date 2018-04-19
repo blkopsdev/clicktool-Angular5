@@ -373,6 +373,19 @@
   }
 }
 
+@keyframes expandingPipe {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 70%;
+    right: 10.8%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
 @keyframes grayFill {
   0% {
     transform: translateY(0%);
@@ -541,6 +554,36 @@
   }
 }
 
+@keyframes silhouetteButton {
+  0% {
+    top: -1%;
+  }
+  50% {
+    top: 0%;
+  }
+  100% {
+    top: -1%;
+  }
+}
+
+@keyframes silhouetteMachine {
+  0% {
+    top: 0%;
+  }
+  25% {
+    top: -2%;
+  }
+  50% {
+    top: 0%;
+  }
+  75% {
+    top: -4%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
 @keyframes shine {
   0% {
     transform: translateX(-190px) rotate(20deg);
@@ -599,6 +642,24 @@
   }
   100% {
     transform: translateY(400%);
+  }
+}
+
+@keyframes timelineBox {
+  0% {
+    top: 1%;
+  }
+  20% {
+    top: -1%;
+  }
+  40% {
+    top: 1%;
+  }
+  60% {
+    top: -1%;
+  }
+  100% {
+    top: 1%;
   }
 }
 

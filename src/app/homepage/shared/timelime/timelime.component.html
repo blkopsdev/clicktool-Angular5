@@ -39,20 +39,24 @@
       <img src="../assets/timeline-pipe-overflow.png" class="timeline-pipe-overflow">
       <img src="../assets/timeline-pipe-overflow2.png" class="timeline-pipe-overflow2">
       <img src="../assets/Conveyor Belt.png" class="conveyor">
+
+      <app-yellowbox *ngFor="let box of boxes; let i = index" animationSpeed="2000" position="{{ box.position }}" month="{{ box.month }}" year="{{ box.year }}" [attr.data-index]="i" isPaused="{{ isAnimationPaused }}"></app-yellowbox>
+
       <div class="machine-screen">
         <div class="yellow-light yellow-light1"></div>
         <div class="yellow-light yellow-light2"></div>
         <div class="yellow-light yellow-light3"></div>
         <div class="yellow-bar yellow-bar1"></div>
         <div class="yellow-bar yellow-bar2"></div>
-        <img src="../assets/yellowboxes.png" class="machine-box yellowbox">
-        <img src="../assets/yellowboxes.png" class="machine-box yellowbox2">
+        <!-- <img src="../assets/yellowboxes.png" class="machine-box yellowbox"> -->
+       <!--  <img src="../assets/yellowboxes.png" class="machine-box yellowbox2"> -->
         <img src="../assets/Machine_full copy.png" class="machine">
       </div>
-      <div class="machine-screen" style="overflow: hidden;">
+
+  <!--     <div class="machine-screen" style="overflow: hidden;">
         <img src="../assets/machine-text.png" class="machine-text yellowbox">
         <img src="../assets/machine-text.png" class="machine-text yellowbox2">
-      </div>
+      </div> -->
 
       <img src="../assets/Small Cog.png" class="small-gear small-gear1">
       <img src="../assets/Small Cog.png" class="small-gear small-gear2">

@@ -17,12 +17,15 @@ import { DocumentsComponent } from './documents/documents.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 import { TextActionComponent } from './shared/common/text-action/text-action.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
+import { TimelimeComponent } from './homepage/shared/timelime/timelime.component';
 
 export const router: Routes = [
 
 	{ path: '', component: HomepageComponent, canActivate:[IsLoggedInGuard]},
 	{ path: 'login', component: LoginComponent, canActivate:[IsLoggedInGuard] },
-	
+
+  { path: 'timeline', component: TimelimeComponent },
+
 	{ path: 'signup', component: AgreementsComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/account', component: AccountInfoComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/contribution', component: ContributionComponent, canActivate:[IsLoggedInGuard] },
