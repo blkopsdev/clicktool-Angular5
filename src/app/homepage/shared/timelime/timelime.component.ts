@@ -1,26 +1,7 @@
-import { Component, Output, OnInit } from '@angular/core';
+import { Component, Output, OnInit, EventEmitter } from '@angular/core';
 import { Animation } from '../../../shared/util/animation'
-
+import { Box } from '../../../shared/models/box'
 declare var $:any
-
-class Box {
-  position:number = -18;
-  month:string
-  year:string
-  constructor(month:string = "foo", year:string = ""){
-    this.month = month
-    this.year = year
-  }
-
-  updateVal(boxes:Box[]):Box[] {
-   boxes.forEach(($0, i) => {
-      console.log(i)
-      $0.position = $0.position - (20 * i)
-
-    })
-    return boxes;
-  }
-}
 
 @Component({
   selector: 'app-timelime',
@@ -30,53 +11,90 @@ class Box {
 })
 export class TimelimeComponent implements OnInit{
 
-  initValue:number = -18;
-  yellowBox:any;
-  isAnimationPaused:boolean = false;
+  isPaused:boolean = false;
+
   boxes:Box[] = [
     new Box("1"),
     new Box("2"),
     new Box("3"),
-    new Box("3"),
-    new Box("3"),
-    new Box("3"),
-    new Box("3")
+    new Box("4"),
+    new Box("5"),
+    new Box("6"),
+    new Box("7")
   ]
 
   constructor(private animation:Animation) { }
 
-  ngAfterContentInit() {
-
-  }
-
   ngOnInit() {
+    this.boxes = new Box().updateVal(this.boxes)
+
+    // remove last item by index
 
 
-    let b:Box[] = new Box().updateVal(this.boxes)
-    this.boxes = b;
+    //this.stopAnimation()
 
-    this.boxes.reverse()
-    this.initEle();
-    this.animationInterval()
-
-    $('.directions').on('click', () => {
-      this.isAnimationPaused = true
-    })
-  }
-
-  initEle() {
+    console.log(this.boxes)
 
   }
 
-  cloneYellowBox() {
-
+  stopAnimation() {
+    this.isPaused = true
   }
 
-  animationInterval() {
-
+  addNewBox(month:string, year:string) {
+    //this.boxes.push(new Box(month, year))
+    console.log(this.boxes)
   }
 
+  boxOffScreen(index:number):void {
+
+    // last item position
+    //let lastItemPosition = this.boxes[this.boxes.length - 1].position
+
+    // last item position
+    let newItemCount = this.boxes[this.boxes.length - 1].count + 1
+    let newPosition = -18 - (20 * newItemCount)
+
+    var newBox = new Box("new");
+    newBox.position = newPosition
+    newBox.count = newItemCount
+
+    // remove last item by index
 
 
+
+    this.boxes.push(newBox)
+
+    this.boxes.splice(index , 1)
+
+    console.log(this.boxes)
+
+    // this.boxes[this.boxes.length - 1].setPosition(newPosition)
+    // // add new item to end of array
+
+
+
+    // console.log(this.boxes);
+
+    // let lastItemPosition = this.boxes[0].position
+    // var newBox = new Box("new");
+    // newBox.set
+    // this.boxes.unshift()
+    //console.log(this.boxes)
+
+    //console.log(this.boxes.length)
+    // remove item
+    //this.removeItemFromBoxes(index)
+    // add new items
+    //this.addNewBox("new", "box")
+    // update position
+
+
+    //this.boxes = new Box().updateVal(this.boxes)
+  }
+
+  private removeItemFromBoxes(index:number) {
+    this.boxes.splice(index, this.boxes.length)
+  }
 
 }
