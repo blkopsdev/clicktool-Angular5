@@ -19,7 +19,6 @@ export class HomepageComponent implements OnInit, OnDestroy {
     this.u.deleteLocalObject("user")
   }
 
-
   // onScroll() {
   //   var offset = this.document.scrollTop();
   //   offset = 75 + (offset * 0.2);

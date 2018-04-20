@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 declare var $: any;
 
@@ -8,6 +8,8 @@ declare var $: any;
   styleUrls: ['./machine-animation.component.css']
 })
 export class MachineAnimationComponent implements OnInit {
+
+  @ViewChild('#milestoneGear') milestone_gear: ElementRef;
 
   dragging = false;
   spinning = true;
@@ -19,15 +21,20 @@ export class MachineAnimationComponent implements OnInit {
   right = 100;
   position = 1;
   box_position = 110;
-  box_start = -309;
+  box_start:number = -309;
   box_start_two = 391;
+  forward:number = 139.5;
   clicked = false;
   finished = false;
   start_time = 0;
   now_time = 0;
   first_click = true;
+  bigGearElement = $('.milestone-gear');
+  smallGearElement = $('.small-gear');
 
   interval:any
+
+  didMouseDownOnGear:boolean = false
 
   constructor() { }
 
@@ -51,12 +58,18 @@ export class MachineAnimationComponent implements OnInit {
 
   // Rotate the big gear at the bottom
   milestoneGear(deg, sec) {
+
+    $(".milestone-gear").on('mousedown', () => {
+      this.didMouseDownOnGear = true;
+    })
+
     $(".milestone-gear").animate(
       {rotation: deg},
       {
         duration: sec,
         easing: 'linear',
         step: function(now, fx) {
+
           $(this).css({"transform": "rotate(" + now + "deg)"});
           $(this).css('-moz-transform', 'rotate(' + now + 'deg)');
           $(this).css('-webkit-transform', 'rotate(' + now + 'deg)');
@@ -65,6 +78,7 @@ export class MachineAnimationComponent implements OnInit {
         }
       }
     );
+
   }
 
   // Rotate the small gears in the conveyor belt
@@ -133,8 +147,8 @@ export class MachineAnimationComponent implements OnInit {
     this.firstYellowbox(this.box_start, 1000);
     this.secondYellowbox(this.box_start_two, 1000);
 
-    this.milestoneGear(this.degree, 1000);
-    this.smallMilestoneGear(this.degree, 1000);
+    //this.milestoneGear(this.degree, 1000);
+    // this.smallMilestoneGear(this.degree, 1000);
     this.degree += 45;
 
     $(".yellowbox").animate(
@@ -172,7 +186,7 @@ export class MachineAnimationComponent implements OnInit {
         }
       );
     }
-    this.box_start -= 139.5;
+    this.box_start -= this.forward;
 
     if (this.box_start_two < -870) {
       this.box_start_two = 391;
@@ -187,7 +201,8 @@ export class MachineAnimationComponent implements OnInit {
         }
       );
     }
-    this.box_start_two -= 139.5;
+    this.box_start_two -= this.forward;
+
   }
 
   // Stop the animation when the mouse enters the big gear at the bottom
@@ -244,16 +259,44 @@ export class MachineAnimationComponent implements OnInit {
     });
   }
 
+  resetDegree() {
+    if(this.degree >= 360){
+      this.degree = 0;
+      // milestoneGear(0, .0001);
+      // smallGear(0, .0001);
+      $('.milestone-gear').css({"transform": "rotate(" + this.degree + "deg)"});
+      $('.milestone-gear').css('-moz-transform', 'rotate(' + this.degree + 'deg)');
+      $('.milestone-gear').css('-webkit-transform', 'rotate(' + this.degree + 'deg)');
+      $('.milestone-gear').css('-o-transform', 'rotate(' + this.degree + 'deg)');
+      $('.milestone-gear').css('-ms-transform', 'rotate(' + this.degree + 'deg)');
+      $('.small-gear').css({"transform": "rotate(" + this.degree + "deg)"});
+      $('.small-gear').css('-moz-transform', 'rotate(' + this.degree + 'deg)');
+      $('.small-gear').css('-webkit-transform', 'rotate(' + this.degree + 'deg)');
+      $('.small-gear').css('-o-transform', 'rotate(' + this.degree + 'deg)');
+      $('.small-gear').css('-ms-transform', 'rotate(' + this.degree + 'deg)');
+    }
+  }
+
   // Click and drag interactivity
   clickAndDrag() {
-    $('.milestone-container').mousemove((e) => {
+
+
+
+
+    $('.directions').mousemove((e) => {
+
+
       // Only allow another move after the previous animation has finished and mouse is pressed down
-      if (this.dragging && this.now_time > this.start_time + 550) {
+      if (this.dragging && this.now_time > this.start_time + 800) {
         this.endAnimations();
+
         this.mouse_x = e.pageX;
 
         if (e.pageX > this.last_mouse + 20 && this.finished) {
-          console.log(this.degree);
+
+          //console.log('Begin: 1 - ' + this.box_start + '2 - ' + this.box_start_two);
+
+
           this.finished = false;
 
           if(!this.first_click){
@@ -262,6 +305,7 @@ export class MachineAnimationComponent implements OnInit {
 
           this.milestoneGear((this.degree), 500);
           this.smallMilestoneGear((this.degree), 500);
+
 
           if (this.box_start < -1000) {
             this.box_start = 391;
@@ -274,10 +318,9 @@ export class MachineAnimationComponent implements OnInit {
           }
 
           if(!this.first_click){
-            this.box_start = this.box_start - 139.5;
-            this.box_start_two = this.box_start_two - 139.5;
+            this.box_start = this.box_start - this.forward;
+            this.box_start_two = this.box_start_two - this.forward;
           }
-
 
           this.firstYellowbox((this.box_start), 500);
           this.secondYellowbox((this.box_start_two), 500);
@@ -286,6 +329,8 @@ export class MachineAnimationComponent implements OnInit {
             this.first_click = false;
             this.finished = true;
           }, 600);
+
+
 
         } else if (e.pageX < this.last_mouse - 20 && this.finished) {
 
@@ -311,8 +356,8 @@ export class MachineAnimationComponent implements OnInit {
           }
 
           if(!this.first_click){
-            this.box_start = this.box_start + 139.5;
-            this.box_start_two = this.box_start_two + 139.5;
+            this.box_start = this.box_start + this.forward;
+            this.box_start_two = this.box_start_two + this.forward;
           }
 
           this.firstYellowbox((this.box_start), 500);
@@ -325,6 +370,7 @@ export class MachineAnimationComponent implements OnInit {
         this.last_mouse = e.pageX;
       }
     });
+
     }
 
         // Mobile arrow click
@@ -352,8 +398,8 @@ export class MachineAnimationComponent implements OnInit {
           }
 
           if(!this.first_click){
-            this.box_start = this.box_start - 139.5;
-            this.box_start_two = this.box_start_two - 139.5;
+            this.box_start = this.box_start - this.forward;
+            this.box_start_two = this.box_start_two - this.forward;
           }
 
 
@@ -397,8 +443,8 @@ export class MachineAnimationComponent implements OnInit {
           }
 
           if(!this.first_click){
-            this.box_start = this.box_start + 139.5;
-            this.box_start_two = this.box_start_two + 139.5;
+            this.box_start = this.box_start + this.forward;
+            this.box_start_two = this.box_start_two + this.forward;
           }
 
           this.firstYellowbox((this.box_start), 500);
