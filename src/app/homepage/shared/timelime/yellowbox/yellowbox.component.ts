@@ -20,12 +20,13 @@ declare var $:any
 })
 export class YellowboxComponent implements OnInit, AfterViewInit {
 
-  private screenWidth:number = $(window).width()
-  private elementPosition:number;
-  private $this:any;
-  private index:number;
-  private intervalID:any;
-  private waitMultiplier:number = 2000
+  screenWidth:number = $(window).width()
+  elementPosition:number;
+  $this:any;
+  index:number;
+  intervalID:any;
+  waitMultiplier:number = 2000
+  isOffScreen:boolean = false;
 
   // Inputs
   @Input() isPaused:boolean
@@ -33,9 +34,11 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
   @Input() month:string
   @Input() year:string
   @Input() animationSpeed:number
+  @Input() isEnd:boolean
 
   // Outputs
-  @Output() isYellowBoxOffScreen = new EventEmitter<number>()
+  @Output() animationCallbackEvent = new EventEmitter<YellowboxComponent>()
+  @Output() isBoxOffScreen = new EventEmitter<number>()
 
   //
   @ViewChild('yellowBox') yellowBox: ElementRef;
@@ -62,20 +65,23 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
 
   checkRemove() {
     if(this.isAtEndOfScreen()) {
-      this.removeEle()
+      
     }
   }
 
   animationCallback() {
+    this.animationCallbackEvent.emit(this)
+
+    if(this.isAtEndOfScreen() && !this.isOffScreen ){
+      this.isBoxOffScreen.emit(this.index)
+      this.isOffScreen = true
+    }
     if(this.isPaused){
       clearInterval(this.intervalID)
     }
-    if(this.isAtEndOfScreen()){
-      console.log('emit')
-      //console.log(this.isYellowBoxOffScreen.emit)
-      this.isYellowBoxOffScreen.emit(this.index)
-    }
   }
+
+
 
   private isAtEndOfScreen():boolean {
     return this.$this.position().left >= this.screenWidth
@@ -89,6 +95,13 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
     this.animation.animateRight(this.yellowBox.nativeElement, this.position, this.animationSpeed, () => {
       this.animationCallback()
     })
+  }
+
+  private emiteInstance() {
+     if(this.isAtEndOfScreen() && !this.isOffScreen){
+      this.animationCallbackEvent.emit(this)
+      this.isOffScreen = true;
+    }   
   }
 
 }

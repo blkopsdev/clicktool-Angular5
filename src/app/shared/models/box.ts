@@ -3,6 +3,7 @@ export class Box {
   month:string
   year:string
   count:number;
+  isEnd:boolean = false
   constructor(month:string = "foo", year:string = ""){
     this.month = month
     this.year = year
