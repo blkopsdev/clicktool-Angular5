@@ -1,6 +1,7 @@
 import { Component, Output, OnInit, EventEmitter } from '@angular/core';
 import { Animation } from '../../../shared/util/animation'
 import { Box } from '../../../shared/models/box'
+import { YellowboxComponent } from './yellowbox/yellowbox.component'
 declare var $:any
 
 @Component({
@@ -12,7 +13,10 @@ declare var $:any
 export class TimelimeComponent implements OnInit{
 
   isPaused:boolean = false;
+  firstYellowBoxPosition:number;
+  isFirstPositionSet:boolean = false
 
+  isUsingCloned:boolean = false;
   boxes:Box[] = [
     new Box("1"),
     new Box("2"),
@@ -20,81 +24,69 @@ export class TimelimeComponent implements OnInit{
     new Box("4"),
     new Box("5"),
     new Box("6"),
-    new Box("7")
+    new Box("7"),
+    new Box("8"),
+    new Box("9"),
+    new Box("10"),
   ]
+  boxesTwo:Box[] = [
+    new Box("1"),
+    new Box("2"),
+    new Box("3"),
+    new Box("4"),
+    new Box("5"),
+    new Box("6"),
+    new Box("7"),
+    new Box("8"),
+    new Box("9"),
+    new Box("10"),
+  ]  
 
   constructor(private animation:Animation) { }
 
   ngOnInit() {
+    
     this.boxes = new Box().updateVal(this.boxes)
+    this.boxesTwo = new Box().updateVal(this.boxesTwo)
 
-    // remove last item by index
-
-
-    //this.stopAnimation()
-
-    console.log(this.boxes)
-
+    this.boxes[this.boxes.length - 1].isEnd = true
   }
 
   stopAnimation() {
     this.isPaused = true
   }
 
-  addNewBox(month:string, year:string) {
-    //this.boxes.push(new Box(month, year))
-    console.log(this.boxes)
+  animationCallback(instance:YellowboxComponent) {
+   
+    // Get the position of the first box animatiom position
+    if(instance.index == 0 && !this.isFirstPositionSet) {
+       this.firstYellowBoxPosition = instance.$this.position().left
+       this.isFirstPositionSet = true
+    }
+
+    // Is last item at first item position
+    if(this.isLastBoxInFirstBoxPosition(instance)){
+      this.boxesTwo.map($instance => { 
+          $instance.month = "neww"
+          this.boxes.push($instance) 
+      })
+    }
   }
 
-  boxOffScreen(index:number):void {
+  onBoxOffScreen(index:number) {
 
-    // last item position
-    //let lastItemPosition = this.boxes[this.boxes.length - 1].position
-
-    // last item position
-    let newItemCount = this.boxes[this.boxes.length - 1].count + 1
-    let newPosition = -18 - (20 * newItemCount)
-
-    var newBox = new Box("new");
-    newBox.position = newPosition
-    newBox.count = newItemCount
-
-    // remove last item by index
-
-
-
-    this.boxes.push(newBox)
-
-    this.boxes.splice(index , 1)
-
-    console.log(this.boxes)
-
-    // this.boxes[this.boxes.length - 1].setPosition(newPosition)
-    // // add new item to end of array
-
-
-
-    // console.log(this.boxes);
-
-    // let lastItemPosition = this.boxes[0].position
-    // var newBox = new Box("new");
-    // newBox.set
-    // this.boxes.unshift()
-    //console.log(this.boxes)
-
-    //console.log(this.boxes.length)
-    // remove item
-    //this.removeItemFromBoxes(index)
-    // add new items
-    //this.addNewBox("new", "box")
-    // update position
-
-
-    //this.boxes = new Box().updateVal(this.boxes)
   }
 
   private removeItemFromBoxes(index:number) {
     this.boxes.splice(index, this.boxes.length)
+  }
+
+  isLastBoxInFirstBoxPosition(instance:YellowboxComponent) : boolean {
+    return instance.$this.position().left == this.firstYellowBoxPosition && instance.index == (this.boxes.length - 2)
+  }
+
+  isMainArrayDone() {
+
   }
 
 }

@@ -46,11 +46,16 @@
       position="{{ box.position }}"
       month="{{ box.month }}"
       year="{{ box.year }}"
+      [isEnd]="box.isEnd"
       [attr.data-index]="i"
       [isPaused]="isPaused"
-      (isYellowBoxOffScreen)="boxOffScreen($event)"
+      (animationCallbackEvent)="animationCallback($event)"
+      (isBoxOffScreen)="onBoxOffScreen($event)"
       >
       </app-yellowbox>
+
+
+
 
       <div class="machine-screen">
         <div class="yellow-light yellow-light1"></div>
