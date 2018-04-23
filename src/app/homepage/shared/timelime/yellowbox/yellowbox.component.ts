@@ -90,9 +90,13 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
   }
 
   private animate() {
-    this.animation.animateRight(this.yellowBox.nativeElement, this.position, this.animationSpeed, () => {
+    this.animateRight()
+  }
+
+  private animateRight() {
+     this.animation.animateRight(this.yellowBox.nativeElement, this.position, this.animationSpeed, () => {
       this.animationCallback()
-    })
+    })   
   }
 
   private emiteInstance() {

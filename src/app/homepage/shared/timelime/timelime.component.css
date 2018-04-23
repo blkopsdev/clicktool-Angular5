@@ -658,6 +658,11 @@
   z-index: 6;
 }
 
+.machine-screen .machine-screen-text {
+  width: 100%;
+  background: red;
+}
+
 .yellow-light {
   height: 4%;
   width: 4%;
