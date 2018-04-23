@@ -1,4 +1,15 @@
-
+<style>
+/* body:before will also work
+ as will body:after */
+:root:before {
+  content: url(../assets/top-background.png);
+  /* partial fallback */
+  background-image: url(../assets/top-background.png);
+  visibility: hidden;
+  position: absolute;
+  left: -999em;
+}
+</style>
 
   <app-homepage-header></app-homepage-header>
 
@@ -183,8 +194,8 @@
         </div>
       <div class="col-md-7">
         <div class="about">
-          <img id="yellow-gear" src="../assets/yellow-gear.png">
-          <img id="pink-gear" class="hidden-xs hidden-sm" src="../assets/pink-gear.png">
+<!--           <img id="yellow-gear" src="../assets/yellow-gear.png">
+          <img id="pink-gear" class="hidden-xs hidden-sm" src="../assets/pink-gear.png"> -->
           <!-- <img id="whitelines1" class="white-lines" src="../assets/white-lines.png">
           <img id="whitelines2" class="white-lines" src="../assets/white-lines.png"> -->
           <h2 class="title">About Clicktool</h2>
