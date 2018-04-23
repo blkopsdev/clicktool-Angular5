@@ -40,7 +40,7 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
   @Output() animationCallbackEvent = new EventEmitter<YellowboxComponent>()
   @Output() isBoxOffScreen = new EventEmitter<number>()
 
-  //
+  // Child elements
   @ViewChild('yellowBox') yellowBox: ElementRef;
 
 
@@ -70,18 +70,16 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
   }
 
   animationCallback() {
-    this.animationCallbackEvent.emit(this)
+    if(this.isPaused){
+      clearInterval(this.intervalID)
+    }
 
+    this.animationCallbackEvent.emit(this)
     if(this.isAtEndOfScreen() && !this.isOffScreen ){
       this.isBoxOffScreen.emit(this.index)
       this.isOffScreen = true
     }
-    if(this.isPaused){
-      clearInterval(this.intervalID)
-    }
   }
-
-
 
   private isAtEndOfScreen():boolean {
     return this.$this.position().left >= this.screenWidth
