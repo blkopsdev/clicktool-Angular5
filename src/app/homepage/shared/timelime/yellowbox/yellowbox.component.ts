@@ -8,6 +8,7 @@ import {
     Output,
     EventEmitter
   } from '@angular/core';
+
 import { Animation } from '../../../../shared/util/animation'
 
 declare var $:any
@@ -104,6 +105,10 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
       this.animationCallbackEvent.emit(this)
       this.isOffScreen = true;
     }   
+  }
+
+  private isEnteringMachine() {
+
   }
 
 }

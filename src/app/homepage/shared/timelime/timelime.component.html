@@ -66,9 +66,14 @@
       </div>
 
       <div class="machine-screen" style="overflow: hidden;">
-        <div class="machine-screen-text">
-          dsvdsvdsvvdsvs
-        </div>
+
+        <app-small-screen
+        *ngFor="let box of boxes; let i = index"
+        [attr.data-index]="box.count"
+        startPosition="50"
+        [animate]="animateSmallScreen">
+        </app-small-screen>
+
       </div>
 
       <img src="../assets/Small Cog.png" class="small-gear small-gear1">

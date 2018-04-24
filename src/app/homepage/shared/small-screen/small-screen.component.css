@@ -1,0 +1,6 @@
+.machine-screen-text {
+  width: 100%;
+  background: red;
+  left: -100%;
+  position: absolute;
+}

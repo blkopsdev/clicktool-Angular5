@@ -1,4 +1,4 @@
-import { Component, Output, OnInit, EventEmitter } from '@angular/core';
+import { Component, Output, OnInit, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Animation } from '../../../shared/util/animation'
 import { Box } from '../../../shared/models/box'
 import { YellowboxComponent } from './yellowbox/yellowbox.component'
@@ -15,8 +15,11 @@ export class TimelimeComponent implements OnInit{
   isPaused:boolean = false;
   firstYellowBoxPosition:number;
   isFirstPositionSet:boolean = false
-
   isUsingCloned:boolean = false;
+  animateSmallScreen:boolean;
+
+  @ViewChild('machineScreenTxt') machineTxtEle:ElementRef;
+
   boxes:Box[] = [
     new Box("1"),
     new Box("2"),
@@ -45,10 +48,8 @@ export class TimelimeComponent implements OnInit{
   constructor(private animation:Animation) { }
 
   ngOnInit() {
-    
     this.boxes = new Box().updateVal(this.boxes)
     this.boxesTwo = new Box().updateVal(this.boxesTwo)
-
     this.boxes[this.boxes.length - 1].isEnd = true
   }
 
@@ -57,28 +58,28 @@ export class TimelimeComponent implements OnInit{
   }
 
   animationCallback(instance:YellowboxComponent) {
-   
+    if(instance.position == 42){
+      
+    }
     if(this.isPaused == false){
       // Get the position of the first box animatiom position
       if(instance.index == 0 && !this.isFirstPositionSet) {
          this.firstYellowBoxPosition = instance.$this.position().left
          this.isFirstPositionSet = true
       }
-
       // Is last item at first item position
       if(this.isLastBoxInFirstBoxPosition(instance)){
         this.boxesTwo.map($instance => { 
-            $instance.month = "neww"
             this.boxes.push($instance) 
         })
       }      
     } 
 
-
   }
 
   onBoxOffScreen(index:number) {
-    //this.boxes.pop()
+    // Perform cleanup
+    
   }
 
   private removeItemFromBoxes(index:number) {
@@ -89,8 +90,5 @@ export class TimelimeComponent implements OnInit{
     return instance.$this.position().left == this.firstYellowBoxPosition && instance.index == (this.boxes.length - 2)
   }
 
-  isMainArrayDone() {
-
-  }
 
 }
