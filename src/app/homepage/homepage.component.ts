@@ -60,6 +60,10 @@ export class HomepageComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
+    setTimeout(() => {
+      (<HTMLElement>document.querySelector('#top-design')).style.opacity = '1';
+    }, 1000);
+
     // Scoll implemenation
     // window.addEventListener('scroll', this.onScroll, true )
 
@@ -120,6 +124,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
       css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
       document.body.appendChild(css);
     };
+
     // New Countdown Timer
 
     // Set the date we're counting down to
