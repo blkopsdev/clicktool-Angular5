@@ -23,7 +23,6 @@ export class SmallScreenComponent implements OnInit, AfterViewInit  {
 
   ngAfterViewInit() {
 	this.index = this.$this.parent('app-small-screen').data('index');
-	console.log(this.index)
 
   	if(this.index == 0){
   		var interval = this.startWaitTime

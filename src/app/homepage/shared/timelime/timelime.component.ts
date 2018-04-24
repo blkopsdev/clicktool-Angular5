@@ -58,9 +58,7 @@ export class TimelimeComponent implements OnInit{
   }
 
   animationCallback(instance:YellowboxComponent) {
-    if(instance.position == 42){
-      
-    }
+
     if(this.isPaused == false){
       // Get the position of the first box animatiom position
       if(instance.index == 0 && !this.isFirstPositionSet) {
@@ -70,6 +68,7 @@ export class TimelimeComponent implements OnInit{
       // Is last item at first item position
       if(this.isLastBoxInFirstBoxPosition(instance)){
         this.boxesTwo.map($instance => { 
+            $instance.month = "new"
             this.boxes.push($instance) 
         })
       }      
@@ -77,9 +76,10 @@ export class TimelimeComponent implements OnInit{
 
   }
 
-  onBoxOffScreen(index:number) {
-    // Perform cleanup
-    
+  onBoxOffScreen(count:number) {
+    if(count == 9) {
+
+    }
   }
 
   private removeItemFromBoxes(index:number) {
@@ -87,6 +87,7 @@ export class TimelimeComponent implements OnInit{
   }
 
   isLastBoxInFirstBoxPosition(instance:YellowboxComponent) : boolean {
+    console.log(instance.index)
     return instance.$this.position().left == this.firstYellowBoxPosition && instance.index == (this.boxes.length - 2)
   }
 

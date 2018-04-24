@@ -36,6 +36,7 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
   @Input() year:string
   @Input() animationSpeed:number
   @Input() isEnd:boolean
+  @Input() count:number
 
   // Outputs
   @Output() animationCallbackEvent = new EventEmitter<YellowboxComponent>()
@@ -43,6 +44,8 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
 
   // Child elements
   @ViewChild('yellowBox') yellowBox: ElementRef;
+
+
 
 
 
@@ -77,7 +80,7 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
 
     this.animationCallbackEvent.emit(this)
     if(this.isAtEndOfScreen() && !this.isOffScreen ){
-      this.isBoxOffScreen.emit(this.index)
+      this.isBoxOffScreen.emit(this.count)
       this.isOffScreen = true
     }
   }
