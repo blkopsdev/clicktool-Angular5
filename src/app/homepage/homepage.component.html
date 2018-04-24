@@ -1,21 +1,10 @@
-<style>
-/* body:before will also work
- as will body:after */
-:root:before {
-  content: url(../assets/top-background.png);
-  /* partial fallback */
-  background-image: url(../assets/top-background.png);
-  visibility: hidden;
-  position: absolute;
-  left: -999em;
-}
-</style>
+
 
   <app-homepage-header></app-homepage-header>
 
-  <div class="container-fluid" style="overflow: hidden;">
-    <div class="top-design">
-      <img class="top-ani" src="../assets/top-background.png">
+  <div class="container-fluid" style="overflow: hidden;" >
+    <div id="top-design" class="top-design" style="opacity: 0;">
+      <img id="top-ani" class="top-ani" src="../assets/top-background.png">
       <img class="blue-logo-gear" src="../assets/blue-logo-gear.png">
       <img class="top-design-logo" src="../assets/top-design-logo.png">
       <img class="blue-buttons blue-buttons1" src="../assets/blue-buttons1.png">
