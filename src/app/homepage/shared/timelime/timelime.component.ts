@@ -67,6 +67,7 @@ export class TimelimeComponent implements OnInit{
       }
       // Is last item at first item position
       if(this.isLastBoxInFirstBoxPosition(instance)){
+        console.log(instance.index)
         this.boxesTwo.map($instance => { 
             $instance.month = "new"
             this.boxes.push($instance) 
@@ -78,7 +79,8 @@ export class TimelimeComponent implements OnInit{
 
   onBoxOffScreen(count:number) {
     if(count == 9) {
-
+      //this.boxes.splice(0,9)
+      //console.log(this.boxes)
     }
   }
 
@@ -87,8 +89,7 @@ export class TimelimeComponent implements OnInit{
   }
 
   isLastBoxInFirstBoxPosition(instance:YellowboxComponent) : boolean {
-    console.log(instance.index)
-    return instance.$this.position().left == this.firstYellowBoxPosition && instance.index == (this.boxes.length - 2)
+    return instance.$this.position().left == this.firstYellowBoxPosition && instance.count == 8
   }
 
 

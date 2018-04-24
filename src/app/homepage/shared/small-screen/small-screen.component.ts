@@ -12,12 +12,14 @@ export class SmallScreenComponent implements OnInit, AfterViewInit  {
 
   @Input() startPosition:number;	
   @Input() animate:boolean;
+  @Input() isPaused:boolean;
 
   @ViewChild('machineScreenTxt') machineTxtEle:ElementRef;
   $this:any;
   startWaitTime:number = 6000
   startWaitTimeOffSet = 4000;
   index:number;
+  
 
   constructor(private animation:Animation) { }
 
@@ -43,15 +45,24 @@ export class SmallScreenComponent implements OnInit, AfterViewInit  {
   }
 
   animateIn() {
-  	this.animation.animateRight(this.machineTxtEle.nativeElement, 0, 2000, ()=>{
-  		this.animateOut()
-  	})
+    if(this.isPaused){
+      this.$this.stop(true, true)
+    }else{
+      this.animation.animateRight(this.machineTxtEle.nativeElement, 0, 2000, ()=>{
+        this.animateOut()
+      })      
+    }
+
   }
 
   animateOut() {
-  	this.animation.animateRight(this.machineTxtEle.nativeElement, 100, 2000, ()=>{
+    if(this.isPaused){
+      this.$this.stop(true, true)
+    }else{
+      this.animation.animateRight(this.machineTxtEle.nativeElement, 100, 2000, ()=>{
 
-  	})  	
+      })        
+    }
   }
 
   

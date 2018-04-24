@@ -59,7 +59,9 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
   private repeat() {
     this.intervalID = setInterval(() => {
       this.position = +this.position + 20
-      this.animate()
+      if(!this.isPaused){
+        this.animate()
+      }
     }, +this.waitMultiplier)
   }
 
@@ -75,14 +77,16 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
 
   animationCallback() {
     if(this.isPaused){
-      clearInterval(this.intervalID)
+      this.$this.stop(true, true)
+      //clearInterval(this.intervalID)
+    }else{
+      this.animationCallbackEvent.emit(this)
+      if(this.isAtEndOfScreen() && !this.isOffScreen ){
+        this.isBoxOffScreen.emit(this.count)
+        this.isOffScreen = true
+      }      
     }
 
-    this.animationCallbackEvent.emit(this)
-    if(this.isAtEndOfScreen() && !this.isOffScreen ){
-      this.isBoxOffScreen.emit(this.count)
-      this.isOffScreen = true
-    }
   }
 
   private isAtEndOfScreen():boolean {

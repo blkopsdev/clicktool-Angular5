@@ -71,6 +71,7 @@
         <app-small-screen
         *ngFor="let box of boxes; let i = index"
         [attr.data-index]="box.count"
+        [isPaused]="isPaused"
         startPosition="50"
         [animate]="animateSmallScreen">
         </app-small-screen>
