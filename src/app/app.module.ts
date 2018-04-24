@@ -47,6 +47,7 @@ import { UpdatePasswordComponent } from './update-password/update-password.compo
 import { MachineAnimationComponent } from './homepage/shared/machine-animation/machine-animation.component';
 import { TimelimeComponent } from './homepage/shared/timelime/timelime.component';
 import { YellowboxComponent } from './homepage/shared/timelime/yellowbox/yellowbox.component';
+import { SmallScreenComponent } from './homepage/shared/small-screen/small-screen.component';
 
 
 
@@ -78,7 +79,8 @@ import { YellowboxComponent } from './homepage/shared/timelime/yellowbox/yellowb
     UpdatePasswordComponent,
     MachineAnimationComponent,
     TimelimeComponent,
-    YellowboxComponent
+    YellowboxComponent,
+    SmallScreenComponent
   ],
   imports: [
     BrowserModule,
