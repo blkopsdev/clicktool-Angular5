@@ -12,7 +12,9 @@ declare var $: any;
 })
 export class HomepageComponent implements OnInit, OnDestroy {
 
-
+  isMobileOrTablet:boolean = false;
+  isSafari:boolean = false;
+  isIE:boolean = false;
   constructor(private u:Util) {}
 
   ngOnDestroy() {
@@ -59,6 +61,22 @@ export class HomepageComponent implements OnInit, OnDestroy {
   // }
 
   ngOnInit() {
+
+
+      var ua = navigator.userAgent;
+
+      if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua)){
+        this.isMobileOrTablet = true;
+
+      }
+      if (navigator.userAgent.match(/Version\/[\d\.]+.*Safari/)) {
+        this.isSafari = true;
+      }
+
+      if (/MSIE/i.test(navigator.userAgent)) {
+        this.isIE = true;
+      }
+
 
     setTimeout(() => {
       (<HTMLElement>document.querySelector('#top-design')).style.opacity = '1';
