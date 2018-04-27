@@ -14,6 +14,10 @@
   margin: auto;
 }
 
+.animation-none {
+  animation: none !important;
+}
+
 .milestone-container div {
   position: absolute;
 }
@@ -351,7 +355,7 @@
   z-index: 3;
 }
 
-.timeline-pipefill-top-right {
+/* .timeline-pipefill-top-right {
   width: 100%;
   height: 100%;
   top: 0;
@@ -378,7 +382,7 @@
   100% {
     clip-path: inset(47% 18% 53.4% 79%);
   }
-}
+} */
 
 .timeline-red-pipe-end {
   width: 100%;

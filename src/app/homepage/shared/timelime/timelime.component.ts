@@ -1,7 +1,8 @@
-import { Component, Output, OnInit, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component, Output, OnInit, EventEmitter, ViewChild, ElementRef, Input } from '@angular/core';
 import { Animation } from '../../../shared/util/animation'
 import { Box } from '../../../shared/models/box'
 import { YellowboxComponent } from './yellowbox/yellowbox.component'
+
 declare var $:any
 
 @Component({
@@ -12,6 +13,7 @@ declare var $:any
 })
 export class TimelimeComponent implements OnInit{
 
+  @Input() isMobileOrTablet;
   isPaused:boolean = false;
   firstYellowBoxPosition:number;
   isFirstPositionSet:boolean = false
@@ -43,11 +45,19 @@ export class TimelimeComponent implements OnInit{
     new Box("8"),
     new Box("9"),
     new Box("10"),
-  ]  
+  ]
 
   constructor(private animation:Animation) { }
 
   ngOnInit() {
+
+    var ua = navigator.userAgent;
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua)){
+      this.isMobileOrTablet = true;
+    } else if(/Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile|Kindle|NetFront|Silk-Accelerated|(hpw|web)OS|Fennec|Minimo|Opera M(obi|ini)|Blazer|Dolfin|Dolphin|Skyfire|Zune/i.test(ua)) {
+      this.isMobileOrTablet = true;
+    }
+
     this.boxes = new Box().updateVal(this.boxes)
     this.boxesTwo = new Box().updateVal(this.boxesTwo)
     this.boxes[this.boxes.length - 1].isEnd = true
@@ -68,12 +78,12 @@ export class TimelimeComponent implements OnInit{
       // Is last item at first item position
       if(this.isLastBoxInFirstBoxPosition(instance)){
         console.log(instance.index)
-        this.boxesTwo.map($instance => { 
+        this.boxesTwo.map($instance => {
             $instance.month = "new"
-            this.boxes.push($instance) 
+            this.boxes.push($instance)
         })
-      }      
-    } 
+      }
+    }
 
   }
 
