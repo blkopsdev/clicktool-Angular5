@@ -16,6 +16,21 @@
   text-align: center;
   box-shadow: 1px 1px 2px 0px #CCCCCC;
 }
+.nav-dropdown-style {
+  padding-left: 20px;
+  background-color: white;
+}
+
+.nav-dropdown-style li {
+  background-color: white;
+  border-bottom: 1px solid #24537f;
+  width: 80%;
+}
+
+.navbar {
+  position: static;
+  z-index:  100;
+}
 
 .nav-login {
   background-color: #24537f;
