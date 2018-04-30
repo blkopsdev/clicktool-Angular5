@@ -81,7 +81,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
 
     setTimeout(() => {
       (<HTMLElement>document.querySelector('#top-design')).style.opacity = '1';
-    }, 1000);
+    }, 1500);
 
     // Scoll implemenation
     // window.addEventListener('scroll', this.onScroll, true )
