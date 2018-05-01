@@ -7,6 +7,7 @@
       <img id="top-ani" class="top-ani" src="../assets/top-background.png">
       <img class="blue-logo-gear" src="../assets/blue-logo-gear.png">
       <img class="top-design-logo" src="../assets/top-design-logo.png">
+      <img class="blue-button-stay" src="../assets/blue-buttons1.png">
       <img class="blue-buttons blue-buttons1" src="../assets/blue-buttons1.png">
       <img class="blue-buttons blue-buttons2" src="../assets/blue-buttons2.png">
       <img class="blue-buttons blue-buttons3" src="../assets/blue-buttons3.png">
@@ -20,22 +21,22 @@
       <div class="arrow-drop">
         <img class="yellow-arrow" src="../assets/yellow-arrow.png">
       </div>
-      <div class="train-holder">
+      <div class="train-holder" [ngClass]="{'display-none':isSafari}" >
         <img class="top-train" src="../assets/top-train.png">
       </div>
-      <div class="car-holder1">
+      <div class="car-holder1" [ngClass]="{'display-none':isSafari}" >
         <img class="car1" src="../assets/car1.png">
       </div>
-      <div class="car-holder2">
+      <div class="car-holder2" [ngClass]="{'display-none':isSafari}" >
         <img class="car2" src="../assets/car2.png">
       </div>
-      <div class="car-holder3">
+      <div class="car-holder3" [ngClass]="{'display-none':isSafari}" >
         <img class="car3" src="../assets/car3.png">
         <img class="car4" src="../assets/car2.png">
       </div>
       <div class="curvy-pipe-holder">
-        <img class="curvy-pipe" src="../assets/curvy-pipe.png">
-        <img class="pink-pipe" src="../assets/pink-pipe.png">
+        <img class="curvy-pipe" [ngClass]="{'animation-none':isSafari}" src="../assets/curvy-pipe.png">
+        <img class="pink-pipe" [ngClass]="{'animation-none':isSafari}" src="../assets/pink-pipe.png">
       </div>
       <img class="knob" src="../assets/machine-knob.png">
       <img class="meter-needle" src="../assets/meter-needle.png">
@@ -94,13 +95,13 @@
       <img class="top-gear top-gear16" src="../assets/top-gear.png">
       <div class="top-coin-holder">
         <img class="top-coin top-coin1" src="../assets/top-coin.png">
-        <img class="top-coin top-coin2" src="../assets/top-coin.png">
-        <img class="top-coin top-coin3" src="../assets/top-coin.png">
-        <img class="top-coin top-coin4" src="../assets/top-coin.png">
+        <img [ngClass]="{'display-none' : isSafari || isMobileOrTablet}" class="top-coin top-coin2" src="../assets/top-coin.png">
+        <img [ngClass]="{'display-none' : isSafari || isMobileOrTablet}" class="top-coin top-coin3" src="../assets/top-coin.png">
+        <img [ngClass]="{'display-none' : isSafari || isMobileOrTablet}" class="top-coin top-coin4" src="../assets/top-coin.png">
         <img class="top-coin top-coin5" src="../assets/top-coin.png">
-        <img class="top-coin top-coin6" src="../assets/top-coin.png">
-        <img class="top-coin top-coin7" src="../assets/top-coin.png">
-        <img class="top-coin top-coin8" src="../assets/top-coin.png">
+        <img [ngClass]="{'display-none' : isSafari || isMobileOrTablet}" class="top-coin top-coin6" src="../assets/top-coin.png">
+        <img [ngClass]="{'display-none' : isSafari || isMobileOrTablet}" class="top-coin top-coin7" src="../assets/top-coin.png">
+        <img [ngClass]="{'display-none' : isSafari || isMobileOrTablet}" class="top-coin top-coin8" src="../assets/top-coin.png">
         <img class="top-coin top-coin9" src="../assets/top-coin.png">
       </div>
       <div class="dynamic-headline dynamic-headline-big">
@@ -468,24 +469,24 @@
       <img class="vid-components" src="../assets/vid-components.png">
       <img class="vid-screen" src="../assets/vid-screen.png">
       <div class="electricity-holder">
-        <img class="vid-electricity" src="../assets/vid-electricity.png">
-        <img class="vid-electricity2" src="../assets/vid-electricity.png">
+        <img class="vid-electricity" [ngClass]="{'display-none':isIE}" src="../assets/vid-electricity.png">
+        <img class="vid-electricity2" [ngClass]="{'display-none':isIE}" src="../assets/vid-electricity.png">
       </div>
       <img class="vid-lines" src="../assets/vid-lines.png">
       <img class="vid-cloud-left" src="../assets/med-cloud.png">
       <img class="vid-cloud-center" src="../assets/med-cloud.png">
       <img class="vid-cloud-right" src="../assets/big-cloud.png">
-      <img class="vid-gear-up-light-blue" src="../assets/gear-up-light-blue.png">
+      <img class="vid-gear-up-light-blue" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/gear-up-light-blue.png">
       <div class="small-red-gear-holder">
-        <img class="vid-gear-small-red" src="../assets/gear-small-red.png">
+        <img id="vid-gear-small-red" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/gear-small-red.png">
       </div>
       <div class="left-gear-holder">
-        <img class="vid-gear-small-turquoise" src="../assets/gear-small-turquoise.png">
-        <img class="vid-gear-left-yellow" src="../assets/gear-left-yellow.png">
-        <img class="vid-gear-down-light-blue" src="../assets/gear-down-light-blue.png">
+        <img id="vid-gear-small-turquoise" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/gear-small-turquoise.png">
+        <img id="vid-gear-left-yellow" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/gear-left-yellow.png">
+        <img id="vid-gear-down-light-blue" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/gear-down-light-blue.png">
       </div>
       <div class="big-red-gear-holder">
-        <img class="vid-gear-big-red" src="../assets/gear-big-red.png">
+        <img id="vid-gear-big-red" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/gear-big-red.png">
       </div>
       <img class="vid-gear-big-turquoise" src="../assets/gear-big-turquoise.png">
       <img class="vid-gear-right-yellow" src="../assets/gear-right-yellow.png">
@@ -662,27 +663,27 @@
       <img class="city-logo2" src="../assets/city-logo2.png">
       <img class="city-gear-bottom-right1" src="../assets/city-gear-right-turquoise.png">
       <div class="city-gear-bottom-right2">
-        <img src="../assets/gear-small-red.png">
+        <img id="city-gear-bottom-right-two" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/gear-small-red.png">
       </div>
       <div class="city-gear-bottom-left1">
-        <img src="../assets/gear-big-red.png">
+        <img id="city-gear-bottom-left-one" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/gear-big-red.png">
       </div>
       <div class="city-gear-top-left">
-        <img src="../assets/city-gear-top-yellow.png">
+        <img id="city-gear-top-left-img" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/city-gear-top-yellow.png">
       </div>
       <div class="city-gear-bottom-left2">
-        <img src="../assets/city-gear-left-turquoise.png">
-        <img src="../assets/city-gear-bottom-left-yellow.png">
-        <img src="../assets/city-gear-bottom-left-lightblue.png">
+        <img id="city-gear-bottom-left2a" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/city-gear-left-turquoise.png">
+        <img id="city-gear-bottom-left2b" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/city-gear-bottom-left-yellow.png">
+        <img id="city-gear-bottom-left2c" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/city-gear-bottom-left-lightblue.png">
       </div>
       <div class="city-gear-middle">
-        <img src="../assets/city-gear-middle-white.png">
-        <img src="../assets/city-gear-middle-blue.png">
+        <img id="city-gear-middle-one" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/city-gear-middle-white.png">
+        <img id="city-gear-middle-two" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/city-gear-middle-blue.png">
       </div>
       <div class="city-gear-top-center">
-        <img src="../assets/city-gear-gray.png">
-        <img src="../assets/city-gear-top-right-yellow.png">
-        <img src="../assets/city-gear-top-blue.png">
+        <img id="city-gear-top-center-one" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/city-gear-gray.png">
+        <img id="city-gear-top-center-two" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/city-gear-top-right-yellow.png">
+        <img id="city-gear-top-center-three" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/city-gear-top-blue.png">
       </div>
     </div>
     <div class="indresgsec">

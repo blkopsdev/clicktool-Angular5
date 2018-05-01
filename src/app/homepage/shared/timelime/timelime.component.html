@@ -23,7 +23,7 @@
       <img class="timeline-slider timeline-slider2" src="../assets/blue-slider.png">
       <img class="timeline-slider timeline-slider3" src="../assets/blue-slider.png">
       <div class="timeline-gear-holder">
-        <img src="../assets/timeline-gear1.png">
+        <img id="timeline-gear-pause" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/timeline-gear1.png">
       </div>
       <img src="../assets/timeline-gray-gear1.png" class="timeline-gray-gear-bottom-left">
       <img src="../assets/timeline-gray-gear1.png" class="timeline-gray-gear-bottom-right">
@@ -37,7 +37,7 @@
       <img src="../assets/timeline-moving-pipe.png" class="timeline-moving-pipe">
       <img src="../assets/timeline-pipefill-top-left.png" class="timeline-pipefill-top-left">
       <img src="../assets/timeline-pipeoverlay-top-left.png" class="timeline-pipeoverlay-top-left">
-      <img src="../assets/timeline-pipefill-top-right.png" class="timeline-pipefill-top-right">
+<!--       <img src="../assets/timeline-pipefill-top-right.png" [ngClass]="{'display-none':isIE}" class="timeline-pipefill-top-right"> -->
       <img src="../assets/timeline-red-pipe-end.png" class="timeline-red-pipe-end">
       <img src="../assets/timeline-pipeoverlay-top-center.png" class="timeline-pipeoverlay-top-center">
       <img src="../assets/timeline-pipefill-top-center.png" class="timeline-pipefill-top-center">

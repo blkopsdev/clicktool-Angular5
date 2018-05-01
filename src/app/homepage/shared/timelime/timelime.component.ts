@@ -1,7 +1,8 @@
-import { Component, Output, OnInit, EventEmitter, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, Output, OnInit, EventEmitter, ViewChild, ElementRef, AfterViewInit, Input } from '@angular/core';
 import { Animation } from '../../../shared/util/animation'
 import { Box } from '../../../shared/models/box'
 import { YellowboxComponent } from './yellowbox/yellowbox.component'
+
 declare var $:any
 
 @Component({
@@ -12,6 +13,7 @@ declare var $:any
 })
 export class TimelimeComponent implements OnInit {
 
+  @Input() isMobileOrTablet;
   isPaused:boolean = false;
   isAnimatingRight:boolean = true;
   screenWidth:number;
@@ -33,6 +35,7 @@ export class TimelimeComponent implements OnInit {
     new Box("9"),
     new Box("10")
   ]
+
   clonedForLeft:Box[]
   clonedForRight:Box[]
 
@@ -41,6 +44,14 @@ export class TimelimeComponent implements OnInit {
   constructor(private animation:Animation) { }
 
   ngOnInit() {
+
+    var ua = navigator.userAgent;
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua)){
+      this.isMobileOrTablet = true;
+    } else if(/Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile|Kindle|NetFront|Silk-Accelerated|(hpw|web)OS|Fennec|Minimo|Opera M(obi|ini)|Blazer|Dolfin|Dolphin|Skyfire|Zune/i.test(ua)) {
+      this.isMobileOrTablet = true;
+    }
+
     this.boxes = new Box().updateVal(this.boxes)
     this.clonedForLeft = this.boxes.map(x => Object.assign({}, x));
 

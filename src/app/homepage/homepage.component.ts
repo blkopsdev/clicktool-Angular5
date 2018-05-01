@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, Output } from '@angular/core';
 import { Util } from '../shared/util/util'
 
 declare var $: any;
@@ -12,7 +12,9 @@ declare var $: any;
 })
 export class HomepageComponent implements OnInit, OnDestroy {
 
-
+  @Output() isMobileOrTablet:boolean = false;
+  isSafari:boolean = false;
+  isIE:boolean = false;
   constructor(private u:Util) {}
 
   ngOnDestroy() {
@@ -60,9 +62,26 @@ export class HomepageComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
+
+      var ua = navigator.userAgent;
+
+      if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua)){
+        this.isMobileOrTablet = true;
+      } else if(/Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile|Kindle|NetFront|Silk-Accelerated|(hpw|web)OS|Fennec|Minimo|Opera M(obi|ini)|Blazer|Dolfin|Dolphin|Skyfire|Zune/i.test(ua)) {
+        this.isMobileOrTablet = true;
+      }
+      if (navigator.userAgent.match(/Version\/[\d\.]+.*Safari/)) {
+        this.isSafari = true;
+      }
+
+      if (/msie\s|trident\/|edge\//i.test(ua)) {
+        this.isIE = true;
+      }
+
+
     setTimeout(() => {
       (<HTMLElement>document.querySelector('#top-design')).style.opacity = '1';
-    }, 1000);
+    }, 1500);
 
     // Scoll implemenation
     // window.addEventListener('scroll', this.onScroll, true )
