@@ -48,6 +48,7 @@ import { MachineAnimationComponent } from './homepage/shared/machine-animation/m
 import { TimelimeComponent } from './homepage/shared/timelime/timelime.component';
 import { YellowboxComponent } from './homepage/shared/timelime/yellowbox/yellowbox.component';
 import { SmallScreenComponent } from './homepage/shared/small-screen/small-screen.component';
+import { AffiliateComponent } from './affiliate/affiliate.component';
 
 
 
@@ -80,7 +81,8 @@ import { SmallScreenComponent } from './homepage/shared/small-screen/small-scree
     MachineAnimationComponent,
     TimelimeComponent,
     YellowboxComponent,
-    SmallScreenComponent
+    SmallScreenComponent,
+    AffiliateComponent
   ],
   imports: [
     BrowserModule,
