@@ -23,7 +23,12 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
   private user:User = new User()
   nextStepUrl:string = "/signup/contribution"
   form: FormGroup;
+  dob_month:string
+  dob_day:string
+  dob_year:string
 
+
+  
   constructor(private util:Util, private router:Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -41,12 +46,6 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
       passwordConfirm:[null, Validators.required]
     })
 
-    $( ".datepicker" ).datepicker({
-      onSelect: (date) => {
-        this.user.dob = date;
-        this.onSelectDate()
-      }
-    });
   	this.user = this.util.getLocalObject("user") as User
   }
 
@@ -61,7 +60,7 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
   }
 
   goToNext() {
-    console.log(this.user)
+
     this.form.updateValueAndValidity();
 
     if(this.form.valid){
