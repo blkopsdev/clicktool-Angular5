@@ -1,5 +1,23 @@
 /* Milestone Section */
 
+.full-screen-container {
+    left: -275%;
+    width: 2400px;
+    height: 200px; 
+}
+
+.sc {
+  background-color: #feca40;
+  border: 3px solid #24537f;
+  border-radius: 6px;
+  height: 16%;
+  width: 14%;
+  left: -14%;
+  bottom: 47%;
+  position: absolute;
+  z-index: 4;  
+}
+
 .milestone-container {
   overflow: hidden;
   -o-user-select: none;

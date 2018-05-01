@@ -4,6 +4,8 @@ export class Box {
   year:string
   count:number;
   isEnd:boolean = false
+  isFirst:boolean = false
+  boxStartingPoint:number = -14
   constructor(month:string = "foo", year:string = ""){
     this.month = month
     this.year = year
@@ -20,8 +22,19 @@ export class Box {
     return boxes;
   }
 
+  updateValForRight(boxes:Box[]):Box[] {
+     var count:number = 1;
+     boxes.map($0 => {
+      $0.position =  102;
+      $0.count = count - 1
+      $0.position = $0.position + (20 * $0.count)
+      count++
+    })
+    return boxes;   
+  }
 
   setPosition(position:number) {
     this.position = position;
   }
 }
+

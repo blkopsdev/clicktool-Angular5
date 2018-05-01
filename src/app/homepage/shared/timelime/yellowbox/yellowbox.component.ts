@@ -26,7 +26,6 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
   $this:any;
   index:number;
   intervalID:any;
-  waitMultiplier:number = 2000
   isOffScreen:boolean = false;
 
   // Inputs
@@ -36,18 +35,18 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
   @Input() year:string
   @Input() animationSpeed:number
   @Input() isEnd:boolean
+  @Input() isFirst:boolean
   @Input() count:number
+  @Input() isAnimatingRight:boolean
+  @Input() boxStartingPoint:number
+  @Input() pauseTime:number
 
   // Outputs
   @Output() animationCallbackEvent = new EventEmitter<YellowboxComponent>()
-  @Output() isBoxOffScreen = new EventEmitter<number>()
+  @Output() isBoxOffScreen = new EventEmitter<YellowboxComponent>()
 
   // Child elements
   @ViewChild('yellowBox') yellowBox: ElementRef;
-
-
-
-
 
   constructor(private animation:Animation) { }
 
@@ -58,35 +57,33 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
 
   private repeat() {
     this.intervalID = setInterval(() => {
-      this.position = +this.position + 20
+      
+      if(this.isAnimatingRight){
+        this.position = +this.position + 20
+      }else{
+        this.position = +this.position - 20
+      }
+      
       if(!this.isPaused){
         this.animate()
       }
-    }, +this.waitMultiplier)
+    }, +this.pauseTime)
   }
 
   ngOnInit() {
     this.$this = $(this.yellowBox.nativeElement)
   }
 
-  checkRemove() {
-    if(this.isAtEndOfScreen()) {
-      
-    }
-  }
-
   animationCallback() {
     if(this.isPaused){
       this.$this.stop(true, true)
-      //clearInterval(this.intervalID)
     }else{
       this.animationCallbackEvent.emit(this)
       if(this.isAtEndOfScreen() && !this.isOffScreen ){
-        this.isBoxOffScreen.emit(this.count)
+        this.isBoxOffScreen.emit(this)
         this.isOffScreen = true
       }      
     }
-
   }
 
   private isAtEndOfScreen():boolean {
@@ -98,10 +95,6 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
   }
 
   private animate() {
-    this.animateRight()
-  }
-
-  private animateRight() {
      this.animation.animateRight(this.yellowBox.nativeElement, this.position, this.animationSpeed, () => {
       this.animationCallback()
     })   
@@ -115,7 +108,7 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
   }
 
   private isEnteringMachine() {
-
+    
   }
 
 }

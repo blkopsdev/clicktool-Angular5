@@ -1,4 +1,4 @@
-import { Component, Output, OnInit, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component, Output, OnInit, EventEmitter, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Animation } from '../../../shared/util/animation'
 import { Box } from '../../../shared/models/box'
 import { YellowboxComponent } from './yellowbox/yellowbox.component'
@@ -10,13 +10,14 @@ declare var $:any
   styleUrls: ['./timelime.component.css'],
   providers:[Animation]
 })
-export class TimelimeComponent implements OnInit{
+export class TimelimeComponent implements OnInit {
 
   isPaused:boolean = false;
-  firstYellowBoxPosition:number;
-  isFirstPositionSet:boolean = false
-  isUsingCloned:boolean = false;
-  animateSmallScreen:boolean;
+  isAnimatingRight:boolean = true;
+  screenWidth:number;
+  pauseTime:number = 4000
+  speed:number = 2000
+  rightStartingPoint:number = 102
 
   @ViewChild('machineScreenTxt') machineTxtEle:ElementRef;
 
@@ -30,57 +31,85 @@ export class TimelimeComponent implements OnInit{
     new Box("7"),
     new Box("8"),
     new Box("9"),
-    new Box("10"),
+    new Box("10")
   ]
-  boxesTwo:Box[] = [
-    new Box("1"),
-    new Box("2"),
-    new Box("3"),
-    new Box("4"),
-    new Box("5"),
-    new Box("6"),
-    new Box("7"),
-    new Box("8"),
-    new Box("9"),
-    new Box("10"),
-  ]  
+  clonedForLeft:Box[]
+  clonedForRight:Box[]
 
+  startingCount:number = this.boxes.length - 1
+ 
   constructor(private animation:Animation) { }
 
   ngOnInit() {
     this.boxes = new Box().updateVal(this.boxes)
-    this.boxesTwo = new Box().updateVal(this.boxesTwo)
-    this.boxes[this.boxes.length - 1].isEnd = true
+    this.clonedForLeft = this.boxes.map(x => Object.assign({}, x));
+
+    this.clonedForRight = this.boxes.map(x => Object.assign({}, x));
+
+    this.clonedForRight.reverse()
+    this.clonedForRight = new Box().updateValForRight(this.clonedForRight)
+    this.clonedForRight.filter($i => { $i.boxStartingPoint = this.rightStartingPoint })    
+
+    this.boxes[this.startingCount].isEnd = true
+    this.screenWidth = $(window).width()
+    
+    
   }
+
+  removeAndUnshift(box:Box, boxes:Box[]) {
+    
+  }
+
 
   stopAnimation() {
     this.isPaused = true
   }
 
   animationCallback(instance:YellowboxComponent) {
-
-    if(this.isPaused == false){
-      // Get the position of the first box animatiom position
-      if(instance.index == 0 && !this.isFirstPositionSet) {
-         this.firstYellowBoxPosition = instance.$this.position().left
-         this.isFirstPositionSet = true
-      }
-      // Is last item at first item position
-      if(this.isLastBoxInFirstBoxPosition(instance)){
-        console.log(instance.index)
-        this.boxesTwo.map($instance => { 
-            $instance.month = "new"
-            this.boxes.push($instance) 
-        })
-      }      
-    } 
-
+    if(this.isAnimatingRight){
+      this.animateRightAnimationCallback(instance)
+    }else{
+      this.animateLeftAnimationCallback(instance)
+    }
   }
 
-  onBoxOffScreen(count:number) {
-    if(count == 9) {
-      //this.boxes.splice(0,9)
-      //console.log(this.boxes)
+  animateLeftAnimationCallback(instance:YellowboxComponent) {
+    // if(instance.index == 0){
+    //   console.log(instance.index == 0 && instance.position == 102)
+    // }
+    
+
+    if(instance.index == 0){
+      console.log(instance.position)
+    }
+
+    if( instance.index == 0 && instance.position == 102 ) {
+      setTimeout(()=>{
+        this.createLoopRight()
+      }, 1900)
+    }
+  }
+
+  animateRightAnimationCallback(instance:YellowboxComponent) {
+    if(instance.count == this.startingCount && instance.position == -18 && instance.isEnd){
+      setTimeout(()=>{
+         this.createLoop()
+       }, 1900)
+     
+    } 
+  }
+
+  animateLeft() {
+    this.isAnimatingRight = false;
+  }
+
+  animateRight() {
+    this.isAnimatingRight = true;
+  }
+
+  onBoxOffScreen(instance:YellowboxComponent) {
+    if(instance.count == 9){
+      
     }
   }
 
@@ -88,9 +117,42 @@ export class TimelimeComponent implements OnInit{
     this.boxes.splice(index, this.boxes.length)
   }
 
-  isLastBoxInFirstBoxPosition(instance:YellowboxComponent) : boolean {
-    return instance.$this.position().left == this.firstYellowBoxPosition && instance.count == 8
+  createLoopRight() {
+
+
+      console.log(this.clonedForRight)
+      // Update clone starting point
+      // this.boxes.map($i => { $i.isFirst = false })
+
+
+      this.clonedForRight.filter($0 => {
+        $0.isFirst = false
+        this.boxes.unshift($0)
+      })   
+
+      console.log(this.boxes)
+
+      //this.boxes[0].isFirst = true
+
+
   }
+
+  private createLoop():Box[] {
+
+      // Update Boxes Starting Point      
+
+      this.boxes.map($i => { $i.isEnd = false })
+
+      this.clonedForLeft.filter($0 => {
+        $0.isEnd = false
+        this.boxes.push($0)
+      })
+
+      this.boxes[this.boxes.length - 1].isEnd = true
+
+      return this.boxes
+  }
+
 
 
 }

@@ -1,6 +1,11 @@
-.machine-screen-text {
-  width: 100%;
-  background: red;
-  left: -100%;
+.sc {
+  background-color: #feca40;
+  border: 3px solid #24537f;
+  border-radius: 6px;
+  height: 16%;
+  width: 14%;
+  left: -14%;
+  bottom: 47%;
   position: absolute;
+  z-index: 4;
 }

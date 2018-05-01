@@ -16,9 +16,10 @@
       <div class="chckbx">
         <span>
           <p>
-            <label>
+            <label class="checkcontainer">
               <input [(ngModel)]="user.isCitizen" type="checkbox" autocomplete="off">
               I am not a citizen or resident of a country where the sale of crpytocurrency is illegal.
+              <span class="checkmark"></span>
             </label>
         </p>
       </span>
@@ -26,9 +27,10 @@
       <div class="chckbx">
         <span>
           <p>
-            <label>
+            <label class="checkcontainer">
               <input [(ngModel)]="user.didAgreeToTerms" type="checkbox" autocomplete="off">
-              I agree to Clicktool's terms and conditions.              
+              I agree to Clicktool's terms and conditions. 
+              <span class="checkmark"></span>             
             </label>
 
           </p>
@@ -37,9 +39,10 @@
       <div class="chckbx">
         <span>
           <p>
-            <label>
+            <label class="checkcontainer">
               <input [(ngModel)]="user.didAgreeToPrivacyPolicy" type="checkbox" autocomplete="off">
-              I consent to Clicktool's privacy policy.              
+              I consent to Clicktool's privacy policy.
+              <span class="checkmark"></span>              
             </label>
 
           </p>
@@ -48,9 +51,10 @@
       <div class="chckbx">
         <span>
           <p>
-            <label>
+            <label class="checkcontainer">
               <input [(ngModel)]="user.didReadWhitePaper" type="checkbox" autocomplete="off">
-              I have read and understand the whitepaper.              
+              I have read and understand the whitepaper.
+              <span class="checkmark"></span>              
             </label>
         </p>
       </span>

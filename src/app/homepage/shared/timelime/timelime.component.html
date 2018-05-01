@@ -1,5 +1,15 @@
 <!-- Milestone / Timeline Section -->
   <div class="container-fluid" style="overflow: hidden;" (isYellowBoxOffScreen)="isYellowBoxOffScreen($event)">
+
+
+<!-- <div style="position: absolute; top: 0; left: 0; z-index: 5000;">
+  <button  type="button" class="btn btn-primary btn-lg" style="float: left;" (click)="stopAnimation()">Stop</button> 
+  <button  type="button" class="btn btn-primary btn-lg" style="float: left;" (click)="animateLeft()">Move left</button>
+  <button  type="button" class="btn btn-primary btn-lg" style="float: left;" (click)="animateRight()">Move Right</button> 
+</div>
+ -->
+
+
     <div class="milestone-container">
       <img src="../assets/timeline-background.png" class="timeline-background">
       <img src="../assets/big Cog.png" class="milestone-gear">
@@ -42,16 +52,20 @@
 
       <app-yellowbox
       *ngFor="let box of boxes; let i = index"
-      animationSpeed="2000"
       position="{{ box.position }}"
       month="{{ box.month }}"
       year="{{ box.year }}"
+      [animationSpeed]="speed"
+      [pauseTime]="pauseTime"
       [count]="box.count"
       [isEnd]="box.isEnd"
+      [isFirst]="box.isFirst"
       [attr.data-index]="i"
       [isPaused]="isPaused"
+      [isAnimatingRight]="isAnimatingRight"
       (animationCallbackEvent)="animationCallback($event)"
       (isBoxOffScreen)="onBoxOffScreen($event)"
+      [boxStartingPoint]="box.boxStartingPoint"
       >
       </app-yellowbox>
 
@@ -68,13 +82,17 @@
 
       <div class="machine-screen" style="overflow: hidden;">
 
-        <app-small-screen
-        *ngFor="let box of boxes; let i = index"
-        [attr.data-index]="box.count"
-        [isPaused]="isPaused"
-        startPosition="50"
-        [animate]="animateSmallScreen">
-        </app-small-screen>
+        <div class="full-screen-container" [style.width.px]="screenWidth">
+           <app-small-screen
+          *ngFor="let box of boxes; let i = index"
+          [attr.data-index]="box.count"
+          [isPaused]="isPaused"
+          [isAnimatingRight]="isAnimatingRight"
+          [pauseTime]="pauseTime"
+          position="{{ box.position }}"
+          [animationSpeed]="speed">
+          </app-small-screen>         
+        </div>
 
       </div>
 
@@ -88,7 +106,7 @@
       <img src="../assets/Small Cog.png" class="small-gear small-gear8">
       <img src="../assets/Small Cog.png" class="small-gear small-gear9">
       <img src="../assets/Small Cog.png" class="small-gear small-gear10">
-      <div (click)="stopAnimation()" class="directions">
+      <div class="directions">
         <div class="right right-mobile">
           <i class="fas fa-arrow-right blue-arrow"></i>
         </div>
