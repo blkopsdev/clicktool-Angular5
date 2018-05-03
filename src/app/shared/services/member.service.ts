@@ -150,7 +150,7 @@ export class MemberService {
     this.api.id = null
     this.api.filter = null
     this.api.params = null
-    this.api.setInstanceName("FileUploads/" + userId + "/files")
+    this.api.setInstanceName("Members/" + userId + "/getUploads")
     return this.api.fire(HTTPmethod.GET, true, true)     
   }
 

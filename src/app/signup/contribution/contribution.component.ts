@@ -51,8 +51,7 @@ export class ContributionComponent implements OnInit, OnDestroy {
   	this.user.isContributionUsd = true
     this.user.isContributionMoreThenTwelve = false
     this.util.setLocalObject("user", this.user)
-    // Provide wire information
-  	this.router.navigate(['/signup/identification'])
+    this.memberService.createAccount(this.user).subscribe(res=>this.afterCreateAccount(res))
   }
 
   afterCreateAccount(res:Response) {
@@ -63,8 +62,17 @@ export class ContributionComponent implements OnInit, OnDestroy {
   afterLogin(session:Response) {
     this.memberService.saveAccessToken(session)
     this.memberService.setLocalMemberObj(session)
-    this.memberService.afterLoginRoute()
+
+    console.log("comppp: ", this.user.isContributionUsd)
+    if(this.user.isContributionUsd){
+      this.router.navigate(['/signup/wire'])
+    }else{
+      this.memberService.afterLoginRoute()
+    }
   }
+
+
+
 
 
 }

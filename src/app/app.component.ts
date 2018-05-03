@@ -14,6 +14,7 @@ declare var $:any
 export class AppComponent {
 
   host:String = "http://18.221.203.247"
+  bucketUrl:string = 'https://s3-us-west-1.amazonaws.com/clicktooluploads/'
   apiUrl:String = this.host + "/api"
   isMenuOpen:boolean = false;
   

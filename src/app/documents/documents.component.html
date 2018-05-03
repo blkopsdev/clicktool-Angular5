@@ -2,23 +2,25 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<table *ngIf="documents && documents.length > 0" class="table" style="margin-top: 50px;">
+			<table class="table" style="margin-top: 50px;">
 			  <thead>
 			    <tr>
-			      <th width="150" scope="col">Name</th>
+			      <th width="600" scope="col">Preview</th>	
 			      <th scope="col">Size</th>
-			      <th scope="col">Preview</th>
+			      <th>Download</th>
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr *ngFor="let doc of documents">
-			      <td>{{ doc.name }}</td>
-			      <td>{{ doc.size }}</td>
-			      <td> <a target="_blank" href="{{ app.host }}/storage/{{doc.container}}/{{doc.name}}"><img width="100" src="{{ app.host }}/storage/{{doc.container}}/{{doc.name}}"> </a></td>
+			    <tr *ngFor="let doc of documents.Contents">
+			      <td> <img width="500" src="{{ app.bucketUrl }}{{ doc.Key }}"> </td>	
+			      <td>{{ doc.Size }}</td>
+			      <td>
+			      	<a href="{{ app.bucketUrl }}{{ doc.Key }}" class="btn btn-primary">Download</a>
+			      </td>
 			    </tr>
 			  </tbody>
 			</table>	
-			<h1 style="margin-top: 20px;" *ngIf="documents && documents.length == 0">No Documents</h1>		
+			<h1 style="margin-top: 20px;" *ngIf="documents && documents.Contents == 0">No Documents</h1>		
 		</div>
 	</div>
 </div>

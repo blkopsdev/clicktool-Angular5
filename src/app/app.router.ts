@@ -19,6 +19,7 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
 import { TextActionComponent } from './shared/common/text-action/text-action.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { TimelimeComponent } from './homepage/shared/timelime/timelime.component';
+import { WireInfoComponent } from './wire-info/wire-info.component';
 
 export const router: Routes = [
 
@@ -32,6 +33,7 @@ export const router: Routes = [
 	{ path: 'signup', component: AgreementsComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/account', component: AccountInfoComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/contribution', component: ContributionComponent, canActivate:[IsLoggedInGuard] },
+	{ path: 'signup/wire', component: WireInfoComponent, canActivate:[AuthGuard] },
 	{ path: 'signup/identification', component: IdentificationComponent, canActivate:[IsLoggedInGuard] },
 
 	{ path: 'password/reset', component: PasswordResetComponent, canActivate:[IsLoggedInGuard] },

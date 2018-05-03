@@ -14,7 +14,7 @@ import { AppComponent } from '../app.component'
 export class DocumentsComponent implements OnInit {
 
   private subscription: Subscription
-  documents:Document[]
+  documents:Document = null
 
   constructor(private activatedRoute: ActivatedRoute, private memberService:MemberService, private app:AppComponent) { }
 
@@ -28,9 +28,9 @@ export class DocumentsComponent implements OnInit {
     }); 
   }
 
-  afterGetDocuments(res:Document[]) {
-  	console.log(res)
+  afterGetDocuments(res:Document) {
   	this.documents = res;
+    console.log(this.documents.Contents)
   }
 
 }

@@ -23,12 +23,12 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
   private user:User = new User()
   nextStepUrl:string = "/signup/contribution"
   form: FormGroup;
-  dob_month:string
-  dob_day:string
-  dob_year:string
+  dob_month:string = ""
+  dob_day:string = ""
+  dob_year:string = ""
 
 
-  
+
   constructor(private util:Util, private router:Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -36,7 +36,9 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
     this.form = this.formBuilder.group({
       firstname:[null, Validators.required],
       lastname:[null, Validators.required],
-      dob:[null, Validators.required],
+      dob_month:[null, Validators.required],
+      dob_day:[null, Validators.required],
+      dob_year:[null, Validators.required],
       email:[null, Validators.required],
       phone:[null, Validators.required],
       country:[null, Validators.required],
@@ -47,6 +49,7 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
     })
 
   	this.user = this.util.getLocalObject("user") as User
+    if(this.user.dob){ this.setBday(this.user) }  
   }
 
   ngOnDestroy() {
@@ -65,6 +68,7 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
 
     if(this.form.valid){
       if(this.user.password != this.user.passwordConfirm){ return alert("Passwords don't match") }
+      this.user.dob = this.getBdayFormmated()
       this.util.setLocalObject("user", this.user)
       this.router.navigate([this.nextStepUrl])
     }else{
@@ -75,6 +79,15 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
 
   }
 
+  getBdayFormmated():string {
+    return this.dob_month + "/" + this.dob_day + "/" + this.dob_year;
+  }
 
+  setBday(user:User) {
+    let bday = this.user.dob.split("/")
+    this.dob_month = bday[0]
+    this.dob_day = bday[1]
+    this.dob_year = bday[2]
+  }
 
 }

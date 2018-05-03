@@ -49,6 +49,7 @@ import { TimelimeComponent } from './homepage/shared/timelime/timelime.component
 import { YellowboxComponent } from './homepage/shared/timelime/yellowbox/yellowbox.component';
 import { SmallScreenComponent } from './homepage/shared/small-screen/small-screen.component';
 import { AffiliateComponent } from './affiliate/affiliate.component';
+import { WireInfoComponent } from './wire-info/wire-info.component';
 
 
 
@@ -82,7 +83,8 @@ import { AffiliateComponent } from './affiliate/affiliate.component';
     TimelimeComponent,
     YellowboxComponent,
     SmallScreenComponent,
-    AffiliateComponent
+    AffiliateComponent,
+    WireInfoComponent
   ],
   imports: [
     BrowserModule,
