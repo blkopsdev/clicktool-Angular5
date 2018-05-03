@@ -49,7 +49,7 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
     })
 
   	this.user = this.util.getLocalObject("user") as User
-    this.setBday(this.user)  
+    if(this.user.dob){ this.setBday(this.user) }  
   }
 
   ngOnDestroy() {
