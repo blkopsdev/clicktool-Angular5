@@ -453,6 +453,7 @@
     </div>
   </div>
 
+
   <!-- Video Section -->
   <div class="container" style="overflow: hidden;">
     <div class="vid-container">
@@ -476,24 +477,27 @@
       <img class="vid-cloud-left" src="../assets/med-cloud.png">
       <img class="vid-cloud-center" src="../assets/med-cloud.png">
       <img class="vid-cloud-right" src="../assets/big-cloud.png">
-      <img class="vid-gear-up-light-blue" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/gear-up-light-blue.png">
+      <img class="vid-gear-up-light-blue" src="../assets/gear-up-light-blue.png">
       <div class="small-red-gear-holder">
-        <img id="vid-gear-small-red" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/gear-small-red.png">
+        <img id="vid-gear-small-red" [ngClass]="{'display-none':isMobileOrTablet}" src="../assets/gear-small-red.png">
       </div>
       <div class="left-gear-holder">
-        <img id="vid-gear-small-turquoise" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/gear-small-turquoise.png">
-        <img id="vid-gear-left-yellow" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/gear-left-yellow.png">
-        <img id="vid-gear-down-light-blue" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/gear-down-light-blue.png">
+        <img id="vid-gear-small-turquoise" [ngClass]="{'display-none':isMobileOrTablet}" src="../assets/gear-small-turquoise.png">
+        <img id="vid-gear-left-yellow" [ngClass]="{'display-none':isMobileOrTablet}" src="../assets/gear-left-yellow.png">
+        <img id="vid-gear-down-light-blue" [ngClass]="{'display-none':isMobileOrTablet}" src="../assets/gear-down-light-blue.png">
       </div>
       <div class="big-red-gear-holder">
-        <img id="vid-gear-big-red" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/gear-big-red.png">
+        <img id="vid-gear-big-red" [ngClass]="{'display-none':isMobileOrTablet}" src="../assets/gear-big-red.png">
       </div>
       <img class="vid-gear-big-turquoise" src="../assets/gear-big-turquoise.png">
       <img class="vid-gear-right-yellow" src="../assets/gear-right-yellow.png">
       <img class="vid-gear-blue" src="../assets/gear-blue.png">
+      <img class="vid-gear-big-turquoise vid-gear-big-turquoise-mobile" [ngClass]="{'display-none':!isMobileOrTablet}" src="../assets/gear-big-turquoise.png">
+      <img class="vid-gear-right-yellow vid-gear-right-yellow-mobile" [ngClass]="{'display-none':!isMobileOrTablet}" src="../assets/gear-right-yellow.png">
+      <img class="vid-gear-blue vid-gear-blue-mobile" [ngClass]="{'display-none':!isMobileOrTablet}" src="../assets/gear-blue.png">
+      <img class="vid-gear-holder-mobile" [ngClass]="{'display-none':!isMobileOrTablet}" src="../assets/vid-cog-holder.png">
     </div>
   </div>
-
   <div class="modal fade modal-video-div" id="modal-video2" tabindex="-1" role="dialog" aria-labelledby="modal-video-label">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
