@@ -30,7 +30,6 @@ export class DocumentsComponent implements OnInit {
 
   afterGetDocuments(res:Document) {
   	this.documents = res;
-    console.log(this.documents.Contents)
   }
 
 }
