@@ -2037,6 +2037,11 @@ margin: 20px;
   animation: rotate 8s reverse linear infinite;
 }
 
+.vid-gear-big-turquoise-mobile {
+  right: 74.8%;
+  top: 66.3%;
+}
+
 .vid-gear-right-yellow {
   width: 7%;
   right: 5%;
@@ -2046,12 +2051,30 @@ margin: 20px;
           animation: rotate 6.7s linear infinite;
 }
 
+.vid-gear-right-yellow-mobile {
+  right: 92.6%;
+}
+
+.vid-gear-holder-mobile {
+  width: 14%;
+  right: 68.8%;
+  top: 69.8%;
+  z-index: 3;
+}
+
 .vid-gear-blue {
   width: 4%;
   right: 7.4%;
   top: 67.3%;
   z-index: 2;
   animation: rotate 5.8s reverse linear infinite;
+}
+
+.vid-gear-blue-mobile {
+/*   right: 87%;
+  top: 79.3%; */
+  right: 81.2%;
+  top: 61.7%;
 }
 
 /*.faqandvideo {
