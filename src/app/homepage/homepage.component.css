@@ -1,5 +1,13 @@
 /* Top Section */
 
+.ie-warning {
+  width: 100vw;
+  background-color: #1db8d3;
+  color: white;
+  padding: 10px;
+  margin-bottom: -16px;
+}
+
 .dynamic-headline {
   right: 11%;
   top: 3%;

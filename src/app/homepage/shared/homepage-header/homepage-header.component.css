@@ -4,11 +4,19 @@
   right: 0px;
 }
 
-.nav-btn a {
+.nav-btn i {
+  font-size: 32px;
+}
+
+.nav-buttons {
+  display: flex;
+}
+
+.nav-buttons a {
   margin-right: 30px;
 }
 
-.nav-btn a div{
+.nav-buttons a div{
   color: white;
   font-size: 18px;
   padding: 5px 10px;
@@ -56,4 +64,10 @@
 .nav-signup:active {
   background-color: #AB5E48;
   box-shadow: none;
+}
+
+@media (max-width: 767px) {
+  .nav-btn {
+    margin-right: -28px;
+  }
 }
