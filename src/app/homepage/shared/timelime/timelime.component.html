@@ -8,13 +8,21 @@
   <button  type="button" class="btn btn-primary btn-lg" style="float: left;" (click)="animateRight()">Move Right</button> 
 </div> -->
 
+      <div class="directions" (click)="swipe($event)">
+        <div class="right f right-mobile" (click)="animateRight()">
+          <i class="fas fa-arrow-right blue-arrow"></i>
+        </div>
+        <div class="left left-mobile" (click)="animateLeft()">
+          <i class="fas fa-arrow-left blue-arrow2"></i>
+        </div>
+      </div>
 
 
     <div class="milestone-container">
       <img src="../assets/timeline-background.png" class="timeline-background">
       
   <div class="slider">
-    <div *ngFor="let box of boxes" class="new-yellowbox"> <div>May<br>'18</div> </div>
+    <div *ngFor="let box of boxes" class="new-yellowbox"> <div>{{ box.month }}<br>{{ box.year }}</div> </div>
   </div>
 
   <img src="../assets/big Cog.png" class="milestone-gear" #mileStoneGear>
@@ -94,11 +102,11 @@
       <div class="machine-screen" style="overflow: hidden;">
           
           <div class="sliderWindow">
-            <div *ngFor="let box of boxes" class="sc"> <div>Start of Development</div> </div>
+            <div *ngFor="let box of boxes" class="sc"> <div>{{ box.screen }}</div> </div>
           </div>
           
           <div class="sliderWindowBottom">
-            <div *ngFor="let box of boxes" class="scBottom"> <div>Jan 1</div> </div>
+            <div *ngFor="let box of boxes" class="scBottom"> <div>{{ box.screenBottom }}</div> </div>
           </div>          
 <!--           <div class="sliderWindowTwo">
             <div class="sc"> <div>Start of Development</div> </div>
@@ -133,7 +141,7 @@
       <img src="../assets/Small Cog.png" class="small-gear small-gear9">
       <img src="../assets/Small Cog.png" class="small-gear small-gear10">
  -->
-      <div class="directions" (click)="swipe($event)">
+  <!--     <div class="directions" (click)="swipe($event)">
         <div class="right f right-mobile" (click)="animateRight()">
           <i class="fas fa-arrow-right blue-arrow"></i>
         </div>
@@ -141,7 +149,7 @@
           <i class="fas fa-arrow-left blue-arrow2"></i>
         </div>
       </div>
-
+ -->
 
       
       <img class="instructions" src="../assets/mouse-instructions.png">

@@ -19,16 +19,25 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
   @ViewChild('mileStoneGear') mileStoneGear:ElementRef;
 
   boxes:Box[] = [
-    new Box("1"),
-    new Box("2"),
-    new Box("3"),
-    new Box("4"),
-    new Box("5"),
-    new Box("6"),
-    new Box("7"),
-    new Box("8"),
-    new Box("9"),
-    new Box("10")
+    new Box("May 1", "'18", "Start of Development", "Jan 1"),
+    new Box("May 1", "'18", "Start of Development", "Jan 1"),
+    new Box("May 1", "'18", "Start of Development", "Jan 1"),
+    new Box("May 1", "'18", "Start of Development", "Jan 1"),
+    new Box("May 1", "'18", "Start of Development", "Jan 1"),
+    new Box("May 1", "'18", "Start of Development", "Jan 1"),
+    new Box("May 1", "'18", "Start of Development", "Jan 1"),
+    new Box("May 1", "'18", "Start of Development", "Jan 1"),
+    new Box("May 1", "'18", "Start of Development", "Jan 1"),
+    new Box("May 1", "'18", "Start of Development", "Jan 1"),
+    new Box("May 1", "'18", "Start of Development", "Jan 1"),
+    new Box("May 1", "'18", "Start of Development", "Jan 1"),
+    new Box("May 1", "'18", "Start of Development", "Jan 1"),
+    new Box("May 1", "'18", "Start of Development", "Jan 1"),
+    new Box("May 1", "'18", "Start of Development", "Jan 1"),
+    new Box("May 1", "'18", "Start of Development", "Jan 1"),
+    new Box("May 1", "'18", "Start of Development", "Jan 1"),
+    new Box("May 1", "'18", "Start of Development", "Jan 1"),
+    new Box("May 1", "'18", "Start of Development", "Jan 1")
   ]
 
   fslide:any;
@@ -96,6 +105,7 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
 
 
   animateLeft() {
+   
     this.movingRight = false
     this.fslide.stopAuto()
     this.fslide.goToNextSlide()
@@ -126,6 +136,7 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
   }
 
   swipe(e) {
+    
     var container = $('.directions')
     var containerWidth = container.width()
     var containerWidthDevide = containerWidth/2
@@ -141,7 +152,6 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
     }
 
   }
-
 
 
 }
