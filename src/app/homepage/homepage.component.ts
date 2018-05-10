@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, HostListener, Output } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, HostListener, Output } from '@angular/core';
 import { Util } from '../shared/util/util'
 
 declare var $: any;
@@ -10,7 +10,7 @@ declare var $: any;
   providers: [Util],
   host: {'(window:scroll)': 'track($event)'},
 })
-export class HomepageComponent implements OnInit, OnDestroy {
+export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
 
   @Output() isMobileOrTablet:boolean = false;
   isSafari:boolean = false;
@@ -77,11 +77,6 @@ export class HomepageComponent implements OnInit, OnDestroy {
       if (/msie\s|trident\/|edge\//i.test(ua)) {
         this.isIE = true;
       }
-
-
-    setTimeout(() => {
-      (<HTMLElement>document.querySelector('#top-design')).style.opacity = '1';
-    }, 1500);
 
     // Scoll implemenation
     // window.addEventListener('scroll', this.onScroll, true )
@@ -426,6 +421,12 @@ export class HomepageComponent implements OnInit, OnDestroy {
       });
 
     } // End ngOnInit
+
+    ngAfterViewInit() {
+      setTimeout(() => {
+      (<HTMLElement>document.querySelector('#top-design')).style.opacity = '1';
+    }, 1000);
+    }
 
 }
 
