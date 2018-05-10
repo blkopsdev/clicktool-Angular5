@@ -1,4 +1,4 @@
-
+  <h3 *ngIf="isIE" class="ie-warning">We want our users to have the best experience possible. For optimal performance, we recommend using Google Chrome or Mozilla Firefox as your browser.</h3>
 
   <app-homepage-header></app-homepage-header>
 
@@ -455,7 +455,19 @@
 
 
   <!-- Video Section -->
-  <div class="container" style="overflow: hidden;">
+  <div class="container-fluid" style="overflow: hidden;">
+    <div class="vid-screen-mobile-container">
+      <img class="vid-screen-mobile" src="../assets/vid-screen.png">
+      <div class="vid-text-mobile">
+        <h3><i style="color:red" class="fas fa-edit"></i>A financial exchange ecosystem that will drive the future of blockchain innovation</h3>
+        <a href="#" class="launch-modal" data-modal-id="modal-video2">
+          <div class="watch-video">
+            <h3><i class="fa fa-play-circle"></i>&nbsp;&nbsp;</h3>
+            <h5>Watch Video</h5>
+          </div>
+        </a>
+      </div>
+    </div>
     <div class="vid-container">
       <div class="vid-text">
         <h3><i style="color:red" class="fas fa-edit"></i>A financial exchange ecosystem that will drive the future of blockchain innovation</h3>
@@ -470,10 +482,11 @@
       <img class="vid-components" src="../assets/vid-components.png">
       <img class="vid-screen" src="../assets/vid-screen.png">
       <div class="electricity-holder">
-        <img class="vid-electricity" [ngClass]="{'display-none':isIE}" src="../assets/vid-electricity.png">
+        <img class="vid-electricity" [ngClass]="{'display-none':isIE || isMobileOrTablet}" src="../assets/vid-electricity.png">
         <img class="vid-electricity2" [ngClass]="{'display-none':isIE}" src="../assets/vid-electricity.png">
       </div>
       <img class="vid-lines" src="../assets/vid-lines.png">
+      <img class="vid-line-mobile" src="../assets/vid-line-mobile.png">
       <img class="vid-cloud-left" src="../assets/med-cloud.png">
       <img class="vid-cloud-center" src="../assets/med-cloud.png">
       <img class="vid-cloud-right" src="../assets/big-cloud.png">

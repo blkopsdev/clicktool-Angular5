@@ -76,7 +76,6 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
 
       if (/msie\s|trident\/|edge\//i.test(ua)) {
         this.isIE = true;
-        alert('We want our users to have the best experience possible. For optimal performance, we recommend using Google Chrome or Mozilla Firefox as your browser.');
       }
 
     // Scoll implemenation
