@@ -2,6 +2,8 @@ import { Component, Output, OnInit, EventEmitter, ViewChild, ElementRef, AfterVi
 import { Animation } from '../../../shared/util/animation'
 import { Box } from '../../../shared/models/box'
 import { YellowboxComponent } from './yellowbox/yellowbox.component'
+import { TimelineService } from '../timeline.service';
+import { Subscription } from 'rxjs/Subscription';
 
 declare var $:any
 
@@ -9,19 +11,12 @@ declare var $:any
   selector: 'app-timelime',
   templateUrl: './timelime.component.html',
   styleUrls: ['./timelime.component.css'],
-  providers:[Animation]
+  providers:[Animation, TimelineService]
 })
-export class TimelimeComponent implements OnInit {
-
-  @Input() isMobileOrTablet;
-  isPaused:boolean = false;
-  isAnimatingRight:boolean = true;
-  screenWidth:number;
-  pauseTime:number = 4000
-  speed:number = 2000
-  rightStartingPoint:number = 102
+export class TimelimeComponent implements OnInit, AfterViewInit {
 
   @ViewChild('machineScreenTxt') machineTxtEle:ElementRef;
+  @ViewChild('mileStoneGear') mileStoneGear:ElementRef;
 
   boxes:Box[] = [
     new Box("1"),
@@ -36,132 +31,115 @@ export class TimelimeComponent implements OnInit {
     new Box("10")
   ]
 
-  clonedForLeft:Box[]
-  clonedForRight:Box[]
-
-  startingCount:number = this.boxes.length - 1
+  fslide:any;
+  windowSlide:any;
+  windowSlideBottom:any
+  movingRight:boolean = true
  
-  constructor(private animation:Animation) { }
+  constructor(private animation:Animation, private timelineService: TimelineService ) {}
+
+  ngAfterViewInit() {
+    var gear = $('.milestone-gear');
+    var p = 45
+  
+    this.fslide = $('.slider').bxSlider({
+      minSlides:5,
+      maxSlides:10,
+      slideWidth:300,
+      moveSlides:1,
+      slideMargin: 10,
+      auto: true,
+      wrapperClass:'bx-wrapper-full',
+      pager:false,
+      controls:false,
+      autoDirection:'prev',
+      onSlideBefore: ($slideElement, oldIndex, newIndex) => {
+         
+         if(!this.movingRight){
+           p = -45
+         }else{
+           p = 45
+         }
+
+         this.animation.spin(gear, p, 500) 
+      }
+    });
+    this.windowSlide = $('.sliderWindow').bxSlider({
+      minSlides:1,
+      maxSlides:1,
+      slideWidth:200,
+      moveSlides:1,
+      slideMargin: 0,
+      auto: true,
+      wrapperClass:'bx-wrapper-small',
+      pager:false,
+      controls:false,
+      autoDirection:'prev',
+    });   
+   this.windowSlideBottom = $('.sliderWindowBottom').bxSlider({
+      minSlides:1,
+      maxSlides:1,
+      slideWidth:200,
+      moveSlides:1,
+      slideMargin: 0,
+      auto: true,
+      wrapperClass:'bx-wrapper-bottom',
+      pager:false,
+      controls:false,
+      autoDirection:'prev',
+    });    
+  }
 
   ngOnInit() {
 
-    var ua = navigator.userAgent;
-    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua)){
-      this.isMobileOrTablet = true;
-    } else if(/Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile|Kindle|NetFront|Silk-Accelerated|(hpw|web)OS|Fennec|Minimo|Opera M(obi|ini)|Blazer|Dolfin|Dolphin|Skyfire|Zune/i.test(ua)) {
-      this.isMobileOrTablet = true;
-    }
-
-    this.boxes = new Box().updateVal(this.boxes)
-    this.clonedForLeft = this.boxes.map(x => Object.assign({}, x));
-
-    this.clonedForRight = this.boxes.map(x => Object.assign({}, x));
-
-    this.clonedForRight.reverse()
-    this.clonedForRight = new Box().updateValForRight(this.clonedForRight)
-    this.clonedForRight.filter($i => { $i.boxStartingPoint = this.rightStartingPoint })    
-
-    this.boxes[this.startingCount].isEnd = true
-    this.screenWidth = $(window).width()
-    
-    
   }
 
-  removeAndUnshift(box:Box, boxes:Box[]) {
-    
-  }
-
-
-  stopAnimation() {
-    this.isPaused = true
-  }
-
-  animationCallback(instance:YellowboxComponent) {
-    if(this.isAnimatingRight){
-      this.animateRightAnimationCallback(instance)
-    }else{
-      this.animateLeftAnimationCallback(instance)
-    }
-  }
-
-  animateLeftAnimationCallback(instance:YellowboxComponent) {
-    // if(instance.index == 0){
-    //   console.log(instance.index == 0 && instance.position == 102)
-    // }
-    
-
-    if(instance.index == 0){
-      console.log(instance.position)
-    }
-
-    if( instance.index == 0 && instance.position == 102 ) {
-      setTimeout(()=>{
-        this.createLoopRight()
-      }, 1900)
-    }
-  }
-
-  animateRightAnimationCallback(instance:YellowboxComponent) {
-    if(instance.count == this.startingCount && instance.position == -18 && instance.isEnd){
-      setTimeout(()=>{
-         this.createLoop()
-       }, 1900)
-     
-    } 
-  }
 
   animateLeft() {
-    this.isAnimatingRight = false;
+    this.movingRight = false
+    this.fslide.stopAuto()
+    this.fslide.goToNextSlide()
+
+    this.windowSlide.stopAuto()
+    this.windowSlide.goToNextSlide()
+
+    this.windowSlideBottom.stopAuto()
+    this.windowSlideBottom.goToNextSlide()
+
+    //console.log( this.fslide.goToNextSlide() )
   }
 
   animateRight() {
-    this.isAnimatingRight = true;
+    
+    this.movingRight = true
+
+    this.fslide.stopAuto()
+    this.fslide.goToPrevSlide()
+
+    this.windowSlide.stopAuto()
+    this.windowSlide.goToPrevSlide()
+
+    this.windowSlideBottom.stopAuto()
+    this.windowSlideBottom.goToPrevSlide()
+
+    //console.log( this.fslide.goToNextSlide() )
   }
 
-  onBoxOffScreen(instance:YellowboxComponent) {
-    if(instance.count == 9){
-      
+  swipe(e) {
+    var container = $('.directions')
+    var containerWidth = container.width()
+    var containerWidthDevide = containerWidth/2
+
+    var offsetX = e.offsetX
+
+    if(offsetX <= containerWidthDevide ) {
+      this.animateLeft()
     }
-  }
 
-  private removeItemFromBoxes(index:number) {
-    this.boxes.splice(index, this.boxes.length)
-  }
+    if(offsetX >= containerWidthDevide ) {
+      this.animateRight()
+    }
 
-  createLoopRight() {
-
-
-      console.log(this.clonedForRight)
-      // Update clone starting point
-      // this.boxes.map($i => { $i.isFirst = false })
-
-
-      this.clonedForRight.filter($0 => {
-        $0.isFirst = false
-        this.boxes.unshift($0)
-      })   
-
-      console.log(this.boxes)
-
-      //this.boxes[0].isFirst = true
-
-
-  }
-
-  private createLoop():Box[] {
-
-      // Update Boxes Starting Point      
-
-      this.boxes.map($i => { $i.isEnd = false })
-
-      this.clonedForLeft.filter($0 => {
-        $0.isEnd = false
-        this.boxes.push($0)
-      })
-
-      this.boxes[this.boxes.length - 1].isEnd = true
-
-      return this.boxes
   }
 
 

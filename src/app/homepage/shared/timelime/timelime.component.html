@@ -6,14 +6,21 @@
   <button  type="button" class="btn btn-primary btn-lg" style="float: left;" (click)="stopAnimation()">Stop</button> 
   <button  type="button" class="btn btn-primary btn-lg" style="float: left;" (click)="animateLeft()">Move left</button>
   <button  type="button" class="btn btn-primary btn-lg" style="float: left;" (click)="animateRight()">Move Right</button> 
-</div>
- -->
+</div> -->
+
 
 
     <div class="milestone-container">
       <img src="../assets/timeline-background.png" class="timeline-background">
-      <img src="../assets/big Cog.png" class="milestone-gear">
-      <img src="../assets/timeline-button-left-top.png" class="timeline-button-left tl-button-left1">
+      
+  <div class="slider">
+    <div *ngFor="let box of boxes" class="new-yellowbox"> <div>May<br>'18</div> </div>
+  </div>
+
+  <img src="../assets/big Cog.png" class="milestone-gear" #mileStoneGear>
+
+
+<!--       <img src="../assets/timeline-button-left-top.png" class="timeline-button-left tl-button-left1">
       <img src="../assets/timeline-button-left-bottom.png" class="timeline-button-left">
       <img src="../assets/timeline-button-right-top.png" class="timeline-button-right">
       <img src="../assets/timeline-button-right-middle.png" class="timeline-button-right tl-button-right2">
@@ -21,11 +28,14 @@
       <img src="../assets/timeline-button-big.png" class="timeline-button-big tl-button-right3">
       <img class="timeline-slider timeline-slider1" src="../assets/blue-slider.png">
       <img class="timeline-slider timeline-slider2" src="../assets/blue-slider.png">
-      <img class="timeline-slider timeline-slider3" src="../assets/blue-slider.png">
-      <div class="timeline-gear-holder">
+      <img class="timeline-slider timeline-slider3" src="../assets/blue-slider.png"> -->
+
+    <!--   <div class="timeline-gear-holder">
         <img id="timeline-gear-pause" [ngClass]="{'animation-none':isMobileOrTablet}" src="../assets/timeline-gear1.png">
-      </div>
-      <img src="../assets/timeline-gray-gear1.png" class="timeline-gray-gear-bottom-left">
+      </div> -->
+
+
+<!--       <img src="../assets/timeline-gray-gear1.png" class="timeline-gray-gear-bottom-left">
       <img src="../assets/timeline-gray-gear1.png" class="timeline-gray-gear-bottom-right">
       <img src="../assets/timeline-gray-gear2.png" class="timeline-gray-gear-top-left">
       <img src="../assets/timeline-gray-gear2.png" class="timeline-gray-gear-top-right">
@@ -37,7 +47,7 @@
       <img src="../assets/timeline-moving-pipe.png" class="timeline-moving-pipe">
       <img src="../assets/timeline-pipefill-top-left.png" class="timeline-pipefill-top-left">
       <img src="../assets/timeline-pipeoverlay-top-left.png" class="timeline-pipeoverlay-top-left">
-<!--       <img src="../assets/timeline-pipefill-top-right.png" [ngClass]="{'display-none':isIE}" class="timeline-pipefill-top-right"> -->
+
       <img src="../assets/timeline-red-pipe-end.png" class="timeline-red-pipe-end">
       <img src="../assets/timeline-pipeoverlay-top-center.png" class="timeline-pipeoverlay-top-center">
       <img src="../assets/timeline-pipefill-top-center.png" class="timeline-pipefill-top-center">
@@ -47,10 +57,12 @@
       <img src="../assets/timeline-pipeoverlay-center-right.png" class="timeline-pipeoverlay-center-right">
       <img src="../assets/timeline-pipefill-center-right2.png" class="timeline-pipefill-center-right2">
       <img src="../assets/timeline-pipe-overflow.png" class="timeline-pipe-overflow">
-      <img src="../assets/timeline-pipe-overflow2.png" class="timeline-pipe-overflow2">
-      <img src="../assets/Conveyor Belt.png" class="conveyor">
+      <img src="../assets/timeline-pipe-overflow2.png" class="timeline-pipe-overflow2"> -->
+      
 
-      <app-yellowbox
+       <img src="../assets/Conveyor Belt.png" class="conveyor">
+
+<!--       <app-yellowbox
       *ngFor="let box of boxes; let i = index"
       position="{{ box.position }}"
       month="{{ box.month }}"
@@ -61,13 +73,12 @@
       [isEnd]="box.isEnd"
       [isFirst]="box.isFirst"
       [attr.data-index]="i"
-      [isPaused]="isPaused"
       [isAnimatingRight]="isAnimatingRight"
       (animationCallbackEvent)="animationCallback($event)"
       (isBoxOffScreen)="onBoxOffScreen($event)"
       [boxStartingPoint]="box.boxStartingPoint"
       >
-      </app-yellowbox>
+      </app-yellowbox> -->
 
       <div class="machine-screen">
         <div class="yellow-light yellow-light1"></div>
@@ -81,8 +92,23 @@
       </div>
 
       <div class="machine-screen" style="overflow: hidden;">
+          
+          <div class="sliderWindow">
+            <div *ngFor="let box of boxes" class="sc"> <div>Start of Development</div> </div>
+          </div>
+          
+          <div class="sliderWindowBottom">
+            <div *ngFor="let box of boxes" class="scBottom"> <div>Jan 1</div> </div>
+          </div>          
+<!--           <div class="sliderWindowTwo">
+            <div class="sc"> <div>Start of Development</div> </div>
+            <div class="sc"> <div>Start of Development</div> </div>
+            <div class="sc"> <div>Start of Development</div> </div>
+            <div class="sc"> <div>Start of Development</div> </div>
+          </div>
+ -->
 
-        <div class="full-screen-container" [style.width.px]="screenWidth">
+<!--         <div class="full-screen-container" [style.width.px]="screenWidth">
            <app-small-screen
           *ngFor="let box of boxes; let i = index"
           [attr.data-index]="box.count"
@@ -92,11 +118,11 @@
           position="{{ box.position }}"
           [animationSpeed]="speed">
           </app-small-screen>         
-        </div>
+        </div> -->
 
       </div>
 
-      <img src="../assets/Small Cog.png" class="small-gear small-gear1">
+<!--       <img src="../assets/Small Cog.png" class="small-gear small-gear1">
       <img src="../assets/Small Cog.png" class="small-gear small-gear2">
       <img src="../assets/Small Cog.png" class="small-gear small-gear3">
       <img src="../assets/Small Cog.png" class="small-gear small-gear4">
@@ -106,14 +132,18 @@
       <img src="../assets/Small Cog.png" class="small-gear small-gear8">
       <img src="../assets/Small Cog.png" class="small-gear small-gear9">
       <img src="../assets/Small Cog.png" class="small-gear small-gear10">
-      <div class="directions">
-        <div class="right right-mobile">
+ -->
+      <div class="directions" (click)="swipe($event)">
+        <div class="right f right-mobile" (click)="animateRight()">
           <i class="fas fa-arrow-right blue-arrow"></i>
         </div>
-        <div class="left left-mobile">
+        <div class="left left-mobile" (click)="animateLeft()">
           <i class="fas fa-arrow-left blue-arrow2"></i>
         </div>
       </div>
+
+
+      
       <img class="instructions" src="../assets/mouse-instructions.png">
       <img class="instructions instructions-icons" src="../assets/mouse-instructions-icon.png">
     </div>

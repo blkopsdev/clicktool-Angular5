@@ -10,6 +10,8 @@ import {
   } from '@angular/core';
 
 import { Animation } from '../../../../shared/util/animation'
+import { TimelineService } from '../../timeline.service';
+import { Subscription } from 'rxjs/Subscription';
 
 declare var $:any
 
@@ -19,6 +21,7 @@ declare var $:any
   styleUrls: ['./yellowbox.component.css'],
   providers:[Animation]
 })
+
 export class YellowboxComponent implements OnInit, AfterViewInit {
 
   screenWidth:number = $(window).width()
@@ -27,6 +30,8 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
   index:number;
   intervalID:any;
   isOffScreen:boolean = false;
+
+  subscription:Subscription;
 
   // Inputs
   @Input() isPaused:boolean
@@ -48,14 +53,22 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
   // Child elements
   @ViewChild('yellowBox') yellowBox: ElementRef;
 
-  constructor(private animation:Animation) { }
+  constructor(private animation:Animation, private timelimeService: TimelineService) { }
 
   ngAfterViewInit() {
+    console.log('loaded')
     this.index = this.$this.parent('app-yellowbox').data('index')
+
+    // Subscribe to stop obeserable
+    this.subscription = this.timelimeService.getNotifier().subscribe(res => {
+      this.actions(res)
+    }); 
     this.repeat()
+
   }
 
   private repeat() {
+
     this.intervalID = setInterval(() => {
       
       if(this.isAnimatingRight){
@@ -64,26 +77,43 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
         this.position = +this.position - 20
       }
       
-      if(!this.isPaused){
-        this.animate()
-      }
+      this.animate()
+
     }, +this.pauseTime)
+  }
+
+
+
+  private actions(res:any) {
+    switch (res) {
+      case "start":
+           //this.repeat()
+        break;
+      case "stop":
+          this.stop()
+        break;
+      case "looping":
+          this.stop()
+          //this.repeat()
+        break;     
+      default:
+        // code...
+        break;
+    }
   }
 
   ngOnInit() {
     this.$this = $(this.yellowBox.nativeElement)
+
+
   }
 
-  animationCallback() {
-    if(this.isPaused){
-      this.$this.stop(true, true)
-    }else{
-      this.animationCallbackEvent.emit(this)
-      if(this.isAtEndOfScreen() && !this.isOffScreen ){
-        this.isBoxOffScreen.emit(this)
-        this.isOffScreen = true
-      }      
-    }
+  animationCallback() { 
+    this.animationCallbackEvent.emit(this)
+    if(this.isAtEndOfScreen() && !this.isOffScreen ){
+      this.isBoxOffScreen.emit(this)
+      this.isOffScreen = true
+    }      
   }
 
   private isAtEndOfScreen():boolean {
@@ -107,8 +137,9 @@ export class YellowboxComponent implements OnInit, AfterViewInit {
     }   
   }
 
-  private isEnteringMachine() {
-    
+  private stop() {
+    clearInterval(this.intervalID)
+    this.$this.clearQueue()
   }
 
 }

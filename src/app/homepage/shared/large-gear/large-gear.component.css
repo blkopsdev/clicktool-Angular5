@@ -1,0 +1,14 @@
+.milestone-gear {
+  pointer-events: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 73%;
+  position: absolute;
+  width: 30%;
+  z-index: 6;
+}
