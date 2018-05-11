@@ -100,9 +100,24 @@
         <!-- <img src="../assets/yellowboxes.png" class="machine-box yellowbox"> -->
        <!--  <img src="../assets/yellowboxes.png" class="machine-box yellowbox2"> -->
         <img src="../assets/Machine_full copy.png" class="machine">
+        
+        <div class="sliderWindow" style="left: 0; right: 0; height: 65%; z-index: 1000;"> 
+          <div *ngFor="let box of boxes" class="sc"> <div>{{ box.screen }}</div> </div>
+        </div>
+
+        <div class="sliderWindowBottom" style=" position: absolute;
+    left: 0;
+    right: 0;
+    height: 20%;
+    z-index: 100;
+    top: 72%;">
+      
+      <div *ngFor="let box of boxes" class="scBottom"> <div>{{ box.screenBottom }}</div> </div>
+    </div>
+
       </div>
 
-      <div class="machine-screen" style="overflow: hidden;">
+<!--       <div class="machine-screen" style="overflow: hidden;">
 
           <div class="sliderWindow">
             <div *ngFor="let box of boxes" class="sc"> <div>{{ box.screen }}</div> </div>
@@ -111,27 +126,8 @@
           <div class="sliderWindowBottom">
             <div *ngFor="let box of boxes" class="scBottom"> <div>{{ box.screenBottom }}</div> </div>
           </div>
-<!--           <div class="sliderWindowTwo">
-            <div class="sc"> <div>Start of Development</div> </div>
-            <div class="sc"> <div>Start of Development</div> </div>
-            <div class="sc"> <div>Start of Development</div> </div>
-            <div class="sc"> <div>Start of Development</div> </div>
-          </div>
- -->
 
-<!--         <div class="full-screen-container" [style.width.px]="screenWidth">
-           <app-small-screen
-          *ngFor="let box of boxes; let i = index"
-          [attr.data-index]="box.count"
-          [isPaused]="isPaused"
-          [isAnimatingRight]="isAnimatingRight"
-          [pauseTime]="pauseTime"
-          position="{{ box.position }}"
-          [animationSpeed]="speed">
-          </app-small-screen>
-        </div> -->
-
-      </div>
+      </div> -->
 
 <!--       <img src="../assets/Small Cog.png" class="small-gear small-gear1">
       <img src="../assets/Small Cog.png" class="small-gear small-gear2">
