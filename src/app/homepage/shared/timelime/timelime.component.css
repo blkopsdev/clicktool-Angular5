@@ -14,6 +14,8 @@
   user-select: none;
   position: relative;
   width: 100.5vw;
+  max-width: 1500px;
+  max-height: 742.57px;
   height: calc(101vw / 2.02);
   top: 0;
   right: 1.6vw;
@@ -862,9 +864,11 @@
 
 @media only screen and (max-width: 767px){
   .milestone-container {
-    width: 280vw;
-    height: calc(280vw / 2.02);
-    left: -101%;
+    max-height: calc(280vw / 2.02) !important;
+    max-width: 280vw !important;;
+    width: 280vw !important;
+    height: calc(280vw / 2.02) !important;
+    left: -100%;
     overflow: hidden;
   } .right {
     visibility: visible;
