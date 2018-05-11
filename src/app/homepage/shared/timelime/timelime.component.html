@@ -3,12 +3,16 @@
 
 
 <!-- <div style="position: absolute; top: 0; left: 0; z-index: 5000;">
-  <button  type="button" class="btn btn-primary btn-lg" style="float: left;" (click)="stopAnimation()">Stop</button> 
+  <button  type="button" class="btn btn-primary btn-lg" style="float: left;" (click)="stopAnimation()">Stop</button>
   <button  type="button" class="btn btn-primary btn-lg" style="float: left;" (click)="animateLeft()">Move left</button>
-  <button  type="button" class="btn btn-primary btn-lg" style="float: left;" (click)="animateRight()">Move Right</button> 
+  <button  type="button" class="btn btn-primary btn-lg" style="float: left;" (click)="animateRight()">Move Right</button>
 </div> -->
 
       <div class="directions" (click)="swipe($event)">
+
+      </div>
+
+      <div class="directions-mobile">
         <div class="right f right-mobile" (click)="animateRight()">
           <i class="fas fa-arrow-right blue-arrow"></i>
         </div>
@@ -18,9 +22,10 @@
       </div>
 
 
+
     <div class="milestone-container">
       <img src="../assets/timeline-background.png" class="timeline-background">
-      
+
   <div class="slider">
     <div *ngFor="let box of boxes" class="new-yellowbox"> <div>{{ box.month }}<br>{{ box.year }}</div> </div>
   </div>
@@ -66,7 +71,7 @@
       <img src="../assets/timeline-pipefill-center-right2.png" class="timeline-pipefill-center-right2">
       <img src="../assets/timeline-pipe-overflow.png" class="timeline-pipe-overflow">
       <img src="../assets/timeline-pipe-overflow2.png" class="timeline-pipe-overflow2"> -->
-      
+
 
        <img src="../assets/Conveyor Belt.png" class="conveyor">
 
@@ -100,14 +105,14 @@
       </div>
 
       <div class="machine-screen" style="overflow: hidden;">
-          
+
           <div class="sliderWindow">
             <div *ngFor="let box of boxes" class="sc"> <div>{{ box.screen }}</div> </div>
           </div>
-          
+
           <div class="sliderWindowBottom">
             <div *ngFor="let box of boxes" class="scBottom"> <div>{{ box.screenBottom }}</div> </div>
-          </div>          
+          </div>
 <!--           <div class="sliderWindowTwo">
             <div class="sc"> <div>Start of Development</div> </div>
             <div class="sc"> <div>Start of Development</div> </div>
@@ -125,7 +130,7 @@
           [pauseTime]="pauseTime"
           position="{{ box.position }}"
           [animationSpeed]="speed">
-          </app-small-screen>         
+          </app-small-screen>
         </div> -->
 
       </div>
@@ -151,7 +156,7 @@
       </div>
  -->
 
-      
+
       <img class="instructions" src="../assets/mouse-instructions.png">
       <img class="instructions instructions-icons" src="../assets/mouse-instructions-icon.png">
     </div>
