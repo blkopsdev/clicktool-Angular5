@@ -1,6 +1,6 @@
 @font-face {
   font-family: ok;
-  src: url(./assets/orange kid.ttf) format("opentype");  
+  src: url(./assets/orange kid.ttf) format("opentype");
 }
 
 
@@ -988,7 +988,8 @@ body {
     width: 100%;
     margin-top: 4%;
     font-weight: bold;
-    line-height: 50px; 
+    line-height: 50px;
+    color: #24537f;
 }
 
 
@@ -1058,7 +1059,7 @@ body {
 }
 .bx-wrapper-bottom {
     position: absolute;
-    top: 75%;  
+    top: 75%;
 }
 .bx-wrapper-bottom .bx-viewport {
   /*height: 100px !important;*/
@@ -1081,7 +1082,7 @@ body {
 @media (max-width: 991.98px) {
   .sc {
     font-size: 25px;
-    line-height: 20px;  
+    line-height: 20px;
   }
   .sc > div {
     margin-top: 15%;
@@ -1092,11 +1093,11 @@ body {
 @media (max-width: 1199.98px) {
   .sc {
     font-size: 25px;
-    line-height: 20px;      
+    line-height: 20px;
   }
   .sc > div {
     margin-top: 15%;
-  }  
+  }
 }
 
 .milestone-gear {

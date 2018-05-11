@@ -874,5 +874,9 @@
     z-index: 4;
   } .instructions {
     display: none;
+  } .directions {
+    display: none;
+  } .mobile-directions {
+    display: unset;
   }
 }
