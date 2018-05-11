@@ -19,41 +19,30 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
   @ViewChild('mileStoneGear') mileStoneGear:ElementRef;
 
   boxes:Box[] = [
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1")
+    new Box("May 1", "'18", "Start of Development", "May 1"),
+    new Box("Jun 1", "'18", "Continue Developement", "Jun 1"),
+    new Box("Aug 1", "'18", "Launch ICO", "Aug 1"),
+    new Box("Sep 1", "'18", "Develop Blockchain", "Sep 1"),
+    new Box("Dec 1", "'18", "Make Money", "Dec 1"),
+    new Box("Jan 1", "'19", "Buy Lambo", "Jan 1"),
+    new Box("Feb 1", "'20", "Retire", "Feb 1"),
   ]
 
   fslide:any;
   windowSlide:any;
   windowSlideBottom:any
   movingRight:boolean = true
- 
+
   constructor(private animation:Animation, private timelineService: TimelineService ) {}
 
   ngAfterViewInit() {
     var gear = $('.milestone-gear');
     var p = 45
-  
+
     this.fslide = $('.slider').bxSlider({
       minSlides:5,
-      maxSlides:10,
+      maxSlides:5,
+      startSlide:this.boxes.length-2,
       slideWidth:300,
       moveSlides:1,
       slideMargin: 10,
@@ -63,18 +52,18 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
       controls:false,
       autoDirection:'prev',
       onSlideBefore: ($slideElement, oldIndex, newIndex) => {
-         
+
          if(!this.movingRight){
            p = -45
          }else{
            p = 45
          }
 
-         this.animation.spin(gear, p, 500) 
+         this.animation.spin(gear, p, 500)
       }
     });
     this.windowSlide = $('.sliderWindow').bxSlider({
-      minSlides:1,
+      minSlides:15,
       maxSlides:1,
       slideWidth:200,
       moveSlides:1,
@@ -84,7 +73,8 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
       pager:false,
       controls:false,
       autoDirection:'prev',
-    });   
+      touchEnabled: false,
+    });
    this.windowSlideBottom = $('.sliderWindowBottom').bxSlider({
       minSlides:1,
       maxSlides:1,
@@ -96,7 +86,8 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
       pager:false,
       controls:false,
       autoDirection:'prev',
-    });    
+      touchEnabled: false,
+    });
   }
 
   ngOnInit() {
@@ -105,7 +96,7 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
 
 
   animateLeft() {
-   
+
     this.movingRight = false
     this.fslide.stopAuto()
     this.fslide.goToNextSlide()
@@ -120,7 +111,7 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
   }
 
   animateRight() {
-    
+
     this.movingRight = true
 
     this.fslide.stopAuto()
@@ -136,7 +127,7 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
   }
 
   swipe(e) {
-    
+
     var container = $('.directions')
     var containerWidth = container.width()
     var containerWidthDevide = containerWidth/2
