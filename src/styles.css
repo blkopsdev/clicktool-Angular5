@@ -1042,7 +1042,7 @@ body {
   line-height: 30px;
 }
 .sc > div {
-  margin-top: 10%;
+  margin-top: 14%;
 }
 
 .scBottom {
@@ -1051,12 +1051,13 @@ body {
   width: 200px;
   z-index: 4;
   text-align: center;
-  font-size: 35px;
+  font-size: 25px;
   font-family: ok;
   line-height: 30px;
 }
 .scBottom > div {
   width: 100%;
+  margin-top: 1%;
 }
 .sliderWindowBottom {
   /*top: 43%;*/
@@ -1066,7 +1067,7 @@ body {
     z-index: 1000;
     top: 70%;
     left: 0;
-    right: 0;  
+    right: 0;
 }
 .bx-wrapper-bottom .bx-viewport {
   height: auto !important;
@@ -1080,8 +1081,8 @@ body {
 
 
 @media (max-width: 767.98px) {
-  .sc {
-
+  .scBottom {
+    font-size: 25px;
   }
 }
 
@@ -1093,6 +1094,9 @@ body {
   }
   .sc > div {
     margin-top: 15%;
+  }
+  .scBottom {
+    font-size: 16px;
   }
 }
 
