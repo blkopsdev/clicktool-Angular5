@@ -1022,6 +1022,10 @@ body {
   }
 }
 
+.bx-wrapper-small {
+    z-index: 10000;
+    position: relative;
+}
 
 .new-yellowbox h2 {
   color: #24537f;
@@ -1030,7 +1034,7 @@ body {
 .sc {
   color: #feca40;
   height: 100px;
-  width: 200px;
+  width: 100%;
   z-index: 4;
   text-align: center;
   font-size: 35px;
@@ -1038,7 +1042,7 @@ body {
   line-height: 30px;
 }
 .sc > div {
-  margin-top: 20%;
+  margin-top: 10%;
 }
 
 .scBottom {
@@ -1059,10 +1063,13 @@ body {
 }
 .bx-wrapper-bottom {
     position: absolute;
-    top: 75%;
+    z-index: 1000;
+    top: 70%;
+    left: 0;
+    right: 0;  
 }
 .bx-wrapper-bottom .bx-viewport {
-  /*height: 100px !important;*/
+  height: auto !important;
 }
 
 @media (max-width: 575.98px) {

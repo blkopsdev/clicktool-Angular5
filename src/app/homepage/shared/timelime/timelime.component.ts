@@ -20,24 +20,12 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
 
   boxes:Box[] = [
     new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1"),
-    new Box("May 1", "'18", "Start of Development", "Jan 1")
+    new Box("May 2", "'18", "Start of Development", "Jan 2"),
+    new Box("May 3", "'18", "Start of Development", "Jan 3"),
+    new Box("May 4", "'18", "Start of Development", "Jan 4"),
+    new Box("May 5", "'18", "Start of Development", "Jan 5"),
+    new Box("May 6", "'18", "Start of Development", "Jan 6"),
+    new Box("May 7", "'18", "Start of Development", "Jan 7")
   ]
 
   fslide:any;
