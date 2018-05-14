@@ -1054,7 +1054,6 @@ body {
   font-size: 2vw;
   font-family: ok;
   line-height: 2.2vw;
-  border: 3px solid orange;
 }
 .scBottom > div {
   width: 100%;
@@ -1086,8 +1085,7 @@ body {
     font-size: 5vw;
     height: 9vw;
   } .scBottom > div {
-    width: 100%;
-    margin-top: 1%;
+    margin-top: 6%;
   } .sc {
     line-height: 6vw;
     height: 23vw;
@@ -1127,8 +1125,13 @@ body {
     font-size: 40px;
     line-height: 40px;
   } .sc > div {
-    margin-top: 10%;
-}
+    margin-top: 30px;
+  } .scBottom {
+    font-size: 32px;
+    height: 50px;
+  } .scBottom > div {
+    margin-top: -5px;
+  }
 }
 
 .milestone-gear {
