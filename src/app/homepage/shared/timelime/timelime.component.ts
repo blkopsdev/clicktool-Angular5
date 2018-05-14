@@ -24,7 +24,7 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
     new Box("Aug 1", "'18", "Launch First ICO", "Aug 1"),
     new Box("Sep 1", "'18", "Develop Blockchain", "Sep 1"),
     new Box("Dec 1", "'18", "Make Lots of Money", "Dec 1"),
-    new Box("Jan 1", "'19", "Buy Yellow Lambo", "Jan 1"),
+    new Box("Jan 1", "'19", "Buy Lamborghini", "Jan 1"),
     new Box("Feb 1", "'20", "Retire at Age Forty", "Feb 1"),
   ]
 
@@ -65,7 +65,7 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
     this.windowSlide = $('.sliderWindow').bxSlider({
       minSlides:15,
       maxSlides:1,
-      slideWidth:200,
+      // slideWidth:200,
       moveSlides:1,
       slideMargin: 0,
       auto: true,
@@ -78,7 +78,7 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
    this.windowSlideBottom = $('.sliderWindowBottom').bxSlider({
       minSlides:1,
       maxSlides:1,
-      slideWidth:200,
+      // slideWidth:200,
       moveSlides:1,
       slideMargin: 0,
       auto: true,
