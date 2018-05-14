@@ -1033,13 +1033,13 @@ body {
 
 .sc {
   color: #feca40;
-  height: 100px;
-  width: 100%;
-  z-index: 4;
+  height: 8vw;
+  width: 5vw;
+  line-height: 2.2vw;
+  z-index: 5;
   text-align: center;
-  font-size: 35px;
+  font-size: 3vw;
   font-family: ok;
-  line-height: 30px;
 }
 .sc > div {
   margin-top: 14%;
@@ -1047,13 +1047,14 @@ body {
 
 .scBottom {
   color: #feca40;
-  height: 50px;
-  width: 200px;
+  width: 5vw;
+  height: 3vw;
   z-index: 4;
   text-align: center;
-  font-size: 25px;
+  font-size: 2vw;
   font-family: ok;
-  line-height: 30px;
+  line-height: 2.2vw;
+  border: 3px solid orange;
 }
 .scBottom > div {
   width: 100%;
@@ -1080,35 +1081,54 @@ body {
 }
 
 
-@media (max-width: 767.98px) {
+@media (max-width: 767px) {
   .scBottom {
-    font-size: 25px;
+    font-size: 5vw;
+    height: 9vw;
+  } .scBottom > div {
+    width: 100%;
+    margin-top: 1%;
+  } .sc {
+    line-height: 6vw;
+    height: 23vw;
+    font-size: 7vw !important;
   }
+
 }
 
 
 @media (max-width: 991.98px) {
-  .sc {
+/*   .sc {
     font-size: 25px;
     line-height: 20px;
-  }
-  .sc > div {
+  } */
+/*   .sc > div {
     margin-top: 15%;
-  }
-  .scBottom {
+  } */
+/*   .scBottom {
     font-size: 16px;
-  }
+  } */
 }
 
 
 @media (max-width: 1199.98px) {
-  .sc {
+/*   .sc {
     font-size: 25px;
     line-height: 20px;
-  }
-  .sc > div {
+  } */
+/*   .sc > div {
     margin-top: 15%;
-  }
+  } */
+}
+
+@media (min-width: 1500px) {
+  .sc {
+    height: 120px;
+    font-size: 40px;
+    line-height: 40px;
+  } .sc > div {
+    margin-top: 10%;
+}
 }
 
 .milestone-gear {
