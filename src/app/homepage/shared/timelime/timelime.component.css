@@ -14,8 +14,8 @@
   user-select: none;
   position: relative;
   width: 100.5vw;
-  max-width: 1500px;
-  max-height: 742.57px;
+/*   max-width: 1500px;
+  max-height: 742.57px; */
   height: calc(101vw / 2.02);
   top: 0;
   right: 1.6vw;
@@ -882,5 +882,17 @@
     display: none;
   } .mobile-directions {
     display: unset;
+  }
+}
+
+@media (min-width: 1500px) {
+  .milestone-container {
+    right: 1vw;
+  }
+}
+
+@media (min-width: 1900px) {
+  .milestone-container {
+    right: 0.5vw;
   }
 }

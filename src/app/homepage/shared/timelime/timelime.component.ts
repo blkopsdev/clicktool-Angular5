@@ -20,7 +20,7 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
 
   boxes:Box[] = [
     new Box("May 1", "'18", "Start of Development", "May 1"),
-    new Box("Jun 1", "'18", "Continue Developement", "Jun 1"),
+    new Box("Jun 1", "'18", "Continue Development", "Jun 1"),
     new Box("Aug 1", "'18", "Launch First ICO", "Aug 1"),
     new Box("Sep 1", "'18", "Develop Blockchain", "Sep 1"),
     new Box("Dec 1", "'18", "Make Lots of Money", "Dec 1"),
@@ -43,9 +43,9 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
       minSlides:5,
       maxSlides:5,
       startSlide:this.boxes.length-2,
-      slideWidth:300,
+      // slideWidth:300,
       moveSlides:1,
-      slideMargin: 10,
+      slideMargin: 0,
       auto: true,
       wrapperClass:'bx-wrapper-full',
       pager:false,
