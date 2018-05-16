@@ -3,8 +3,8 @@
 <app-header></app-header>
 
 
-<div class="container-fluid reg-container first-form">
-  
+<div class="container-fluid reg-container first-form" style="height:750px">
+
   <div class="reg-image hidden-sm hidden-xs">
     <img src="../../assets/Animated-Clicktool2 a.gif">
   </div>
@@ -29,8 +29,8 @@
           <p>
             <label class="checkcontainer">
               <input [(ngModel)]="user.didAgreeToTerms" type="checkbox" autocomplete="off">
-              I agree to Clicktool's terms and conditions. 
-              <span class="checkmark"></span>             
+              I agree to Clicktool's terms and conditions.
+              <span class="checkmark"></span>
             </label>
 
           </p>
@@ -42,7 +42,7 @@
             <label class="checkcontainer">
               <input [(ngModel)]="user.didAgreeToPrivacyPolicy" type="checkbox" autocomplete="off">
               I consent to Clicktool's privacy policy.
-              <span class="checkmark"></span>              
+              <span class="checkmark"></span>
             </label>
 
           </p>
@@ -54,17 +54,17 @@
             <label class="checkcontainer">
               <input [(ngModel)]="user.didReadWhitePaper" type="checkbox" autocomplete="off">
               I have read and understand the whitepaper.
-              <span class="checkmark"></span>              
+              <span class="checkmark"></span>
             </label>
         </p>
       </span>
       </div>
-      
+
       <button
-      style="margin-bottom: 50px !important;" 
-      [disabled]="!user.isCitizen || !user.didAgreeToTerms || !user.didAgreeToPrivacyPolicy || !user.didReadWhitePaper" 
-      (click)="goToNext()" 
-      class="btn btn-info reg-button" 
+      style="margin-bottom: 50px !important;"
+      [disabled]="!user.isCitizen || !user.didAgreeToTerms || !user.didAgreeToPrivacyPolicy || !user.didReadWhitePaper"
+      (click)="goToNext()"
+      class="btn btn-info reg-button"
       id="sign-up2">
         <p>
           <i class="fa fa-user-plus"></i>&nbsp;&nbsp;&nbsp;Sign Up

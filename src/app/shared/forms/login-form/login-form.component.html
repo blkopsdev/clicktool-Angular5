@@ -1,17 +1,17 @@
-<form [formGroup]="form"> 
+<form [formGroup]="form">
   <div  class="reg-form">
     <div class="reg-active reg-border">
       <h3>Log In</h3>
       <hr>
-      <div class="reginr"> 
+      <div class="reginr">
         <span><i class="fa fa-user"></i></span>
         <input [ngClass]="{'has-danger':!this.form.get('email').valid && this.form.get('email').touched}" formControlName="email"  name="email" minlength="4" maxlength="100" [(ngModel)]="user.email" type="email" required="" autocomplete="off" placeholder="enter email">
       </div>
 
-          <div 
-          class="text-danger" 
-          style="margin-bottom: 20px; text-align: left;"  
-          
+          <div
+          class="text-danger"
+          style="margin-bottom: 20px; text-align: left;"
+
           *ngIf="!form.get('email').valid && form.get('email').touched"
           >
                 <div [hidden]="!form.get('email').hasError('required')">
@@ -29,9 +29,9 @@
         <input [ngClass]="{'has-danger':!form.get('password').valid && form.get('password').touched}" formControlName="password" name="password" minlength="4" maxlength="24" [(ngModel)]="user.password" type="password" required="" autocomplete="off" placeholder="enter password">
       </div>
 
-          <div 
-          class="text-danger" 
-          style="margin-bottom: 20px; text-align: left;"  
+          <div
+          class="text-danger"
+          style="margin-bottom: 20px; text-align: left;"
           *ngIf="!form.get('password').valid && form.get('password').touched"
           >
                 <div [hidden]="!form.get('password').hasError('required')">
@@ -48,6 +48,7 @@
       <button (click)="login()" type="submit" style="margin-top: 25px;" class="btn btn-info reg-button" id="continue">
         <p><i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;&nbsp;Continue</p>
       </button>
-    </div> 
-  </div>  
+      <a routerLink="/password/reset" style="margin-top: 10px; display: block; width: 100%;" href="#">Forgot Password?</a>
+    </div>
+  </div>
 </form>
