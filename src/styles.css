@@ -481,13 +481,14 @@ body {
 }
 
 .reg-container {
-  display: flex;
+/*   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
   text-align: center;
   margin-top: 20px;
   overflow: hidden;
-  height: 700px;
+  min-height: calc(100vh - 114px);
+  height: 100%;
   position: relative;
 }
 
