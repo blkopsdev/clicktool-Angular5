@@ -1271,7 +1271,7 @@ margin: 20px;
 }
 
 .info-row {
-  font-weight: 250;
+  font-weight: 200;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2847,9 +2847,9 @@ margin: 20px;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: left;
-  -webkit-justify-content: left;
+  -webkit-justify-content: flex-start;
       -ms-flex-pack: left;
-          justify-content: left;
+          justify-content: flex-start;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
