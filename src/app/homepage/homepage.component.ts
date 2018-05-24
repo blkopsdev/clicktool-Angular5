@@ -219,19 +219,11 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
         chartGearSpin(this);
       });
 
-      $('#chart1b').mouseenter(function(){
+      $('.chart-text1a, #chart1b').mouseenter(function(){
         $('#marketing').addClass('chart-active chart-active1a');
       });
 
-      $('.chart-text1a').mouseenter(function(){
-        $('#marketing').addClass('chart-active chart-active1a');
-      });
-
-      $('#chart1b').mouseleave(function(){
-        $('#marketing').removeClass('chart-active chart-active1a');
-      });
-
-      $('.chart-text1a').mouseleave(function(){
+      $('#chart1b, .chart-text1a').mouseleave(function(){
         $('#marketing').removeClass('chart-active chart-active1a');
       });
 
@@ -239,19 +231,11 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
         chartGearSpin('#chart1b');
       });
 
-      $('#chart1a').mouseenter(function(){
+      $('#chart1a, .chart-text1b').mouseenter(function(){
         $('#development').addClass('chart-active chart-active2a');
       });
 
-      $('.chart-text1b').mouseenter(function(){
-        $('#development').addClass('chart-active chart-active2a');
-      });
-
-      $('#chart1a').mouseleave(function(){
-        $('#development').removeClass('chart-active chart-active2a');
-      });
-
-      $('.chart-text1b').mouseleave(function(){
+      $('#chart1a, .chart-text1b').mouseleave(function(){
         $('#development').removeClass('chart-active chart-active2a');
       });
 
@@ -259,19 +243,11 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
         chartGearSpin('#chart1a');
       });
 
-      $('#chart1c').mouseenter(function(){
+      $('#chart1c, .chart-text1c').mouseenter(function(){
         $('#acquisition').addClass('chart-active chart-active3a');
       });
 
-      $('.chart-text1c').mouseenter(function(){
-        $('#acquisition').addClass('chart-active chart-active3a');
-      });
-
-      $('#chart1c').mouseleave(function(){
-        $('#acquisition').removeClass('chart-active chart-active3a');
-      });
-
-      $('.chart-text1c').mouseleave(function(){
+      $('#chart1c, .chart-text1c').mouseleave(function(){
         $('#acquisition').removeClass('chart-active chart-active3a');
       });
 
@@ -279,19 +255,11 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
         chartGearSpin('#chart1c');
       });
 
-      $('#chart1d').mouseenter(function(){
+      $('#chart1d, .chart-text1d').mouseenter(function(){
         $('#legal').addClass('chart-active chart-active4a');
       });
 
-      $('.chart-text1d').mouseenter(function(){
-        $('#legal').addClass('chart-active chart-active4a');
-      });
-
-      $('#chart1d').mouseleave(function(){
-        $('#legal').removeClass('chart-active chart-active4a');
-      });
-
-      $('.chart-text1d').mouseleave(function(){
+      $('#chart1d, .chart-text1d').mouseleave(function(){
         $('#legal').removeClass('chart-active chart-active4a');
       });
 
@@ -299,19 +267,11 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
         chartGearSpin('#chart1d');
       });
 
-      $('#chart2a').mouseenter(function(){
+      $('#chart2a, .chart-text2a').mouseenter(function(){
         $('#ico').addClass('chart-active chart-active1b');
       });
 
-      $('.chart-text2a').mouseenter(function(){
-        $('#ico').addClass('chart-active chart-active1b');
-      });
-
-      $('#chart2a').mouseleave(function(){
-        $('#ico').removeClass('chart-active chart-active1b');
-      });
-
-      $('.chart-text2a').mouseleave(function(){
+      $('#chart2a, .chart-text2a').mouseleave(function(){
         $('#ico').removeClass('chart-active chart-active1b');
       });
 
@@ -319,19 +279,11 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
         chartGearSpin('#chart2a');
       });
 
-      $('#chart2c').mouseenter(function(){
+      $('#chart2c, .chart-text2b').mouseenter(function(){
         $('#liquidity').addClass('chart-active chart-active2b');
       });
 
-      $('.chart-text2b').mouseenter(function(){
-        $('#liquidity').addClass('chart-active chart-active2b');
-      });
-
-      $('#chart2c').mouseleave(function(){
-        $('#liquidity').removeClass('chart-active chart-active2b');
-      });
-
-      $('.chart-text2b').mouseleave(function(){
+      $('#chart2c, .chart-text2b').mouseleave(function(){
         $('#liquidity').removeClass('chart-active chart-active2b');
       });
 
@@ -339,19 +291,11 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
         chartGearSpin('#chart2c');
       });
 
-      $('#chart2b').mouseenter(function(){
+      $('#chart2b, .chart-text2c').mouseenter(function(){
         $('#distribution').addClass('chart-active chart-active3b');
       });
 
-      $('.chart-text2c').mouseenter(function(){
-        $('#distribution').addClass('chart-active chart-active3b');
-      });
-
-      $('#chart2b').mouseleave(function(){
-        $('#distribution').removeClass('chart-active chart-active3b');
-      });
-
-      $('.chart-text2c').mouseleave(function(){
+      $('#chart2b, .chart-text2c').mouseleave(function(){
         $('#distribution').removeClass('chart-active chart-active3b');
       });
 
@@ -359,19 +303,11 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
         chartGearSpin('#chart2b');
       });
 
-      $('#chart2d').mouseenter(function(){
+      $('#chart2d, .chart-text2d').mouseenter(function(){
         $('#presale').addClass('chart-active chart-active4b');
       });
 
-      $('.chart-text2d').mouseenter(function(){
-        $('#presale').addClass('chart-active chart-active4b');
-      });
-
-      $('#chart2d').mouseleave(function(){
-        $('#presale').removeClass('chart-active chart-active4b');
-      });
-
-      $('.chart-text2d').mouseleave(function(){
+      $('#chart2d, .chart-text2d').mouseleave(function(){
         $('#presale').removeClass('chart-active chart-active4b');
       });
 
@@ -379,19 +315,11 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
         chartGearSpin('#chart2d');
       });
 
-      $('#chart2e').mouseenter(function(){
+      $('#chart2e, .chart-text2e').mouseenter(function(){
         $('#community').addClass('chart-active chart-active5');
       });
 
-      $('.chart-text2e').mouseenter(function(){
-        $('#community').addClass('chart-active chart-active5');
-      });
-
-      $('#chart2e').mouseleave(function(){
-        $('#community').removeClass('chart-active chart-active5');
-      });
-
-      $('.chart-text2e').mouseleave(function(){
+      $('#chart2e, .chart-text2e').mouseleave(function(){
         $('#community').removeClass('chart-active chart-active5');
       });
 
@@ -429,27 +357,6 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-      // Timeline -------------------
-
-
-
-
-      // if (spinning) {
-      //   spin();
-      // }
-
-    // });
 
 
 
