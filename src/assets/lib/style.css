@@ -1522,7 +1522,7 @@ table tbody tr td {
 }
 .slider_bar .slider.slider-horizontal { height: 24px; width: 100%;}
 .slider_bar .slider.slider-horizontal .slider-track { height: 8px; margin-top: -4px;}
-.slider_bar .slider-track-low, .slider-track-high{ background:#ebebebe;}
+.slider_bar .slider-track-low, .slider-track-high{ background:#ebebeb;}
 .slider_bar .slider-selection {
   background: #0080ff none repeat scroll 0 0;
 }
