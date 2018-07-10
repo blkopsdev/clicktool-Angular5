@@ -1,18 +1,18 @@
 <app-header></app-header>
 
-<div id="identification-form" class="container-fluid reg-container first-form" style="height: 1200px;">
-  
+<div id="identification-form" class="container-fluid reg-container first-form" style="height: 1000px;">
+
   <div class="reg-image hidden-sm hidden-xs">
     <img src="../../assets/Animated-Clicktool2 a.gif">
   </div>
   <div class="reg-form">
- 
+
     <div class="reg-active reg-border">
       <h1>Your ID</h1>
       <h3>Almost There!</h3>
       <hr>
-      
-      <div *ngFor="let uploadPanel of uploadPanels; let i = index"> 
+
+      <div *ngFor="let uploadPanel of uploadPanels; let i = index">
         <span><i class="fas"></i></span>
        <app-uploader id="upload-document-{{ i }}" name="{{ uploadPanel.name }}" (onAddFile)="onDropFile($event, i)" [parentUploader]="uploader"></app-uploader>
       </div>
@@ -29,7 +29,7 @@
       <div style="margin-bottom: 20px !important;" class="btn btn-info reg-button sign-in" id="sign-in3">
         <p><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;Sign In</p>
       </div>
-    </div> 
+    </div>
 
 
   </div>

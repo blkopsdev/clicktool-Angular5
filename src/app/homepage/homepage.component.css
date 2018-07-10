@@ -1271,7 +1271,7 @@ margin: 20px;
 }
 
 .info-row {
-  font-weight: 250;
+  font-weight: 200;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1339,11 +1339,6 @@ margin: 20px;
   width: 100px;
 }
 
-.featcont {
-  margin: 20px;
-  color: white;
-}
-
 .benefit-row {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1359,29 +1354,6 @@ margin: 20px;
   margin-top: -80px;
   max-width: 1400px;
 }
-
-.benefit-div {
-  max-width: 500px;
-}
-
-.benefit-div img {
-  max-height: 200px;
-}
-
-.featcont > h4 {
-  font-size: 18px;
-  font-weight: 800;
-  padding: 0;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.featcont p {
-  font-family: open sans;
-  font-size: 14px;
-  line-height: 24px;
-}
-
 
 /* Chart Section */
 .chart-container {
@@ -2847,9 +2819,9 @@ margin: 20px;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: left;
-  -webkit-justify-content: left;
+  -webkit-justify-content: flex-start;
       -ms-flex-pack: left;
-          justify-content: left;
+          justify-content: flex-start;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;

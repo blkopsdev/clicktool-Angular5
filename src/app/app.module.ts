@@ -51,6 +51,8 @@ import { SmallScreenComponent } from './homepage/shared/small-screen/small-scree
 import { AffiliateComponent } from './affiliate/affiliate.component';
 import { WireInfoComponent } from './wire-info/wire-info.component';
 import { LargeGearComponent } from './homepage/shared/large-gear/large-gear.component';
+import { BenefitComponent } from './homepage/benefit/benefit.component';
+import { EmployeeComponent } from './homepage/employee/employee.component';
 
 
 
@@ -86,7 +88,9 @@ import { LargeGearComponent } from './homepage/shared/large-gear/large-gear.comp
     SmallScreenComponent,
     AffiliateComponent,
     WireInfoComponent,
-    LargeGearComponent
+    LargeGearComponent,
+    BenefitComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,
