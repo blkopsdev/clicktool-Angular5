@@ -1,61 +1,147 @@
 <app-dashboard-header></app-dashboard-header>
-  <div class="container-fluid member-container">
-    <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <div class="mem-box">
-          <h3>TOKEN SALE IS:</h3>
-          <h1>LIVE</h1>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-4">
-        <div class="mem-box">
-          <h3>TOKEN PRICE:</h3>
-          <h1>1 CLK = $51,397</h1>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-4">
-        <div class="mem-box">
-          <h3>RAISED:</h3>
-          <h1>$36,965,327</h1>
-        </div>
+
+<div class="container-fluid">
+  <div class="row">
+    
+    <div class="col-md-12 brand-color-bg text-white p-5 text-center" style="padding: 60px;">
+      <h1 style="font-size: 50px; margin-top: 50px;">Crowdsale Dashboard</h1>
+      <div class="container-fluid" style="max-width: 1000px; margin-bottom: 50px;">
+        <div class="row timeline-row" style="margin-top: 100px;">
+          <div class="pl-0 pr-0 col-sm-3 text-left timeline-section">
+            <div class="timeline-section-top"><h4 class="p-0" style="font-size: 21px;">Sale 25%</h4>Price $0.014</div>
+            <div class="timeline-section-bottom">ROUND 1</div>
+          </div>
+           <div class="pl-0 pr-0 col-sm-3 text-left timeline-section">
+            <div class="timeline-section-top"><h4 class="p-0" style="font-size: 21px;">Sale 10%</h4>Price $0.014</div>
+            <div class="timeline-section-bottom">ROUND 2</div>
+          </div>
+          <div class="pl-0 pr-0 col-sm-3 text-left timeline-section">
+            <div class="timeline-section-top"><h4 class="p-0" style="font-size: 21px;">Sale 7%</h4>Price $0.014</div>
+            <div class="timeline-section-bottom">ROUND 3</div>
+          </div>
+          <div class="pl-0 pr-0 col-sm-3 text-left timeline-section">
+            <div class="timeline-section-top"><h4 class="p-0" style="font-size: 21px;">Sale 3%</h4>Price $0.014</div>
+            <div class="timeline-section-bottom">ROUND 4</div>
+          </div>                
+        </div>        
       </div>
     </div>
-    <div class="row">
-      <div class="hidden-xs col-sm-4 mem-logo">
-        <img src="../assets/logo.png" alt="Clicktool Logo">
+  </div>
+</div>
+
+    <div class="container-fluid" style="margin-top:50px; max-width: 1200px;">
+      <div class="row">
+
+        <div class="col col-sm-4 nrp padding-right-mobile" style="margin-bottom: 15px;">
+          <div class="white-bg" style="padding: 30px;">
+            <h3 style="margin-bottom: 40px;">Balance</h3>
+            
+            <h1 style="font-size: 50px;">0</h1>
+            <span class="text-muted">TOKENS</span>
+            
+            <button style="margin-top: 40px;" class="btn prim-btn-outline btn-block btn-lg-txt btn-lg-outline"> Contribute now</button>
+          </div>
+        </div>
+        <div class="col col-sm-4" style="margin-bottom: 15px;">
+          <app-qr-card 
+          title="Pay with Bitcoin" 
+          address="0x624D5050b12154Eb29BEc54B8faAeC3A3c01bDD6" 
+          minimum="Minimum payment 0.01 BTC"
+          qrImageUrl="../../assets/qr.png"
+          >
+          </app-qr-card>
+        </div>
+        <div class="col col-sm-4 nlp padding-left-mobile" style="margin-bottom: 15px;">
+          <app-qr-card 
+          title="Pay with Ethereum" 
+          address="0x624D5050b12154Eb29BEc54B8faAeC3A3c01bDD6" 
+          minimum="Minimum payment 0.01 ETH"
+          qrImageUrl="../../assets/qr.png"
+          >
+          </app-qr-card>
+        </div>        
+
       </div>
-      <div class="col-xs-12 col-sm-8">
-        <div class="lower-mem-section">
-          <div class="mem-box-wide">
-            <p><i style="color:red" class="fas fa-edit"></i>Enter your Ethereum address to receive and store your CLK tokens or generate a new one using the link myetherwallet.com</p>
-          </div>
-          <br>
-          <div class="mem-box-wide2">
-            <p><i style="color:red" class="fas fa-edit"></i>You have to use your personal Ethereum wallets like MyEtherWallet, Metamask, Parity, Mist or Ledger (hardware wallet)</p>
-          </div>
-          <br>
-          <div>
-            <h4>Buy CLK Tokens with</h4>
-            <div class="mem-form">
-              <h5>Enter ETH wallet to receive CLK tokens</h5>
-              <div class="reginr mem-reginr"> <span><i class="fab fa-ethereum"></i></span>
-                <input type="text" required="" autocomplete="off">
+      <div class="row">
+
+        <div class="col-sm-4 nrp padding-right-mobile" style="margin-bottom: 15px;">
+          <div class="white-bg break-txt" style="padding: 30px;">
+            <h4 style="margin-bottom: 20px;">Current 25% special ends in</h4>
+            <div class="row">
+
+              <div class="col-sm-12 col-md-4 text-center d-flex" style="background: url(../../assets/time-bg.png) no-repeat center center; background-size: contain; height: 100px;">
+                  <div style="margin-top: 26px;">
+                    <h1>00</h1>
+                    <span class="text-muted">days</span>
+                  </div>
+                
+                <!-- <img class="img-responsive" src="../../assets/time-bg.png"> -->
               </div>
-              <br>
-              <div>
-                <label for="read-whitepaper"><input type="checkbox" id="read-whitepaper">Check here to confirm that you have read and understand the Clicktool ICO whitepaper</label>
+              <div class="col-sm-12 col-md-8">
+                <ul class="list-inline list-with-border full-width-list" style="margin-top: 35px;">
+                  <li class="list-inline-item text-center">
+                    <h3>06</h3>
+                    <span class="text-muted">hours</span>
+                  </li>                  
+                  <li class="list-inline-item text-center">
+                    <h3>21</h3>
+                    <span class="text-muted">mins</span>
+                  </li>
+                  <li class="list-inline-item text-center">
+                    <h3>59</h3>
+                    <span class="text-muted">secs</span>
+                  </li>
+                </ul>
               </div>
-              <br>
-              <br>
-              <div class="mem-button">
-                <h3>Contribute Now</h3>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="text-muted" style="margin-top: 10px; font-size: 11px;">ICO Enddate:<br>October 30, 2017 00:00 PTS</div> 
               </div>
             </div>
           </div>
         </div>
+
+        <div class="col-sm-4" style="margin-bottom: 15px;">
+          <div class="white-bg break-txt" style="padding: 30px;">
+            <h4 style="margin-bottom: 20px;">Exchange Rates</h4>
+            <div class="row">
+              <div class="col-md-12">
+               <span class="text-muted">Choose Token Amount</span><br>
+               <div class="clearfix" style="margin-bottom: 15px;">
+                 <span class="pull-left"><strong>1000</strong></span>
+                 <span class="pull-right"> <strong>CTC</strong> </span>
+               </div>
+               <input type="range" min="1" max="100" value="0" class="slider" id="myRange">
+
+               <div class="row" style=" margin-top: 20px;">
+                 <div class="col-md-12 clearfix" style="margin-bottom: 10px;">
+                   <div class="pull-left">= 0.9800</div>
+                   <div class="pull-right"> <strong class="badge badge-primary">BTC</strong> </div>
+                 </div>
+                 <div class="col-md-12 clearfix" style="margin-bottom: 10px;">
+                   <div class="pull-left">= 0.9375</div>
+                   <div class="pull-right"> <strong class="badge badge-primary">ETH</strong> </div>
+                 </div>
+                 <div class="col-md-12 clearfix">
+                   <div class="pull-left">= 47.9700</div>
+                   <div class="pull-right"> <strong class="badge badge-primary">USD</strong> </div>
+                 </div>                                  
+               </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4 nlp padding-left-mobile" style="margin-bottom: 15px;">
+          <div class="white-bg break-txt" style="padding: 30px;">
+            <h4 style="margin-bottom: 20px;">How to contribute</h4>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jwulcLx5o-E"></iframe>
+            </div> 
+          </div>                   
+        </div>
+        
       </div>
     </div>
-  <br>
-  <br>
-  <br>
-  </div>

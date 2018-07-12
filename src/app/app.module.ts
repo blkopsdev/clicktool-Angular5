@@ -53,6 +53,7 @@ import { WireInfoComponent } from './wire-info/wire-info.component';
 import { LargeGearComponent } from './homepage/shared/large-gear/large-gear.component';
 import { BenefitComponent } from './homepage/benefit/benefit.component';
 import { EmployeeComponent } from './homepage/employee/employee.component';
+import { QrCardComponent } from './shared/common/qr-card/qr-card.component';
 
 
 
@@ -90,7 +91,8 @@ import { EmployeeComponent } from './homepage/employee/employee.component';
     WireInfoComponent,
     LargeGearComponent,
     BenefitComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    QrCardComponent
   ],
   imports: [
     BrowserModule,

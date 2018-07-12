@@ -3,6 +3,102 @@
   src: url(./assets/orange kid.ttf) format("opentype");
 }
 
+.btn-lg-outline {
+    padding: 10px 12px !important;
+    border-radius: 40px !important;   
+}
+
+.btn.active, .btn:active {
+  box-shadow: none;
+}
+
+.dash-logo {
+    margin-top: 10px;
+    margin-left: 10px;  
+}
+
+.prim-btn-outline {
+    border: thin solid #37a2cd;
+    background: transparent;
+    border-radius: 23px;
+    color: #000;  
+}
+.prim-btn-outline:hover {
+  background: #37a2cd;
+  color: #FFF;
+}
+
+.btn-lg-txt {
+  font-size: 22px;
+}
+
+.fixed-header {
+    position: fixed;
+    z-index: 1000;
+    background: #FFF;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+.fixed-header a {
+  color: #000;
+}
+.fixed-header i {
+  color: #bdbdbd;  
+}
+
+.main-nav {
+  margin-right: 10px;
+}
+
+.main-nav .dropdown-menu {
+  padding: 0;
+}
+
+.main-nav .list-inline-item a{
+  display: block;
+  
+}
+
+.main-nav .list-inline-item > a{
+  padding: 13px 5px;  
+}
+
+.main-nav .dropdown-menu a {
+  display: block;
+  padding: 10px;
+  border-bottom: thin solid #dedede;
+}
+
+.full-width-list {
+  width: 100%;
+  display: table;
+}
+.full-width-list li {
+  display: table-cell;
+}
+
+.list-with-border li {
+  border-right: thin solid #dadada;
+}
+.list-with-border li:last-child {
+  border-right: none;
+}
+
+.text-muted {
+  color: #b5b5b5;
+}
+
+.break-txt {
+  word-break: break-all;
+}
+
+.pl-0 {
+  padding-left: 0 !important;
+}
+
+.pr-0 {
+  padding-right: 0 !important;
+}
 
 * {
   margin: 0;
@@ -25,6 +121,7 @@ input[type="submit"] {
 
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: #F5F5F5;
 }
 
 
@@ -1069,10 +1166,19 @@ body {
   height: auto !important;
 }
 
+.nrp {
+  padding-right: 0;
+}
+.nlp {
+  padding-left: 0;
+}
 @media (max-width: 575.98px) {
-  .sc {
-
+  .padding-right-mobile {
+    padding-right: 15px;
   }
+  .padding-left-mobile {
+    padding-left: 15px;
+  }  
 }
 
 
@@ -1095,46 +1201,6 @@ body {
   }
 }
 
-
-@media (max-width: 991.98px) {
-/*   .sc {
-    font-size: 25px;
-    line-height: 20px;
-  } */
-/*   .sc > div {
-    margin-top: 15%;
-  } */
-/*   .scBottom {
-    font-size: 16px;
-  } */
-}
-
-
-@media (max-width: 1199.98px) {
-/*   .sc {
-    font-size: 25px;
-    line-height: 20px;
-  } */
-/*   .sc > div {
-    margin-top: 15%;
-  } */
-}
-
-/* @media (min-width: 1500px) {
-  .sc {
-    height: 120px;
-    font-size: 40px;
-    line-height: 40px;
-  } .sc > div {
-    margin-top: 30px;
-  } .scBottom {
-    font-size: 32px;
-    height: 50px;
-  } .scBottom > div {
-    margin-top: -5px;
-  }
-} */
-
 .milestone-gear {
   pointer-events: none;
   -o-user-select: none;
@@ -1150,3 +1216,81 @@ body {
   z-index: 6;
 }
 
+.brand-color-bg {
+  background-color: #36A2CD;
+  color: #FFF;
+}
+.brand-color-txt {
+  color: #36A2CD;
+}
+
+.timeline-row .timeline-section{
+  border-left: thin solid #8BD0EC;
+}
+.timeline-row .timeline-section-top {
+  border-bottom: 7px solid #FFF;
+}
+.timeline-row .timeline-section-bottom {
+  color: #8BD0EC;
+  font-weight: bold;
+}
+.timeline-row .timeline-section-top,
+.timeline-row .timeline-section-bottom {
+  padding: 10px 20px;
+}
+
+.white-bg {
+  background-color: #FFF;
+}
+
+
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 20px;   
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #37a2cd; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%; 
+}
+
+.slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #37a2cd; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%; 
+}
+
+
+.table-row {
+  display: table;
+}
+.table-row .col {
+  display: table-cell;
+  float: none;
+}

@@ -1,8 +1,25 @@
-<ul class="nav navbar-nav navbar-right">
-	<li><a routerLink="/" href="/">Home</a></li>
-	<li><a routerLink="/dashboard" href="/dashboard">Dashboard</a></li>
-	<li><a routerLink="/transactions" href="/transactions">Transactions</a></li>
-	<li><a routerLink="/user/{{ app.getUserId() }}/password" href="/user/{{ app.getUserId() }}/password">Change Password</a></li>
-	<li appIfAdmin><a routerLink="/users" href="/users">Admin</a></li>
-	<li> <a (click)="logout()"> <strong>Logout</strong></a> </li>
+<ul class="list-inline main-nav" style="float: right">
+<!-- 	<li class="list-inline-item"><a routerLink="/" href="/">
+		<img width="30px" src="../../assets/logo.png">
+	</a></li> -->
+	<li class="list-inline-item"><a routerLink="/" href="/"><i class="material-icons">home</i></a></li>
+	<li class="list-inline-item"><a routerLink="/dashboard" href="/dashboard"><i class="material-icons">dashboard</i></a></li>
+	<li class="list-inline-item"><a routerLink="/transactions" href="/transactions"><i class="material-icons">receipt</i></a></li>
+<!-- 	<li class="list-inline-item"><a routerLink="/user/{{ app.getUserId() }}/password" href="/user/{{ app.getUserId() }}/password">Change Password</a></li>
+	<li class="list-inline-item" appIfAdmin><a routerLink="/users" href="/users">Admin</a></li>
+	<li class="list-inline-item"> <a (click)="logout()" href="#">Logout</a> </li> -->
+	<li class="list-inline-item">
+		<div class="dropdown">
+		  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="material-icons">
+				arrow_drop_down
+				</i>
+		  </a>
+
+		  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+		    <a class="dropdown-item" routerLink="/users" href="/users">Settings</a>
+		    <a (click)="logout()" class="dropdown-item" href="#">Logout</a>
+		  </div>
+		</div>		
+	</li>
 </ul>
