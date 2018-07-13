@@ -93,7 +93,7 @@ input[type="checkbox"]{ margin:0 5px 0 0;}
 
 .table-responsive{  border:none; padding:0; margin:0;}
 table{ width:100%;}
-table thead th{ text-align:center; white-space:nowrap;}
+
 table tbody td{text-align:center;  white-space:nowrap;}
 
 input[type="text"], input[type="email"], input[type="password"] {
@@ -1307,17 +1307,6 @@ margin-bottom:30px;}
 }
 
 
-
-table thead th {
-  background: #0080ff none repeat scroll 0 0;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 400;
-  padding: 9px 32px;
-  text-align: left;
-  text-transform: capitalize;
-  white-space: nowrap;
-}
 table tbody tr td {
   background: #fff none repeat scroll 0 0;
   border-bottom: 1px solid #eaeaea;
