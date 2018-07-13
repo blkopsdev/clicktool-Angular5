@@ -54,6 +54,9 @@ import { LargeGearComponent } from './homepage/shared/large-gear/large-gear.comp
 import { BenefitComponent } from './homepage/benefit/benefit.component';
 import { EmployeeComponent } from './homepage/employee/employee.component';
 import { QrCardComponent } from './shared/common/qr-card/qr-card.component';
+import { LgTxtWButtonComponent } from './shared/common/lg-txt-w-button/lg-txt-w-button.component';
+import { CountdownComponent } from './shared/common/countdown/countdown.component';
+import { EqualHeightColDirective } from './shared/directives/equal-height-col.directive';
 
 
 
@@ -92,7 +95,10 @@ import { QrCardComponent } from './shared/common/qr-card/qr-card.component';
     LargeGearComponent,
     BenefitComponent,
     EmployeeComponent,
-    QrCardComponent
+    QrCardComponent,
+    LgTxtWButtonComponent,
+    CountdownComponent,
+    EqualHeightColDirective
   ],
   imports: [
     BrowserModule,

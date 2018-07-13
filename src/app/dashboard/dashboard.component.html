@@ -5,6 +5,7 @@
     
     <div class="col-md-12 brand-color-bg text-white p-5 text-center" style="padding: 60px;">
       <h1 style="font-size: 50px; margin-top: 50px;">Crowdsale Dashboard</h1>
+      <h4 style="margin-top: 10px; color: #8BD0EC;">Total Value: $32,456,241 USD</h4>
       <div class="container-fluid" style="max-width: 1000px; margin-bottom: 50px;">
         <div class="row timeline-row" style="margin-top: 100px;">
           <div class="pl-0 pr-0 col-sm-3 text-left timeline-section">
@@ -30,17 +31,14 @@
 </div>
 
     <div class="container-fluid" style="margin-top:50px; max-width: 1200px;">
-      <div class="row">
+      <div appEqualHeightCol class="row">
 
         <div class="col col-sm-4 nrp padding-right-mobile" style="margin-bottom: 15px;">
-          <div class="white-bg" style="padding: 30px;">
-            <h3 style="margin-bottom: 40px;">Balance</h3>
-            
-            <h1 style="font-size: 50px;">0</h1>
-            <span class="text-muted">TOKENS</span>
-            
-            <button style="margin-top: 40px;" class="btn prim-btn-outline btn-block btn-lg-txt btn-lg-outline"> Contribute now</button>
-          </div>
+          <app-lg-txt-w-button
+          title="Balance"
+          bodyText="0"
+          subText="TOKENS"
+          ></app-lg-txt-w-button>
         </div>
         <div class="col col-sm-4" style="margin-bottom: 15px;">
           <app-qr-card 
@@ -65,41 +63,7 @@
       <div class="row">
 
         <div class="col-sm-4 nrp padding-right-mobile" style="margin-bottom: 15px;">
-          <div class="white-bg break-txt" style="padding: 30px;">
-            <h4 style="margin-bottom: 20px;">Current 25% special ends in</h4>
-            <div class="row">
-
-              <div class="col-sm-12 col-md-4 text-center d-flex" style="background: url(../../assets/time-bg.png) no-repeat center center; background-size: contain; height: 100px;">
-                  <div style="margin-top: 26px;">
-                    <h1>00</h1>
-                    <span class="text-muted">days</span>
-                  </div>
-                
-                <!-- <img class="img-responsive" src="../../assets/time-bg.png"> -->
-              </div>
-              <div class="col-sm-12 col-md-8">
-                <ul class="list-inline list-with-border full-width-list" style="margin-top: 35px;">
-                  <li class="list-inline-item text-center">
-                    <h3>06</h3>
-                    <span class="text-muted">hours</span>
-                  </li>                  
-                  <li class="list-inline-item text-center">
-                    <h3>21</h3>
-                    <span class="text-muted">mins</span>
-                  </li>
-                  <li class="list-inline-item text-center">
-                    <h3>59</h3>
-                    <span class="text-muted">secs</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="text-muted" style="margin-top: 10px; font-size: 11px;">ICO Enddate:<br>October 30, 2017 00:00 PTS</div> 
-              </div>
-            </div>
-          </div>
+            <app-countdown></app-countdown>
         </div>
 
         <div class="col-sm-4" style="margin-bottom: 15px;">
@@ -144,4 +108,18 @@
         </div>
         
       </div>
+
+
+
+      <div class="row">
+        <div class="col-md-12">
+          <h1 style="margin-top: 20px;">Transactions</h1>
+          <div class="white-bg break-txt" style="padding: 30px; margin-top: 50px;">
+            sacasc
+          </div>
+        </div>
+      </div>
+
+
+
     </div>
