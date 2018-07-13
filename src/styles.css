@@ -3,6 +3,30 @@
   src: url(./assets/orange kid.ttf) format("opentype");
 }
 
+.search-input {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+    border: thin solid #cacaca;
+    padding: 7px 15px;
+    border-radius: 20px;
+    margin-top: 11px;
+    position: relative;
+    min-width: 350px;
+    font-size: 12px;
+    outline: none;
+    box-shadow: 1px 1px 1px inset rgba(0,0,0,0.1);
+    position: relative;
+    top: -5px;    
+}
+.search-input:focus {
+  border-color: #29a6d3;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
 .btn-lg-outline {
     padding: 10px 12px !important;
     border-radius: 40px !important;   
@@ -163,7 +187,7 @@ table tbody td {
   white-space: nowrap;
 }
 
-input[type="text"],input[type="email"],input[type="password"] {
+/*input[type="text"],input[type="email"],input[type="password"] {
   background: transparent none repeat scroll 0 0;
   border-color: -moz-use-text-color -moz-use-text-color #2cb8d1;
   border-radius: 5px;
@@ -177,7 +201,7 @@ input[type="text"],input[type="email"],input[type="password"] {
   padding: 0 11px 0 55px;
   transition: all 0.3s ease 0s;
   width: 100%;
-}
+}*/
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
@@ -199,10 +223,10 @@ input[type="text"],input[type="email"],input[type="password"] {
   opacity: 1;
 }
 
-input[type="text"]:active,input[type="email"]:active,input[type="password"]:active,input[type="text"]:focus,input[type="email"]:focus,input[type="password"]:focus {
+/*input[type="text"]:active,input[type="email"]:active,input[type="password"]:active,input[type="text"]:focus,input[type="email"]:focus,input[type="password"]:focus {
   border-bottom: 4px solid #2cb8d1;
   transition: all 0.3s ease 0s;
-}
+}*/
 
 /* Navbar and Language Bar */
 
