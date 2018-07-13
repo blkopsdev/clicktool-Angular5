@@ -10,6 +10,7 @@ export class EqualHeightColDirective {
 
   colHeight:number[] = []
   el:ElementRef
+  windowWidth:number = $(window).width()
 
   constructor(el: ElementRef, app:AppComponent) {
   	this.el = el
