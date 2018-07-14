@@ -92,6 +92,9 @@
   padding: 10px;
   border-bottom: thin solid #dedede;
 }
+.main-nav .dropdown-menu a:last-child {
+  border-bottom: none;
+}
 
 .full-width-list {
   width: 100%;
