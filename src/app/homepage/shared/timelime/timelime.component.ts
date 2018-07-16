@@ -19,13 +19,18 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
   @ViewChild('mileStoneGear') mileStoneGear:ElementRef;
 
   boxes:Box[] = [
-    new Box("May 1", "'18", "Start of Development", "May 1"),
-    new Box("Jun 1", "'18", "Continue Development", "Jun 1"),
-    new Box("Aug 1", "'18", "Launch First ICO", "Aug 1"),
-    new Box("Sep 1", "'18", "Develop Blockchain", "Sep 1"),
-    new Box("Dec 1", "'18", "Make Lots of Money", "Dec 1"),
-    new Box("Jan 1", "'19", "Buy Lamborghini", "Jan 1"),
-    new Box("Feb 1", "'20", "Retire at Age Forty", "Feb 1"),
+    new Box("DEC", "'16", "Funding For Development", "DEC '16"),
+    new Box("FEB", "'17", "Software Architecture Design", "FEB '17"),
+    new Box("MAY", "'17", "Development Team Expanded", "MAY '17"),
+    new Box("JUN", "'17", "Development Begins", "JUN '17"),
+    new Box("DEC", "'17", "Closed Environment Launch", "DEC '17"),
+    new Box("JUL", "'18", "First Prototype Completed", "JUL '18"),
+    new Box("AUG", "'18", "Beta Software Release", "AUG '18"),
+    new Box("SEP", "'18", "Token Sale Live", "SEP '18"),
+    new Box("DEC", "'18", "Token Listed On Exchanges", "DEC '18"),
+    new Box("JAN", "'19", "Landing Page Builder Development", "JAN '19"),
+    new Box("FEB", "'19", "Decentralized Tracking Beta Release", "FEB '19"),
+    new Box("MAY", "'19", "Official Decentralized Tracking Platform Release", "MAY '19"),
   ]
 
   fslide:any;
