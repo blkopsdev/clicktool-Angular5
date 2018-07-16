@@ -16,9 +16,9 @@ export class DashboardNavComponent implements OnInit {
   	
   }
 
-  logout() {
+  logout(e) {
  	  this.memberSerivce.logout( this.app.getAccessToken() ).subscribe(res => this.memberSerivce.afterLogout())
- 	  return false;
+ 	  e.preventDefault();
   }
 
 }

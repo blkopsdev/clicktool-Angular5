@@ -58,6 +58,8 @@ import { LgTxtWButtonComponent } from './shared/common/lg-txt-w-button/lg-txt-w-
 import { CountdownComponent } from './shared/common/countdown/countdown.component';
 import { EqualHeightColDirective } from './shared/directives/equal-height-col.directive';
 import { CarComponent } from './car/car.component';
+import { SearchBarComponent } from './shared/common/search-bar/search-bar.component';
+import { TransactionTableComponent } from './transactions/transaction-table/transaction-table.component';
 
 
 
@@ -100,7 +102,9 @@ import { CarComponent } from './car/car.component';
     LgTxtWButtonComponent,
     CountdownComponent,
     EqualHeightColDirective,
-    CarComponent
+    CarComponent,
+    SearchBarComponent,
+    TransactionTableComponent
   ],
   imports: [
     BrowserModule,
