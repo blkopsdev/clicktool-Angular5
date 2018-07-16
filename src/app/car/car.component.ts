@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarComponent implements OnInit {
 
+
+  
+
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  moved() {
+
+  }
+
+  spoed() {
+
   }
 
 }

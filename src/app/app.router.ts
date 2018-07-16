@@ -26,10 +26,7 @@ export const router: Routes = [
 	{ path: '', component: HomepageComponent, canActivate:[IsLoggedInGuard]},
 	{ path: 'login', component: LoginComponent, canActivate:[IsLoggedInGuard] },
 
-  { path: 'affiliate', component: AffiliateComponent, canActivate:[IsLoggedInGuard]},
-
-  { path: 'timeline', component: TimelimeComponent },
-
+  	{ path: 'affiliate', component: AffiliateComponent, canActivate:[IsLoggedInGuard]},
 	{ path: 'signup', component: AgreementsComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/account', component: AccountInfoComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/contribution', component: ContributionComponent, canActivate:[IsLoggedInGuard] },
@@ -41,7 +38,7 @@ export const router: Routes = [
 	{ path: 'reset-password/:token', component: UpdatePasswordComponent, canActivate:[IsLoggedInGuard] },
 
 	{ path: 'dashboard', component: DashboardComponent  },
-	{ path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard] },
+	{ path: 'transactions', component: TransactionsComponent},
 	{ path: 'user/:id/password', component: PasswordComponent, canActivate: [AuthGuard] },
 
 	{ path: 'users', component: UsersComponent, canActivate: [AuthGuard] },
