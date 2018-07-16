@@ -1263,7 +1263,7 @@ body {
 }
 
 /* The slider itself */
-.slider {
+.rslider {
     -webkit-appearance: none;
     width: 100%;
     height: 15px;
@@ -1276,12 +1276,12 @@ body {
 }
 
 /* Mouse-over effects */
-.slider:hover {
+.rslider:hover {
     opacity: 1; /* Fully shown on mouse-over */
 }
 
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
-.slider::-webkit-slider-thumb {
+.rslider::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
     width: 25px; /* Set a specific slider handle width */
@@ -1291,7 +1291,8 @@ body {
     border-radius: 50%; 
 }
 
-.slider::-moz-range-thumb {
+
+.rslider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
     background: #37a2cd; /* Green background */
