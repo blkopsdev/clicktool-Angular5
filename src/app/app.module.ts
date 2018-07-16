@@ -57,6 +57,7 @@ import { QrCardComponent } from './shared/common/qr-card/qr-card.component';
 import { LgTxtWButtonComponent } from './shared/common/lg-txt-w-button/lg-txt-w-button.component';
 import { CountdownComponent } from './shared/common/countdown/countdown.component';
 import { EqualHeightColDirective } from './shared/directives/equal-height-col.directive';
+import { CarComponent } from './car/car.component';
 
 
 
@@ -98,7 +99,8 @@ import { EqualHeightColDirective } from './shared/directives/equal-height-col.di
     QrCardComponent,
     LgTxtWButtonComponent,
     CountdownComponent,
-    EqualHeightColDirective
+    EqualHeightColDirective,
+    CarComponent
   ],
   imports: [
     BrowserModule,
