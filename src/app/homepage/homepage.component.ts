@@ -142,7 +142,7 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
     // New Countdown Timer
 
     // Set the date we're counting down to
-    var countDownDate = new Date("Jul 1, 2018 12:00:00").getTime();
+    var countDownDate = new Date("Oct 1, 2018 12:00:00").getTime();
     var secondsDegree = 0;
     var minutesDegree = 15;
 
