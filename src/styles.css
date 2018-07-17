@@ -190,7 +190,7 @@ table tbody td {
   white-space: nowrap;
 }
 
-/*input[type="text"],input[type="email"],input[type="password"] {
+.reg-form input[type="text"],.reg-form input[type="email"],.reg-form input[type="password"] {
   background: transparent none repeat scroll 0 0;
   border-color: -moz-use-text-color -moz-use-text-color #2cb8d1;
   border-radius: 5px;
@@ -204,7 +204,12 @@ table tbody td {
   padding: 0 11px 0 55px;
   transition: all 0.3s ease 0s;
   width: 100%;
-}*/
+}
+
+.reg-form input[type="text"]:active,.reg-form input[type="email"]:active,.reg-form input[type="password"]:active,.reg-form input[type="text"]:focus,.reg-form input[type="email"]:focus,.reg-form input[type="password"]:focus {
+  border-bottom: 4px solid #2cb8d1;
+  transition: all 0.3s ease 0s;
+}
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
@@ -226,10 +231,7 @@ table tbody td {
   opacity: 1;
 }
 
-/*input[type="text"]:active,input[type="email"]:active,input[type="password"]:active,input[type="text"]:focus,input[type="email"]:focus,input[type="password"]:focus {
-  border-bottom: 4px solid #2cb8d1;
-  transition: all 0.3s ease 0s;
-}*/
+
 
 /* Navbar and Language Bar */
 

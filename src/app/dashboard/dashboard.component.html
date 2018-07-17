@@ -1,130 +1,74 @@
 <app-dashboard-header></app-dashboard-header>
+
 <div class="container-fluid">
   <div class="row">
-    
     <div class="col-md-12 brand-color-bg text-white p-5 text-center" style="padding: 60px;">
       <h1 style="font-size: 50px; margin-top: 50px;">Crowdsale Dashboard</h1>
       <h4 style="margin-top: 10px; color: #8BD0EC;">Total Value: $32,456,241 USD</h4>
       <div class="container-fluid" style="max-width: 1000px; margin-bottom: 50px;">
-        <div class="row timeline-row" style="margin-top: 100px; position: relative;">
-          <img style="position: absolute;
-    left: 100px;
-    top: 51px;
-    z-index: 100;" width="30" src="../../assets/148912.svg">
-          <div class="pl-0 pr-0 col-sm-3 text-left timeline-section">
-            <div class="timeline-section-top"><h4 class="p-0" style="font-size: 21px;">Sale 25%</h4>Price $0.014</div>
-            <div class="timeline-section-bottom">ROUND 1</div>
-          </div>
-           <div class="pl-0 pr-0 col-sm-3 text-left timeline-section">
-            <div class="timeline-section-top"><h4 class="p-0" style="font-size: 21px;">Sale 10%</h4>Price $0.014</div>
-            <div class="timeline-section-bottom">ROUND 2</div>
-          </div>
-          <div class="pl-0 pr-0 col-sm-3 text-left timeline-section">
-            <div class="timeline-section-top"><h4 class="p-0" style="font-size: 21px;">Sale 7%</h4>Price $0.014</div>
-            <div class="timeline-section-bottom">ROUND 3</div>
-          </div>
-          <div class="pl-0 pr-0 col-sm-3 text-left timeline-section">
-            <div class="timeline-section-top"><h4 class="p-0" style="font-size: 21px;">Sale 3%</h4>Price $0.014</div>
-            <div class="timeline-section-bottom">ROUND 4</div>
-          </div>                
-        </div>        
+        <app-timeline></app-timeline>        
       </div>
     </div>
   </div>
 </div>
-
-    <div class="container-fluid" style="margin-top:50px; max-width: 1200px;">
-      <div appEqualHeightCol class="row">
-
-        <div class="col col-sm-4 nrp padding-right-mobile" style="margin-bottom: 15px;">
-          <app-lg-txt-w-button
-          title="Balance"
-          bodyText="0"
-          subText="TOKENS"
-          ></app-lg-txt-w-button>
-        </div>
-        <div class="col col-sm-4" style="margin-bottom: 15px;">
-          <app-qr-card 
-          title="Pay with Bitcoin" 
-          address="0x624D5050b12154Eb29BEc54B8faAeC3A3c01bDD6" 
-          minimum="Minimum payment 0.01 BTC"
-          qrImageUrl="../../assets/qr.png"
-          >
-          </app-qr-card>
-        </div>
-        <div class="col col-sm-4 nlp padding-left-mobile" style="margin-bottom: 15px;">
-          <app-qr-card 
-          title="Pay with Ethereum" 
-          address="0x624D5050b12154Eb29BEc54B8faAeC3A3c01bDD6" 
-          minimum="Minimum payment 0.01 ETH"
-          qrImageUrl="../../assets/qr.png"
-          >
-          </app-qr-card>
-        </div>        
-
-      </div>
-
-
-      <div appEqualHeightCol class="row">
-
-        <div class="col-sm-4 nrp padding-right-mobile" style="margin-bottom: 15px;">
-            <app-countdown></app-countdown>
-        </div>
-
-        <div class="col-sm-4" style="margin-bottom: 15px;">
-          <div class="white-bg break-txt" style="padding: 30px;">
-            <h4 style="margin-bottom: 20px;">Exchange Rates</h4>
-            <div class="row">
-              <div class="col-md-12">
-               <span class="text-muted">Choose Token Amount</span><br>
-               <div class="clearfix" style="margin-bottom: 15px;">
-                 <span class="pull-left"><strong>1000</strong></span>
-                 <span class="pull-right"> <strong>CTC</strong> </span>
-               </div>
-               <input type="range" min="1" max="100" value="0" class="rslider" id="myRange">
-
-               <div class="row" style=" margin-top: 20px;">
-                 <div class="col-md-12 clearfix" style="margin-bottom: 10px;">
-                   <div class="pull-left">= 0.9800</div>
-                   <div class="pull-right"> <strong class="badge badge-primary">BTC</strong> </div>
-                 </div>
-                 <div class="col-md-12 clearfix" style="margin-bottom: 10px;">
-                   <div class="pull-left">= 0.9375</div>
-                   <div class="pull-right"> <strong class="badge badge-primary">ETH</strong> </div>
-                 </div>
-                 <div class="col-md-12 clearfix">
-                   <div class="pull-left">= 47.9700</div>
-                   <div class="pull-right"> <strong class="badge badge-primary">USD</strong> </div>
-                 </div>                                  
-               </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-4 nlp padding-left-mobile" style="margin-bottom: 15px;">
-          <div class="white-bg break-txt" style="padding: 30px;">
-            <h4 style="margin-bottom: 20px;">How to contribute</h4>
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jwulcLx5o-E"></iframe>
-            </div> 
-          </div>                   
-        </div>
-        
-      </div>
-
-
-
-      <div class="row" style="margin-bottom: 50px;">
-        <div class="col-md-12">
-          <h1 style="margin-top: 20px;">Transactions</h1>
-          <div class="white-bg break-txt" style="padding: 10px; margin-top: 30px;">
-            <app-transaction-table></app-transaction-table>
-          </div>
-        </div>
-      </div>
-
-
-
+<div class="container-fluid" style="margin-top:50px; max-width: 1200px;">
+  
+  <div appEqualHeightCol class="row">
+    <div class="col col-sm-4 nrp padding-right-mobile" style="margin-bottom: 15px;">
+      <app-lg-txt-w-button
+      title="Balance"
+      bodyText="0"
+      subText="TOKENS"
+      ></app-lg-txt-w-button>
     </div>
+    <div class="col col-sm-4" style="margin-bottom: 15px;">
+      <app-qr-card 
+      title="Pay with Bitcoin" 
+      address="0x624D5050b12154Eb29BEc54B8faAeC3A3c01bDD6" 
+      minimum="Minimum payment 0.01 BTC"
+      qrImageUrl="../../assets/qr.png"
+      >
+      </app-qr-card>
+    </div>
+    <div class="col col-sm-4 nlp padding-left-mobile" style="margin-bottom: 15px;">
+      <app-qr-card 
+      title="Pay with Ethereum" 
+      address="0x624D5050b12154Eb29BEc54B8faAeC3A3c01bDD6" 
+      minimum="Minimum payment 0.01 ETH"
+      qrImageUrl="../../assets/qr.png"
+      >
+      </app-qr-card>
+    </div>        
+  </div>
+
+
+  <div appEqualHeightCol class="row">
+    <div class="col-sm-4 nrp padding-right-mobile" style="margin-bottom: 15px;">
+        <app-countdown></app-countdown>
+    </div>
+
+    <div class="col-sm-4" style="margin-bottom: 15px;">
+      <app-exchange-rate></app-exchange-rate>
+    </div>
+
+    <div class="col-sm-4 nlp padding-left-mobile" style="margin-bottom: 15px;">
+      <app-video-card></app-video-card>                  
+    </div>
+  </div>
+
+
+  <div class="row" style="margin-bottom: 50px;">
+    <div class="col-md-12">
+      <h2 style="margin-top: 20px;">Transactions</h2>
+      <div style="margin-top: 35px;">
+        <app-transaction-table></app-transaction-table>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+   
