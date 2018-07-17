@@ -2794,14 +2794,8 @@ margin: 20px;
 
 .social-icons p {
   font-size: 30px;
-  margin-right: 60px;
-  opacity: 0.3;
+  margin-right: 40px;
   margin-top: 10px;
-}
-
-.social-icons p:hover {
-  opacity: 1;
-  cursor: pointer;
 }
 
 .fa-div {
@@ -2883,6 +2877,72 @@ margin: 20px;
 
 .display-none {
   display: none !important;
+}
+
+.facebook {
+  color:  #4468b0 !important;
+}
+
+.facebook:hover {
+  color:  #395897 !important;
+}
+
+.twitter {
+  color:  #2aa3ef !important;
+}
+
+.twitter:hover {
+  color:  #2592D6 !important;
+}
+
+.linkedin {
+  color:  #1178b3 !important;
+}
+
+.linkedin:hover {
+  color:  #0E6497 !important;
+}
+
+.reddit {
+  color:  #fc461e !important;
+}
+
+.reddit:hover {
+  color:  #DF3F1D !important;
+}
+
+.instagram {
+  margin-right: 40px;
+  margin-top: 15px;
+  color:  white !important;
+  height: 30px;
+  width: 30px;
+  font-size: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF)
+}
+
+.instagram:hover {
+  background: radial-gradient(circle at 33% 100%, #E2BC69 4%, #D2483D 30%, #B5286B 62%, #802D99 85%, #424EAB)
+}
+
+.telegram {
+  color:  #3bb0ea !important;
+}
+
+.telegram:hover {
+  color:  #3191C1 !important;
+}
+
+.medium {
+  color:  #26b377 !important;
+}
+
+.medium:hover {
+  color:  #1E8B5E !important;
 }
 
 /* Media Queries */
