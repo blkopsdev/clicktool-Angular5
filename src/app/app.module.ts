@@ -60,6 +60,10 @@ import { EqualHeightColDirective } from './shared/directives/equal-height-col.di
 import { CarComponent } from './car/car.component';
 import { SearchBarComponent } from './shared/common/search-bar/search-bar.component';
 import { TransactionTableComponent } from './transactions/transaction-table/transaction-table.component';
+import { TimelineComponent } from './shared/common/timeline/timeline.component';
+import { ExchangeRateComponent } from './shared/common/exchange-rate/exchange-rate.component';
+import { VideoCardComponent } from './shared/common/video-card/video-card.component';
+import { TransactionRowComponent } from './transactions/transaction-table/transaction-row/transaction-row.component';
 
 
 
@@ -104,7 +108,11 @@ import { TransactionTableComponent } from './transactions/transaction-table/tran
     EqualHeightColDirective,
     CarComponent,
     SearchBarComponent,
-    TransactionTableComponent
+    TransactionTableComponent,
+    TimelineComponent,
+    ExchangeRateComponent,
+    VideoCardComponent,
+    TransactionRowComponent
   ],
   imports: [
     BrowserModule,
