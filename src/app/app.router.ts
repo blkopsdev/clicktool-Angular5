@@ -20,6 +20,7 @@ import { TextActionComponent } from './shared/common/text-action/text-action.com
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { TimelimeComponent } from './homepage/shared/timelime/timelime.component';
 import { WireInfoComponent } from './wire-info/wire-info.component';
+import { SettingsComponent } from './settings/settings.component';
 
 export const router: Routes = [
 
@@ -32,6 +33,9 @@ export const router: Routes = [
 	{ path: 'signup/contribution', component: ContributionComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/wire', component: WireInfoComponent, canActivate:[AuthGuard] },
 	{ path: 'signup/identification', component: IdentificationComponent, canActivate:[IsLoggedInGuard] },
+	{ path: 'settings', component: SettingsComponent },
+
+
 
 	{ path: 'password/reset', component: PasswordResetComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'password/reset/checkemail', component: TextActionComponent, canActivate:[IsLoggedInGuard] },

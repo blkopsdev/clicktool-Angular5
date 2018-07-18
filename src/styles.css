@@ -3,6 +3,79 @@
   src: url(./assets/orange kid.ttf) format("opentype");
 }
 
+.form-toggler-container app-form-toggler:last-child .bb {
+  border-bottom: 0;
+}
+
+.form-toggler-content {
+  background-color: #f7f7f7;
+}
+.form-toggler-content input {
+    width: 100%;
+    padding: 7px 12px;
+    font-size: 16px;
+}
+
+.p-rel {
+  position: relative;
+}
+
+.hoverable-row:hover {
+  background: #f7fafb;
+}
+
+.full-link {
+    position: absolute;
+    left: 0;
+    z-index: 9000;
+    right: 0;
+    width: 100%;
+    top: 0;
+    bottom: 0;  
+}
+
+.title-bb {
+    display: block;
+    padding: 15px;
+    font-weight: bold; 
+}
+
+.mw-900 {
+  max-width: 900px;
+}
+
+.sidenav-2 > li > a {
+  display: block;
+  padding: 5px 12px;
+  color: #000;
+}
+
+.sidenav-2 > li > a > i {
+    font-size: 16px;
+    top: 2px;
+    position: relative;  
+}
+.sidenav-2 > li > a.active-link {
+  background: #1fa7d721;
+}
+
+.npr {
+  padding-right: 0;
+}
+.npl {
+  padding-left: 0;
+}
+
+.br {
+  border-right: thin solid #dadada;  
+}
+.bb {
+  border-bottom: thin solid #dadada;  
+}
+.bl {
+  border-left: thin solid #dadada;  
+}
+
 .search-input {
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -422,7 +495,6 @@ header .navbar-header a img {
 }
 
 .text-right {
-  margin: 16px 0 27px;
   text-align: right;
 }
 
@@ -1146,7 +1218,7 @@ body {
   line-height: 2.2vw;
   z-index: 5;
   text-align: center;
-  font-size: 3vw;
+  font-size: 2vw;
   font-family: ok;
 }
 .sc > div {

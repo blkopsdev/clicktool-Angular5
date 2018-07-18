@@ -64,6 +64,9 @@ import { TimelineComponent } from './shared/common/timeline/timeline.component';
 import { ExchangeRateComponent } from './shared/common/exchange-rate/exchange-rate.component';
 import { VideoCardComponent } from './shared/common/video-card/video-card.component';
 import { TransactionRowComponent } from './transactions/transaction-table/transaction-row/transaction-row.component';
+import { SettingsComponent } from './settings/settings.component';
+import { FormTogglerComponent } from './shared/common/form-toggler/form-toggler.component';
+import { FormTogglerCloseDirective } from './shared/directives/form-toggler-close.directive';
 
 
 
@@ -112,7 +115,10 @@ import { TransactionRowComponent } from './transactions/transaction-table/transa
     TimelineComponent,
     ExchangeRateComponent,
     VideoCardComponent,
-    TransactionRowComponent
+    TransactionRowComponent,
+    SettingsComponent,
+    FormTogglerComponent,
+    FormTogglerCloseDirective
   ],
   imports: [
     BrowserModule,
