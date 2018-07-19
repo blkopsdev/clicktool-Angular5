@@ -68,6 +68,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { FormTogglerComponent } from './shared/common/form-toggler/form-toggler.component';
 import { FormTogglerCloseDirective } from './shared/directives/form-toggler-close.directive';
 import { SecurityComponent } from './settings/security/security.component';
+import { SettingsNavComponent } from './settings/settings-nav/settings-nav.component';
 
 
 
@@ -120,7 +121,8 @@ import { SecurityComponent } from './settings/security/security.component';
     SettingsComponent,
     FormTogglerComponent,
     FormTogglerCloseDirective,
-    SecurityComponent
+    SecurityComponent,
+    SettingsNavComponent
   ],
   imports: [
     BrowserModule,

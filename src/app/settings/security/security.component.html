@@ -1,3 +1,31 @@
-<p>
-  security works!
-</p>
+<app-dashboard-header></app-dashboard-header>
+
+<div class="container-fluid white-bg bb" style="margin-top: 60px; box-shadow: 1px 1px 1px rgba(0,0,0,0.1);">
+	<div class="container mw-900 br bl">
+		<div class="row">
+			<div class="col-md-3 npr npl">
+				<app-settings-nav></app-settings-nav>
+			</div>
+			<div class="col-md-9 bl form-toggler-container">
+				
+				<div class="row">
+					<div class="col-md-12 bb">
+						<h4 class="title-bb">Security</h4>
+					</div>
+				</div>
+
+
+				<app-form-toggler 
+					label="Password" 
+					value="•••••••••••••"
+					[verifyValue]="false" 
+					[fields]="[{name:'chris'}]"
+					(onSave)="saveSettings($event)">		
+				</app-form-toggler>
+
+
+				
+			</div>
+		</div>
+	</div>
+</div>

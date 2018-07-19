@@ -21,6 +21,7 @@ import { UpdatePasswordComponent } from './update-password/update-password.compo
 import { TimelimeComponent } from './homepage/shared/timelime/timelime.component';
 import { WireInfoComponent } from './wire-info/wire-info.component';
 import { SettingsComponent } from './settings/settings.component';
+import { SecurityComponent } from './settings/security/security.component';
 
 export const router: Routes = [
 
@@ -34,6 +35,7 @@ export const router: Routes = [
 	{ path: 'signup/wire', component: WireInfoComponent, canActivate:[AuthGuard] },
 	{ path: 'signup/identification', component: IdentificationComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'settings', component: SettingsComponent },
+	{ path: 'settings/security', component: SecurityComponent },
 
 
 
