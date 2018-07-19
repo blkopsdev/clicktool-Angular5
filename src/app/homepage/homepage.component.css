@@ -3227,6 +3227,13 @@ margin: 20px;
   } .vid-text a {
     right: 92% !important;
   }
+  .action-container {
+    overflow: hidden !important;
+  }
+  .clicktool-city {
+    overflow: hidden !important;
+  }
+
 }
 
 @media only screen and (max-width: 420px){
