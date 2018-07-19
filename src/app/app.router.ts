@@ -22,8 +22,10 @@ import { TimelimeComponent } from './homepage/shared/timelime/timelime.component
 import { WireInfoComponent } from './wire-info/wire-info.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SecurityComponent } from './settings/security/security.component';
+import { WalletSettingsComponent } from './settings/wallet-settings/wallet-settings.component';
 
 export const router: Routes = [
+
 
 	{ path: '', component: HomepageComponent, canActivate:[IsLoggedInGuard]},
 	{ path: 'login', component: LoginComponent, canActivate:[IsLoggedInGuard] },
@@ -36,6 +38,7 @@ export const router: Routes = [
 	{ path: 'signup/identification', component: IdentificationComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'settings', component: SettingsComponent },
 	{ path: 'settings/security', component: SecurityComponent },
+	{ path: 'settings/wallet', component: WalletSettingsComponent },
 
 
 

@@ -1,0 +1,63 @@
+<app-dashboard-header></app-dashboard-header>
+
+<div class="container-fluid white-bg bb" style="margin-top: 60px; box-shadow: 1px 1px 1px rgba(0,0,0,0.1);">
+	<div class="container mw-900 br bl">
+		<div class="row">
+			<div class="col-md-3 npr npl">
+				<app-settings-nav></app-settings-nav>
+			</div>
+			<div class="col-md-9 bl form-toggler-container">
+				
+				<div class="row">
+					<div class="col-md-12 bb">
+						<h4 class="title-bb">Wallets</h4>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12 bb" style="padding:20px;">
+						<ul class="list-inline">
+							<li class="list-inline-item"> <button class="btn btn-primary">+ Add Wallet</button> </li>
+						</ul>
+					</div>
+				</div>
+
+				<app-form-toggler 
+					label="Wallet Name" 
+					value="0x624D5050b12154Eb29BEc54B8faAeC3A3c01bDD6"
+					[verifyValue]="false" 
+					[fields]="[{name:'chris'}]"
+					(onSave)="saveSettings($event)">		
+				</app-form-toggler>
+				<app-form-toggler 
+					label="Wallet Name" 
+					value="0x624D5050b12154Eb29BEc54B8faAeC3A3c01bDD6"
+					[verifyValue]="false" 
+					[fields]="[{name:'chris'}]"
+					(onSave)="saveSettings($event)">		
+				</app-form-toggler>
+				<app-form-toggler 
+					label="Wallet Name" 
+					value="0x624D5050b12154Eb29BEc54B8faAeC3A3c01bDD6"
+					[verifyValue]="false" 
+					[fields]="[{name:'chris'}]"
+					(onSave)="saveSettings($event)">		
+				</app-form-toggler>
+				<app-form-toggler 
+					label="Wallet Name" 
+					value="0x624D5050b12154Eb29BEc54B8faAeC3A3c01bDD6"
+					[verifyValue]="false" 
+					[fields]="[{name:'chris'}]"
+					(onSave)="saveSettings($event)">		
+				</app-form-toggler>
+				<app-form-toggler 
+					label="Wallet Name" 
+					value="0x624D5050b12154Eb29BEc54B8faAeC3A3c01bDD6"
+					[verifyValue]="false" 
+					[fields]="[{name:'chris'}]"
+					(onSave)="saveSettings($event)">		
+				</app-form-toggler>								
+			</div>
+		</div>
+	</div>
+</div>
