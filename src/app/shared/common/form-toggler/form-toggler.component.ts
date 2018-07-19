@@ -24,15 +24,20 @@ export class FormTogglerComponent implements OnInit {
   }
 
   toggleChild(e) {
+  	
+  	$('.form-toggler-content.open-input').prev('.hoverable-row').show()
+  	$('.form-toggler-content.open-input').hide()
+
+
   	var row = $(e.target).parent('.hoverable-row')
-  	row.next('.form-toggler-content').show()
+  	row.next('.form-toggler-content').show().addClass('open-input')
   	row.hide()
   	e.preventDefault()
   }
 
   close(e) { 
   	var content = $(e.target).closest('.form-toggler-content')
-  	content.hide()
+  	content.hide().removeClass('open-input')
   	content.prev('.hoverable-row').show()
   }
 
