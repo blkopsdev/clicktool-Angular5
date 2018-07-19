@@ -8,14 +8,22 @@
 	</div>
 	<div class="col-md-3 text-right"> {{ actionLabel }} </div>
 </div>
+
 <div class="row form-toggler-content bb" style="display: none;">
 	<div class="col-md-12">
 		<div style="padding: 20px;">
-			<label>{{ label }}</label>
-			<input value="{{ value }}" type="text" name="name">
+			
+			<div>
+				<label>{{ label }}</label>
+				<input value="{{ value }}" type="text" name="name">				
+			</div>
+			<div style="margin-top: 10px;" *ngIf="verifyValue">
+				<label>Enter {{ label }} again</label>
+				<input type="text" name="name" placeholder="enter {{ label }} again">	
+			</div>
 			<div class="clearfix" style="margin-top: 10px;">
 				<button class="btn btn-secondary pull-left form-toggler-close" (click)="close($event)" >Cancel</button>
-				<button class="btn btn-primary pull-right">Save</button>
+				<button class="btn btn-primary pull-right" (click)="save()">Save</button>
 			</div>
 		</div>
 	</div>
