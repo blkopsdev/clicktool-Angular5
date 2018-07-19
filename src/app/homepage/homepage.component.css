@@ -1259,6 +1259,7 @@ margin: 20px;
 .experience-container {
   position: relative;
   max-width: 1000px;
+  overflow: hidden;
 }
 
 #gray-gear2 {
