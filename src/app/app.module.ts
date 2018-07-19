@@ -67,6 +67,7 @@ import { TransactionRowComponent } from './transactions/transaction-table/transa
 import { SettingsComponent } from './settings/settings.component';
 import { FormTogglerComponent } from './shared/common/form-toggler/form-toggler.component';
 import { FormTogglerCloseDirective } from './shared/directives/form-toggler-close.directive';
+import { SecurityComponent } from './settings/security/security.component';
 
 
 
@@ -118,7 +119,8 @@ import { FormTogglerCloseDirective } from './shared/directives/form-toggler-clos
     TransactionRowComponent,
     SettingsComponent,
     FormTogglerComponent,
-    FormTogglerCloseDirective
+    FormTogglerCloseDirective,
+    SecurityComponent
   ],
   imports: [
     BrowserModule,

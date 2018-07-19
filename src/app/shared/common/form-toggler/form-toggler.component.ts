@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 declare var $:any
 
@@ -9,14 +9,18 @@ declare var $:any
 })
 export class FormTogglerComponent implements OnInit {
 
+  @Input() verifyValue:boolean = false
+
   @Input() label:string
   @Input() value:string
   @Input() actionLabel:string = "edit"
+  @Input() fields:Object
+  @Output() onSave: EventEmitter<any> = new EventEmitter()
 
   constructor() { }
 
   ngOnInit() {
-
+  	console.log(this.fields)
   }
 
   toggleChild(e) {
@@ -26,10 +30,14 @@ export class FormTogglerComponent implements OnInit {
   	e.preventDefault()
   }
 
-  close(e) {
-  	console.log($(e.target).closest('.form-toggler-content').hide())
-  	$(e.target).closest('.form-toggler-content').prev('.hoverable-row').show()
+  close(e) { 
+  	var content = $(e.target).closest('.form-toggler-content')
+  	content.hide()
+  	content.prev('.hoverable-row').show()
+  }
 
+  save() {
+  	this.onSave.emit(this.fields);
   }
 
 }
