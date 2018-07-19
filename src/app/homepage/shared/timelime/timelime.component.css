@@ -671,7 +671,9 @@
 }
 
 .sc {
-  font-size: 2.05vw;
+  font-size: 2.55vw;
+  line-height: 1.95vw;
+  margin-top: -0.2vw;
 }
 
 .yellow-light {
