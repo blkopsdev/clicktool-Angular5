@@ -26,11 +26,11 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
     new Box("DEC", "'17", "Closed Environment Launch", "DEC '17"),
     new Box("JUL", "'18", "First Prototype Completed", "JUL '18"),
     new Box("AUG", "'18", "Beta Software Release", "AUG '18"),
-    new Box("SEP", "'18", "Token Sale Live", "SEP '18"),
+    new Box("SEP", "'18", "Token Sale Goes Live", "SEP '18"),
     new Box("DEC", "'18", "Token Listed On Exchanges", "DEC '18"),
     new Box("JAN", "'19", "Landing Page Builder Development", "JAN '19"),
     new Box("FEB", "'19", "Decentralized Tracking Beta Release", "FEB '19"),
-    new Box("MAY", "'19", "Official Decentralized Tracking Platform Release", "MAY '19"),
+    new Box("MAY", "'19", "Decentralized Platform Release", "MAY '19"),
   ]
 
   fslide:any;
