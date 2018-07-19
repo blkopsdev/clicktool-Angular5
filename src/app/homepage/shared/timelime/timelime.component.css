@@ -670,7 +670,9 @@
   z-index: 6;
 }
 
-
+.sc {
+  font-size: 26px;
+}
 
 .yellow-light {
   height: 4%;
