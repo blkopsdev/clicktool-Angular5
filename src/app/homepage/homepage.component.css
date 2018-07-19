@@ -1412,12 +1412,14 @@ margin: 20px;
   left: 0;
   right: 0;
   margin: auto;
+  margin-bottom: -45px;
 }
 
 #chart1a {
   position: absolute;
-  height: 30%;
-  right: 30%;
+  height: 26%;
+  right: 32%;
+  top: 2%;
 }
 
 #chart1b {
@@ -1429,14 +1431,14 @@ margin: 20px;
 
 #chart1c {
   position: absolute;
-  height: 26%;
-  top: 40%;
-  right: 19%;
+  height: 21%;
+  top: 41%;
+  right: 22%;
 }
 
 #chart1d {
   position: absolute;
-  height: 20%;
+  height: 16%;
   top: 65%;
   right: 50%;
 }
@@ -1483,32 +1485,46 @@ margin: 20px;
   right: 28%;
 }
 
+#chart1k {
+  position: absolute;
+  height: 12%;
+  top: 64%;
+  right: 68%;
+}
+
 .chart-text1a {
   position: absolute;
   top: 40.5%;
-  right: 56%;
-  height: 7.5%;
+  right: 55.6%;
+  height: 9.5%;
 }
 
 .chart-text1b {
   position: absolute;
-  top: 11%;
-  right: 36%;
+  top: 11.5%;
+  right: 37%;
   height: 7%;
 }
 
 .chart-text1c {
   position: absolute;
-  top: 50%;
-  right: 25%;
+  top: 48.5%;
+  right: 26%;
   height: 6%;
 }
 
 .chart-text1d {
   position: absolute;
-  top: 72%;
+  top: 70.5%;
   right: 54%;
   height: 5%;
+}
+
+.chart-text1e {
+  position: absolute;
+  top: 67.5%;
+  right: 70%;
+  height: 4.5%;
 }
 
 #chart2a {
@@ -1597,9 +1613,9 @@ margin: 20px;
 
 #chart2m {
   position: absolute;
-  top: 0%;
-  right: 55%;
-  height: 8%;
+  top: -1%;
+  right: 53%;
+  height: 10%;
 }
 
 .chart-text2a {
@@ -1633,8 +1649,22 @@ margin: 20px;
 .chart-text2e {
   position: absolute;
   top: 53%;
-  right: 43.5%;
+  right: 44%;
   height: 3.5%;
+}
+
+.chart-text2f {
+  position: absolute;
+  top: 2.2%;
+  right: 55.3%;
+  height: 3.4%;
+}
+
+.chart-text2g {
+  position: absolute;
+  top: 80.3%;
+  right: 49.6%;
+  height: 3%;
 }
 
 .chart-gear {
@@ -1785,6 +1815,15 @@ margin: 20px;
   background-color: #9ee2ec;
 }
 
+#legend1 h4:nth-child(5) span span:first-child {
+  color: #24537f;
+  font-weight: 500;
+}
+
+#legend1 h4:nth-child(5):hover {
+  background-color: #24537f;
+}
+
 #legend2 h4:nth-child(4) span span:first-child {
   color: #fd8a66;
   font-weight: 500;
@@ -1802,6 +1841,25 @@ margin: 20px;
 #community:nth-child(5):hover {
   background-color: #9ee2ec;
 }
+
+#legend2 h4:nth-child(6) span span:first-child {
+  color: #fbc943;
+  font-weight: 500;
+}
+
+#legend2 h4:nth-child(6):hover {
+  background-color: #fbc943;
+}
+
+#legend2 h4:nth-child(7) span span:first-child {
+  color: #24537f;
+  font-weight: 500;
+}
+
+#legend2 h4:nth-child(7):hover {
+  background-color: #24537f;
+}
+
 
 /* Video Section */
 .vid-container {

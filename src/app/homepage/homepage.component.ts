@@ -263,8 +263,20 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
         $('#legal').removeClass('chart-active chart-active4a');
       });
 
+      $('#chart1k, .chart-text1e').mouseenter(function(){
+        $('#legal2').addClass('chart-active chart-active2b');
+      });
+
+      $('#chart1k, .chart-text1e').mouseleave(function(){
+        $('#legal2').removeClass('chart-active chart-active2b');
+      });
+
       $('#legal').mouseenter(function(){
         chartGearSpin('#chart1d');
+      });
+
+      $('#legal2').mouseenter(function(){
+        chartGearSpin('#chart1k');
       });
 
       $('#chart2a, .chart-text2a').mouseenter(function(){
@@ -325,6 +337,30 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
 
       $('#community').mouseenter(function(){
         chartGearSpin('#chart2e');
+      });
+
+      $('#chart2m, .chart-text2f').mouseenter(function(){
+        $('#advisors').addClass('chart-active chart-active1b');
+      });
+
+      $('#chart2m, .chart-text2f').mouseleave(function(){
+        $('#advisors').removeClass('chart-active chart-active1b');
+      });
+
+      $('#advisors').mouseenter(function(){
+        chartGearSpin('#chart2m');
+      });
+
+      $('#chart2g, .chart-text2g').mouseenter(function(){
+        $('#air-drop').addClass('chart-active chart-active2b');
+      });
+
+      $('#chart2g, .chart-text2g').mouseleave(function(){
+        $('#air-drop').removeClass('chart-active chart-active2b');
+      });
+
+      $('#air-drop').mouseenter(function(){
+        chartGearSpin('#chart2g');
       });
 
       // Video Modal -------------------
