@@ -12,4 +12,8 @@ export class SettingsComponent implements OnInit {
   ngOnInit() {
   }
 
+  saveSettings(fields:any) {
+  	console.log(fields)
+  }
+
 }

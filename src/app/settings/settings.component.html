@@ -32,7 +32,13 @@
 				</div>
 
 
-				<app-form-toggler label="Full name" value="Christopher Kendrick"></app-form-toggler>
+				<app-form-toggler 
+					label="Full name" 
+					value="Christopher Kendrick"
+					[verify]="true" 
+					[fields]="[{name:'chris'}]"
+					(onSave)="saveSettings($event)">		
+				</app-form-toggler>
 				<app-form-toggler label="Email" value="chris.kendricks07@gmai.com"></app-form-toggler>				
 				<app-form-toggler label="DOB" value="07/30/1988"></app-form-toggler>
 				<app-form-toggler label="Country" value="USA"></app-form-toggler>
