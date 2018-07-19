@@ -1,7 +1,7 @@
 .nav-btn {
   display: flex;
   position: absolute;
-  right: 0px;
+  right: 15px;
 }
 
 .nav-btn i {
@@ -36,7 +36,7 @@
 }
 
 .navbar {
-  position: static;
+  position: relative;
   z-index:  100;
 }
 
@@ -67,7 +67,7 @@
 }
 
 @media (max-width: 767px) {
-  .nav-btn {
+/*  .nav-btn {
     margin-right: -28px;
-  }
+  }*/
 }
