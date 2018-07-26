@@ -19,18 +19,18 @@ export class TimelimeComponent implements OnInit, AfterViewInit {
   @ViewChild('mileStoneGear') mileStoneGear:ElementRef;
 
   boxes:Box[] = [
-    new Box("DEC", "'16", "Funding For Development", "DEC '16"),
-    new Box("FEB", "'17", "Software Architecture Design", "FEB '17"),
-    new Box("MAY", "'17", "Development Team Expanded", "MAY '17"),
-    new Box("JUN", "'17", "Development Begins", "JUN '17"),
-    new Box("DEC", "'17", "Closed Environment Launch", "DEC '17"),
-    new Box("JUL", "'18", "First Prototype Completed", "JUL '18"),
-    new Box("AUG", "'18", "Beta Software Release", "AUG '18"),
-    new Box("SEP", "'18", "Token Sale Goes Live", "SEP '18"),
-    new Box("DEC", "'18", "Token Listed On Exchanges", "DEC '18"),
-    new Box("JAN", "'19", "Landing Page Builder Development", "JAN '19"),
-    new Box("FEB", "'19", "Decentralized Tracking Beta Release", "FEB '19"),
     new Box("MAY", "'19", "Decentralized Platform Release", "MAY '19"),
+    new Box("FEB", "'19", "Decentralized Tracking Beta Release", "FEB '19"),
+    new Box("JAN", "'19", "Landing Page Builder Development", "JAN '19"),
+    new Box("DEC", "'18", "Token Listed On Exchanges", "DEC '18"),
+    new Box("SEP", "'18", "Token Sale Goes Live", "SEP '18"),
+    new Box("AUG", "'18", "Beta Software Release", "AUG '18"),
+    new Box("JUL", "'18", "First Prototype Completed", "JUL '18"),
+    new Box("DEC", "'17", "Closed Environment Launch", "DEC '17"),
+    new Box("JUN", "'17", "Development Begins", "JUN '17"),
+    new Box("MAY", "'17", "Development Team Expanded", "MAY '17"),
+    new Box("FEB", "'17", "Software Architecture Design", "FEB '17"),
+    new Box("DEC", "'16", "Funding For Development", "DEC '16"),
   ]
 
   fslide:any;
