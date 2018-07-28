@@ -155,8 +155,10 @@ div.sidebar-icon-arrow.sidebar-icon-right {
 	-webkit-transition: 0.5s;
 	transition: 0.5s;
 }
-.sidebar-icon-telegram-right:hover {
-	right: 0;
+@media only screen and (min-width: 992px) {
+	.sidebar-icon-telegram-right:hover {
+		right: 0;
+	}
 }
 img {
 	border-style: none;
