@@ -1,175 +1,190 @@
 div#sidebar-icon-share{
-			padding: 0;
-			margin: 0;
-		}
-		#sidebar-icon-share, #sidebar-icon-soc {
-		    top: 30% !important;
-		    bottom: auto;
-		}
-		#sidebar-icon-share{
-			display: table;
-		}
-		.slideInDown.addthis-animated, .slideInLeft.addthis-animated, .slideInRight.addthis-animated, .slideInUp.addthis-animated, .slideOutDown.addthis-animated, .slideOutLeft.addthis-animated, .slideOutRight.addthis-animated, .slideOutUp.addthis-animated {
-		    animation-duration: .4s;
-		}
-		
-		.do-animate .slideOutLeft {
-		    -webkit-animation-name: slideOutLeft;
-		    animation-name: slideOutLeft;
-		}
-		
-		@keyframes slideInUp{0%{transform:translateY(1500px)}0%,to{opacity:1}to{transform:translateY(0)}}
-		.slideInUp{animation-name:slideInUp}
-		.slideInUp.addthis-animated{animation-duration:.4s}
-		@keyframes slideInDown{0%{transform:translateY(-850px)}0%,to{opacity:1}to{transform:translateY(0)}}
-		.slideInDown{animation-name:slideInDown}
-		@keyframes slideOutUp{0%{transform:translateY(0)}0%,to{opacity:1}to{transform:translateY(-250px)}}
-		.slideOutUp{animation-name:slideOutUp}
-		
-		@keyframes slideOutDown{0%{transform:translateY(0)}0%,to{opacity:1}to{transform:translateY(350px)}}.slideOutDown{animation-name:slideOutDown}
-		
-		@keyframes slideInLeft{0%{opacity:0;transform:translateX(-850px)}to{transform:translateX(0)}}.slideInLeft{animation-name:slideInLeft}
-		@keyframes slideInRight{0%{opacity:0;transform:translateX(1250px)}to{transform:translateX(0)}}.slideInRight{animation-name:slideInRight}
-		@keyframes slideOutLeft{0%{transform:translateX(0)}to{opacity:0;transform:translateX(-350px)}}.slideOutLeft{animation-name:slideOutLeft}
-		@keyframes slideOutRight{0%{transform:translateX(0)}to{opacity:0;transform:translateX(350px)}}.slideOutRight{animation-name:slideOutRight}
-		.addthis-animated {
-		    animation-fill-mode: both;
-		    animation-timing-function: ease-out;
-		    animation-duration: .3s;
-		}
-		.sidebar-icon-left{
-			left: 0;
-			float: left;
-			right: auto;
-		}
-		.sidebar-icon {
-			position: fixed;
-			width: 3pc;
-			z-index: 100020;
-			background: none;
-		}
-		.sidebar-icon .sidebar-icon-btn {
-			border: 0;
-			padding: 0;
-		}
-		.sidebar-icon a{
-			position: relative;
-			display: block;
-			margin: 0;
-			width: 3pc;
-			outline-offset: -1px;
-			text-align: center;
-			float: left;
-			transition: width .15s ease-in-out;
-			overflow: hidden;
-			background: #e8e8e8;
-			z-index: 100030;
-			cursor: pointer;
-		}
-		.sidebar-icon-visually-hidden {
-		    position: absolute;
-		    clip: rect(1px,1px,1px,1px);
-		    padding: 0;
-		    border: 0;
-		    overflow: hidden;
-		}
-		.sidebar-icon .sidebar-icon-btn .sidebar-icon-wrapper, .sidebar-icon a .sidebar-icon-wrapper {
-		    display: block;
-		    background-color: #1db8d3;
-		    padding: 8px 0;
-		}
-		.sidebar-icon-wrapper svg {
-			fill: white;
-		}
-		.sidebar-icon .sidebar-icon-btn, .sidebar-icon a {
-		    text-align: center;
-		    cursor: pointer;
-		}
-		.sidebar-icon-open-control-left {
-			position: fixed;
-			top: 20%;
-			z-index: 100020;
-			left: 0;
-			width: 22px;
-		}
-		.sidebar-icon .sidebar-icon-btn span .sidebar-icon, .sidebar-icon a span .sidebar-icon {
-		    position: relative;
-		    top: 0;
-		    left: 0;
-		    display: block;
-		    background-repeat: no-repeat;
-		    background-position: 50% 50%;
-		    width: 2pc;
-		    height: 2pc;
-		    line-height: 2pc;
-		    border: none;
-		    padding: 0;
-		    margin: 0 auto;
-		    overflow: hidden;
-		    cursor: pointer;
-		    cursor: hand;
-		}
-		.sidebar-icon .sidebar-icon-btn:focus, .sidebar-icon .sidebar-icon-btn:hover, .sidebar-icon a:focus, .sidebar-icon a:hover {
-		    width: 4pc;
-		}
-		.sidebar-icon-close-control {
-			position: relative;
-			width: 3pc;
-			overflow: auto;
-		}
-		.sidebar-icon-show{
-			display:block!important;
-			opacity:1!important;
-		}
-		.sidebar-icon-show-content{
-			opacity:1!important;
-			visibility:visible;
-		}
-		.sidebar-icon-hide{display:none!important;opacity:0!important}
-		.sidebar-icon-hide-content{opacity:0!important;visibility:hidden}
-		.sidebar-icon-visible{display:block!important;opacity:0!important}
-		.sidebar-icon-hide-content {
-		    opacity: 0!important;
-		    visibility: hidden;
-		}
-		.sidebar-icon-close-control .sidebar-icon-arrow.sidebar-icon-left {
-		    float: right;
-		}
-		.sidebar-icon-arrow:hover{
-			cursor: pointer;
-		}
-		div.sidebar-icon-arrow.sidebar-icon-right {
-		    background-position: -20px 0;
-		}
-		.sidebar-icon-telegram-right {
-		    position: fixed;
-		    bottom: 0;
-		    border-radius: 0;
-		    overflow: hidden;
-		    max-width: 292px;
-		    z-index: 99;
-		    top: 0;
-		    margin: auto;
-		    height: 68px;
-		    right: -229px;
-		    -webkit-transition: 0.5s;
-		    transition: 0.5s;
-		}
-		.sidebar-icon-telegram-right:hover {
-		    right: 0;
-		}
-		img {
-		    border-style: none;
-		    vertical-align: top;
-		    max-width: 100%;
-		    height: auto;
-		}
-		.sidebar-icon-telegram-right img {
-		    border-radius: 10px;
-		    border: 2px solid #15456d;
-		}
-		@media only screen and (max-width: 480px) {
-			.telegram {
-			    display: none;
-			}
-		}
+	padding: 0;
+	margin: 0;
+}
+#sidebar-icon-share, #sidebar-icon-soc {
+	top: 30% !important;
+	bottom: auto;
+}
+#sidebar-icon-share{
+	display: table;
+}
+.slideInDown.addthis-animated, .slideInLeft.addthis-animated, .slideInRight.addthis-animated, .slideInUp.addthis-animated, .slideOutDown.addthis-animated, .slideOutLeft.addthis-animated, .slideOutRight.addthis-animated, .slideOutUp.addthis-animated {
+	animation-duration: .4s;
+}
+
+.do-animate .slideOutLeft {
+	-webkit-animation-name: slideOutLeft;
+	animation-name: slideOutLeft;
+}
+
+@keyframes slideInUp{0%{transform:translateY(1500px)}0%,to{opacity:1}to{transform:translateY(0)}}
+.slideInUp{animation-name:slideInUp}
+.slideInUp.addthis-animated{animation-duration:.4s}
+@keyframes slideInDown{0%{transform:translateY(-850px)}0%,to{opacity:1}to{transform:translateY(0)}}
+.slideInDown{animation-name:slideInDown}
+@keyframes slideOutUp{0%{transform:translateY(0)}0%,to{opacity:1}to{transform:translateY(-250px)}}
+.slideOutUp{animation-name:slideOutUp}
+
+@keyframes slideOutDown{0%{transform:translateY(0)}0%,to{opacity:1}to{transform:translateY(350px)}}.slideOutDown{animation-name:slideOutDown}
+
+@keyframes slideInLeft{0%{opacity:0;transform:translateX(-850px)}to{transform:translateX(0)}}.slideInLeft{animation-name:slideInLeft}
+@keyframes slideInRight{0%{opacity:0;transform:translateX(1250px)}to{transform:translateX(0)}}.slideInRight{animation-name:slideInRight}
+@keyframes slideOutLeft{0%{transform:translateX(0)}to{opacity:0;transform:translateX(-350px)}}.slideOutLeft{animation-name:slideOutLeft}
+@keyframes slideOutRight{0%{transform:translateX(0)}to{opacity:0;transform:translateX(350px)}}.slideOutRight{animation-name:slideOutRight}
+.addthis-animated {
+	animation-fill-mode: both;
+	animation-timing-function: ease-out;
+	animation-duration: .3s;
+}
+.sidebar-icon-left{
+	left: 0;
+	float: left;
+	right: auto;
+}
+.sidebar-icon {
+	position: fixed;
+	width: 3pc;
+	z-index: 100020;
+	background: none;
+}
+.sidebar-icon .sidebar-icon-btn {
+	border: 0;
+	padding: 0;
+}
+.sidebar-icon a{
+	position: relative;
+	display: block;
+	margin: 0;
+	width: 3pc;
+	outline-offset: -1px;
+	text-align: center;
+	float: left;
+	transition: width .15s ease-in-out;
+	overflow: hidden;
+	background: #e8e8e8;
+	z-index: 100030;
+	cursor: pointer;
+}
+.sidebar-icon-visually-hidden {
+	position: absolute;
+	clip: rect(1px,1px,1px,1px);
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+}
+.sidebar-icon .sidebar-icon-btn .sidebar-icon-wrapper, .sidebar-icon a .sidebar-icon-wrapper {
+	display: block;
+	background-color: #1db8d3;
+	padding: 8px 0;
+}
+.sidebar-icon-wrapper svg {
+	fill: white;
+}
+.sidebar-icon .sidebar-icon-btn, .sidebar-icon a {
+	text-align: center;
+	cursor: pointer;
+}
+.sidebar-icon-open-control-left {
+	position: fixed;
+	top: 20%;
+	z-index: 100020;
+	left: 0;
+	width: 22px;
+}
+.sidebar-icon .sidebar-icon-btn span .sidebar-icon, .sidebar-icon a span .sidebar-icon {
+	position: relative;
+	top: 0;
+	left: 0;
+	display: block;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	width: 2pc;
+	height: 2pc;
+	line-height: 2pc;
+	border: none;
+	padding: 0;
+	margin: 0 auto;
+	overflow: hidden;
+	cursor: pointer;
+	cursor: hand;
+}
+.sidebar-icon .sidebar-icon-btn:focus, .sidebar-icon .sidebar-icon-btn:hover, .sidebar-icon a:focus, .sidebar-icon a:hover {
+	width: 4pc;
+}
+.sidebar-icon-close-control {
+	position: relative;
+	width: 3pc;
+	overflow: auto;
+}
+.sidebar-icon-show{
+	display:block!important;
+	opacity:1!important;
+}
+.sidebar-icon-show-content{
+	opacity:1!important;
+	visibility:visible;
+}
+.sidebar-icon-hide{display:none!important;opacity:0!important}
+.sidebar-icon-hide-content{opacity:0!important;visibility:hidden}
+.sidebar-icon-visible{display:block!important;opacity:0!important}
+.sidebar-icon-hide-content {
+	opacity: 0!important;
+	visibility: hidden;
+}
+.sidebar-icon-close-control .sidebar-icon-arrow.sidebar-icon-left {
+	float: right;
+}
+.sidebar-icon-arrow:hover{
+	cursor: pointer;
+}
+div.sidebar-icon-arrow.sidebar-icon-right {
+	background-position: -20px 0;
+}
+.sidebar-icon-telegram-right {
+	position: fixed;
+	bottom: 0;
+	border-radius: 0;
+	overflow: hidden;
+	max-width: 292px;
+	z-index: 99;
+	top: 0;
+	margin: auto;
+	height: 68px;
+	right: -229px;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}
+.sidebar-icon-telegram-right:hover {
+	right: 0;
+}
+img {
+	border-style: none;
+	vertical-align: top;
+	max-width: 100%;
+	height: auto;
+}
+.sidebar-icon-telegram-right img {
+	border-radius: 10px;
+	border: 2px solid #15456d;
+}
+@media only screen and (max-width: 480px) {
+	.telegram {
+		display: none;
+	}
+}
+@media only screen and (max-width: 900px) {
+	#sidebar-icon-share {
+		top: unset !important;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		max-width: 100%;
+		z-index: 1000200;
+		box-shadow: 0 0 1px 1px #e2dfe2;
+	}
+	#sidebar-icon-share a {
+		width: 14.2857%;
+	}
+}
