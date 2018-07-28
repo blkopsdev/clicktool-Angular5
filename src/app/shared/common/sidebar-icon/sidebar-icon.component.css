@@ -75,8 +75,15 @@ div#sidebar-icon-share{
 }
 .sidebar-icon .sidebar-icon-btn .sidebar-icon-wrapper, .sidebar-icon a .sidebar-icon-wrapper {
 	display: block;
-	background-color: #1db8d3;
+	background-color: #ff8962;
 	padding: 8px 0;
+	border-right: 2px solid #15456d;
+}
+.sidebar-icon a:first-child .sidebar-icon-wrapper {
+	border-top: 2px solid #15456d;
+}
+.sidebar-icon a:last-child .sidebar-icon-wrapper {
+	border-bottom: 2px solid #15456d;
 }
 .sidebar-icon-wrapper svg {
 	fill: white;
@@ -188,5 +195,10 @@ img {
 	}
 	#sidebar-icon-share a {
 		width: 14.2857%;
+	}
+	.sidebar-icon .sidebar-icon-btn .sidebar-icon-wrapper, .sidebar-icon a .sidebar-icon-wrapper {
+		border-top: 2px solid #15456d;
+		border-right: 0 !important;
+		border-bottom: 0 !important;
 	}
 }
