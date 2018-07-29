@@ -3253,3 +3253,9 @@ margin: 20px;
     left: -34vw;
   }
 }
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .about-container {
+    height: 410px;
+  }
+}
