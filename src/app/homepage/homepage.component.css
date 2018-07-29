@@ -1007,14 +1007,14 @@ margin: 20px;
 }
 
 .about-container {
-  height: 330px;
+  height: 370px;
 }
 
 .wrench-container {
   height: 330px;
   position: relative;
   overflow: hidden;
-  /* left: -100px; */
+  /* left: -100px;142 */
 }
 
 .wrench {
