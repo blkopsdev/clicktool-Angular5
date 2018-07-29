@@ -1014,7 +1014,7 @@ margin: 20px;
   height: 330px;
   position: relative;
   overflow: hidden;
-  left: -100px;
+  /* left: -100px; */
 }
 
 .wrench {
