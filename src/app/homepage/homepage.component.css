@@ -1262,6 +1262,10 @@ margin: 20px;
   overflow: hidden;
 }
 
+.experience-container h4 {
+  margin-bottom: 10px;
+}
+
 #gray-gear2 {
   right: -450px;
   top: -450px;
