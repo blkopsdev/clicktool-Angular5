@@ -2775,11 +2775,16 @@ margin: 20px;
   margin: 0 auto;
 }
 
+.btn-modal {
+  padding: 0;
+}
+
 .action-button {
   height: 50px;
   width: 200px;
   background-color: #fd8a66;
-  margin: 10px auto;
+  /* margin: 10px auto; */
+
   color: white;
   border-radius: 5px;
   display: -webkit-box;

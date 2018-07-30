@@ -45,7 +45,7 @@ div#sidebar-icon-share{
 .sidebar-icon {
 	position: fixed;
 	width: 3pc;
-	z-index: 100020;
+	z-index: 100;
 	background: none;
 }
 .sidebar-icon .sidebar-icon-btn {
@@ -63,7 +63,7 @@ div#sidebar-icon-share{
 	transition: width .15s ease-in-out;
 	overflow: hidden;
 	background: #e8e8e8;
-	z-index: 100030;
+	z-index: 100;
 	cursor: pointer;
 }
 .sidebar-icon-visually-hidden {
