@@ -2777,6 +2777,11 @@ margin: 20px;
 
 .btn-modal {
   padding: 0;
+  border: 0;
+}
+
+.btn-modal:focus {
+  outline: 0;
 }
 
 .action-button {
