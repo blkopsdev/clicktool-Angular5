@@ -2778,6 +2778,8 @@ margin: 20px;
 .btn-modal {
   padding: 0;
   border: 0;
+  position: relative;
+  top: 10px;
 }
 
 .btn-modal:focus {
