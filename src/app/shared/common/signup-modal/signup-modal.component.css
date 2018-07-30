@@ -14,7 +14,7 @@
   left: 0;
   position: absolute;
   right: 0;
-  top: 50px;
+  top: 30px;
 }
 
 .signup-modal.underlay .signup-modal-sub {
@@ -26,7 +26,7 @@
   opacity: 1;
   overflow: visible;
   margin: 0 auto;
-  width: 475px;
+  width: 560px;
   border: 2px solid #15465d;
   z-index: 21;
   border-radius: 4px;
@@ -55,7 +55,7 @@
 }
 
 .signup-modal-content {
-  margin-top: 40px;
+  margin-top: 15px;
 }
 
 .signup-modal-content h2 {
