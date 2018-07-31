@@ -71,6 +71,8 @@ import { SecurityComponent } from './settings/security/security.component';
 import { SettingsNavComponent } from './settings/settings-nav/settings-nav.component';
 import { WalletSettingsComponent } from './settings/wallet-settings/wallet-settings.component';
 import { ButtonToFormComponent } from './shared/common/button-to-form/button-to-form.component';
+import { SidebarIconComponent } from './shared/common/sidebar-icon/sidebar-icon.component';
+import { SignupModalComponent } from './shared/common/signup-modal/signup-modal.component';
 
 
 
@@ -126,7 +128,9 @@ import { ButtonToFormComponent } from './shared/common/button-to-form/button-to-
     SecurityComponent,
     SettingsNavComponent,
     WalletSettingsComponent,
-    ButtonToFormComponent
+    ButtonToFormComponent,
+    SidebarIconComponent,
+    SignupModalComponent
   ],
   imports: [
     BrowserModule,

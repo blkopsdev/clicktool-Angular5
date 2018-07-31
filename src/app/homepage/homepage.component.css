@@ -1007,14 +1007,14 @@ margin: 20px;
 }
 
 .about-container {
-  height: 330px;
+  height: 370px;
 }
 
 .wrench-container {
   height: 330px;
   position: relative;
   overflow: hidden;
-  left: -100px;
+  /* left: -100px;142 */
 }
 
 .wrench {
@@ -1091,7 +1091,7 @@ margin: 20px;
   height: 50px;
   width: 230px;
   border-radius: 25px;
-  background-color: #2cb8d1;
+  background-color: #fe8962;
   color: white;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1110,7 +1110,7 @@ margin: 20px;
 }
 
 .read-more:hover {
-  background-color: #249BB0 !important;
+  background-color: #f36434 !important;
 }
 
 .read-more:active {
@@ -1260,6 +1260,10 @@ margin: 20px;
   position: relative;
   max-width: 1000px;
   overflow: hidden;
+}
+
+.experience-container h4 {
+  margin-bottom: 10px;
 }
 
 #gray-gear2 {
@@ -2186,10 +2190,7 @@ margin: 20px;
 }*/
 
 /* Team Section */
-.team-section {
-
-}
-
+ 
 .team-member-section {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2774,11 +2775,24 @@ margin: 20px;
   margin: 0 auto;
 }
 
+.btn-modal {
+  padding: 0;
+  border: 0;
+  position: relative;
+  top: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-modal:focus {
+  outline: 0;
+}
+
 .action-button {
   height: 50px;
   width: 200px;
   background-color: #fd8a66;
-  margin: 10px auto;
+  /* margin: 10px auto; */
+
   color: white;
   border-radius: 5px;
   display: -webkit-box;
@@ -3004,6 +3018,10 @@ margin: 20px;
   color:  #1E8B5E !important;
 }
 
+.desc-txt {
+  font-size: 16px;
+  line-height: 24px;
+}
 /* Media Queries */
 
 @media only screen and (min-width: 1866px){
@@ -3246,5 +3264,11 @@ margin: 20px;
   } .vid-screen-mobile {
     width: 160vw;
     left: -34vw;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .about-container {
+    height: 410px;
   }
 }

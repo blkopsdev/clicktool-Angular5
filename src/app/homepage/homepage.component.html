@@ -1,7 +1,7 @@
   <h3 *ngIf="isIE" class="ie-warning">We want our users to have the best experience possible. For optimal performance, we recommend using Google Chrome or Mozilla Firefox as your browser.</h3>
 
   <app-homepage-header></app-homepage-header>
-
+  <app-sidebar-icon></app-sidebar-icon>
   <div class="container-fluid" style="overflow: hidden;" >
 
     <div id="top-design" class="top-design" style="opacity: 0;">
@@ -175,7 +175,7 @@
     <br>
   </div>
 
-  <div class="container-fluid about-container hidden-xs hidden-sm"><!-- About Section -->
+  <div class="container about-container hidden-xs hidden-sm"><!-- About Section -->
     <div class="row">
       <div class="container wrench-container hidden-md hidden-lg hidden-xl">
           <div class="col-xs-12 col-sm-4 col-sm-offset-4">
@@ -192,13 +192,13 @@
           <h2 class="title">About Clicktool</h2>
           <br>
           <br>
-          <p>The Clicktool team is based in Santa Monica, California. Our core team consists of 12 members and quickly growing. We’ve been hard at work building our first working prototype which is now live in BETA and has satisfied paying customers. Click on the link below to view the Clicktool Tracker webpage.</p>
+          <p class="desc-txt">The Clicktool team is based in Santa Monica, California. Our core team consists of 12 members and quickly growing. We’ve been hard at work building our first working prototype which is now live in BETA and has satisfied paying customers. Click on the link below to view the Clicktool Tracker webpage.</p>
           <br>
-          <a href="https://tracking.clicktool.com/" target="_blank" class="btn btn-info read-more">Visit Our Tracking Website</a>
+          <a href="https://tracking.clicktool.com/" target="_blank" class="btn btn-info read-more">Clicktool Tracker Beta</a>
         </div>
       </div>
       <div class="col-md-5 hidden-xs hidden-sm">
-        <div class="container wrench-container">
+        <div class="wrench-container">
           <img class="wrench" src="../assets/wrench.png" alt="wrench">
           <img class="multigray-circle" src="../assets/gray-circle.png" alt="circle">
         </div>
@@ -220,7 +220,7 @@
             </a>
         </div>
         <div class="col-xs-12 col-sm-6">
-          <p>Clicktool is a decentralized tracking platform that allows businesses to easily identify their most most valuable placements in order to maximize their online advertising campaigns.<br><br>Our goal is to help businesses easily achieve their marketing goals. We do that by providing them with cutting edge tools, helping them easily analyze their data, and by protecting their information in the blockchain. </p>
+          <p class="desc-txt">Clicktool is a decentralized tracking platform that allows businesses to easily identify their most most valuable placements in order to maximize their online advertising campaigns.<br><br>Our goal is to help businesses easily achieve their marketing goals. We do that by providing them with cutting edge tools, helping them easily analyze their data, and by protecting their information in the blockchain. </p>
         </div>
       </div>
     </div>
@@ -253,7 +253,7 @@
           <div class="text-center">
             <h2 class="title"><br />Worldwide Spending On Marketing Automation Software Will Hit $32 Billion This Year. </h2>
             <br>
-            <p>Clickcoin Gives You Access To Own A Piece Of This Market.</p>
+            <p class="desc-txt">Clickcoin Gives You Access To Own A Piece Of This Market.</p>
           </div>
         </div>
       </div>
@@ -271,13 +271,15 @@
   <div class="experience-container container"><!-- Experience Section -->
     <img class="gray-gear hidden-xs hidden-sm" id="gray-gear2" src="../assets/gray-gear1.png" alt="gear">
     <br>
-    <h2 class="text-center title blue">THE FUTURE OF DIGITAL MARKETING IS HERE</h2>
+    <div class="text-center">
+      <h2 class="title blue">THE FUTURE OF DIGITAL MARKETING IS HERE</h2>
+    </div>
     <div class="info-row">
       <img class="info-icon" src="../assets/icons-300x/ClickTool_Icons_Current Price.png" alt="dollar icon">
       <div class="info-text blue">
         <br>
         <h4>ADVANCED TRAFFIC DISTRIBUTION STRATEGIES</h4>
-        <p>Clicktool’s platform allows users to run advanced A/B tests and test strategic market segmentation to maximize the value of their digital marketing campaigns.<br>Cutting edge no-redirect campaigns represent a breakthrough in tracking technology. We’ve achieved what many called "impossible." This breakthrough represents faster load times, campaign stability and increased value for our customers. </p>
+        <p class="desc-txt">Clicktool’s platform allows users to run advanced A/B tests and test strategic market segmentation to maximize the value of their digital marketing campaigns.<br>Cutting edge no-redirect campaigns represent a breakthrough in tracking technology. We’ve achieved what many called "impossible." This breakthrough represents faster load times, campaign stability and increased value for our customers. </p>
         <br>
       </div>
     </div>
@@ -286,7 +288,7 @@
       <div class="info-text blue">
         <br>
         <h4>ADVANCED REPORTING</h4>
-        <p>Data is the lifeblood of any successful digital advertising campaign. But data is only as good as the decisions it enables.<br>Clicktool’s tracking platform is designed to empower its users. Its easy-to-use reporting allows business owners and campaign managers to visualize the data and clearly see where their most valuable segments are.</p>
+        <p class="desc-txt">Data is the lifeblood of any successful digital advertising campaign. But data is only as good as the decisions it enables.<br>Clicktool’s tracking platform is designed to empower its users. Its easy-to-use reporting allows business owners and campaign managers to visualize the data and clearly see where their most valuable segments are.</p>
         <br>
       </div>
       <img class="info-icon hidden-xs hidden-sm" src="../assets/icons-300x/ClickTool_Icons_Contributors.png" alt="contributor icon">
@@ -296,7 +298,7 @@
       <div class="info-text blue">
         <br>
         <h4>SECURITY THROUGH BLOCKCHAIN</h4>
-        <p>Analytics platforms, by their very nature, contain valuable business data. Centralized applications can’t provide the level of security that a decentralized blockchain can. Clicktool protects its users' valuable analytics data by storing it in a cutting edge blockchain database.</p>
+        <p class="desc-txt">Analytics platforms, by their very nature, contain valuable business data. Centralized applications can’t provide the level of security that a decentralized blockchain can. Clicktool protects its users' valuable analytics data by storing it in a cutting edge blockchain database.</p>
         <br>
       </div>
     </div>
@@ -308,49 +310,49 @@
   <div class="container-fluid featuresdes" id="read-more-redirect">
     <div class="benefit-row">
       <app-benefit
-        imageSrc="../../assets/icons-300x/ClickTool_Icons_Buy and Sell.png" alt="cryptocurrency shopping cart"
+        imageSrc="../../assets/0718_icons-01.png" alt="cryptocurrency shopping cart"
         imageAlt="cryptocurrency shopping cart"
         title="TRACKING MADE EASY"
         info="We’ve taken very complex tasks and made them extremely simple. Tasks that would take hours of daily manual labor now can be done in seconds. We’ve designed our tool so that the most relevant data for your business is displayed first. ">
       </app-benefit>
       <app-benefit
-        imageSrc="../assets/icons-300x/ClickTool_Icons_With Drawals.png"
+        imageSrc="../assets/0718_icons-02.png"
         imageAlt="withdrawal"
         title="BLOCKCHAIN BASED TRACKING"
         info='No more complicated impractical "self hosted" solutions. No more unease when using an analytics service because you suspect they may be looking at your data. Blockchain based tracking means only you have access.'>
       </app-benefit>
       <app-benefit
-        imageSrc="../assets/icons-300x/ClickTool_Icons_Exchange.png"
+        imageSrc="../assets/0718_icons-03.png"
         imageAlt="dollar gear"
         title="BYZANTINE FAULT TOLERANT DATABASE"
         info="Achieving Byzantine Fault tolerance is one of the most difficult challenges for any blockchain based project. Clicktool uses Tendermint for all networking and consensus. Each node has its own local MongoDB database. Full Decentralization at its best.">
       </app-benefit>
       <app-benefit
-        imageSrc="../assets/icons-300x/ClickTool_Icons_Give and Take.png"
+        imageSrc="../assets/0718_icons-04.png"
         imageAlt="papers"
         title="INDEXING AND QUERYING STRUCTURED DATA"
         info="Each node operator has access to the full power of MongoDB for indexing and querying the stored data. This makes our blockchain enabled database fast and powerful enough to suit every business need.">
       </app-benefit>
       <app-benefit
-        imageSrc="../assets/icons-300x/ClickTool_Icons_Trading.png"
+        imageSrc="../assets/0718_icons-05.png"
         imageAlt="graph"
         title="CUTTING EDGE HIGH TRANSACTION RATE BLOCKCHAIN"
         info="Powered by BigchainDB, our goal has always been the agility to process a large number of transactions each second. We are now able to bring the best of both worlds by providing speed and security in one easy-to-use application.">
       </app-benefit>
       <app-benefit
-        imageSrc="../assets/icons-300x/ClickTool_Icons_Boading.png"
+        imageSrc="../assets/0718_icons-06.png"
         imageAlt="id"
         title="TURN AD CLICKS INTO SALES"
         info="Putting data under a microscope has never been easier. Our users can create reports based on location, device, browsers, type of objective, and many more. If a users wants to send 90% of traffic to one page and 10% to another? They can do it with 1 click. ">
       </app-benefit>
       <app-benefit
-        imageSrc="../assets/icons-300x/ClickTool_Icons_Asset Management.png"
+        imageSrc="../assets/0718_icons-07.png"
         imageAlt="database"
         title="FIRST OF IT’S KIND PHONE CALL TRACKING"
         info="Selling over the phone? We have that covered. Click to call is becoming increasingly important in today’s world. We’ve invented completely new ways to track phone call objectives so you can see where your results are coming from. ">
       </app-benefit>
       <app-benefit
-        imageSrc="../assets/icons-300x/ClickTool_Icons_Vetted Marketplace.png"
+        imageSrc="../assets/0718_icons-08.png"
         imageAlt="vault safe"
         title="MULTIPLE OBJECTIVE TRACKING"
         info="Customers do so much before they buy. We help track it all. Want to track when a customer initiates a checkout? Want to track an email signup? We’ve developed objective tracking that allows businesses to record everything a visitor does.">
@@ -684,7 +686,7 @@
     <div class="indresgsec">
       <h1>Join Our Fast Growing Community, Get Exclusive Rewards</h1>
       <br>
-      <p>Have questions that need answers? Join our telegram group and ask away. Our community is here to help 24/7. Follow us on all social media channels and get exclusive bonuses, airdrops, bounty rewards and the latest news. Help us improve this industry, your voice matters to us!</p>
+      <p class="desc-txt">Have questions that need answers? Join our telegram group and ask away. Our community is here to help 24/7. Follow us on all social media channels and get exclusive bonuses, airdrops, bounty rewards and the latest news. Help us improve this industry, your voice matters to us!</p>
       <div class="social-icons">
         <a href="https://www.facebook.com/click.tool.71" target="_blank"><p class="facebook"><i class="fab fa-facebook-square"></i></p></a>
         <a href="https://twitter.com/clickcoins" target="_blank"><p class="twitter"><i class="fab fa-twitter-square"></i></p></a>
@@ -717,8 +719,10 @@
   <img src="../assets/Background_3-top.png" class="top-divider" alt="background">
   <div class="container-fluid sign-up">
     <h1>Get The Latest News On Our ICO</h1>
-    <p>Sign up to our newsletter to receive the latest news. Our email subscribers may receive early discount, special bonuses and a behind the scenes look of our company. Sign up below to stay updated.</p>
-    <a href="#">
+    <p class="desc-txt">Sign up to our newsletter to receive the latest news. Our email subscribers may receive early discount, special bonuses and a behind the scenes look of our company. Sign up below to stay updated.</p>
+  <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#signupModal">Open Modal</button> -->
+    <a href="#" class="btn btn-modal" data-toggle="modal" data-target="#signupModal">
+
       <div class="action-button">
         <h3><i class="fa fa-check-circle"></i>&nbsp;&nbsp;</h3>
         <h5>Sign Up</h5>
@@ -729,4 +733,5 @@
 
 <app-footer></app-footer>
 
+<app-signup-modal></app-signup-modal>
 
