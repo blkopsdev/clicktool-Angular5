@@ -98,7 +98,7 @@ form.mc4wp-form {
   width: 100%;
 }
 
-.signup-modal-sub .nsu-submit {
+.signup-modal-sub .btn {
   background-color: #fe8962;
   border: 1px solid #fe8962;
   box-shadow: 1px 1px 2px #CCCCCC;
@@ -116,7 +116,7 @@ form.mc4wp-form {
   width: auto;
 }
 
-.signup-modal-sub .nsu-submit:hover {
+.signup-modal-sub .btn:hover {
   background-color: #DD795B;
 }
 
