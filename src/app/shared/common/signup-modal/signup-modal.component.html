@@ -37,21 +37,29 @@
                     </button>
                 </form> -->
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
-              <div class="reg-form">
-                <div class="reg-active reg-border">
-                  <div class="reginr">
-                    <input formControlName="email" name="email" placeholder="Email">
-                  </div>
-
-                  <div class="reginr">
-                    <input  formControlName="name" name="name" placeholder="Name">
-                  </div>
-
-                  <button type="submit" class="btn btn-subscriber" [disabled]="!form.valid">
-                    <span><i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;&nbsp;Sign Up</span>
-                  </button>
-                </div>
+              <div class="form-group">
+                <input name="name" formControlName="name" placeholder="Name" class="field-no-label" required type="text" value="">
               </div>
+              <div class="form-group">
+                <input name="email" placeholder="Email" formControlName="name" class="field-no-label" required type="email" value="">
+              </div>
+              <div class="form-group" style="display: none;">
+                <input type="hidden" name="meta_web_form_id" value="1865666917" />
+                <input type="hidden" name="meta_split_id" value="" />
+                <input type="hidden" name="listname" value="awlist4934147" />
+                <input type="hidden" name="redirect" value="https://www.aweber.com/thankyou-coi.htm?m=text" id="redirect_6586ddb89df81feca7b91b7f672f72ce"
+                />
+                <input type="hidden" name="meta_adtracking" value="My_Web_Form" />
+                <input type="hidden" name="meta_message" value="1" />
+                <input type="hidden" name="meta_required" value="name,email" />
+                <input type="hidden" name="meta_tooltip" value="" />
+              </div>
+                <button type="submit" class="signup-modal-submit-button btn" [disabled]="!form.valid">
+                <span>
+                  <i class="fa fa-check-circle"></i>
+                </span>
+                <span>Sign Up</span>
+              </button>
             </form>
           </section>
         </div>
