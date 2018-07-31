@@ -45,12 +45,13 @@
 
 .signup-modal-img {
   display: inline-block;
+  background: white;
   position: relative;
 }
 
 .modal-body img {
   display: block;
-  width: 100%;
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -126,7 +127,7 @@ form.mc4wp-form {
 }
 
 .signup-modal form input[type=email],
-.signup-modal form input[type=tel] {
+.signup-modal form input[type=text] {
   color: #999;
   padding: 12px;
   font-size: 15px;
