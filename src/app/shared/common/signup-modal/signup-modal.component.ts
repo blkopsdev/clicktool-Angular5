@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
   Validators,
   FormControl
 } from '@angular/forms';
+import { toUnicode } from 'punycode';
 
 @Component({
   selector: 'app-signup-modal',
@@ -12,7 +13,7 @@ import {
   styleUrls: ['./signup-modal.component.css']
 })
 export class SignupModalComponent implements OnInit {
-
+  
   form: FormGroup;
   
   constructor(private formBuilder: FormBuilder) { }
@@ -24,16 +25,9 @@ export class SignupModalComponent implements OnInit {
     })
   }
 
-  Submit() {
-    this.form.updateValueAndValidity();
-    if (this.form.valid) {
-      console.log('form submitted');
-    } else {
-      Object.keys(this.form.controls).filter($0 => {
-        this.form.get($0).markAsTouched({ onlySelf: true })
-      })
-    }
-
+  onSubmit() {
+    // TODO: Use EventEmitter with form value
+    console.warn(this.form.value);
   }
 
 }
