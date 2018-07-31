@@ -3,17 +3,17 @@
     <div id="signup-modal-sub" class="signup-modal-sub">
       <div class="modal-body">
         <div class="signup-modal-img row">
-            <img src="../assets/Animated-Clicktool2 a.gif" width="" height="">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <img src="../assets/Animated-Clicktool2 a.gif" width="" height="">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="signup-modal-content">
-        <h2>Get The Latest Clicktool ICO News</h2>
+          <h2>Get The Latest Clicktool ICO News</h2>
           <p>Sign up to our newsletter to receive the latest news. Our email subscribers may receive early discount, special
             bonuses and a behind the scenes look of our company. Sign up below to stay updated.</p>
         </div>
         <div class="signup-form">
-            <section>
-                <form class="signup-modal-form mc4wp-form" action="https://www.aweber.com/scripts/addlead.pl">
+          <section>
+            <!-- <form class="signup-modal-form mc4wp-form" action="https://www.aweber.com/scripts/addlead.pl">
                     <div class="form-group">
                         <input name="name" placeholder="Name" class="field-no-label" required type="text" value="">
                     </div>
@@ -35,35 +35,55 @@
                         <span><i class="fa fa-check-circle"></i></span>
                         <span>Sign Up</span>
                     </button>
-                </form>
-                <!-- <form method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
-                    
-                    <div id="af-form-1865666917" class="af-form">
-                        <div id="af-body-1865666917" class="af-body af-standards">
-                            <div class="af-element">
-                                <div class="af-textWrap">
-                                    <input id="awf_field-95431901" type="text" name="name" class="" value=""/>
-                                </div>
-                                <div class="af-clear"></div>
-                            </div>
-                            <div class="af-element">
-                                <div class="af-textWrap">
-                                    <input class="" id="awf_field-95431902" type="text" name="email" value=""/>
-                                </div>
-                            </div>
-                            <button type="submit" class="signup-modal-submit-button btn">
-                                <span>
-                                    <i class="fa fa-check-circle"></i>
-                                </span>
-                                <span>Sign Up</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div style="display: none;">
-                        <img src="https://forms.aweber.com/form/displays.htm?id=jBxsrGxsbJyM7A==" alt="" />
-                    </div>
                 </form> -->
-            </section>
+            <form [formGroup]="form">
+              <div class="reg-form">
+                <div class="reg-active reg-border">
+                  <div class="reginr">
+                    <input [ngClass]="{'has-danger':!this.form.get('email').valid && this.form.get('email').touched}" formControlName="email"
+                      name="email" minlength="4" maxlength="100" type="email" required="" autocomplete="off" placeholder="enter email">
+                  </div>
+
+                  <div class="text-danger" style="margin-bottom: 20px; text-align: left;" *ngIf="!form.get('email').valid && form.get('email').touched">
+                    <div [hidden]="!form.get('email').hasError('required')">
+                      <div class="">Email required</div>
+                    </div>
+                    <div [hidden]="!form.get('email').hasError('minlength')">
+                      <div class="">Email must be at least 4 characters long.</div>
+                    </div>
+                    <div [hidden]="!form.get('email').hasError('maxlength')">
+                      <div class="">Email cannot be more than 100 characters long.</div>
+                    </div>
+                  </div>
+
+                  <div class="reginr">
+                    <span>
+                      <i class="fa fa-user"></i>
+                    </span>
+                    <input [ngClass]="{'has-danger':!form.get('name').valid && form.get('name').touched}" formControlName="name"
+                      name="name" minlength="4" maxlength="24" type="name" required="" autocomplete="off" placeholder="enter name">
+                  </div>
+
+                  <div class="text-danger" style="margin-bottom: 20px; text-align: left;" *ngIf="!form.get('name').valid && form.get('name').touched">
+                    <div [hidden]="!form.get('name').hasError('required')">
+                      <div class="">Password required</div>
+                    </div>
+                    <div [hidden]="!form.get('name').hasError('minlength')">
+                      <div class="">Password must be at least 4 characters long.</div>
+                    </div>
+                    <div [hidden]="!form.get('name').hasError('maxlength')">
+                      <div class="">Password cannot be more than 100 characters long.</div>
+                    </div>
+                  </div>
+
+                  <button (click)="Submit()" type="submit" style="margin-top: 25px;" class="btn btn-info reg-button" id="continue">
+                    <p>
+                      <i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;&nbsp;Continue</p>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </section>
         </div>
       </div>
     </div>
