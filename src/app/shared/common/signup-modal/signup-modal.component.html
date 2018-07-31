@@ -38,10 +38,10 @@
                 </form> -->
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
               <div class="form-group">
-                <input name="name" formControlName="name" placeholder="Name" class="field-no-label" required type="text" value="">
+                <input name="name" formControlName="name" placeholder="Name" class="formcontrol" required type="text" value="">
               </div>
               <div class="form-group">
-                <input name="email" placeholder="Email" formControlName="name" class="field-no-label" required type="email" value="">
+                <input name="email" placeholder="Email" formControlName="email" class="formcontrol" required type="email" value="">
               </div>
               <div class="form-group" style="display: none;">
                 <input type="hidden" name="meta_web_form_id" value="1865666917" />
