@@ -53,10 +53,19 @@ export class SignupModalComponent implements OnInit {
       meta_adtracking: 'My_Web_Form',
       meta_message: '1'
     }
-    this.http.post(
-      'https://www.aweber.com/scripts/addlead.pl', body, {}).subscribe(res => {
-        debugger;
+    let requestOptions = {
+      method: 'POST',
+      url: 'https://www.aweber.com/scripts/addlead.pl',
+      body: body
+      // responseType: ResponseContentType[responseType]
+    };
+    return this.http.request(requestOptions.url, requestOptions)
+      .map(res => {
+        debugger
       })
+      .catch(res => {
+        debugger
+      });
       
     /* setTimeout(() => {
       this.result = null;
