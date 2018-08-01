@@ -57,7 +57,7 @@ export class SignupModalComponent implements OnInit {
       // responseType: ResponseContentType[responseType]
     };
     return this.http.request(requestOptions.url, requestOptions)
-      .map(res => {
+      .subscribe(res => {
         debugger
       });
       
