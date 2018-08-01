@@ -51,9 +51,9 @@ export class SignupModalComponent implements OnInit {
         'Accept': 'text/html,application/xhtml+xml,application/xml,application/json;q=0.9,image/webp,image/apng,*/*;q=0.8'
       })
     };
-    this.http.post('https://www.aweber.com/scripts/addlead.pl', body, httpOptions).subscribe(res => { console.log(res) });
+    return this.http.post('https://www.aweber.com/scripts/addlead.pl', body, httpOptions).subscribe(res => { console.log(res) });
     // location.href = 'https://www.aweber.com/thankyou-coi.htm?m=text&l=awlist4934147'; 
-    return;
+    
   }
 
   reset() {
