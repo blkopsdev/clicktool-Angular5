@@ -53,9 +53,8 @@ export class SignupModalComponent implements OnInit {
         redirect: 'https://www.aweber.com/thankyou-coi.htm?m=text',
         meta_adtracking: 'My_Web_Form',
         meta_message: 1,
-      }, {}).map((response: Response) => {
-      console.log(response.json());
-    })
+      }, {}).subscribe(res => 
+      console.log(res.json()));
     /* setTimeout(() => {
       this.result = null;
       this.reset();
