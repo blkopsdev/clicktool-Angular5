@@ -48,8 +48,7 @@ export class SignupModalComponent implements OnInit {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Accept': 'text/html,application/xhtml+xml,application/xml,application/json;q=0.9,image/webp,image/apng,*/*;q=0.8',
-        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, x-auth'
+        'Accept': 'text/html,application/xhtml+xml,application/xml,application/json;q=0.9,image/webp,image/apng,*/*;q=0.8'
       })
     };
     return this.http.post('https://www.aweber.com/scripts/addlead.pl', body, httpOptions).subscribe(res => { console.log(res) })
