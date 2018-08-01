@@ -54,7 +54,7 @@ export class SignupModalComponent implements OnInit {
         meta_adtracking: 'My_Web_Form',
         meta_message: 1,
       }, {}).subscribe(res => 
-      console.log(res.json()));
+      console.log(res));
     /* setTimeout(() => {
       this.result = null;
       this.reset();
