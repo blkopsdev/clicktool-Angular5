@@ -46,13 +46,13 @@ export class SignupModalComponent implements OnInit {
     this.http.post(
       'https://www.aweber.com/scripts/addlead.pl', 
       { 
-        name: this.result.name,
-        email: this.result.email,
-        listname: 'awlist4934147',
-        meta_web_form_id: 1865666917,
-        redirect: 'https://www.aweber.com/thankyou-coi.htm?m=text',
-        meta_adtracking: 'My_Web_Form',
-        meta_message: 1,
+        'name': this.result.name,
+        'email': this.result.email,
+        'listname': 'awlist4934147',
+        'meta_web_form_id': 1865666917,
+        'redirect': 'https://www.aweber.com/thankyou-coi.htm?m=text',
+        'meta_adtracking': 'My_Web_Form',
+        'meta_message': 1,
       }, {}).subscribe(res => 
       console.log(res));
     /* setTimeout(() => {
