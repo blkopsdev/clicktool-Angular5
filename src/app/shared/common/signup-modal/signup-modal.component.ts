@@ -6,11 +6,8 @@ import {
   FormControl
 } from '@angular/forms';
 import {
-  HttpClientModule,
-  HttpClient,
-  HttpHeaders,
-  HttpParams
-} from "@angular/common/http";
+  Http,
+} from "@angular/http";
 
 @Component({
   selector: 'app-signup-modal',
@@ -23,7 +20,7 @@ export class SignupModalComponent implements OnInit {
   isSubmitted: boolean = false;
   result: any = null;
   
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
+  constructor(private formBuilder: FormBuilder, private http: Http) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -61,9 +58,6 @@ export class SignupModalComponent implements OnInit {
     };
     return this.http.request(requestOptions.url, requestOptions)
       .map(res => {
-        debugger
-      })
-      .catch(res => {
         debugger
       });
       
