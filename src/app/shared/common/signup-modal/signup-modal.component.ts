@@ -44,15 +44,16 @@ export class SignupModalComponent implements OnInit {
     this.result = this.form.value;
     
     // var body = "name=" + this.result.name + "&email=" + this.result.email + "&meta_web_form_id=1865666917&listname=awlist4934147&redirect=https://www.aweber.com/thankyou-coi.htm?m=text&meta_adtracking=My_Web_Form&meta_message=1";
-    let body = {
-      name: this.result.name,
-      email: this.result.email,
-      meta_web_form_id: '1865666917',
-      listname: 'awlist4934147',
-      redirect: 'https://www.aweber.com/thankyou-coi.htm?m=text',
-      meta_adtracking: 'My_Web_Form',
-      meta_message: '1'
-    }
+    // let body = {
+    //   name: this.result.name,
+    //   email: this.result.email,
+    //   meta_web_form_id: '1865666917',
+    //   listname: 'awlist4934147',
+    //   redirect: 'https://www.aweber.com/thankyou-coi.htm?m=text',
+    //   meta_adtracking: 'My_Web_Form',
+    //   meta_message: '1'
+    // }
+    let body ='meta_web_form_id=1865666917&meta_split_id=&listname=awlist4934147&redirect=https%3A%2F%2Fwww.aweber.com%2Fthankyou-coi.htm%3Fm%3Dtext&meta_adtracking=My_Web_Form&meta_message=1&meta_required=name%2Cemail&meta_tooltip=&name=admin123&email=user123%40user.com&submit.x=59&submit.y=31';
     // let requestOptions = {
     //   method: 'POST',
     //   url: 'https://www.aweber.com/scripts/addlead.pl',
