@@ -47,6 +47,7 @@ export class SignupModalComponent implements OnInit {
 
     const httpOptions = {
       headers: new HttpHeaders({
+        'Access-Control-Allow-Origin':'*',
         'Content-Type': 'application/x-www-form-urlencoded',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
       })
@@ -55,7 +56,6 @@ export class SignupModalComponent implements OnInit {
       .subscribe(res => {
         debugger
       })
-      
   }
 
   reset() {
