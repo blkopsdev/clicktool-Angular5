@@ -52,7 +52,7 @@ export class SignupModalComponent implements OnInit {
       })
     };
     this.http.post('https://www.aweber.com/scripts/addlead.pl', body, httpOptions).subscribe(res => { console.log(res) });
-    location.href = 'https://www.aweber.com/thankyou-coi.htm?m=text&l=awlist4934147'; 
+    // location.href = 'https://www.aweber.com/thankyou-coi.htm?m=text&l=awlist4934147'; 
     return;
   }
 

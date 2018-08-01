@@ -131,7 +131,7 @@ form.mc4wp-form {
 
 .signup-modal form input[type=email],
 .signup-modal form input[type=text] {
-  color: #999;
+  color: black;
   padding: 12px;
   font-size: 15px;
   width: 300px;
