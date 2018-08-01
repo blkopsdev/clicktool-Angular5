@@ -42,17 +42,20 @@ export class SignupModalComponent implements OnInit {
     // Code to save the data
     // userService.Save(this.register.value);
     this.result = this.form.value;
-    console.log(this.result.name);
-    console.log(this.result.email);
-/*     this.http.post(
+    
+    this.http.post(
       'https://www.aweber.com/scripts/addlead.pl', 
       { 
         name: this.result.name,
         email: this.result.email,
-
+        listname: 'awlist4934147',
+        meta_web_form_id: 1865666917,
+        redirect: 'https://www.aweber.com/thankyou-coi.htm?m=text',
+        meta_adtracking: 'My_Web_Form',
+        meta_message: 1,
       }, {}).map((response: Response) => {
       console.log(response.json());
-    }) */
+    })
     /* setTimeout(() => {
       this.result = null;
       this.reset();
