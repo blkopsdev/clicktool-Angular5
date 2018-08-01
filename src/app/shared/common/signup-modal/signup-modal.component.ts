@@ -43,10 +43,21 @@ export class SignupModalComponent implements OnInit {
     // userService.Save(this.register.value);
     this.result = this.form.value;
     
-    var body = "name=" + this.result.name + "&email=" + this.result.email + "&meta_web_form_id=1865666917&listname=awlist4934147&redirect=https://www.aweber.com/thankyou-coi.htm?m=text&meta_adtracking=My_Web_Form&meta_message=1";
+    // var body = "name=" + this.result.name + "&email=" + this.result.email + "&meta_web_form_id=1865666917&listname=awlist4934147&redirect=https://www.aweber.com/thankyou-coi.htm?m=text&meta_adtracking=My_Web_Form&meta_message=1";
+    let body = {
+      name: this.result.name,
+      email: this.result.email,
+      meta_web_form_id: '1865666917',
+      listname: 'awlist4934147',
+      redirect: 'https://www.aweber.com/thankyou-coi.htm?m=text',
+      meta_adtracking: 'My_Web_Form',
+      meta_message: '1'
+    }
     this.http.post(
-      'https://www.aweber.com/scripts/addlead.pl', body, {}).subscribe(res => 
-      console.log(res));
+      'https://www.aweber.com/scripts/addlead.pl', body, {}).subscribe(res => {
+        debugger;
+      })
+      
     /* setTimeout(() => {
       this.result = null;
       this.reset();
