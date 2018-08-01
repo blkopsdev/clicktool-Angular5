@@ -6,8 +6,11 @@ import {
   FormControl
 } from '@angular/forms';
 import {
-  Http,
-} from "@angular/http";
+  HttpClientModule,
+  HttpClient,
+  HttpHeaders,
+  HttpParams
+} from "@angular/common/http";
 
 @Component({
   selector: 'app-signup-modal',
@@ -20,7 +23,7 @@ export class SignupModalComponent implements OnInit {
   isSubmitted: boolean = false;
   result: any = null;
   
-  constructor(private formBuilder: FormBuilder, private http: Http) { }
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -50,16 +53,21 @@ export class SignupModalComponent implements OnInit {
       meta_adtracking: 'My_Web_Form',
       meta_message: '1'
     }
-    let requestOptions = {
-      method: 'POST',
-      url: 'https://www.aweber.com/scripts/addlead.pl',
-      body: body
-      // responseType: ResponseContentType[responseType]
+    // let requestOptions = {
+    //   method: 'POST',
+    //   url: 'https://www.aweber.com/scripts/addlead.pl',
+    //   body: body
+    //   // responseType: ResponseContentType[responseType]
+    // };
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded'
+      })
     };
-    return this.http.request(requestOptions.url, requestOptions)
+    return this.http.post('https://www.aweber.com/scripts/addlead.pl', body, httpOptions)
       .subscribe(res => {
         debugger
-      });
+      })
       
     /* setTimeout(() => {
       this.result = null;
