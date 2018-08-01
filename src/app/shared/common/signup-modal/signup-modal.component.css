@@ -16,7 +16,10 @@
   right: 0;
   top: 30px;
 }
-
+.text-danger p {
+  font-size: 16px;
+  margin-top: 5px;
+}
 .signup-modal.underlay .signup-modal-sub {
   background-color: #feca40;
   background-repeat: no-repeat;

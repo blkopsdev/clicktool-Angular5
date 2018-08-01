@@ -5,7 +5,12 @@ import {
   Validators,
   FormControl
 } from '@angular/forms';
-import { toUnicode } from 'punycode';
+import {
+  HttpClientModule,
+  HttpClient,
+  HttpHeaders,
+  HttpParams
+} from "@angular/common/http";
 
 @Component({
   selector: 'app-signup-modal',
@@ -18,7 +23,7 @@ export class SignupModalComponent implements OnInit {
   isSubmitted: boolean = false;
   result: any = null;
   
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -37,7 +42,17 @@ export class SignupModalComponent implements OnInit {
     // Code to save the data
     // userService.Save(this.register.value);
     this.result = this.form.value;
-    console.log(this.result);
+    console.log(this.result.name);
+    console.log(this.result.email);
+/*     this.http.post(
+      'https://www.aweber.com/scripts/addlead.pl', 
+      { 
+        name: this.result.name,
+        email: this.result.email,
+
+      }, {}).map((response: Response) => {
+      console.log(response.json());
+    }) */
     /* setTimeout(() => {
       this.result = null;
       this.reset();
