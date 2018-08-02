@@ -3,6 +3,7 @@
   src: url(./assets/orange kid.ttf) format("opentype");
 }
 
+
 .form-control.style1 {
   border: none;
   box-shadow: none;
@@ -56,13 +57,13 @@
     right: 0;
     width: 100%;
     top: 0;
-    bottom: 0;  
+    bottom: 0;
 }
 
 .title-bb {
     display: block;
     padding: 15px;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 .mw-900 {
@@ -78,7 +79,7 @@
 .sidenav-2 > li > a > i {
     font-size: 16px;
     top: 2px;
-    position: relative;  
+    position: relative;
 }
 .sidenav-2 > li > a.active-link {
   background: #1fa7d721;
@@ -92,13 +93,13 @@
 }
 
 .br {
-  border-right: thin solid #dadada;  
+  border-right: thin solid #dadada;
 }
 .bb {
-  border-bottom: thin solid #dadada;  
+  border-bottom: thin solid #dadada;
 }
 .bl {
-  border-left: thin solid #dadada;  
+  border-left: thin solid #dadada;
 }
 
 .search-input {
@@ -115,7 +116,7 @@
     outline: none;
     box-shadow: 1px 1px 1px inset rgba(0,0,0,0.1);
     position: relative;
-    top: -5px;    
+    top: -5px;
 }
 .search-input:focus {
   border-color: #29a6d3;
@@ -127,7 +128,7 @@
 
 .btn-lg-outline {
     padding: 10px 12px !important;
-    border-radius: 40px !important;   
+    border-radius: 40px !important;
 }
 
 .btn.active, .btn:active {
@@ -136,14 +137,14 @@
 
 .dash-logo {
     margin-top: 10px;
-    margin-left: 10px;  
+    margin-left: 10px;
 }
 
 .prim-btn-outline {
     border: thin solid #37a2cd;
     background: transparent;
     border-radius: 23px;
-    color: #000;  
+    color: #000;
 }
 .prim-btn-outline:hover {
   background: #37a2cd;
@@ -165,7 +166,7 @@
   color: #000;
 }
 .fixed-header i {
-  color: #bdbdbd;  
+  color: #bdbdbd;
 }
 
 .main-nav {
@@ -178,11 +179,11 @@
 
 .main-nav .list-inline-item a{
   display: block;
-  
+
 }
 
 .main-nav .list-inline-item > a{
-  padding: 13px 5px;  
+  padding: 13px 5px;
 }
 
 .main-nav .dropdown-menu a {
@@ -362,7 +363,7 @@ table tbody td {
 }
 
 .language button {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background: transparent none repeat scroll 0 0;
   border: medium none;
   color: #fff;
@@ -411,7 +412,7 @@ header .navbar-nav > li {
 }
 
 header .navbar-nav > li > a {
-  font-family: "Ubuntu",sans-serif;
+  font-family: "Montserrat",sans-serif;
   font-size: 14px;
   font-weight: 400;
   margin: 0 0 0 5px;
@@ -1310,7 +1311,7 @@ body {
   }
   .padding-left-mobile {
     padding-left: 15px;
-  }  
+  }
 }
 
 
@@ -1386,7 +1387,7 @@ body {
     -webkit-appearance: none;
     width: 100%;
     height: 15px;
-    border-radius: 20px;   
+    border-radius: 20px;
     background: #d3d3d3;
     outline: none;
     opacity: 0.7;
@@ -1399,7 +1400,7 @@ body {
     opacity: 1; /* Fully shown on mouse-over */
 }
 
-/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
 .rslider::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
@@ -1407,7 +1408,7 @@ body {
     height: 25px; /* Slider handle height */
     background: #37a2cd; /* Green background */
     cursor: pointer; /* Cursor on hover */
-    border-radius: 50%; 
+    border-radius: 50%;
 }
 
 
@@ -1416,7 +1417,7 @@ body {
     height: 25px; /* Slider handle height */
     background: #37a2cd; /* Green background */
     cursor: pointer; /* Cursor on hover */
-    border-radius: 50%; 
+    border-radius: 50%;
 }
 
 
