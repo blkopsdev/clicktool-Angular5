@@ -13,7 +13,7 @@
         </div>
         <div class="signup-form">
           <section>
-            <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate *ngIf="!isSubmitted">
               <div class="form-group">
                 <input name="name" formControlName="name" placeholder="Name" class="formcontrol" required type="text" value="">
                 <div *ngIf="name.invalid && (name.dirty || isSubmitted)" class="text-danger">
@@ -43,9 +43,9 @@
               </button>
             </form>
 
-            <div class="success-signup">
+            <div class="success-signup row" *ngIf="isSubmitted">
               <h3>Thank you! Please check your inbox to confirm your email address.</h3>
-              <div class="modal-social-btn">
+              <!-- <div class="modal-social-btn">
                 <ul>
                   <li>
                     <a href="https://www.facebook.com/click.tool.71" target="_blank">
@@ -83,7 +83,7 @@
                     </a>
                   </li>
                 </ul>
-              </div>
+              </div> -->
             </div>
           </section>
         </div>

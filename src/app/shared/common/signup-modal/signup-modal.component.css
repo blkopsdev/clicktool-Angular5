@@ -154,3 +154,7 @@ form.mc4wp-form {
 .modal-social-btn li .fab {
   font-size: 28px;
 }
+
+.success-signup h3 {
+  color: #ff8962;
+}
