@@ -9,6 +9,7 @@ export class EmployeeComponent implements OnInit {
   @Input() name: string;
   @Input() role: string;
   @Input() imageSrc: string;
+  @Input() icon: boolean;
 
   constructor() { }
 
