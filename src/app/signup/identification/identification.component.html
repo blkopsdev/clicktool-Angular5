@@ -5,34 +5,37 @@
   <div class="reg-image hidden-sm hidden-xs">
     <img src="../../assets/Animated-Clicktool2 a.gif">
   </div>
-  <div class="reg-form">
 
-    <div class="reg-active reg-border">
-      <h1>Your ID</h1>
-      <h3>Almost There!</h3>
-      <hr>
-
-      <div *ngFor="let uploadPanel of uploadPanels; let i = index">
-        <span><i class="fas"></i></span>
-       <app-uploader id="upload-document-{{ i }}" name="{{ uploadPanel.name }}" (onAddFile)="onDropFile($event, i)" [parentUploader]="uploader"></app-uploader>
-      </div>
-
-      <div class="chckbx mt-4 mb-4" style="margin-bottom: 50px !important; margin-top: 50px;">
-       <div class="g-recaptcha" data-sitekey="6LeIvlgUAAAAACw_uSBNIERrRd8Eo6YuTAcTKj1D"></div>
-      </div>
-      <button style="margin-bottom: 20px !important;" (click)="signup()" class="btn btn-info reg-button" id="finish">
-        <p><i class="fa fa-check-circle"></i>&nbsp;&nbsp;&nbsp;Finish</p>
-      </button>
-      <div style="margin-bottom: 20px !important;" routerLink="/signup/contribution" class="btn btn-info reg-button back" id="back2">
-        <p><i class="fa fa-chevron-circle-left"></i>&nbsp;&nbsp;&nbsp;Back</p>
-      </div>
-      <div style="margin-bottom: 20px !important;" class="btn btn-info reg-button sign-in" id="sign-in3">
-        <p><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;Sign In</p>
+  <div class="container" style="max-width: 747px;">
+    <div class="row" style="margin-top: 30px;">
+      <div class="col-md-12">
+        <span> <strong>Wait one sec!</strong> </span><br>
+        <span> chris.kendricks07@gmail.com </span><br>
+        <span class="badge badge-danger" style="margin-top: 40px;">UNVERIFIED</span>
+        <h1 style="margin-top: 50px;">Verify your identity</h1>
+        <br>
+        <p> <strong>To continue</strong> we have to verify your identity to make sure you are who you say you are. Please upload the required documents. We won't ever share you information.</p>
+        <br>    
       </div>
     </div>
-
-
+    <div class="row" style="margin-top: 50px;">
+      <div *ngFor="let uploadPanel of uploadPanels; let i = index" class="col-md-4">
+        <app-uploader id="upload-document-{{ i }}" name="{{ uploadPanel.name }}" (onAddFile)="onDropFile($event, i)" [parentUploader]="uploader"></app-uploader>        
+      </div>
+    </div> 
+    <div class="row" style="margin-top: 70px;">
+      <div class="col-md-12">
+          <button style="float: left;width: 20%; background-color: #FFF; color: #000;" (click)="signup()" class="btn btn-info reg-button" id="finish">
+            <p>Cancel</p>
+          </button>         
+          <button style="float: right;width: 78%;" (click)="signup()" class="btn btn-info reg-button" id="finish">
+            <p><i class="fa fa-check-circle"></i>&nbsp;&nbsp;&nbsp;Upload and verify documents</p>
+          </button>        
+      </div>
+    </div>   
   </div>
+
+
   <div class="reg-image2 hidden-xs">
     <img src="../../assets/Animated-Clicktool2 a.gif">
   </div>

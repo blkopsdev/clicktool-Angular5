@@ -26,7 +26,7 @@ export class IdentificationComponent implements OnInit, OnDestroy {
     {name:'Proof of residence', addedUpload:false},
   ]
 
-  
+  base64Strings:string[] = [];
 
   nextStepUrl:string = "/dashboard"
   previousUrl:string = "/signup/contribution"
@@ -40,6 +40,19 @@ export class IdentificationComponent implements OnInit, OnDestroy {
   onDropFile($event, index) {
     this.uploader.queue[index] = $event
     this.uploadPanels[index]["addedUpload"] = true
+    
+    let fileReader = new FileReader();
+    fileReader.onloadend = (e) => {
+        let imageData = fileReader.result;
+        let rawData = imageData.split("base64,");
+        if (rawData.length > 1) {
+            rawData = rawData[1];
+            this.base64Strings[index] = rawData;
+        }
+        console.log(this.base64Strings);
+    }
+    fileReader.readAsDataURL(this.uploader.queue[index]._file);
+
   }
 
   ngOnInit() {
@@ -60,7 +73,7 @@ export class IdentificationComponent implements OnInit, OnDestroy {
 
   onUploadComplete() {
     this.uploader.onCompleteAll = () => {
-      this.memberService.afterLoginRoute()
+      //this.memberService.afterLoginRoute()
     }  
   }
 
@@ -71,6 +84,7 @@ export class IdentificationComponent implements OnInit, OnDestroy {
 
   setUploadContainerName(userId:string) {
     this.uploader.setOptions({
+      disableMultipart:false,
       authTokenHeader:this.app.getAccessToken(),
       url: this.app.apiUrl + '/Members/'+ this.app.getUserId() +'/uploadFile?access_token=' + this.app.getAccessToken()
     })    
@@ -79,8 +93,9 @@ export class IdentificationComponent implements OnInit, OnDestroy {
   afterLogin(session:Response) {
     this.memberService.saveAccessToken(session)
     this.memberService.setLocalMemberObj(session)
-    this.setUploadContainerName(session["userId"])
-    this.uploader.uploadAll() 
+    this.setUploadContainerName(session["userId"]) 
+
+
   }
 
 

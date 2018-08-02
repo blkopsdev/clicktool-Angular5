@@ -3,6 +3,26 @@
   src: url(./assets/orange kid.ttf) format("opentype");
 }
 
+.form-control.style1 {
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: thin solid #e2e2e2;
+  padding-left: 0;
+  padding-right: 0;  
+}
+.form-control.style1:focus {
+  border-bottom-color: #28CAE8;
+}
+.form-control.style1::placeholder {
+  color: #666;
+  font-weight: 300;
+}
+
+.nmb {
+  margin-bottom: 0 !important;
+}
+
 .form-toggler-container app-form-toggler:last-child .bb {
   border-bottom: 0;
 }
@@ -14,6 +34,11 @@
     width: 100%;
     padding: 7px 12px;
     font-size: 16px;
+}
+
+.badge-danger {
+  background-color: red;
+  color: #FFF;
 }
 
 .p-rel {
@@ -221,10 +246,30 @@ input[type="submit"] {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #F5F5F5;
+  /*background-color: #F5F5F5;*/
 }
 
+.btn-group.btn-group-block {
+  display: flex;
+}
+.btn-group.btn-group-block button{
+  flex-grow: 1;
+}
 
+.btn.btn-primary {
+/* Rectangle: */
+background-image: linear-gradient(-180deg, #28CAE8 0%, #1FB3CE 100%);
+box-shadow: 0 2px 4px 0 rgba(49,119,152,0.27);
+border-radius: 5px;  
+}
+.btn-primary.active {
+  background-color: #082036 !important;
+  background-image: none;
+}
+
+.active:after {
+  content: "" !important;
+}
 
 .mb-0 {
   margin-bottom: 0 !important;

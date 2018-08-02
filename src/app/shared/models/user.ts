@@ -16,4 +16,5 @@ export class User {
 	passwordConfirm:string
 	isContributionMoreThenTwelve:boolean
 	isContributionUsd:boolean
+	isShuftiproVerified:boolean
 }
