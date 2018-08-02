@@ -161,3 +161,14 @@ form.mc4wp-form {
 .success-signup h3 {
   color: #ff8962;
 }
+
+.signup-modal-telegram{
+  position: relative;
+}
+.signup-modal-telegram img{
+  -webkit-box-shadow: 0px 0px 14px 2px #524844;
+  -moz-box-shadow: 0px 0px 14px 2px #524844;
+  box-shadow: 0px 0px 14px 2px #524844;
+  border: 2px solid #15465d;
+  border-radius: 15px;
+}
