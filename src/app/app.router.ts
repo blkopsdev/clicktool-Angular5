@@ -23,6 +23,8 @@ import { WireInfoComponent } from './wire-info/wire-info.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SecurityComponent } from './settings/security/security.component';
 import { WalletSettingsComponent } from './settings/wallet-settings/wallet-settings.component';
+import { IsIdVerifiedGuard } from './shared/guards/is-id-verified.guard'
+import { VerifyComponent } from './verify/verify.component'
 
 export const router: Routes = [
 
@@ -35,7 +37,7 @@ export const router: Routes = [
 	{ path: 'signup/account', component: AccountInfoComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/contribution', component: ContributionComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/wire', component: WireInfoComponent, canActivate:[AuthGuard] },
-	{ path: 'signup/identification', component: IdentificationComponent, canActivate:[IsLoggedInGuard] },
+	{ path: 'verify', component: VerifyComponent },
 	{ path: 'settings', component: SettingsComponent },
 	{ path: 'settings/security', component: SecurityComponent },
 	{ path: 'settings/wallet', component: WalletSettingsComponent },
@@ -46,7 +48,7 @@ export const router: Routes = [
 	{ path: 'password/reset/checkemail', component: TextActionComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'reset-password/:token', component: UpdatePasswordComponent, canActivate:[IsLoggedInGuard] },
 
-	{ path: 'dashboard', component: DashboardComponent  },
+	{ path: 'dashboard', component: DashboardComponent, canActivate:[IsIdVerifiedGuard]  },
 	{ path: 'transactions', component: TransactionsComponent},
 	{ path: 'user/:id/password', component: PasswordComponent, canActivate: [AuthGuard] },
 

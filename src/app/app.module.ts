@@ -73,7 +73,8 @@ import { WalletSettingsComponent } from './settings/wallet-settings/wallet-setti
 import { ButtonToFormComponent } from './shared/common/button-to-form/button-to-form.component';
 import { SidebarIconComponent } from './shared/common/sidebar-icon/sidebar-icon.component';
 import { SignupModalComponent } from './shared/common/signup-modal/signup-modal.component';
-
+import { IsIdVerifiedGuard } from './shared/guards/is-id-verified.guard';
+import { VerifyComponent } from './verify/verify.component'
 
 
 @NgModule({
@@ -130,7 +131,8 @@ import { SignupModalComponent } from './shared/common/signup-modal/signup-modal.
     WalletSettingsComponent,
     ButtonToFormComponent,
     SidebarIconComponent,
-    SignupModalComponent
+    SignupModalComponent,
+    VerifyComponent
   ],
   imports: [
     BrowserModule,
@@ -148,6 +150,7 @@ import { SignupModalComponent } from './shared/common/signup-modal/signup-modal.
     AuthGuard,
     IsLoggedInGuard,
     CookieService,
+    IsIdVerifiedGuard,
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorServiceService, multi: true },
     { provide: ErrorHandler, useClass: ErrorHandlerService }
     ],

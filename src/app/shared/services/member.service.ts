@@ -87,11 +87,10 @@ export class MemberService {
   }
 
   afterLogin(res:Response):Response {
-    console.log(res);
     this.deleteLocalCookieSession();
     this.saveAccessToken(res)
     this.setLocalMemberObj(res)
-    this.afterLoginRoute();
+    this.afterLoginRoute(res);
     return res;
   }
 
@@ -108,8 +107,14 @@ export class MemberService {
     this.cookieService.delete("session");
   }
 
-  afterLoginRoute() {
-    this.router.navigate(['/dashboard'])
+  afterLoginRoute(res?:any) {
+    console.log('res', res);
+    if(!res["user"]["isShuftiproVerified"]){
+      this.router.navigate(['/verify'])
+    }else{
+      this.router.navigate(['/dashboard'])
+    }
+    
   }
 
   createAccount(user:User) {
@@ -168,6 +173,14 @@ export class MemberService {
     this.api.params = {newPassword:newPassword}
     this.api.setInstanceName("Members/reset-password?access_token=" + accessToken)
     return this.api.fire(HTTPmethod.CREATE, false, true)       
+  }
+
+  verifyMember(userId:string, accessToken:string, params:any) {
+    this.api.id = null;
+    this.api.filter = null;
+    this.api.params = params;
+    this.api.setInstanceName("Members/"+ userId +"/checkBackground?access_token=" + accessToken)
+    return this.api.fire(HTTPmethod.CREATE, false, true)     
   }
 
 

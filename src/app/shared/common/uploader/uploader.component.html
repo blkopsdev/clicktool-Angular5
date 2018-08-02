@@ -2,7 +2,7 @@
 	[ngClass]="{'nv-file-over': hasBaseDropZoneOver}"              
 	(fileOver)="fileOverAnother($event)"
 	[uploader]="uploader"
-	(click)="file.click()" class="uploader">
+	(click)="file.click()" class="uploader text-center">
 
 	<div [hidden]="!showAfterDropImage" class="row">
 		<div class="col-xs-6 col-md-6">
@@ -16,7 +16,7 @@
 			<span>{{ fileName }}</span>
 		</div>
 	</div>
-	 <span [hidden]="showAfterDropImage">Drag drop your {{ name }} here</span>
+	 <span [hidden]="showAfterDropImage">{{ name }}</span>
 
 </div>
 

@@ -1,0 +1,162 @@
+<app-header></app-header>
+
+<div id="identification-form" class="container-fluid first-form npr">
+
+  <div style="position: fixed;" class="reg-image hidden-sm hidden-xs" style="z-index: -10;">
+    <img src="../../assets/Animated-Clicktool2 a.gif">
+  </div>
+
+  <div class="container" [ngStyle]="{'min-height': hideUploadForm === true ? '1200px' : 'auto'}" style="max-width: 1100px;border-left: thin solid  #e4e4e4;
+    border-right: thin solid  #e4e4e4; padding-left: 30px; padding-right: 30px; padding-bottom: 40px; box-shadow: 0px 0px 12px rgba(0,0,0,0.1); background-color: #FFF; float: right;">
+    <div class="row text-left" style="margin-top: 40px;">
+      <div class="col-sm-12">
+
+        <div class="row">
+        	<div class="col-md-12">
+        		<h1 class="pull-left">Verify your identity</h1>
+        		<div class="pull-right">
+        			<span class="badge badge-danger">Unverified</span>
+        		</div>
+        	</div>
+        </div>
+
+        
+        <br>
+        <p> To continue we have to verify your identity to make sure you are who you say you are. Please upload the required documents. We won't ever share you information.</p>
+        <br>    
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+    	<div class="col-sm-6 text-left">
+    		<label class="float-left">Select a document to verify:</label>
+    	</div>
+    	<div class="col-sm-6 text-left">
+			<div style="float:right; width: 100%;" class="btn-group btn-group-block" role="group" aria-label="Basic example">
+			  <button [ngClass]="{'active': documentType == 'passport' }" (click)="setDocumentType('passport', 'Passport')"  type="button" class="btn btn-primary active">Passport</button>
+			  <button [ngClass]="{'active': documentType == 'driving_license' }" (click)="setDocumentType('driving_license', 'License')"  type="button" class="btn btn-primary">Driver license</button>
+			  <button [ngClass]="{'active': documentType == 'id_card' }" (click)="setDocumentType('id_card', 'ID card')" type="button" class="btn btn-primary">ID card</button>
+			</div>    		
+    	</div>
+    </div>
+    <hr [hidden]="hideUploadForm">
+    <div [hidden]="hideUploadForm" class="row text-left">
+	  <div class="col-sm-6 text-left">
+		<label class="float-left">Upload {{ documentTypeLabel }} documents:</label>
+	  </div>	
+      <div class="col-sm-6">
+	      <div class="row">
+		      <div style="margin-bottom: 10px;" *ngFor="let uploadPanel of uploadPanels; let i = index" class="col-sm-6">
+		        <app-uploader id="upload-document-{{ i }}" name="{{ uploadPanel.name }}" (onAddFile)="onDropFile($event, i)" [parentUploader]="uploader"></app-uploader>        
+		      </div>      	
+	      </div>      	
+      </div>	
+	
+
+
+    </div> 
+
+    <hr [hidden]="hideUploadForm">
+
+    <div [hidden]="hideUploadForm" class="row">
+    	<div class="col-sm-6 text-left">
+    		<label class="float-left">{{ documentTypeLabel }} information:</label>
+    	</div>
+    	<div></div>
+    	<div class="col-sm-6 text-left">
+    		<div class="row">
+    			<div class="col-sm-6">
+  					<div class="form-group nmb">
+						<input [(ngModel)]="verifyObj.document_id_no" class="form-control style1" type="text" name="" placeholder="{{ documentTypeLabel }} number">
+					</div>    				
+    			</div>
+    			<div class="col-sm-6">
+  					<div class="form-group nmb">
+						<input [(ngModel)]="verifyObj.document_expiry_date" class="form-control style1" type="text" name="" placeholder="{{ documentTypeLabel }} exp date">
+					</div>    				
+    			</div>    			   			    						    			
+    		</div>
+   		
+    	</div>
+    </div>
+
+    <hr [hidden]="hideUploadForm">
+
+    <div [hidden]="hideUploadForm" class="row">
+    	<div class="col-sm-6 text-left">
+    		<label class="float-left">Enter information on identity document:</label>
+    	</div>
+    	<div></div>
+    	<div class="col-sm-6 text-left">
+    		<div class="row">   			
+    			<div class="col-sm-6">
+					<div class="form-group">
+						<input [(ngModel)]="verifyObj.first_name" class="form-control style1" type="text" name="" placeholder="First name">
+					</div>     				
+    			</div>
+    			<div class="col-sm-6">
+					<div class="form-group">
+						<input [(ngModel)]="verifyObj.last_name" class="form-control style1" type="text" name="" placeholder="Last name">
+					</div>     				
+    			</div>
+    			<div class="col-sm-12">
+					<div class="form-group">
+						<input [(ngModel)]="verifyObj.address" class="form-control style1" type="text" name="" placeholder="Address">
+					</div>     				
+    			</div>    
+    			<div class="col-sm-6">
+					<div class="form-group">
+						<input [(ngModel)]="verifyObj.dob" class="form-control style1" type="text" name="" placeholder="Date of birth">
+					</div>     				
+    			</div>
+    			<div class="col-sm-12">
+					<div class="form-group">
+						<input [(ngModel)]="verifyObj.phone_number" class="form-control style1" type="text" name="" placeholder="Phone number">
+					</div>     				
+    			</div>    			    						    			
+    		</div>
+   		
+    	</div>
+    </div>
+
+    <hr [hidden]="hideUploadForm">
+
+    <div [hidden]="hideUploadForm" class="row">
+    	<div class="col-sm-6 text-left">
+    		<label class="float-left">Terms & Service:</label>
+    	</div>
+    	<div></div>
+    	<div class="col-sm-6 text-left">
+    		<div class="row">   			
+    			<div class="col-sm-12">
+		            <label class="checkcontainer">
+		              <input [(ngModel)]="user.didAgreeToTerms" type="checkbox" autocomplete="off">
+		              Agree to background check terms
+		              <span class="checkmark"></span>
+		            </label>    				
+    			</div>
+   			    						    			
+    		</div>
+   		
+    	</div>
+    </div>
+
+    <hr [hidden]="hideUploadForm">
+
+    <div [hidden]="hideUploadForm" class="row" style="margin-top: 10px;">
+      <div class="col-md-12">  
+      	  <a href="#">Logout and verify later</a>   
+          <button (click)="verify()" class="btn btn-primary pull-right" id="finish">
+            Upload and verify documents
+          </button>        
+      </div>
+    </div>   
+  </div>
+
+
+<!--   <div class="reg-image2 hidden-xs">
+    <img src="../../assets/Animated-Clicktool2 a.gif">
+  </div> -->
+</div>
+
+<app-footer></app-footer>

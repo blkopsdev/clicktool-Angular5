@@ -21,11 +21,9 @@ export class ContributionComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
   	this.user = this.util.getLocalObject("user") as User
-    console.log(this.user)
   }
 
   ngOnDestroy() {
-
     if( this.router.url == this.nextStepUrl || this.router.url == this.previousUrl ) { }else{
       this.util.deleteLocalObject("user");
     }     
@@ -35,14 +33,16 @@ export class ContributionComponent implements OnInit, OnDestroy {
   	this.user.isContributionMoreThenTwelve = true
     this.user.isContributionUsd = false
     this.util.setLocalObject("user", this.user)
+    this.memberService.createAccount(this.user).subscribe(res=>this.afterCreateAccount(res))
     // Identification
-  	this.router.navigate(['/signup/identification'])
+  	//this.router.navigate(['/signup/identification'])
   }
 
   lessThenTwelve() {
   	this.user.isContributionMoreThenTwelve = false
     this.user.isContributionUsd = false
     this.util.setLocalObject("user", this.user)
+    //this.router.navigate(['/signup/identification'])
     // Go straight to dashboard and create account
     this.memberService.createAccount(this.user).subscribe(res=>this.afterCreateAccount(res))
   }
@@ -63,9 +63,10 @@ export class ContributionComponent implements OnInit, OnDestroy {
     this.memberService.saveAccessToken(session)
     this.memberService.setLocalMemberObj(session)
 
-    console.log("comppp: ", this.user.isContributionUsd)
-    if(this.user.isContributionUsd){
-      this.router.navigate(['/signup/wire'])
+    console.log(session["user"]["isShuftiproVerified"])
+
+    if(!session["user"]["isShuftiproVerified"]){
+      this.router.navigate(['/verify'])
     }else{
       this.memberService.afterLoginRoute()
     }
