@@ -164,11 +164,12 @@ form.mc4wp-form {
 
 .signup-modal-telegram{
   position: relative;
+  top: 15px;
 }
 .signup-modal-telegram img{
-  -webkit-box-shadow: 0px 0px 14px 2px #524844;
-  -moz-box-shadow: 0px 0px 14px 2px #524844;
-  box-shadow: 0px 0px 14px 2px #524844;
+  -webkit-box-shadow: 0px 0px 14px 2px white;
+  -moz-box-shadow: 0px 0px 14px 2px white;
+  box-shadow: 0px 0px 14px 2px white;
   border: 2px solid #15465d;
   border-radius: 15px;
 }
