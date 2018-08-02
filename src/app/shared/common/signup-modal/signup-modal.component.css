@@ -155,6 +155,9 @@ form.mc4wp-form {
   font-size: 28px;
 }
 
+.success-signup {
+  padding-bottom: 30px;
+}
 .success-signup h3 {
   color: #ff8962;
 }
