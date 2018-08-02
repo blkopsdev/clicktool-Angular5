@@ -36,6 +36,7 @@ export class SignupModalComponent implements OnInit {
   get email() { return this.form.get('email'); }
 
   onSubmit() {
+    debugger;
     this.isSubmitted = true;
     if (!this.form.valid)
       return;
