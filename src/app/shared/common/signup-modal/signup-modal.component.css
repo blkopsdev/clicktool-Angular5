@@ -147,3 +147,10 @@ form.mc4wp-form {
   right: 5px;
   padding: 0 2.5px !important;
 }
+.modal-social-btn li {
+  float: left;
+  list-style: none;
+}
+.modal-social-btn li .fab {
+  font-size: 28px;
+}
