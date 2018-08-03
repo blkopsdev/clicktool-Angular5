@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler  } from '@angular/core';
+import { CdkTreeModule } from '@angular/cdk/tree';
+import { MatTabsModule } from '@angular/material';
 import { routes } from './app.router';
 
 import { AppComponent } from './app.component';
@@ -76,8 +78,8 @@ import { SignupModalComponent } from './shared/common/signup-modal/signup-modal.
 import { IsIdVerifiedGuard } from './shared/guards/is-id-verified.guard';
 import { VerifyComponent } from './verify/verify.component'
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
-import { MatTabsModule } from '@angular/material';
 import { HeaderTabComponent } from './homepage/shared/header-tab-group/header-tab-group.component';
+
 
 @NgModule({
   declarations: [
@@ -146,6 +148,7 @@ import { HeaderTabComponent } from './homepage/shared/header-tab-group/header-ta
     FileUploadModule,
     ReactiveFormsModule,
     GooglePlaceModule,
+    CdkTreeModule,
     MatTabsModule
   ],
   providers: [
