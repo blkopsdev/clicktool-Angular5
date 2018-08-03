@@ -75,7 +75,7 @@ import { SidebarIconComponent } from './shared/common/sidebar-icon/sidebar-icon.
 import { SignupModalComponent } from './shared/common/signup-modal/signup-modal.component';
 import { IsIdVerifiedGuard } from './shared/guards/is-id-verified.guard';
 import { VerifyComponent } from './verify/verify.component'
-// import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 
 
 @NgModule({
@@ -143,7 +143,7 @@ import { VerifyComponent } from './verify/verify.component'
     HttpClientModule,
     FileUploadModule,
     ReactiveFormsModule,
-    // GooglePlaceModule
+    GooglePlaceModule
   ],
   providers: [
     MemberService,
