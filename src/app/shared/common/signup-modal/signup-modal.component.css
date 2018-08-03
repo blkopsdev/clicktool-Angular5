@@ -140,7 +140,7 @@ form.mc4wp-form {
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 299px) {
+@media only screen and (max-width: 359px) {
  .signup-modal form input[type=email],
   .signup-modal form input[type=text] {
     width: 240px;
