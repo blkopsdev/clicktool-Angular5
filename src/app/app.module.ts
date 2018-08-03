@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler  } from '@angular/core';
-import { CdkTreeModule } from '@angular/cdk/tree';
+// import { CdkTreeModule } from '@angular/cdk/tree';
 import { MatTabsModule } from '@angular/material';
 import { routes } from './app.router';
 
@@ -148,7 +148,7 @@ import { HeaderTabComponent } from './homepage/shared/header-tab-group/header-ta
     FileUploadModule,
     ReactiveFormsModule,
     GooglePlaceModule,
-    CdkTreeModule,
+    // CdkTreeModule,
     MatTabsModule
   ],
   providers: [
