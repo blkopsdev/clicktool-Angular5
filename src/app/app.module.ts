@@ -76,7 +76,8 @@ import { SignupModalComponent } from './shared/common/signup-modal/signup-modal.
 import { IsIdVerifiedGuard } from './shared/guards/is-id-verified.guard';
 import { VerifyComponent } from './verify/verify.component'
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
-
+import { MatTabsModule } from '@angular/material';
+import { HeaderTabComponent } from './shared/common/header-tab-group/header-tab-group.component';
 
 @NgModule({
   declarations: [
@@ -133,7 +134,8 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
     ButtonToFormComponent,
     SidebarIconComponent,
     SignupModalComponent,
-    VerifyComponent
+    VerifyComponent,
+    HeaderTabComponent
   ],
   imports: [
     BrowserModule,
@@ -143,7 +145,8 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
     HttpClientModule,
     FileUploadModule,
     ReactiveFormsModule,
-    GooglePlaceModule
+    GooglePlaceModule,
+    MatTabsModule
   ],
   providers: [
     MemberService,
