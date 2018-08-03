@@ -77,7 +77,7 @@ import { IsIdVerifiedGuard } from './shared/guards/is-id-verified.guard';
 import { VerifyComponent } from './verify/verify.component'
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 import { MatTabsModule } from '@angular/material';
-import { HeaderTabComponent } from './shared/common/header-tab-group/header-tab-group.component';
+import { HeaderTabComponent } from './homepage/shared/header-tab-group/header-tab-group.component';
 
 @NgModule({
   declarations: [
