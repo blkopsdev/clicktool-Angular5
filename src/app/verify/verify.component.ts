@@ -7,7 +7,7 @@ import {Response} from '@angular/http'
 import { FileSelectDirective, FileDropDirective, FileUploader, FileUploaderOptions, Headers, FileItem } from 'ng2-file-upload/ng2-file-upload';
 import { AppComponent } from '../app.component'
 import { UploaderComponent } from '../shared/common/uploader/uploader.component'
-
+import { GooglePlaceDirective } from "ngx-google-places-autocomplete";
 export class Verify {
 	document_type:string
 	document_id_no:string
@@ -37,6 +37,7 @@ export class VerifyComponent implements OnInit {
 
   private user:User = new User()
   public uploader:FileUploader = new FileUploader({});
+  @ViewChild("placesRef") placesRef : GooglePlaceDirective;
 
   uploadPanels:any[] = [
     {name:'ID (front)', addedUpload:false},
@@ -55,6 +56,10 @@ export class VerifyComponent implements OnInit {
   verifyObj:Verify = new Verify()
 
   constructor(private util:Util, private router:Router, private memberService:MemberService, private app:AppComponent) {}
+
+  public handleAddressChange(address: any){
+
+  }
 
   onDropFile($event, index) {
     this.uploader.queue[index] = $event
