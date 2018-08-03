@@ -101,7 +101,7 @@
     			</div>
     			<div class="col-sm-12">
 					<div class="form-group">
-						<input [(ngModel)]="verifyObj.address" class="form-control style1" type="text" name="" placeholder="Address">
+						<input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" [(ngModel)]="verifyObj.address" class="form-control style1" type="text" name="" placeholder="Address">
 					</div>     				
     			</div>    
     			<div class="col-sm-6">
@@ -123,15 +123,18 @@
 
     <div [hidden]="hideUploadForm" class="row">
     	<div class="col-sm-6 text-left">
-    		<label class="float-left">Terms & Service:</label>
+    		<label class="float-left">TOS & Agreements:</label>
     	</div>
     	<div></div>
     	<div class="col-sm-6 text-left">
     		<div class="row">   			
     			<div class="col-sm-12">
-		            <label class="checkcontainer">
+		            <label class="checkcontainer" style="font-weight: normal;
+    font-size: 14px;
+    padding-top: 3px;
+    margin-bottom: 0;">
 		              <input [(ngModel)]="user.didAgreeToTerms" type="checkbox" autocomplete="off">
-		              Agree to background check terms
+		              Agree to background check
 		              <span class="checkmark"></span>
 		            </label>    				
     			</div>
