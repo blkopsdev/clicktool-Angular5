@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler  } from '@angular/core';
 import { MatTabsModule } from '@angular/material';
 // import { CdkTreeModule } from '@angular/cdk';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { routes } from './app.router';
 
 import { AppComponent } from './app.component';
@@ -152,7 +153,9 @@ import { HeaderTabComponent } from './homepage/shared/header-tab-group/header-ta
     ReactiveFormsModule,
     GooglePlaceModule,
     // CdkTreeModule,
-    MatTabsModule
+    MatTabsModule,
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [
     MemberService,
