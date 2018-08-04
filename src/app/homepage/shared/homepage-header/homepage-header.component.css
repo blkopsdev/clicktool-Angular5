@@ -74,4 +74,5 @@
 .ico-tab {
   position: absolute;
   z-index: 1000;
+  top: 95px;
 }
