@@ -23,7 +23,7 @@
                 <li><a href="whitepaper.html">Whitepaper</a></li>
                 <li><a href="http://blog.clicktool.com/">Blog</a></li>
                 <li><a routerLink="/affiliate" href="/affiliate">Affiliate Program</a></li>
-                <li><a href="#">ICO</a></li>
+                <li><a href="#" (click)="tabshow=!tabshow" id="bt">ICO</a></li>
 <!--                   <li class="hidden-md hidden-sm hidden-lg hidden-xl"><a routerLink="/login" href="/login">Login</a></li>
                 <li class="hidden-md hidden-sm hidden-lg hidden-xl"><a routerLink="/signup" href="/signup">Buy Tokens</a></li> -->
               </ul>
@@ -39,7 +39,7 @@
                     <li><a href="whitepaper.html">Whitepaper</a></li>
                     <li><a href="http://blog.clicktool.com/">Blog</a></li>
                     <li><a href="referral.html">Affiliate Program</a></li>
-                    <li><a href="#">ICO</a></li>
+                    <li><a href="#" (click)="tabshow=!tabshow" id="bt">ICO</a></li>
                     <li><a routerLink="/login" href="/login">Login</a></li>
                     <li style="border-bottom: none"><a routerLink="/signup" href="/signup">Buy Tokens</a></li>
                   </ul>
@@ -56,6 +56,7 @@
     </div>
   </header>
 </div>
-<div class="ico-tab">
+<div class="ico-tab" *ngIf="tabshow">
+  <p>test</p>
   <!-- <header-tab-group></header-tab-group> -->
 </div>

@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageHeaderComponent implements OnInit {
 
+  public tabshow: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
   }
+
+  /* toggle() {
+    this.tabshow = !this.tabshow;
+
+    // CHANGE THE NAME OF THE BUTTON.
+  } */
 
 }
