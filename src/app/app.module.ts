@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler  } from '@angular/core';
-// import { CdkTreeModule } from '@angular/cdk/tree';
 import { MatTabsModule } from '@angular/material';
+// import { CdkTreeModule } from '@angular/cdk';
 import { routes } from './app.router';
 
 import { AppComponent } from './app.component';
@@ -138,6 +138,9 @@ import { HeaderTabComponent } from './homepage/shared/header-tab-group/header-ta
     SignupModalComponent,
     VerifyComponent,
     HeaderTabComponent
+  ],
+  exports: [
+    MatTabsModule
   ],
   imports: [
     BrowserModule,
