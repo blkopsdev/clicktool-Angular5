@@ -14,10 +14,4 @@ export class HomepageHeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  /* toggle() {
-    this.tabshow = !this.tabshow;
-
-    // CHANGE THE NAME OF THE BUTTON.
-  } */
-
 }
