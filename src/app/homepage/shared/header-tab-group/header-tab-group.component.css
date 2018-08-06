@@ -1,8 +1,82 @@
-.demo-tab-group {
-    border: 1px solid #e8e8e8;
+.tab-content .active {
+    background: white;
 }
-  
-.demo-tab-content {
-    padding: 16px;
+.top-tab .nav {
+    background: #1db8d3;
+    border-bottom: 0;
 }
-  
+
+.top-tab .nav li {
+    width: 20%;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.top-tab .nav a {
+    background: #1db8d3;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    background: #008ca5;
+    color: white;
+    border: 0;
+    margin-right: 0;
+}
+.top-tab .nav-tabs>li>a:hover {
+    border: 0;
+}
+.top-tab .tab-pane{
+    text-align: center;
+    padding: 15px 0;
+    background: #f5f6f5;
+}
+.tab-content .tab-pane .col-md-12 {
+    min-height: 315px;
+}
+.top-tab .tab-pane h2 {
+    color: #15465d;
+}
+.top-tab .tab-pane p {
+    font-size: 14px;
+    font-weight: 500;
+}
+.tab1-elem {
+    width: 20%;
+    float: left;
+    position: relative;
+    top: 70px;
+    text-align: center;
+}
+.tab1-elem .inner-image{
+    width: 150px;
+}
+.avatar-gear {
+    width: 230px;
+    position: absolute;
+    left: -40px;
+    bottom: -30px;    
+}
+.inner-elem {
+    display: inline-block;
+    position: relative;
+}
+.tab1-elem h3 {
+    position: relative;
+    top: 30px;
+    color: #008ca5;
+}
+.tab1-elem:hover {
+    cursor: pointer;
+}
+.tab1-elem:hover .avatar-gear {
+    -webkit-animation: smallRotate 1s ease;
+            animation: smallRotate 1s ease;
+    transform: rotate(95deg);
+    -moz-transform: rotate(95deg);
+    -webkit-transform: rotate(95deg);
+    -o-transform: rotate(95deg);
+    -ms-transform: rotate(95deg);
+}

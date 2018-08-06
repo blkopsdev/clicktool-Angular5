@@ -1,9 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler  } from '@angular/core';
-import { MatTabsModule, MatCardModule } from '@angular/material';
-import { CdkTableModule } from '@angular/cdk/table';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { routes } from './app.router';
 
 import { AppComponent } from './app.component';
@@ -141,9 +137,6 @@ import { HeaderTabComponent } from './homepage/shared/header-tab-group/header-ta
     VerifyComponent,
     HeaderTabComponent
   ],
-  exports: [
-    MatTabsModule
-  ],
   imports: [
     BrowserModule,
     routes,
@@ -153,11 +146,6 @@ import { HeaderTabComponent } from './homepage/shared/header-tab-group/header-ta
     FileUploadModule,
     ReactiveFormsModule,
     GooglePlaceModule,
-    CdkTableModule,
-    MatTabsModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatCardModule
   ],
   providers: [
     MemberService,
@@ -173,5 +161,3 @@ import { HeaderTabComponent } from './homepage/shared/header-tab-group/header-ta
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-platformBrowserDynamic().bootstrapModule(AppModule);
