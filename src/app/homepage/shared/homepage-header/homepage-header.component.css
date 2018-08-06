@@ -73,6 +73,7 @@
 }
 .ico-tab {
   position: absolute;
+  background: white;
   z-index: 1000;
   top: 95px;
 }
