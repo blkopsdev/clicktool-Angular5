@@ -27,85 +27,86 @@ html,body {
   height: 100%;
 }
 
-.referral-container {
+.support-container {
   background-color: #1db8d3;
 /*   margin-top: -139px; */
   color: white;
   text-align: center;
 }
 
-.referral-container h1 {
-  margin-top: 50px;
+.support-container h1 {
+  padding: 15px 0;
   font-weight: 700;
   font-size: 48px;
 }
 
-.referral-container span {
+.support-container span {
   color: rgba(255, 255, 255, 1);
   border-bottom: 2px solid white;
 }
 
-.referral-container h3 {
+.support-container h3 {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.referral-container img {
+.support-container img {
   width: 70vw;
   margin-top: 30px;
   max-width: 1000px;
 }
 
-.referral-container div {
+.support-container div {
   margin: 0 auto;
 }
 
-.referral-icons {
+.support-icons {
   margin:  0 auto;
   display: flex;
   justify-content: space-around;
   text-align:  center;
 }
 
-.referral-icons i {
+.support-icons i {
   font-size: 8vw;
   opacity:  0.8;
 }
 
-.referral-info {
+.support-info {
   width: 70vw;
+  height: 100%;
   max-width: 1000px;
   margin-top: 20px;
   font-size: 18px;
   margin: 0 auto;
 }
 
-.referral-info i {
+.support-info i {
   color: #24537f;
 }
 
-.referral-info p {
+.support-info p {
   color: #595959 !important;
 }
 
-.referral-info h2 {
+.support-info h2 {
   font-size: 32px;
   font-weight: 600;
   color: black;
 }
 
-.referral-info h6 {
+.support-info h6 {
   font-size: 20px;
   margin: 16px;
   color: black;
 }
 
-.referral-info h3 {
+.support-info h3 {
   font-size: 28px;
   font-weight: 700;
   color: black;
 }
 
-.referral-box {
+.support-box {
   width: 800px;
   box-shadow: 0px 0px 18px #CCCCCC;
   margin: 40px auto;
@@ -114,7 +115,7 @@ html,body {
   border-radius: 2px;
 }
 
-.referral-button {
+.support-button {
   background-color: #fd8a66;
   color: white;
   width: 220px;
@@ -124,12 +125,12 @@ html,body {
   box-shadow: 1px 1px 1px #CCCCCC;
 }
 
-.referral-button:hover {
+.support-button:hover {
   cursor: pointer;
   background-color: #D17356;
 }
 
-.referral-button:active {
+.support-button:active {
   box-shadow: none;
   background-color: #BE684F;
 }
@@ -152,13 +153,13 @@ html,body {
 /* Media Queries */
 
 @media only screen and (max-width: 979px) {
-  .referral-box {
+  .support-box {
     width: 80vw;
   }
 }
 
 @media only screen and (max-width: 800px) {
-  .referral-info {
+  .support-info {
     width: 90vw;
   }
 
@@ -168,7 +169,7 @@ html,body {
 }
 
 @media only screen and (max-width: 767px) {
-  .referral-container {
+  .support-container {
     margin-top: -35px !important;
   }
 }
