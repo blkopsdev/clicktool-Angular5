@@ -5,6 +5,7 @@ import { routes } from './app.router';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SupportComponent } from './support/support.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 import { AgreementsComponent } from './signup/agreements/agreements.component';
 import { AccountInfoComponent } from './signup/account-info/account-info.component';
@@ -86,6 +87,7 @@ import { HeaderTabComponent } from './homepage/shared/header-tab-group/header-ta
     HomepageComponent,
     AgreementsComponent,
     SupportComponent,
+    PrivacyComponent,
     AccountInfoComponent,
     HeaderComponent,
     FooterComponent,
