@@ -80,3 +80,44 @@
     -o-transform: rotate(95deg);
     -ms-transform: rotate(95deg);
 }
+@media only screen and (min-width: 768px) and (max-width: 1169px) {
+    .tab1-elem {
+        width: 33.33%;
+    }
+    .tab1-elem:nth-child(4), .tab1-elem:last-child {
+        padding-top: 100px;
+    }
+    .tab-content .tab-pane .col-md-12 {
+        height: 600px;
+    }
+}
+
+@media only screen and (min-width: 460px) and (max-width: 767px) {
+    .tab1-elem {
+        width: 50%;
+    }
+    .tab1-elem:nth-child(3), .tab1-elem:nth-child(4), .tab1-elem:last-child {
+        padding-top: 100px;
+    }
+    .tab-content .tab-pane .col-md-12 {
+        height: 900px;
+    }
+}
+
+@media only screen and (max-width: 469px) {
+    .tab1-elem {
+        width: 100%;
+    }
+    .tab1-elem:nth-child(2), .tab1-elem:nth-child(3), .tab1-elem:nth-child(4), .tab1-elem:last-child {
+        padding-top: 100px;
+    }
+    .tab-content .tab-pane .col-md-12 {
+        height: 1420px;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .top-tab .nav li{
+        width: 100%;
+        float: initial;
+    }
+}

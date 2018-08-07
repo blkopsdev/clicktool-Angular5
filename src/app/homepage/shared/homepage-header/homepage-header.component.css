@@ -78,3 +78,9 @@
   top: 95px;
   width: 100%;
 }
+@media only screen and (max-width: 991px) {
+  .ico-tab {
+    top: 82px;
+    
+  } 
+}
