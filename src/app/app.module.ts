@@ -4,6 +4,7 @@ import { routes } from './app.router';
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { SupportComponent } from './support/support.component';
 
 import { AgreementsComponent } from './signup/agreements/agreements.component';
 import { AccountInfoComponent } from './signup/account-info/account-info.component';
@@ -84,6 +85,7 @@ import { HeaderTabComponent } from './homepage/shared/header-tab-group/header-ta
     AppComponent,
     HomepageComponent,
     AgreementsComponent,
+    SupportComponent,
     AccountInfoComponent,
     HeaderComponent,
     FooterComponent,

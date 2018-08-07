@@ -1,7 +1,8 @@
-import {ModuleWithProviders} from '@angular/core'
-import {Routes, RouterModule} from '@angular/router'
+import { ModuleWithProviders } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
 import { HomepageComponent } from './homepage/homepage.component';
 import { AffiliateComponent } from './affiliate/affiliate.component';
+import { SupportComponent } from './support/support.component';
 import { AgreementsComponent } from './signup/agreements/agreements.component'
 import { AccountInfoComponent } from './signup/account-info/account-info.component';
 import { ContributionComponent } from './signup/contribution/contribution.component';
@@ -32,7 +33,8 @@ export const router: Routes = [
 	{ path: '', component: HomepageComponent, canActivate:[IsLoggedInGuard]},
 	{ path: 'login', component: LoginComponent, canActivate:[IsLoggedInGuard] },
 
-  	{ path: 'affiliate', component: AffiliateComponent, canActivate:[IsLoggedInGuard]},
+	{ path: 'affiliate', component: AffiliateComponent, canActivate:[IsLoggedInGuard]},
+	{ path: 'support', component: SupportComponent, canActivate:[IsLoggedInGuard]},
 	{ path: 'signup', component: AgreementsComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/account', component: AccountInfoComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/contribution', component: ContributionComponent, canActivate:[IsLoggedInGuard] },
