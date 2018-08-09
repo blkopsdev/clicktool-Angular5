@@ -95,7 +95,12 @@ export class MemberService {
   }
 
   setLocalMemberObj(res:any) {
-    this.cookieService.set("member", JSON.stringify(res["user"])) 
+    if(res["user"]){
+       this.cookieService.set("member", JSON.stringify(res["user"]))  
+    }else{
+      this.cookieService.set("member", JSON.stringify(res)) 
+    }
+    
   }
 
   saveAccessToken(body){

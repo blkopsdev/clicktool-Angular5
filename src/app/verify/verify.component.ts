@@ -8,6 +8,14 @@ import { FileSelectDirective, FileDropDirective, FileUploader, FileUploaderOptio
 import { AppComponent } from '../app.component'
 import { UploaderComponent } from '../shared/common/uploader/uploader.component'
 import { GooglePlaceDirective } from "ngx-google-places-autocomplete";
+
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  FormControl
+} from '@angular/forms';
+
 export class Verify {
 	document_type:string
 	document_id_no:string
@@ -27,6 +35,13 @@ export class Verify {
 	document_address_image:string
 }
 
+export class VerifyResponse {
+  message:string
+  reference:string
+  signature:string
+  status_code:string
+}
+
 @Component({
   selector: 'app-verify',
   templateUrl: './verify.component.html',
@@ -40,26 +55,37 @@ export class VerifyComponent implements OnInit {
   @ViewChild("placesRef") placesRef : GooglePlaceDirective;
 
   uploadPanels:any[] = [
-    {name:'ID (front)', addedUpload:false},
-    {name:'ID (back)', addedUpload:false},
-    {name:'Proof of address', addedUpload:false},
-    {name:'Seflie Photo', addedUpload:false},
+    {
+      name:'ID (front)', 
+      addedUpload:false,
+      defaultUploadMessage:""
+    },
+    {
+      name:'ID (back)', addedUpload:false
+    },
+    {
+      name:'Proof of address', addedUpload:false
+    },
+    {
+      name:'Seflie Photo', addedUpload:false
+    },
   ]
 
   base64Strings:string[] = [];
   isAllUploaded:boolean = false;
   hideUploadForm:boolean = true
-
   documentType:string = ""
   documentTypeLabel:string = "";
-
   verifyObj:Verify = new Verify()
+  didBeginVerification:boolean = false;
 
-  constructor(private util:Util, private router:Router, private memberService:MemberService, private app:AppComponent) {}
+  form: FormGroup;
 
-  public handleAddressChange(address: any){
+  defaultUploadMessage:string = "To the right drag and drop, or click to browse needed files. We'll use these files to verify your identity."
 
-  }
+  constructor(private util:Util, private router:Router, private memberService:MemberService, private app:AppComponent, private formBuilder: FormBuilder) {}
+
+  public handleAddressChange(address: any){}
 
   onDropFile($event, index) {
     this.uploader.queue[index] = $event
@@ -73,7 +99,6 @@ export class VerifyComponent implements OnInit {
             rawData = rawData[1];
             this.base64Strings[index] = rawData;
         }
-        console.log(this.base64Strings);
     }
     fileReader.readAsDataURL(this.uploader.queue[index]._file);
   }
@@ -81,6 +106,19 @@ export class VerifyComponent implements OnInit {
   ngOnInit() {
     this.uploader.clearQueue()
   	this.user = this.util.getLocalObject("user") as User
+
+
+    this.form = this.formBuilder.group({
+      document_id_no:[null, Validators.required],
+      document_expiry_date:[null, Validators.required],
+      first_name:[null, Validators.required],
+      last_name:[null, Validators.required],
+      address:[null, Validators.required],
+      dob:[null, Validators.required],
+      phone_number:[null, Validators.required],
+      didAgreeToTerms:[null, Validators.required],
+    })
+
   }
 
   setUploadContainerName(userId:string) {
@@ -95,8 +133,8 @@ export class VerifyComponent implements OnInit {
   	this.documentType = type;
   	this.documentTypeLabel = labelName;
 
-  	this.uploadPanels[0]["name"] = labelName + '(front)';
-  	this.uploadPanels[1]["name"] = labelName + '(back)';
+  	this.uploadPanels[0]["name"] = labelName + ' (front)';
+  	this.uploadPanels[1]["name"] = labelName + ' (back)';
 
   	this.hideUploadForm = false;
   }
@@ -104,28 +142,58 @@ export class VerifyComponent implements OnInit {
   verify() {
   	
   	this.verifyObj.document_type = this.documentType;
-  	this.verifyObj.background_checks = "0";
+  	this.verifyObj.background_checks = "1";
   	this.verifyObj.email = this.app.getMember().email;
+  	this.verifyObj.country = "US";
+  	this.verifyObj.lang = "en"
 
-  	var p = {
-  		document_type:this.documentType,
-  		// document_id_no:'111111',
-  		// document_expiry_date:'2021-07-30',
-  		// address:'9333 Lincoln Blvd apt 3231, Los Angeles, CA 90045',
-  		// first_name:'John',
-  		// last_name:'Doe',
-  		// dob:'2021-07-30',
-  		// background_checks:'0',
-  		// email:'chris.kendricks07@gmail.com',
-  		// phone_number: '+132332587954',
-  		country:'US',
-  		lang:'en'
-  	}
-  	this.memberService.verifyMember(this.app.getUserId() as string, this.app.getAccessToken(), p).subscribe(res=>this.afterVerify(res));	
+    // ID Document front
+
+    this.verifyObj.document_front_image = this.base64Strings[0];
+    this.verifyObj.document_back_image = this.base64Strings[1];
+    this.verifyObj.document_address_image = this.base64Strings[2];
+    this.verifyObj.face_image = this.base64Strings[3];
+
+    if(!this.verifyObj.document_front_image) {
+      return       
+    }
+
+    this.form.updateValueAndValidity();
+
+    if(this.form.valid){
+     this.memberService.verifyMember(this.app.getUserId() as string, this.app.getAccessToken(), this.verifyObj).subscribe(res=>this.afterVerify(res));
+    }else{
+       Object.keys(this.form.controls).filter($0 => {
+        this.form.get($0).markAsTouched({ onlySelf: true })
+      })     
+    } 
+
   }
 
-  afterVerify(res:any) {
-  	console.log(res);
+  setDefaultUploadMessage(label:string) {
+    this.defaultUploadMessage = label;
+  }
+
+  begin() {
+    this.didBeginVerification = true;
+  }
+
+  logout() {
+    this.memberService.logout(this.app.getAccessToken()).subscribe(res=>this.memberService.afterLogout()); 
+    return false;
+  }
+
+  afterVerify(res:VerifyResponse) {
+  	if(res.status_code == "SP1"){
+      var m = this.app.getMember();
+      m.isShuftiproVerified = true
+      this.memberService.setLocalMemberObj(m);
+      alert('You passed verification process');
+      this.router.navigate(['/dashboard']);
+    }else{
+      console.log(res);
+      alert(res.message);
+    }
   }
 
 

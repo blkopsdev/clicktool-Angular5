@@ -4,22 +4,26 @@
 	[uploader]="uploader"
 	(click)="file.click()" class="uploader text-center">
 
+	<div [hidden]="showAfterDropImage"><i style="font-size: 40px; color: #c4d4d8; margin-top: 60px;" class="material-icons"> cloud_upload</i></div>
+	
 	<div [hidden]="!showAfterDropImage" class="row">
-		<div class="col-xs-6 col-md-6">
-			{{ name }}<br>
-			<img style="margin-top: 10px;" width="35" src="assets/success.png">
-		</div>
-		<div class="col-xs-6 col-md-6">
-			<div class="uploaded-image-container">
+		<div class="col-xs-12 col-md-12">
+			<div class="uploaded-image-container ">
+				<a href="#" (click)="removeUpload($event)">
+					<i class="material-icons close-upload">
+					close
+					</i>					
+				</a>		
 				<img #AddedImage >
 			</div>
-			<span>{{ fileName }}</span>
+			<span>{{ name }}</span>
 		</div>
 	</div>
-	 <span [hidden]="showAfterDropImage">{{ name }}</span>
+
+	<span style="font-size: 16px; font-weight: 500;" [hidden]="showAfterDropImage">{{ name }}</span>
+	<div class="text-info" [hidden]="showAfterDropImage">click to browse</div>
+	
 
 </div>
-
-<div class="upload-over-label" [hidden]="!hasBaseDropZoneOver">Drop your {{ name }} here</div>
 <input style="display: none;" accept="image/*" type="file" ng2FileSelect [uploader]="uploader" #file/>	
 

@@ -3,6 +3,9 @@
   src: url(./assets/orange kid.ttf) format("opentype");
 }
 
+.no-padding-right-odd.row .col:nth-child(odd) {
+  padding-right: 0;
+} 
 
 .form-control.style1 {
   border: none;
@@ -247,7 +250,7 @@ input[type="submit"] {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  /*background-color: #F5F5F5;*/
+  background-color: #F5F5F5;
 }
 
 .btn-group.btn-group-block {
@@ -258,11 +261,26 @@ body {
 }
 
 .btn.btn-primary {
-/* Rectangle: */
-background-image: linear-gradient(-180deg, #28CAE8 0%, #1FB3CE 100%);
-box-shadow: 0 2px 4px 0 rgba(49,119,152,0.27);
-border-radius: 5px;  
+  border-radius: 5px;
+  background: #29a6d3;
+  border: none; 
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 18px;
+  padding-right: 18px;
 }
+
+.btn.btn-primary.btn-primary-i {
+  padding-right: 55px;
+}
+.btn.btn-primary.btn-primary-i i{
+    position: absolute;
+    font-size: 40px;
+    margin-top: -8px;
+    margin-left: 6px;  
+}
+
 .btn-primary.active {
   background-color: #082036 !important;
   background-image: none;

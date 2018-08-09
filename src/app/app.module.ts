@@ -76,6 +76,7 @@ import { SignupModalComponent } from './shared/common/signup-modal/signup-modal.
 import { IsIdVerifiedGuard } from './shared/guards/is-id-verified.guard';
 import { VerifyComponent } from './verify/verify.component'
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+import { FormInputComponent } from './shared/common/form-input/form-input.component';
 
 
 @NgModule({
@@ -133,7 +134,8 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
     ButtonToFormComponent,
     SidebarIconComponent,
     SignupModalComponent,
-    VerifyComponent
+    VerifyComponent,
+    FormInputComponent
   ],
   imports: [
     BrowserModule,

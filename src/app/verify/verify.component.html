@@ -1,160 +1,313 @@
 <app-header></app-header>
 
-<div id="identification-form" class="container-fluid first-form npr">
+<div id="identification-form" class="container-fluid first-form npr" style="background-color: #FFF;">
 
-  <div style="position: fixed;" class="reg-image hidden-sm hidden-xs" style="z-index: -10;">
+  <div style="position: fixed;" class="reg-image hidden-sm hidden-xs" style="z-index: 1;">
     <img src="../../assets/Animated-Clicktool2 a.gif">
   </div>
 
-  <div class="container" [ngStyle]="{'min-height': hideUploadForm === true ? '1200px' : 'auto'}" style="max-width: 1100px;border-left: thin solid  #e4e4e4;
-    border-right: thin solid  #e4e4e4; padding-left: 30px; padding-right: 30px; padding-bottom: 40px; box-shadow: 0px 0px 12px rgba(0,0,0,0.1); background-color: #FFF; float: right;">
-    <div class="row text-left" style="margin-top: 40px;">
-      <div class="col-sm-12">
+  <form [formGroup]="form">
+      <div class="container" [ngStyle]="{'min-height': hideUploadForm === true ? '1200px' : 'auto'}" style="max-width: 1100px;border-left: thin solid  #e4e4e4;
+        border-right: thin solid  #e4e4e4; padding-left: 30px; padding-right: 30px; padding-bottom: 40px; box-shadow: 0px 0px 12px rgba(0,0,0,0.1); background-color: #FFF; float: right;">
+        <div class="row text-left" style="margin-top: 40px;">
+          <div class="col-sm-12">
 
-        <div class="row">
-        	<div class="col-md-12">
-        		<h1 class="pull-left">Verify your identity</h1>
-        		<div class="pull-right">
-        			<span class="badge badge-danger">Unverified</span>
+            <div class="row">
+            	<div class="col-md-12">
+                <span *ngIf="app.getMember()" style="display: block; margin-bottom: 4px; font-size: 16px;">Hello {{ app.getMember().firstname }} {{ app.getMember().lastname }}  <!-- {{ app.getMember().email }} --></span><br>
+            		<h2 class="pull-left">Verify your identity</h2>
+            		<div class="pull-right">
+            			<!-- <span class="badge badge-danger">Unverified</span> -->
+            		</div>
+            	</div>
+            </div>
+            <br>
+            <p style="display: block; max-width: 600px;"> To continue we have to verify your identity to make sure you are who you say you are. Please upload the required documents. We won't ever share you information.</p>
+
+            <div class="animated slideInUp" [hidden]="didBeginVerification">
+              <button (click)="begin()" style="margin-top: 45px;" class="btn btn-primary btn-primary-i">
+                Begin verification
+                <i class="material-icons">
+                arrow_right_alt
+                </i>
+              </button>              
+            </div>
+
+            <br>    
+          </div>
+        </div>
+        <hr [hidden]="!didBeginVerification">
+
+        <div [hidden]="!didBeginVerification" class="row">
+        	<div class="col-sm-6 text-left">
+        		<label class="float-left">Select a document to verify:</label>
+        	</div>
+        	<div class="col-sm-6 text-left">
+    			<div style="float:right;" class="btn-group btn-group-block animated slideInRight" role="group" aria-label="Basic example">
+    			  <button [ngClass]="{'active': documentType == 'passport' }" (click)="setDocumentType('passport', 'Passport')"  type="button" class="btn btn-primary active">Passport</button>
+    			  <button [ngClass]="{'active': documentType == 'driving_license' }" (click)="setDocumentType('driving_license', 'License')"  type="button" class="btn btn-primary">Driver license</button>
+    			  <button [ngClass]="{'active': documentType == 'id_card' }" (click)="setDocumentType('id_card', 'ID card')" type="button" class="btn btn-primary">ID card</button>
+    			</div>    		
+        	</div>
+        </div>
+        <hr [hidden]="hideUploadForm">
+        <div [hidden]="hideUploadForm" class="row text-left animated slideInRight">
+    	  <div class="col-sm-6 text-left">
+    		<label class="float-left">Upload {{ documentTypeLabel }} documents:</label><br>
+            To the right drag and drop, or click to browse needed files. We'll use these files to verify your identity.
+    	  </div>	
+          <div class="col-sm-6">
+    	      <div class="row no-padding-right-odd">
+    		      <div style="margin-bottom: 15px;" *ngFor="let uploadPanel of uploadPanels; let i = index" class="col col-sm-6">
+    		        
+                    <app-uploader id="upload-document-{{ i }}" name="{{ uploadPanel.name }}" [index]="i" (onAddFile)="onDropFile($event, i)" [parentUploader]="uploader"></app-uploader>  
+
+    		      </div>      	
+    	      </div>      	
+          </div>	
+    	
+
+
+        </div> 
+
+        <hr [hidden]="hideUploadForm">
+
+        <div [hidden]="hideUploadForm" class="row">
+        	<div class="col-sm-6 text-left">
+        		<label class="float-left">{{ documentTypeLabel }} information:</label>
+        	</div>
+        	<div></div>
+        	<div class="col-sm-6 text-left">
+        		<div class="row">
+        			<div class="col-sm-6">
+
+<!--                         <app-form-input
+                        name="document_id_no"
+                        formControlName="document_id_no"
+                        minLength="4"
+                        maxlength="30"
+                        [form]="form"
+                        [model]="verifyObj"
+                        placeholder="fooo ascasc"
+                        requiredMessage="required messag here.."
+                        minLengthMessage="min messag here.."
+                        maxlengthMessage="max messag here.."
+                        placeholderMessage="placeholder message here."
+                        ></app-form-input> -->
+
+
+
+
+
+      					<div class="form-group nmb">
+                         <input formControlName="document_id_no" name="document_id_no" required minlength="4" maxlength="24" [(ngModel)]="verifyObj.document_id_no" class="form-control style1" type="text" placeholder="{{ documentTypeLabel }} number">
+
+                          <div
+                          class="text-danger"
+                          style="margin-bottom: 20px; text-align: left;"
+                          *ngIf="!this.form.get('document_id_no').valid && this.form.get('document_id_no').touched"
+                          >
+                                <div [hidden]="!form.get('document_id_no').hasError('required')">
+                                  <div class="">{{ documentTypeLabel }} number required</div>
+                                </div>
+                                <div [hidden]="!form.get('document_id_no').hasError('minlength')">
+                                  <div class="">{{ documentTypeLabel }} number must be at least 4 characters long.</div>
+                                </div>
+                                <div [hidden]="!form.get('document_id_no').hasError('maxlength')">
+                                  <div class="">{{ documentTypeLabel }} number cannot be more than 24 characters long.</div>
+                                </div>
+
+                            </div>
+    					</div>  
+
+
+
+        			</div>
+        			<div class="col-sm-6">
+      					<div class="form-group nmb">
+    						<input formControlName="document_expiry_date" name="document_expiry_date" [(ngModel)]="verifyObj.document_expiry_date" class="form-control style1" type="text" name="" placeholder="{{ documentTypeLabel }} exp date">
+
+                              <div
+                              class="text-danger"
+                              style="margin-bottom: 20px; text-align: left;"
+                              *ngIf="!this.form.get('document_expiry_date').valid && this.form.get('document_expiry_date').touched"
+                              >
+                                    <div [hidden]="!form.get('document_expiry_date').hasError('required')">
+                                      <div class="">{{ documentTypeLabel }} exp date required</div>
+                                    </div>
+                                    <div [hidden]="!form.get('document_expiry_date').hasError('minlength')">
+                                      <div class="">{{ documentTypeLabel }} exp date must be at least 4 characters long.</div>
+                                    </div>
+                                    <div [hidden]="!form.get('document_expiry_date').hasError('maxlength')">
+                                      <div class="">{{ documentTypeLabel }} exp date cannot be more than 24 characters long.</div>
+                                    </div>
+
+                                </div>
+
+    					</div>    				
+        			</div>    			   			    						    			
         		</div>
+       		
         	</div>
         </div>
 
-        
-        <br>
-        <p> To continue we have to verify your identity to make sure you are who you say you are. Please upload the required documents. We won't ever share you information.</p>
-        <br>    
+        <hr [hidden]="hideUploadForm">
+
+        <div [hidden]="hideUploadForm" class="row">
+        	<div class="col-sm-6 text-left">
+        		<label class="float-left">Enter information on identity document:</label>
+        	</div>
+        	<div></div>
+        	<div class="col-sm-6 text-left">
+        		<div class="row">   			
+        			<div class="col-sm-6">
+    					<div class="form-group">
+    						<input formControlName="first_name" name="first_name" required minlength="4" maxlength="24" [(ngModel)]="verifyObj.first_name" class="form-control style1" type="text" name="" placeholder="First name">
+
+ 
+                          <div
+                          class="text-danger"
+                          style="margin-bottom: 20px; text-align: left;"
+                          *ngIf="!this.form.get('first_name').valid && this.form.get('first_name').touched"
+                          >
+                                <div [hidden]="!form.get('first_name').hasError('required')">
+                                  <div class="">First name required</div>
+                                </div>
+                                <div [hidden]="!form.get('first_name').hasError('minlength')">
+                                  <div class="">First name must be at least 4 characters long.</div>
+                                </div>
+                                <div [hidden]="!form.get('first_name').hasError('maxlength')">
+                                  <div class="">First name cannot be more than 24 characters long.</div>
+                                </div>
+
+                            </div>
+
+    					</div>     				
+        			</div>
+        			<div class="col-sm-6">
+    					<div class="form-group">
+    						<input formControlName="last_name" name="last_name" required minlength="4" maxlength="24" [(ngModel)]="verifyObj.last_name" class="form-control style1" type="text" name="" placeholder="Last name">
+
+                          <div
+                          class="text-danger"
+                          style="margin-bottom: 20px; text-align: left;"
+                          *ngIf="!this.form.get('last_name').valid && this.form.get('last_name').touched"
+                          >
+                                <div [hidden]="!form.get('last_name').hasError('required')">
+                                  <div class="">Last name required</div>
+                                </div>
+                                <div [hidden]="!form.get('last_name').hasError('minlength')">
+                                  <div class="">Last name must be at least 4 characters long.</div>
+                                </div>
+                                <div [hidden]="!form.get('last_name').hasError('maxlength')">
+                                  <div class="">Last name cannot be more than 24 characters long.</div>
+                                </div>
+
+                            </div>
+
+    					</div>     				
+        			</div>
+        			<div class="col-sm-12">
+    					<div class="form-group">
+    						<input formControlName="address" name="address" required minlength="4" maxlength="24" ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" [(ngModel)]="verifyObj.address" class="form-control style1" type="text" name="" placeholder="Address">
+    					</div>     				
+        			</div>    
+        			<div class="col-sm-6">
+    					<div class="form-group">
+    						<input formControlName="dob" name="dob" required minlength="4" maxlength="24" [(ngModel)]="verifyObj.dob" class="form-control style1" type="text" name="" placeholder="Date of birth">
+
+                              <div
+                              class="text-danger"
+                              style="margin-bottom: 20px; text-align: left;"
+                              *ngIf="!this.form.get('dob').valid && this.form.get('dob').touched"
+                              >
+                                    <div [hidden]="!form.get('dob').hasError('required')">
+                                      <div class="">DOB required</div>
+                                    </div>
+                                    <div [hidden]="!form.get('dob').hasError('minlength')">
+                                      <div class="">DOB must be at least 4 characters long.</div>
+                                    </div>
+                                    <div [hidden]="!form.get('dob').hasError('maxlength')">
+                                      <div class="">DOB cannot be more than 24 characters long.</div>
+                                    </div>
+
+                                </div>
+
+    					</div>     				
+        			</div>
+        			<div class="col-sm-12">
+    					<div class="form-group">
+    						<input formControlName="phone_number" name="phone_number" required minlength="4" maxlength="24" [(ngModel)]="verifyObj.phone_number" class="form-control style1" type="text" name="" placeholder="Phone number">
+
+                              <div
+                              class="text-danger"
+                              style="margin-bottom: 20px; text-align: left;"
+                              *ngIf="!this.form.get('phone_number').valid && this.form.get('phone_number').touched"
+                              >
+                                    <div [hidden]="!form.get('phone_number').hasError('required')">
+                                      <div class="">DOB required</div>
+                                    </div>
+                                    <div [hidden]="!form.get('phone_number').hasError('minlength')">
+                                      <div class="">DOB must be at least 4 characters long.</div>
+                                    </div>
+                                    <div [hidden]="!form.get('phone_number').hasError('maxlength')">
+                                      <div class="">DOB cannot be more than 24 characters long.</div>
+                                    </div>
+
+                                </div>
+
+    					</div>     				
+        			</div>    			    						    			
+        		</div>
+       		
+        	</div>
+        </div>
+
+        <hr [hidden]="hideUploadForm">
+
+        <div [hidden]="hideUploadForm" class="row">
+        	<div class="col-sm-6 text-left">
+        		<label class="float-left">TOS & Agreements:</label>
+        	</div>
+        	<div></div>
+        	<div class="col-sm-6 text-left">
+        		<div class="row">   			
+        			<div class="col-sm-12">
+    		            <label class="checkcontainer" style="font-weight: normal; font-size: 14px; padding-top: 3px; margin-bottom: 0;">
+    		              <input formControlName="didAgreeToTerms" name="didAgreeToTerms" required [(ngModel)]="user.didAgreeToTerms" type="checkbox" autocomplete="off">
+    		              Agree to background check
+    		              <span class="checkmark"></span>
+    		            </label>   
+
+                      <div
+                      class="text-danger"
+                      style="margin-bottom: 20px; text-align: left;"
+                      *ngIf="!this.form.get('didAgreeToTerms').valid && this.form.get('didAgreeToTerms').touched"
+                      >
+                            <div [hidden]="!form.get('didAgreeToTerms').hasError('required')">
+                              <div class="">TOS & Agreements required</div>
+                            </div>
+
+                        </div>
+        			</div>
+       			    						    			
+        		</div>
+       		
+        	</div>
+        </div>
+
+        <hr [hidden]="hideUploadForm">
+
+        <div [hidden]="hideUploadForm" class="row" style="margin-top: 10px;">
+          <div class="col-md-12">  
+          	  <a (click)="logout()" href="#">Logout and verify later</a>   
+              <button (click)="verify()" class="btn btn-primary pull-right" id="finish">
+                Upload and verify documents
+              </button>        
+          </div>
+        </div>   
       </div>
-    </div>
-    <hr>
-    <div class="row">
-    	<div class="col-sm-6 text-left">
-    		<label class="float-left">Select a document to verify:</label>
-    	</div>
-    	<div class="col-sm-6 text-left">
-			<div style="float:right; width: 100%;" class="btn-group btn-group-block" role="group" aria-label="Basic example">
-			  <button [ngClass]="{'active': documentType == 'passport' }" (click)="setDocumentType('passport', 'Passport')"  type="button" class="btn btn-primary active">Passport</button>
-			  <button [ngClass]="{'active': documentType == 'driving_license' }" (click)="setDocumentType('driving_license', 'License')"  type="button" class="btn btn-primary">Driver license</button>
-			  <button [ngClass]="{'active': documentType == 'id_card' }" (click)="setDocumentType('id_card', 'ID card')" type="button" class="btn btn-primary">ID card</button>
-			</div>    		
-    	</div>
-    </div>
-    <hr [hidden]="hideUploadForm">
-    <div [hidden]="hideUploadForm" class="row text-left">
-	  <div class="col-sm-6 text-left">
-		<label class="float-left">Upload {{ documentTypeLabel }} documents:</label>
-	  </div>	
-      <div class="col-sm-6">
-	      <div class="row">
-		      <div style="margin-bottom: 10px;" *ngFor="let uploadPanel of uploadPanels; let i = index" class="col-sm-6">
-		        <app-uploader id="upload-document-{{ i }}" name="{{ uploadPanel.name }}" (onAddFile)="onDropFile($event, i)" [parentUploader]="uploader"></app-uploader>        
-		      </div>      	
-	      </div>      	
-      </div>	
-	
-
-
-    </div> 
-
-    <hr [hidden]="hideUploadForm">
-
-    <div [hidden]="hideUploadForm" class="row">
-    	<div class="col-sm-6 text-left">
-    		<label class="float-left">{{ documentTypeLabel }} information:</label>
-    	</div>
-    	<div></div>
-    	<div class="col-sm-6 text-left">
-    		<div class="row">
-    			<div class="col-sm-6">
-  					<div class="form-group nmb">
-						<input [(ngModel)]="verifyObj.document_id_no" class="form-control style1" type="text" name="" placeholder="{{ documentTypeLabel }} number">
-					</div>    				
-    			</div>
-    			<div class="col-sm-6">
-  					<div class="form-group nmb">
-						<input [(ngModel)]="verifyObj.document_expiry_date" class="form-control style1" type="text" name="" placeholder="{{ documentTypeLabel }} exp date">
-					</div>    				
-    			</div>    			   			    						    			
-    		</div>
-   		
-    	</div>
-    </div>
-
-    <hr [hidden]="hideUploadForm">
-
-    <div [hidden]="hideUploadForm" class="row">
-    	<div class="col-sm-6 text-left">
-    		<label class="float-left">Enter information on identity document:</label>
-    	</div>
-    	<div></div>
-    	<div class="col-sm-6 text-left">
-    		<div class="row">   			
-    			<div class="col-sm-6">
-					<div class="form-group">
-						<input [(ngModel)]="verifyObj.first_name" class="form-control style1" type="text" name="" placeholder="First name">
-					</div>     				
-    			</div>
-    			<div class="col-sm-6">
-					<div class="form-group">
-						<input [(ngModel)]="verifyObj.last_name" class="form-control style1" type="text" name="" placeholder="Last name">
-					</div>     				
-    			</div>
-    			<div class="col-sm-12">
-					<div class="form-group">
-						<input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" [(ngModel)]="verifyObj.address" class="form-control style1" type="text" name="" placeholder="Address">
-					</div>     				
-    			</div>    
-    			<div class="col-sm-6">
-					<div class="form-group">
-						<input [(ngModel)]="verifyObj.dob" class="form-control style1" type="text" name="" placeholder="Date of birth">
-					</div>     				
-    			</div>
-    			<div class="col-sm-12">
-					<div class="form-group">
-						<input [(ngModel)]="verifyObj.phone_number" class="form-control style1" type="text" name="" placeholder="Phone number">
-					</div>     				
-    			</div>    			    						    			
-    		</div>
-   		
-    	</div>
-    </div>
-
-    <hr [hidden]="hideUploadForm">
-
-    <div [hidden]="hideUploadForm" class="row">
-    	<div class="col-sm-6 text-left">
-    		<label class="float-left">TOS & Agreements:</label>
-    	</div>
-    	<div></div>
-    	<div class="col-sm-6 text-left">
-    		<div class="row">   			
-    			<div class="col-sm-12">
-		            <label class="checkcontainer" style="font-weight: normal;
-    font-size: 14px;
-    padding-top: 3px;
-    margin-bottom: 0;">
-		              <input [(ngModel)]="user.didAgreeToTerms" type="checkbox" autocomplete="off">
-		              Agree to background check
-		              <span class="checkmark"></span>
-		            </label>    				
-    			</div>
-   			    						    			
-    		</div>
-   		
-    	</div>
-    </div>
-
-    <hr [hidden]="hideUploadForm">
-
-    <div [hidden]="hideUploadForm" class="row" style="margin-top: 10px;">
-      <div class="col-md-12">  
-      	  <a href="#">Logout and verify later</a>   
-          <button (click)="verify()" class="btn btn-primary pull-right" id="finish">
-            Upload and verify documents
-          </button>        
-      </div>
-    </div>   
-  </div>
+  </form>
 
 
 <!--   <div class="reg-image2 hidden-xs">
