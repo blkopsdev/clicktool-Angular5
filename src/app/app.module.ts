@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SupportComponent } from './support/support.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { BountyComponent } from './bounty/bounty.component';
 
 import { AgreementsComponent } from './signup/agreements/agreements.component';
 import { AccountInfoComponent } from './signup/account-info/account-info.component';
@@ -78,7 +79,6 @@ import { SignupModalComponent } from './shared/common/signup-modal/signup-modal.
 import { IsIdVerifiedGuard } from './shared/guards/is-id-verified.guard';
 import { VerifyComponent } from './verify/verify.component'
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
-import { HeaderTabComponent } from './homepage/shared/header-tab-group/header-tab-group.component';
 
 
 @NgModule({
@@ -139,7 +139,7 @@ import { HeaderTabComponent } from './homepage/shared/header-tab-group/header-ta
     SidebarIconComponent,
     SignupModalComponent,
     VerifyComponent,
-    HeaderTabComponent
+    BountyComponent
   ],
   imports: [
     BrowserModule,
