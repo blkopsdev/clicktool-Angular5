@@ -48,7 +48,7 @@ export const router: Routes = [
 	{ path: 'password/reset/checkemail', component: TextActionComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'reset-password/:token', component: UpdatePasswordComponent, canActivate:[IsLoggedInGuard] },
 
-	{ path: 'dashboard', component: DashboardComponent, canActivate:[IsIdVerifiedGuard]  },
+	{ path: 'dashboard', component: DashboardComponent, canActivate:[]  },
 	{ path: 'transactions', component: TransactionsComponent},
 	{ path: 'user/:id/password', component: PasswordComponent, canActivate: [AuthGuard] },
 

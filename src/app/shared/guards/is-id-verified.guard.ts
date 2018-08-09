@@ -14,7 +14,7 @@ export class IsIdVerifiedGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-  	if(!this.app.getMember().isShuftiproVerified) {
+  	if(this.app.getMember() && !this.app.getMember().isShuftiproVerified) {
   		this.router.navigate(['/verify']);
   		return false;	
   	}else{

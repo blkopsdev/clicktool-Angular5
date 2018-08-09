@@ -71,3 +71,16 @@
     margin-right: -28px;
   }*/
 }
+.ico-tab {
+  position: absolute;
+  background: #f5f6f5;
+  z-index: 1000;
+  top: 95px;
+  width: 100%;
+}
+@media only screen and (max-width: 991px) {
+  .ico-tab {
+    top: 82px;
+    
+  } 
+}
