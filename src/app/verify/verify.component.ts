@@ -9,6 +9,8 @@ import { AppComponent } from '../app.component'
 import { UploaderComponent } from '../shared/common/uploader/uploader.component'
 import { GooglePlaceDirective } from "ngx-google-places-autocomplete";
 
+declare var $:any
+
 import {
   FormGroup,
   FormBuilder,
@@ -118,6 +120,8 @@ export class VerifyComponent implements OnInit {
       phone_number:[null, Validators.required],
       didAgreeToTerms:[null, Validators.required],
     })
+
+    $('html,body').scrollTop(0);
 
   }
 
