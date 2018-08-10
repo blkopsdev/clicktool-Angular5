@@ -14,35 +14,56 @@
         <h4>Select Support Type</h4>
         <form [formGroup]="form">
           <select formControlName="support_type" [(ngModel)]='selected_type'>
-            <option value=""></option>
+            <option value="" disabled>Select Support Type</option>
             <option *ngFor="let support_type of support_types" [ngValue]="support_type">{{support_type.name}}</option>
           </select>
         </form>
       </div>
-      <div class="row" *ngIf="selected_type">
-        <form (ngSubmit)="processForm()">
+      <div class="row submit-content" *ngIf="selected_type">
+        <form [formGroup]="submitForm" (ngSubmit)="processForm()" *ngIf="!isSubmitted" novalidate>
           <!-- name -->
           <div class="form-group">
-            <input type="text" name="name" class="input" placeholder="Name" [(ngModel)]="name">
+            <input type="text" name="name" formControlName="name" placeholder="Name">
+            <div *ngIf="name.invalid && (name.dirty || isSubmitted)" class="text-danger">
+              <div *ngIf="name.errors.required">
+                <p>Name is required.</p>
+              </div>
+              <div *ngIf="name.errors.minlength">
+                <p>Name must be at least 4 characters long.</p>
+              </div>
+              <div *ngIf="name.errors.maxlength">
+                <p>Name must not exceed 30 characters.</p>
+              </div>
+            </div>
           </div>
           <!-- email -->
           <div class="form-group">
-            <input type="email" name="email" class="input" placeholder="Email" [(ngModel)]="email">
+            <input type="email" name="email" formControlName="email" placeholder="Email">
+            <div *ngIf="email.invalid && (email.dirty || isSubmitted)" class="text-danger">
+              <p>Email is required.</p>
+            </div>
           </div>
           <!-- subject -->
           <div class="form-group">
-            <input type="text" name="subject" class="input" placeholder="Subject" [(ngModel)]="subject">
-          </div>
-          <!-- subject -->
-          <div class="form-group">
-            <input type="hidden" name="support_type" class="input" [(ngModel)]="support_type" value="clicktool">
+            <input type="text" name="subject" formControlName="subject" placeholder="Subject">
+            <div *ngIf="subject.invalid && (subject.dirty || isSubmitted)" class="text-danger">
+              <p>Subject is required.</p>
+            </div>
           </div>
           <!-- message -->
           <div class="form-group">
-            <textarea class="textarea" name="message" placeholder="What's on your question?" [(ngModel)]="message"></textarea>
+            <textarea class="textarea" name="message" formControlName="message" placeholder="What's on your question?"></textarea>
+            <div *ngIf="message.invalid && (message.dirty || isSubmitted)" class="text-danger">
+              <p>Question is required.</p>
+            </div>
           </div>
 
-          <button type="submit" class="button is-danger is-large">Submit</button>
+          <button type="submit" class="button signup-modal-submit-button btn" [disabled]="!submitForm.valid">
+            <span>
+              <i class="fa fa-check-circle"></i>
+            </span>
+            <span>Sign Up</span>
+          </button>
         </form>
       </div>
     </div>
