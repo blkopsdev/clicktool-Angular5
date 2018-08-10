@@ -3,6 +3,14 @@
   src: url(./assets/orange kid.ttf) format("opentype");
 }
 
+button:focus {
+  outline:none !important;
+}
+
+.form-group input {
+  margin-bottom: 10px;
+}
+
 .no-padding-right-odd.row .col:nth-child(odd) {
   padding-right: 0;
 } 

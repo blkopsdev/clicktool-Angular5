@@ -14,7 +14,7 @@
 
             <div class="row">
             	<div class="col-md-12">
-                <span *ngIf="app.getMember()" style="display: block; margin-bottom: 4px; font-size: 16px;">Hello {{ app.getMember().firstname }} {{ app.getMember().lastname }}  <!-- {{ app.getMember().email }} --></span><br>
+                <span *ngIf="app.getMember()" style="display: block; margin-bottom: 4px; font-size: 16px;">Hello, {{ app.getMember().firstname }} {{ app.getMember().lastname }}  <!-- {{ app.getMember().email }} --></span><br>
             		<h2 class="pull-left">Verify your identity</h2>
             		<div class="pull-right">
             			<!-- <span class="badge badge-danger">Unverified</span> -->
@@ -44,7 +44,7 @@
         		<label class="float-left">Select a document to verify:</label>
         	</div>
         	<div class="col-sm-6 text-left">
-    			<div style="float:right;" class="btn-group btn-group-block animated slideInRight" role="group" aria-label="Basic example">
+    			<div style="float:left;" class="btn-group btn-group-block animated slideInRight" role="group" aria-label="Basic example">
     			  <button [ngClass]="{'active': documentType == 'passport' }" (click)="setDocumentType('passport', 'Passport')"  type="button" class="btn btn-primary active">Passport</button>
     			  <button [ngClass]="{'active': documentType == 'driving_license' }" (click)="setDocumentType('driving_license', 'License')"  type="button" class="btn btn-primary">Driver license</button>
     			  <button [ngClass]="{'active': documentType == 'id_card' }" (click)="setDocumentType('id_card', 'ID card')" type="button" class="btn btn-primary">ID card</button>
@@ -211,6 +211,24 @@
         			<div class="col-sm-12">
     					<div class="form-group">
     						<input formControlName="address" name="address" required minlength="4" maxlength="24" ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" [(ngModel)]="verifyObj.address" class="form-control style1" type="text" name="" placeholder="Address">
+
+                   <div
+                  class="text-danger"
+                  style="margin-bottom: 20px; text-align: left;"
+                  *ngIf="!this.form.get('address').valid && this.form.get('address').touched"
+                  >
+                        <div [hidden]="!form.get('dob').hasError('required')">
+                          <div class="">Address required</div>
+                        </div>
+                        <div [hidden]="!form.get('dob').hasError('minlength')">
+                          <div class="">Address must be at least 4 characters long.</div>
+                        </div>
+                        <div [hidden]="!form.get('dob').hasError('maxlength')">
+                          <div class="">Address cannot be more than 24 characters long.</div>
+                        </div>
+
+                    </div>
+
     					</div>     				
         			</div>    
         			<div class="col-sm-6">
@@ -246,13 +264,13 @@
                               *ngIf="!this.form.get('phone_number').valid && this.form.get('phone_number').touched"
                               >
                                     <div [hidden]="!form.get('phone_number').hasError('required')">
-                                      <div class="">DOB required</div>
+                                      <div class="">Phone number required</div>
                                     </div>
                                     <div [hidden]="!form.get('phone_number').hasError('minlength')">
-                                      <div class="">DOB must be at least 4 characters long.</div>
+                                      <div class="">Phone number must be at least 4 characters long.</div>
                                     </div>
                                     <div [hidden]="!form.get('phone_number').hasError('maxlength')">
-                                      <div class="">DOB cannot be more than 24 characters long.</div>
+                                      <div class="">Phone number cannot be more than 24 characters long.</div>
                                     </div>
 
                                 </div>
@@ -285,7 +303,7 @@
                       style="margin-bottom: 20px; text-align: left;"
                       *ngIf="!this.form.get('didAgreeToTerms').valid && this.form.get('didAgreeToTerms').touched"
                       >
-                            <div [hidden]="!form.get('didAgreeToTerms').hasError('required')">
+                            <div style="margin-top: 15px;" [hidden]="!form.get('didAgreeToTerms').hasError('required')">
                               <div class="">TOS & Agreements required</div>
                             </div>
 
