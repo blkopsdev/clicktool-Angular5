@@ -147,7 +147,7 @@ export class VerifyComponent implements OnInit {
   	
   	this.verifyObj.document_type = this.documentType;
   	this.verifyObj.background_checks = "1";
-  	this.verifyObj.email = this.app.getMember().email;
+  	this.verifyObj.email = this.app.getMember() ? this.app.getMember().email : "";
   	this.verifyObj.country = "US";
   	this.verifyObj.lang = "en"
 
@@ -158,10 +158,6 @@ export class VerifyComponent implements OnInit {
     this.verifyObj.document_address_image = this.base64Strings[2];
     this.verifyObj.face_image = this.base64Strings[3];
 
-    if(!this.verifyObj.document_front_image) {
-      return       
-    }
-
     this.form.updateValueAndValidity();
 
     if(this.form.valid){
@@ -169,7 +165,12 @@ export class VerifyComponent implements OnInit {
     }else{
        Object.keys(this.form.controls).filter($0 => {
         this.form.get($0).markAsTouched({ onlySelf: true })
-      })     
+      })  
+
+      if(!this.verifyObj.document_front_image) {
+        return       
+      }
+
     } 
 
   }
