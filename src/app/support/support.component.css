@@ -28,7 +28,7 @@ html,body {
 }
 
 .support-container {
-  background-color: #1db8d3;
+  background-color: #f5f6f5;
 /*   margin-top: -139px; */
   color: white;
   text-align: center;
@@ -36,13 +36,19 @@ html,body {
 
 .support-container h1 {
   padding: 15px 0;
+  color: #16465d;
   font-weight: 700;
   font-size: 48px;
 }
 
-.support-container span {
-  color: rgba(255, 255, 255, 1);
-  border-bottom: 2px solid white;
+.support-container p {
+  padding-bottom: 15px;
+  color: black;
+  font-size: 24px;
+}
+
+.support-container .container {
+  padding: 25px 0;
 }
 
 .support-container h3 {
@@ -172,4 +178,86 @@ html,body {
   .support-container {
     margin-top: -35px !important;
   }
+}
+
+.tab-content .active {
+  background: white;
+}
+.top-tab .nav {
+  background: #1db8d3;
+  border-bottom: 0;
+}
+
+.top-tab .nav li {
+  width: 50%;
+  text-align: center;
+  margin: 0 !important;
+}
+
+.top-tab .nav a {
+  background: #1db8d3;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border: 0;
+}
+
+.support-content {
+  margin: 0 auto;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  background: #008ca5;
+  color: white;
+  border: 0;
+  margin-right: 0;
+}
+.top-tab .nav-tabs>li>a:hover {
+  border: 0;
+}
+.top-tab .tab-pane{
+  text-align: center;
+  padding: 15px 0;
+  background: #f5f6f5;
+}
+.tab-content .tab-pane .tab-container {
+  min-height: 315px;
+  margin-bottom: 150px;
+  background: #f5f6f5;
+}
+.top-tab .tab-pane h2 {
+  color: #15465d;
+}
+.top-tab .tab-pane p {
+  font-size: 14px;
+  font-weight: 500;
+}
+.tab1-elem {
+  width: 20%;
+  float: left;
+  position: relative;
+  top: 70px;
+  text-align: center;
+}
+.tab1-elem .inner-image{
+  width: 150px;
+}
+.avatar-gear {
+  width: 230px;
+  position: absolute;
+  left: -40px;
+  bottom: -30px;    
+}
+.inner-elem {
+  display: inline-block;
+  position: relative;
+}
+.tab1-elem h3 {
+  position: relative;
+  top: 30px;
+  color: #008ca5;
+}
+
+.support {
+  background: #f5f5f5;
 }

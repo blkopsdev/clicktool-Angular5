@@ -1,10 +1,45 @@
 <app-homepage-header></app-homepage-header>
 
-<div class="container-fluid support-container">
-  <h1>Support</h1>
-</div>
+<div class="support">
+  <div class="container-fluid support-container">
+    <div class="container">
+      <h1>Get in touch</h1>
+      <p>Have a question? Send us a note using the form below and someone from the Clicktool team will be in touch soon.</p>
+    </div>
+  </div>
 
-<div class="container support-info">
-</div>
+  <div class="container support-content">
+    <form [formGroup]="form">
+      <select formControlName="support_type">
+        <option *ngFor="let support_type of support_types" [ngValue]="support_type">{{support_type.name}}</option>
+      </select>
+      <p>Selected Support Type: {{support_type?.name}}</p>
+    </form>
 
+    <form (ngSubmit)="processForm()">
+      <!-- name -->
+      <div class="form-group">
+        <input type="text" name="name" class="input" placeholder="Name" [(ngModel)]="name">
+      </div>
+      <!-- email -->
+      <div class="form-group">
+        <input type="email" name="email" class="input" placeholder="Email" [(ngModel)]="email">
+      </div>
+      <!-- subject -->
+      <div class="form-group">
+        <input type="text" name="subject" class="input" placeholder="Subject" [(ngModel)]="subject">
+      </div>
+      <!-- subject -->
+      <div class="form-group">
+        <input type="hidden" name="support_type" class="input" [(ngModel)]="support_type" value="clicktool">
+      </div>
+      <!-- message -->
+      <div class="form-group">
+        <textarea class="textarea" name="message" placeholder="What's on your question?" [(ngModel)]="message"></textarea>
+      </div>
+
+      <button type="submit" class="button is-danger is-large">Submit</button>
+    </form>
+  </div>
+</div>
 <app-footer></app-footer>
