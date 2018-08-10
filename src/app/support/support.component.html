@@ -9,9 +9,9 @@
   </div>
 
   <div class="container support-content">
-    <div class="col-md-6">
-      <div class="row support-type">
-        <h4>Select Support Type</h4>
+    <div class="col-md-6 support-form">
+      <div class="col-md-12 support-type">
+        <h4>Select Support Type*</h4>
         <form [formGroup]="form">
           <select formControlName="support_type" [(ngModel)]='selected_type'>
             <option value="" disabled>Select Support Type</option>
@@ -19,10 +19,11 @@
           </select>
         </form>
       </div>
-      <div class="row submit-content" *ngIf="selected_type">
+      <div class="col-md-12 submit-content" *ngIf="selected_type">
         <form [formGroup]="submitForm" (ngSubmit)="processForm()" *ngIf="!isSubmitted" novalidate>
           <!-- name -->
           <div class="form-group">
+            <h4>Name*</h4>
             <input type="text" name="name" formControlName="name" placeholder="Name">
             <div *ngIf="name.invalid && (name.dirty || isSubmitted)" class="text-danger">
               <div *ngIf="name.errors.required">
@@ -38,6 +39,7 @@
           </div>
           <!-- email -->
           <div class="form-group">
+            <h4>Email*</h4>
             <input type="email" name="email" formControlName="email" placeholder="Email">
             <div *ngIf="email.invalid && (email.dirty || isSubmitted)" class="text-danger">
               <p>Email is required.</p>
@@ -45,6 +47,7 @@
           </div>
           <!-- subject -->
           <div class="form-group">
+            <h4>Subject*</h4>
             <input type="text" name="subject" formControlName="subject" placeholder="Subject">
             <div *ngIf="subject.invalid && (subject.dirty || isSubmitted)" class="text-danger">
               <p>Subject is required.</p>
@@ -52,6 +55,7 @@
           </div>
           <!-- message -->
           <div class="form-group">
+            <h4>Question*</h4>
             <textarea class="textarea" name="message" formControlName="message" placeholder="What's on your question?"></textarea>
             <div *ngIf="message.invalid && (message.dirty || isSubmitted)" class="text-danger">
               <p>Question is required.</p>

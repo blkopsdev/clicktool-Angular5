@@ -248,8 +248,7 @@ html,body {
   background: #f5f5f5;
 }
 
-.support-type
- h4 {
+.support-form h4 {
   margin-bottom: 10px;
 }
 
@@ -259,6 +258,9 @@ html,body {
   width: 80%;
   padding-left: 15px;
   font-size: 18px;
+}
+.support-form {
+  padding-bottom: 30px;
 }
 .support select {
   font-size: 18px;

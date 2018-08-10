@@ -58,15 +58,12 @@ export class SupportComponent implements OnInit {
   * Only alerting for now
   */
   processForm() {
-    console.log(this.selected_type);
 
     this.result = this.submitForm.value;
-    console.log(this.result);
-    debugger;
     this.isSubmitted = true;
     if (!this.submitForm.valid)
       return;
-    console.log(this.selected_type);
+
     const allInfo = `My name is ${this.name}. My email is ${this.email}. My subject is ${this.subject}. My message is ${this.message}`;
     console.log(allInfo);
     
