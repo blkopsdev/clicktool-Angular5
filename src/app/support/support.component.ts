@@ -30,7 +30,7 @@ export class SupportComponent implements OnInit {
   email: string;
   subject: string;
   message: string;
-
+  selected_type: string;
   constructor() {
     this.form = new FormGroup({
       support_type: new FormControl(null)
@@ -40,16 +40,16 @@ export class SupportComponent implements OnInit {
   ngOnInit() {
   }
   
-  get support_type(): string {
-    return this.form ? this.form.get('support_type').value : '';
-  }
-
+  panelOpenState: boolean = false;
+  
  /**
   * Process the form we have. Send to whatever backend
   * Only alerting for now
   */
   processForm() {
+    console.log(this.selected_type);
     const allInfo = `My name is ${this.name}. My email is ${this.email}. My subject is ${this.subject}. My message is ${this.message}`;
+    
   }
 
 }

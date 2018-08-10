@@ -9,37 +9,180 @@
   </div>
 
   <div class="container support-content">
-    <form [formGroup]="form">
-      <select formControlName="support_type">
-        <option *ngFor="let support_type of support_types" [ngValue]="support_type">{{support_type.name}}</option>
-      </select>
-      <p>Selected Support Type: {{support_type?.name}}</p>
-    </form>
+    <div class="col-md-6">
+      <div class="row support-type">
+        <h4>Select Support Type</h4>
+        <form [formGroup]="form">
+          <select formControlName="support_type" [(ngModel)]='selected_type'>
+            <option value=""></option>
+            <option *ngFor="let support_type of support_types" [ngValue]="support_type">{{support_type.name}}</option>
+          </select>
+        </form>
+      </div>
+      <div class="row" *ngIf="selected_type">
+        <form (ngSubmit)="processForm()">
+          <!-- name -->
+          <div class="form-group">
+            <input type="text" name="name" class="input" placeholder="Name" [(ngModel)]="name">
+          </div>
+          <!-- email -->
+          <div class="form-group">
+            <input type="email" name="email" class="input" placeholder="Email" [(ngModel)]="email">
+          </div>
+          <!-- subject -->
+          <div class="form-group">
+            <input type="text" name="subject" class="input" placeholder="Subject" [(ngModel)]="subject">
+          </div>
+          <!-- subject -->
+          <div class="form-group">
+            <input type="hidden" name="support_type" class="input" [(ngModel)]="support_type" value="clicktool">
+          </div>
+          <!-- message -->
+          <div class="form-group">
+            <textarea class="textarea" name="message" placeholder="What's on your question?" [(ngModel)]="message"></textarea>
+          </div>
 
-    <form (ngSubmit)="processForm()">
-      <!-- name -->
-      <div class="form-group">
-        <input type="text" name="name" class="input" placeholder="Name" [(ngModel)]="name">
+          <button type="submit" class="button is-danger is-large">Submit</button>
+        </form>
       </div>
-      <!-- email -->
-      <div class="form-group">
-        <input type="email" name="email" class="input" placeholder="Email" [(ngModel)]="email">
-      </div>
-      <!-- subject -->
-      <div class="form-group">
-        <input type="text" name="subject" class="input" placeholder="Subject" [(ngModel)]="subject">
-      </div>
-      <!-- subject -->
-      <div class="form-group">
-        <input type="hidden" name="support_type" class="input" [(ngModel)]="support_type" value="clicktool">
-      </div>
-      <!-- message -->
-      <div class="form-group">
-        <textarea class="textarea" name="message" placeholder="What's on your question?" [(ngModel)]="message"></textarea>
-      </div>
+    </div>
+    <div class="col-md-6 faq">
+      <h3>Related Questions</h3>
+      <div class="col-md-12">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                1. Question
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                2. Question
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                3. Question
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </mat-expansion-panel>
 
-      <button type="submit" class="button is-danger is-large">Submit</button>
-    </form>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                4. Question
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                5. Question
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                6. Question
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                7. Question
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                8. Question
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                9. Question
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                10. Question
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
   </div>
-</div>
-<app-footer></app-footer>
+  <app-footer></app-footer>

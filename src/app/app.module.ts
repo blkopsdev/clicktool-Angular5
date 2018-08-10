@@ -79,7 +79,20 @@ import { SignupModalComponent } from './shared/common/signup-modal/signup-modal.
 import { IsIdVerifiedGuard } from './shared/guards/is-id-verified.guard';
 import { VerifyComponent } from './verify/verify.component'
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { 
+  MatExpansionModule,
+  MatFormFieldModule
+} from '@angular/material';
 
+@NgModule({
+  exports: [
+    MatExpansionModule,
+    MatFormFieldModule,
+  ]
+})
+
+export class DemoMaterialModule {}
 
 @NgModule({
   declarations: [
@@ -150,6 +163,9 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
     FileUploadModule,
     ReactiveFormsModule,
     GooglePlaceModule,
+    BrowserAnimationsModule,
+    DemoMaterialModule,
+    MatFormFieldModule,
   ],
   providers: [
     MemberService,
