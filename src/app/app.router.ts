@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router'
 import { HomepageComponent } from './homepage/homepage.component';
 import { AffiliateComponent } from './affiliate/affiliate.component';
 import { SupportComponent } from './support/support.component';
+import { BountyComponent } from './bounty/bounty.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { AgreementsComponent } from './signup/agreements/agreements.component'
 import { AccountInfoComponent } from './signup/account-info/account-info.component';
@@ -36,6 +37,7 @@ export const router: Routes = [
 
 	{ path: 'affiliate', component: AffiliateComponent, canActivate:[IsLoggedInGuard]},
 	{ path: 'support', component: SupportComponent },
+	{ path: 'bounty', component: BountyComponent },
 	{ path: 'privacy', component: PrivacyComponent },
 	{ path: 'signup', component: AgreementsComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/account', component: AccountInfoComponent, canActivate:[IsLoggedInGuard] },

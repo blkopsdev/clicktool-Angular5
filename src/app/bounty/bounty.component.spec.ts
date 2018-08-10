@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeaderTabComponent } from './header-tab-group.component';
+import { BountyComponent } from './bounty.component';
 
-describe('HeaderTabComponent', () => {
-    let component: HeaderTabComponent;
-    let fixture: ComponentFixture<HeaderTabComponent>;
+describe('BountyComponent', () => {
+    let component: BountyComponent;
+    let fixture: ComponentFixture<BountyComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [HeaderTabComponent]
+            declarations: [BountyComponent]
         })
             .compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(HeaderTabComponent);
+        fixture = TestBed.createComponent(BountyComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });
