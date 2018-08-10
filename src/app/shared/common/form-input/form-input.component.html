@@ -1,0 +1,20 @@
+ <div class="form-group nmb">
+	 <input formControlName="{{ formControlName }}" name="{{ name }}" required minlength="{{ minLength }}" maxlength="{{ maxlength }}" [(ngModel)]="verifyObj.document_id_no" class="form-control style1" type="text" placeholder="{{ documentTypeLabel }} {{ placeholderMessage }}">
+
+	  <div
+	  class="text-danger"
+	  style="margin-bottom: 20px; text-align: left; font-size: 12px; margin-top: 10px;"
+	  *ngIf="!this.form.get('document_id_no').valid && this.form.get('document_id_no').touched"
+	  >
+	        <div [hidden]="!form.get('document_id_no').hasError('required')">
+	          <div class="">{{ documentTypeLabel }} {{ requiredMessage }}</div>
+	        </div>
+	        <div [hidden]="!form.get('document_id_no').hasError('minlength')">
+	          <div class="">{{ documentTypeLabel }} {{ minLengthMessage }}</div>
+	        </div>
+	        <div [hidden]="!form.get('document_id_no').hasError('maxlength')">
+	          <div class="">{{ documentTypeLabel }} {{ maxlengthMessage }}</div>
+	        </div>
+
+	    </div>
+</div> 

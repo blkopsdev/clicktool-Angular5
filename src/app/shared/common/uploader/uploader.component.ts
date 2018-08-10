@@ -11,7 +11,9 @@ export class UploaderComponent implements OnInit, AfterViewInit {
   @Input() uploadDir:string
   @Input() name:string
   @Input() id:string
+  @Input() index:string
   @Output() onAddFile:EventEmitter<any> = new EventEmitter()
+
 
   @ViewChild('AddedImage') droppedImage : ElementRef
 
@@ -26,9 +28,7 @@ export class UploaderComponent implements OnInit, AfterViewInit {
 
   @Input() parentUploader:FileUploader;
 
-  constructor() { 
-
-  }
+  constructor() {}
 
   ngOnInit() {
     if(!this.parentUploader){
@@ -60,13 +60,20 @@ export class UploaderComponent implements OnInit, AfterViewInit {
       }else{
         alert('File must be a jpg or png');      
       }
-
-
     }  	
   }
 
   fileOverAnother(e:any) {
   	this.hasBaseDropZoneOver = e;
+  }
+
+  removeUpload(e) {
+    this.showAfterDropImage = false;
+    e.preventDefault();
+  }
+
+  onClick() {
+    
   }
 
 

@@ -80,10 +80,8 @@ import { IsIdVerifiedGuard } from './shared/guards/is-id-verified.guard';
 import { VerifyComponent } from './verify/verify.component'
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { 
-  MatExpansionModule,
-  MatFormFieldModule
-} from '@angular/material';
+import { MatExpansionModule, MatFormFieldModule } from '@angular/material';
+import { FormInputComponent } from './shared/common/form-input/form-input.component';
 
 @NgModule({
   exports: [
@@ -93,6 +91,7 @@ import {
 })
 
 export class DemoMaterialModule {}
+
 
 @NgModule({
   declarations: [
@@ -152,7 +151,8 @@ export class DemoMaterialModule {}
     SidebarIconComponent,
     SignupModalComponent,
     VerifyComponent,
-    BountyComponent
+    BountyComponent,
+    FormInputComponent
   ],
   imports: [
     BrowserModule,
