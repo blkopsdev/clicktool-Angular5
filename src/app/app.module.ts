@@ -79,11 +79,17 @@ import { SignupModalComponent } from './shared/common/signup-modal/signup-modal.
 import { IsIdVerifiedGuard } from './shared/guards/is-id-verified.guard';
 import { VerifyComponent } from './verify/verify.component'
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+<<<<<<< HEAD
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { 
   MatExpansionModule,
   MatFormFieldModule
 } from '@angular/material';
+=======
+
+import { FormInputComponent } from './shared/common/form-input/form-input.component';
+import { HeaderTabComponent } from './homepage/shared/header-tab-group/header-tab-group.component';
+>>>>>>> e00407952dc8806605ebe2387cd88ad6e90785b8
 
 @NgModule({
   exports: [
@@ -93,6 +99,7 @@ import {
 })
 
 export class DemoMaterialModule {}
+
 
 @NgModule({
   declarations: [
@@ -152,7 +159,12 @@ export class DemoMaterialModule {}
     SidebarIconComponent,
     SignupModalComponent,
     VerifyComponent,
+<<<<<<< HEAD
     BountyComponent
+=======
+    FormInputComponent,
+    HeaderTabComponent
+>>>>>>> e00407952dc8806605ebe2387cd88ad6e90785b8
   ],
   imports: [
     BrowserModule,
