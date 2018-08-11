@@ -24,6 +24,8 @@
     "@angular/platform-browser": "^5.2.11",
     "@angular/platform-browser-dynamic": "^5.2.11",
     "@angular/router": "^5.2.11",
+    "ajv": "^6.5.2",
+    "ajv-keywords": "^3.1.0",
     "async": "^2.6.1",
     "core-js": "^2.5.7",
     "grunt-autoprefixer": "^3.0.4",
