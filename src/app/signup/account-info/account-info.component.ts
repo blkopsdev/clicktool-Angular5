@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { User } from '../../shared/models/user'
 import { Util } from '../../shared/util/util'
 import { Router } from '@angular/router'
@@ -26,6 +26,10 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
   dob_month:string = ""
   dob_day:string = ""
   dob_year:string = ""
+  showPassword:boolean = false;
+  countryCode:string
+  @ViewChild('passwordField') passwordField:ElementRef;
+  @ViewChild('passwordConfirmField') passwordConfirmField:ElementRef;
 
 
 
@@ -88,6 +92,20 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
     this.dob_month = bday[0]
     this.dob_day = bday[1]
     this.dob_year = bday[2]
+  }
+
+  changeInputType() {
+    if(this.showPassword) {
+      this.passwordField.nativeElement.setAttribute('type','password'); 
+      this.passwordConfirmField.nativeElement.setAttribute('type','password'); 
+      // Hide Password
+      this.showPassword = false
+    }else{
+      this.passwordField.nativeElement.setAttribute('type','text');      
+      this.passwordConfirmField.nativeElement.setAttribute('type','text');      
+      // Show Password
+      this.showPassword = true
+    }
   }
 
 }

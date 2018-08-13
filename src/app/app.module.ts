@@ -79,6 +79,7 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 
 import { FormInputComponent } from './shared/common/form-input/form-input.component';
 import { HeaderTabComponent } from './homepage/shared/header-tab-group/header-tab-group.component';
+import { InputAnimationDirective } from './shared/directives/input-animation.directive';
 
 
 
@@ -139,7 +140,8 @@ import { HeaderTabComponent } from './homepage/shared/header-tab-group/header-ta
     SignupModalComponent,
     VerifyComponent,
     FormInputComponent,
-    HeaderTabComponent
+    HeaderTabComponent,
+    InputAnimationDirective
   ],
   imports: [
     BrowserModule,

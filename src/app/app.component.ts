@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
 import { User } from './shared/models/user'
 import { CookieService } from 'ngx-cookie-service';
@@ -20,7 +20,10 @@ export class AppComponent {
   
   private cookieService: CookieService = new CookieService(document);
 
-  constructor(){ }
+  constructor(){ 
+    
+  }
+
 
   getUserId():String{
     if(this.getSession()){
@@ -96,6 +99,8 @@ export class AppComponent {
   scrollToTop() {
     console.log('Fooo')
   }
+
+
 
 
   
