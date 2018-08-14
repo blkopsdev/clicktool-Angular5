@@ -21,10 +21,11 @@
 .form-error {
     margin-bottom: 20px;
     text-align: left;
-    top: 40px;
+    top: 34px;
     position: absolute;
     width: 100%;
     font-size: 12px;  
+    line-height: 15px;
 }
 
 .btn-group-small button{
@@ -37,7 +38,18 @@ button:focus, select:focus {
 }
 
 .form-group input {
-  margin-bottom: 35px;
+  margin-bottom: 50px;
+}
+
+.form-group.form-group-error .form-control.style1 {
+  border-bottom: thin solid red !important;
+}
+.form-group.form-group-error .top-label {
+  /*color: red !important;*/
+}
+.form-group.form-group-error .material-icons-error {
+  display: block !important;
+  color: red;
 }
 
 .no-padding-right-odd.row .col:nth-child(odd) {
@@ -49,6 +61,14 @@ button:focus, select:focus {
     position: absolute;
     top: 6px; 
     display: none; 
+}
+.form-group i.material-icons-error {
+    position: absolute;
+    z-index: 1000;
+    top: 8px;
+    right: 0;
+    font-size: 16px;
+    display: none;
 }
 
 .form-control.style1 {

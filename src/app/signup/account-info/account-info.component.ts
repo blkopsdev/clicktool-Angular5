@@ -40,10 +40,8 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
     this.form = this.formBuilder.group({
       firstname:[null, Validators.required],
       lastname:[null, Validators.required],
-      dob_month:[null, Validators.required],
-      dob_day:[null, Validators.required],
-      dob_year:[null, Validators.required],
-      email:[null, Validators.required],
+      dob:[null, Validators.required],
+      email:[null, Validators.email],
       phone:[null, Validators.required],
       country:[null, Validators.required],
       publicWalletAddress:[null, Validators.required],

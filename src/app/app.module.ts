@@ -83,12 +83,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule, MatFormFieldModule } from '@angular/material';
 import { FormInputComponent } from './shared/common/form-input/form-input.component';
 import { InputAnimationDirective } from './shared/directives/input-animation.directive';
+import { DobInputDirective } from './shared/directives/dob-input.directive';
 
 @NgModule({
   exports: [
     MatExpansionModule,
     MatFormFieldModule,
-  ]
+  ],
+  declarations: []
 })
 
 export class DemoMaterialModule {}
@@ -154,6 +156,7 @@ export class DemoMaterialModule {}
     VerifyComponent,
     FormInputComponent,
     InputAnimationDirective,
+    DobInputDirective,
     BountyComponent
   ],
   imports: [
