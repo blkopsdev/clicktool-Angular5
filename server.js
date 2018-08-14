@@ -21,8 +21,10 @@ app.use(function(req, res, next){
     used to make the request */
   let protocol = req.headers["x-forwarded-proto"];
   
+  return next();
+
   if (protocol === "http") {
-    return res.redirect(`https://${req.hostname}${req.originalUrl}`);
+    return res.redirect(`https:${req.hostname}${req.originalUrl}`);
   }
   
   return next();   
