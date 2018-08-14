@@ -4,6 +4,9 @@ import { routes } from './app.router';
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { SupportComponent } from './support/support.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { BountyComponent } from './bounty/bounty.component';
 
 import { AgreementsComponent } from './signup/agreements/agreements.component';
 import { AccountInfoComponent } from './signup/account-info/account-info.component';
@@ -76,11 +79,19 @@ import { SignupModalComponent } from './shared/common/signup-modal/signup-modal.
 import { IsIdVerifiedGuard } from './shared/guards/is-id-verified.guard';
 import { VerifyComponent } from './verify/verify.component'
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatExpansionModule, MatFormFieldModule } from '@angular/material';
 import { FormInputComponent } from './shared/common/form-input/form-input.component';
-import { HeaderTabComponent } from './homepage/shared/header-tab-group/header-tab-group.component';
 import { InputAnimationDirective } from './shared/directives/input-animation.directive';
 
+@NgModule({
+  exports: [
+    MatExpansionModule,
+    MatFormFieldModule,
+  ]
+})
+
+export class DemoMaterialModule {}
 
 
 @NgModule({
@@ -88,6 +99,8 @@ import { InputAnimationDirective } from './shared/directives/input-animation.dir
     AppComponent,
     HomepageComponent,
     AgreementsComponent,
+    SupportComponent,
+    PrivacyComponent,
     AccountInfoComponent,
     HeaderComponent,
     FooterComponent,
@@ -140,7 +153,6 @@ import { InputAnimationDirective } from './shared/directives/input-animation.dir
     SignupModalComponent,
     VerifyComponent,
     FormInputComponent,
-    HeaderTabComponent,
     InputAnimationDirective
   ],
   imports: [
@@ -152,6 +164,9 @@ import { InputAnimationDirective } from './shared/directives/input-animation.dir
     FileUploadModule,
     ReactiveFormsModule,
     GooglePlaceModule,
+    BrowserAnimationsModule,
+    DemoMaterialModule,
+    MatFormFieldModule,
   ],
   providers: [
     MemberService,

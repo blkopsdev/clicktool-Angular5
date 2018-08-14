@@ -1,6 +1,6 @@
 @font-face {
   font-family: ok;
-  src: url(./assets/orange kid.ttf) format("opentype");
+  src: url(./assets/orange_kid.ttf) format("opentype");
 }
 
 .form-input-select {
@@ -654,7 +654,7 @@ table tbody tr td {
 }
 
 .slider-track-high {
-  background: #ebebebe;
+  background: #ebebeb;
 }
 
 .slider_bar .slider-handle {
