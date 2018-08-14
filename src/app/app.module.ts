@@ -153,7 +153,8 @@ export class DemoMaterialModule {}
     SignupModalComponent,
     VerifyComponent,
     FormInputComponent,
-    InputAnimationDirective
+    InputAnimationDirective,
+    BountyComponent
   ],
   imports: [
     BrowserModule,
