@@ -1,7 +1,10 @@
-import {ModuleWithProviders} from '@angular/core'
-import {Routes, RouterModule} from '@angular/router'
+import { ModuleWithProviders } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
 import { HomepageComponent } from './homepage/homepage.component';
 import { AffiliateComponent } from './affiliate/affiliate.component';
+import { SupportComponent } from './support/support.component';
+import { BountyComponent } from './bounty/bounty.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 import { AgreementsComponent } from './signup/agreements/agreements.component'
 import { AccountInfoComponent } from './signup/account-info/account-info.component';
 import { ContributionComponent } from './signup/contribution/contribution.component';
@@ -32,7 +35,10 @@ export const router: Routes = [
 	{ path: '', component: HomepageComponent, canActivate:[IsLoggedInGuard]},
 	{ path: 'login', component: LoginComponent, canActivate:[IsLoggedInGuard] },
 
-  	{ path: 'affiliate', component: AffiliateComponent, canActivate:[IsLoggedInGuard]},
+	{ path: 'affiliate', component: AffiliateComponent, canActivate:[IsLoggedInGuard]},
+	{ path: 'support', component: SupportComponent },
+	{ path: 'bounty', component: BountyComponent },
+	{ path: 'privacy', component: PrivacyComponent },
 	{ path: 'signup', component: AgreementsComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/account', component: AccountInfoComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/contribution', component: ContributionComponent, canActivate:[IsLoggedInGuard] },
@@ -48,7 +54,7 @@ export const router: Routes = [
 	{ path: 'password/reset/checkemail', component: TextActionComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'reset-password/:token', component: UpdatePasswordComponent, canActivate:[IsLoggedInGuard] },
 
-	{ path: 'dashboard', component: DashboardComponent, canActivate:[]  },
+	{ path: 'dashboard', component: DashboardComponent },
 	{ path: 'transactions', component: TransactionsComponent},
 	{ path: 'user/:id/password', component: PasswordComponent, canActivate: [AuthGuard] },
 

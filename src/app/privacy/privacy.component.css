@@ -1,0 +1,162 @@
+@charset "utf-8";
+
+a {
+  text-decoration: none !important;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+html,body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.privacy-container {
+  background-color: #1db8d3;
+/*   margin-top: -139px; */
+  color: white;
+  text-align: center;
+}
+
+.privacy-container h1 {
+  padding: 15px 0;
+  font-weight: 700;
+  font-size: 48px;
+}
+
+.privacy-container span {
+  color: rgba(255, 255, 255, 1);
+  border-bottom: 2px solid white;
+}
+
+.privacy-container img {
+  width: 70vw;
+  margin-top: 30px;
+  max-width: 1000px;
+}
+
+.privacy-container div {
+  margin: 0 auto;
+}
+
+.privacy-icons {
+  margin:  0 auto;
+  display: flex;
+  justify-content: space-around;
+  text-align:  center;
+}
+
+.privacy-icons i {
+  font-size: 8vw;
+  opacity:  0.8;
+}
+
+.privacy-info {
+  width: 70vw;
+  max-width: 1000px;
+  margin-top: 20px;
+  padding-bottom: 30px;
+  font-size: 18px;
+  margin: 0 auto;
+}
+
+.privacy-info i {
+  color: #24537f;
+}
+
+.privacy-info p {
+  color: #595959 !important;
+}
+
+.privacy-info h2 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.privacy-info h6 {
+  font-size: 20px;
+  margin: 16px;
+}
+p {
+  padding: 5px 0;
+}
+.privacy-info h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #15465d;
+  padding: 15px 0;
+}
+
+.privacy-box {
+  width: 800px;
+  box-shadow: 0px 0px 18px #CCCCCC;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.privacy-button {
+  background-color: #fd8a66;
+  color: white;
+  width: 220px;
+  padding: 10px;
+  border-radius: 3px;
+  margin: 0 auto;
+  box-shadow: 1px 1px 1px #CCCCCC;
+}
+
+.privacy-button:hover {
+  cursor: pointer;
+  background-color: #D17356;
+}
+
+.privacy-button:active {
+  box-shadow: none;
+  background-color: #BE684F;
+}
+
+.affiliate {
+  display: flex;
+  justify-content: center;
+}
+
+.affiliate a {
+  color: #2C62F1;
+}
+
+.affiliate a:hover {
+  color: #1B46C1;
+  text-decoration: underline !important;
+}
+
+
+/* Media Queries */
+
+@media only screen and (max-width: 979px) {
+  .privacy-box {
+    width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .privacy-info {
+    width: 90vw;
+  }
+
+  .sign-up p {
+    width: 90vw;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .privacy-container {
+    margin-top: -35px !important;
+  }
+}

@@ -45,16 +45,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0080ff', end
 .btn-primary:active,
 .btn-primary:focus{background-color:#0080ff; transition:.3s; color:#fff; border:1px solid #0080ff;}
 
-select {
-  background: url("../images/select_arrow_down.png") no-repeat scroll right center, #0080ff none repeat scroll 0 0;
-  color: #fff;
-  font-family: open sans;
-  font-size: 14px;
-  font-weight: 400;
-  height: 39px;
-  padding: 0 15px;
-  width: 100%;
-}
 
 .showdetails span {
   background: #0080ff none repeat scroll 0 0;

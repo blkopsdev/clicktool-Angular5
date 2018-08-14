@@ -1,6 +1,30 @@
 @font-face {
   font-family: ok;
-  src: url(./assets/orange kid.ttf) format("opentype");
+  src: url(./assets/orange_kid.ttf) format("opentype");
+}
+
+.form-input-select {
+    position: absolute;
+    top: 6px;
+    background: transparent;
+    font-size: 15px;  
+    background: url('./assets/select-arrow-grey.png');
+    background-size: 8px;
+    background-repeat: no-repeat;
+    background-position: 0 8px;
+    padding-left: 12px;
+    font-weight: 300;
+    width: 40px;
+    border-right: thin solid #c5c5c5 !important;
+    border-radius: 0;        
+}
+.form-error {
+    margin-bottom: 20px;
+    text-align: left;
+    top: 40px;
+    position: absolute;
+    width: 100%;
+    font-size: 12px;  
 }
 
 .btn-group-small button{
@@ -8,17 +32,24 @@
     font-size: 14px !important;  
 }
 
-button:focus {
+button:focus, select:focus {
   outline:none !important;
 }
 
 .form-group input {
-  margin-bottom: 10px;
+  margin-bottom: 35px;
 }
 
 .no-padding-right-odd.row .col:nth-child(odd) {
   padding-right: 0;
 } 
+
+.form-group .top-label {
+    font-size: 15px;
+    position: absolute;
+    top: 6px; 
+    display: none; 
+}
 
 .form-control.style1 {
   border: none;
@@ -26,7 +57,14 @@ button:focus {
   border-radius: 0;
   border-bottom: thin solid #e2e2e2;
   padding-left: 0;
-  padding-right: 0;  
+  padding-right: 0; 
+  font-size: 15px;
+  font-weight: 500;  
+  color: #000; 
+}
+
+.form-group {
+  position: relative;
 }
 .form-control.style1:focus {
   border-bottom-color: #28CAE8;
@@ -34,6 +72,15 @@ button:focus {
 .form-control.style1::placeholder {
   color: #666;
   font-weight: 300;
+}
+.form-group .active-border {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #29a6d3;
+    position: absolute;
+    top: 32px;
+    display: none;
 }
 
 .nmb {
@@ -607,7 +654,7 @@ table tbody tr td {
 }
 
 .slider-track-high {
-  background: #ebebebe;
+  background: #ebebeb;
 }
 
 .slider_bar .slider-handle {
