@@ -3,6 +3,10 @@
   src: url(./assets/orange_kid.ttf) format("opentype");
 }
 
+.form-group {
+  margin-bottom: 30px;
+}
+
 .form-input-select {
     position: absolute;
     top: 6px;
@@ -14,15 +18,15 @@
     background-position: 0 8px;
     padding-left: 12px;
     font-weight: 300;
-    width: 40px;
+    width: 70px;
     border-right: thin solid #c5c5c5 !important;
     border-radius: 0;        
 }
 .form-error {
-    margin-bottom: 20px;
+    /*margin-bottom: 50px;*/
     text-align: left;
     top: 34px;
-    position: absolute;
+    /*position: absolute;*/
     width: 100%;
     font-size: 12px;  
     line-height: 15px;
@@ -38,9 +42,11 @@ button:focus, select:focus {
 }
 
 .form-group input {
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
-
+.form-group.form-group-error .remove_red_eye {
+  right: 20px !important;
+}
 .form-group.form-group-error .form-control.style1 {
   border-bottom: thin solid red !important;
 }
@@ -78,7 +84,7 @@ button:focus, select:focus {
   border-bottom: thin solid #e2e2e2;
   padding-left: 0;
   padding-right: 0; 
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;  
   color: #000; 
 }

@@ -7,11 +7,7 @@
 <div class="row">
 
   <div class="col-md-7">
-
-
-
     <div [formGroup]="form" class="row">
-
       <div class="col-md-12" style="margin-bottom: 40px;">
         <img style="margin-bottom: 20px;" width="100" src="../../assets/font-logo.png">
         <h3 style="margin-bottom: 20px;">Create your clicktool account</h3>
@@ -70,32 +66,42 @@
 
         </div>
       </div> 
-      <div class="col-sm-6">
-        <div class="form-group" [ngClass]="{'form-group-error':!this.form.get('dob').valid && this.form.get('dob').touched}">
-          <span class="active-border"></span>
-          <span class="top-label">DOB</span>
-          <input appDobInput appInputAnimation [(ngModel)]="user.dob" formControlName="dob" name="first_name" required minlength="4" maxlength="14" class="form-control style1" type="text" name="" placeholder="(DOB) - MM/DD/YYYY">
-          <i class="material-icons material-icons-error">
-          error_outline
-          </i>
-           <div
-          class="form-error text-danger"
-          style="margin-bottom: 20px; text-align: left;"
-          *ngIf="!this.form.get('dob').valid && this.form.get('dob').touched"
-          >
-                <div [hidden]="!form.get('dob').hasError('required')">
-                  <div class="">DOB required</div>
-                </div>
-                <div [hidden]="!form.get('dob').hasError('minlength')">
-                  <div class="">DOB must be at least 4 characters long.</div>
-                </div>
-                <div [hidden]="!form.get('dob').hasError('maxlength')">
-                  <div class="">DOB cannot be more than 24 characters long.</div>
-                </div>
-            </div>
 
+
+      <div class="row">
+        <div class="col-md-12">
+          
+              <div class="col-sm-6">
+                <div class="form-group" [ngClass]="{'form-group-error':!this.form.get('dob').valid && this.form.get('dob').touched}">
+                  <span class="active-border"></span>
+                  <span class="top-label">DOB - MM/DD/YYYY</span>
+                  <input appDobInput appInputAnimation [(ngModel)]="user.dob" formControlName="dob" name="first_name" required minlength="4" maxlength="14" class="form-control style1" type="text" name="" placeholder="DOB">
+                  <i class="material-icons material-icons-error">
+                  error_outline
+                  </i>
+                   
+                   <div
+                  class="form-error text-danger"
+                  style="margin-bottom: 20px; text-align: left;"
+                  *ngIf="!this.form.get('dob').valid && this.form.get('dob').touched"
+                  >
+                        <div [hidden]="!form.get('dob').hasError('required')">
+                          <div class="">DOB required</div>
+                        </div>
+                        <div [hidden]="!form.get('dob').hasError('minlength')">
+                          <div class="">DOB must be at least 4 characters long.</div>
+                        </div>
+                        <div [hidden]="!form.get('dob').hasError('maxlength')">
+                          <div class="">DOB cannot be more than 24 characters long.</div>
+                        </div>
+                    </div>
+
+                </div>
+              </div>            
+          
         </div>
       </div>
+
       <div class="col-sm-12">
         <div class="form-group" [ngClass]="{'form-group-error':!this.form.get('email').valid && this.form.get('email').touched}">
           <span class="active-border"></span>
@@ -110,16 +116,16 @@
           *ngIf="!this.form.get('email').valid && this.form.get('email').touched"
           >
                 <div [hidden]="!form.get('email').hasError('required')">
-                  <div class="">Email name required</div>
+                  <div class="">*Email name required</div>
                 </div>
                 <div [hidden]="!form.get('email').hasError('minlength')">
-                  <div class="">Email must be at least 1 characters long.</div>
+                  <div class="">*Email must be at least 1 characters long.</div>
                 </div>
                 <div [hidden]="!form.get('email').hasError('maxlength')">
-                  <div class="">Email cannot be more than 24 characters long.</div>
+                  <div class="">*Email cannot be more than 24 characters long.</div>
                 </div>
                 <div [hidden]="!form.hasError('email', 'email') && form.get('email').touched">
-                  Please enter the correct email, this email not valid.
+                  *Please enter the correct email, this email not valid.
                 </div>
             </div>
 
@@ -349,8 +355,10 @@
                 <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
               </optgroup>
           </select>
-          <input style="padding-left: 53px;" appInputAnimation formControlName="phone" name="phone" required minlength="4" maxlength="24" class="form-control style1" type="text" name="" placeholder="Phone">
-
+          <input style="padding-left: 83px;" appInputAnimation formControlName="phone" name="phone" required minlength="4" maxlength="24" class="form-control style1" type="text" name="" placeholder="Phone">
+          <i class="material-icons material-icons-error">
+          error_outline
+          </i>
            <div
           class="form-error text-danger"
           style="margin-bottom: 20px; text-align: left;"
@@ -374,6 +382,9 @@
           <span class="active-border"></span>
           <span class="top-label">Country</span>
           <input appInputAnimation [(ngModel)]="user.country" formControlName="country" name="country" required minlength="2" maxlength="40" class="form-control style1" type="text" name="" placeholder="Country">
+          <i class="material-icons material-icons-error">
+            error_outline
+          </i>
            <div
           class="form-error text-danger"
           style="margin-bottom: 20px; text-align: left;"
@@ -396,6 +407,9 @@
           <span class="active-border"></span>
           <span class="top-label">Company</span>
           <input appInputAnimation [(ngModel)]="user.company" formControlName="company" name="company" required minlength="2" maxlength="40" class="password-input form-control style1" type="text" name="" placeholder="Company">
+          <i class="material-icons material-icons-error">
+            error_outline
+          </i>          
            <div
           class="form-error text-danger"
           style="margin-bottom: 20px; text-align: left;"
@@ -414,13 +428,16 @@
         </div>
       </div>
       <div class="col-sm-6 npr">
-        <div class="form-group" [ngClass]="{'form-group-error':!this.form.get('password').valid && this.form.get('password').touched}">
+        <div class="form-group" style="margin-bottom: 0;" [ngClass]="{'form-group-error':!this.form.get('password').valid && this.form.get('password').touched}">
           <span class="active-border"></span>
           <span class="top-label">Password</span>
-          <input appInputAnimation [(ngModel)]="user.password" #passwordField formControlName="password" name="first_name" required minlength="4" maxlength="24" class="password-input form-control style1" type="password" name="" placeholder="Password">
+          <input style="margin-bottom: 0;" appInputAnimation [(ngModel)]="user.password" #passwordField formControlName="password" name="first_name" required minlength="8" maxlength="24" class="password-input form-control style1" type="password" name="" placeholder="Password">
+          <i class="material-icons material-icons-error">
+            error_outline
+          </i>          
            <div
           class="form-error text-danger"
-          style="margin-bottom: 20px; text-align: left;"
+          style="margin-bottom: 0px; text-align: left;"
           *ngIf="!this.form.get('password').valid && this.form.get('password').touched"
           >
                 <div [hidden]="!form.get('password').hasError('required')">
@@ -436,15 +453,17 @@
         </div>
       </div>
       <div class="col-sm-6">
-        <div class="form-group" [ngClass]="{'form-group-error':!this.form.get('passwordConfirm').valid && this.form.get('passwordConfirm').touched}">
+        <div class="form-group" style="margin-bottom: 0;" [ngClass]="{'form-group-error':!this.form.get('passwordConfirm').valid && this.form.get('passwordConfirm').touched}">
           <span class="active-border"></span>
           <span class="top-label">Password confirm</span>
-          <input appInputAnimation #passwordConfirmField style="padding-right: 36px;" formControlName="passwordConfirm" name="first_name" required minlength="4" maxlength="24" class="form-control style1" type="password" name="" placeholder="Password confirm">
-          <i (click)="changeInputType()" style="float: right;position: absolute;top: 5px;right: 0px; color: #d0d0d0;" class="material-icons">remove_red_eye</i>
-
+          <input appInputAnimation #passwordConfirmField style="padding-right: 36px; margin-bottom: 0;" formControlName="passwordConfirm" name="first_name" required minlength="8" maxlength="24" class="form-control style1" type="password" name="" placeholder="Password confirm">
+          <i (click)="changeInputType()" style="float: right;position: absolute;top: 5px;right: 0px; color: #d0d0d0;" class="material-icons remove_red_eye">remove_red_eye</i>
+          <i class="material-icons material-icons-error">
+            error_outline
+          </i>
            <div
           class="form-error text-danger"
-          style="margin-bottom: 20px; text-align: left;"
+          style="margin-bottom: 0px; text-align: left;"
           *ngIf="!this.form.get('passwordConfirm').valid && this.form.get('passwordConfirm').touched"
           >
                 <div [hidden]="!form.get('passwordConfirm').hasError('required')">
@@ -461,10 +480,10 @@
         </div>
       </div> 
       <div class="col-md-12">
-        <span style="font-size: 12px;">Use 8 or more characters with a mix of letters, numbers & symbols</span>
+        <span style="font-size: 12px; margin-top: 20px; display: block !important;">Use 8 or more characters with a mix of letters, numbers & symbols</span>
       </div>
       <div class="col-sm-12" style="margin-top: 20px;">
-        <a style="float: left; margin-top: 15px; font-weight: bold;" href="#">Sign up</a>
+        <a style="float: left; margin-top: 15px; font-weight: bold;" href="#">Sign in instead</a>
         <button class="btn btn-primary" style="float: right;">Create account</button>
       </div> 
       
