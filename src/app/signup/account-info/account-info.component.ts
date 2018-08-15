@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/co
 import { User } from '../../shared/models/user'
 import { Util } from '../../shared/util/util'
 import { Router } from '@angular/router'
+import { MemberService } from '../../shared/services/member.service'
 
 import {
   FormGroup,
@@ -30,10 +31,10 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
   countryCode:string
   @ViewChild('passwordField') passwordField:ElementRef;
   @ViewChild('passwordConfirmField') passwordConfirmField:ElementRef;
+  doPasswordsMatch:boolean = true;
 
 
-
-  constructor(private util:Util, private router:Router, private formBuilder: FormBuilder) { }
+  constructor(private util:Util, private router:Router, private formBuilder: FormBuilder, private memberService:MemberService) { }
 
   ngOnInit() {
 
@@ -44,14 +45,14 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
       email:[null, Validators.email],
       phone:[null, Validators.required],
       country:[null, Validators.required],
-      publicWalletAddress:[null, Validators.required],
+      // publicWalletAddress:[null, Validators.required],
       company:[null, Validators.required],
       password:[null, Validators.required],
       passwordConfirm:[null, Validators.required]
     })
 
   	this.user = this.util.getLocalObject("user") as User
-    if(this.user.dob){ this.setBday(this.user) }  
+ 
   }
 
   ngOnDestroy() {
@@ -68,11 +69,12 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
 
     this.form.updateValueAndValidity();
 
+    console.log(this.form.valid);
+
     if(this.form.valid){
-      if(this.user.password != this.user.passwordConfirm){ return alert("Passwords don't match") }
-      this.user.dob = this.getBdayFormmated()
+      if(this.user.password != this.user.passwordConfirm){ this.doPasswordsMatch = false; } 
+      this.memberService.createAccount(this.user).subscribe(res=>this.afterCreateAccount(res))
       this.util.setLocalObject("user", this.user)
-      this.router.navigate([this.nextStepUrl])
     }else{
        Object.keys(this.form.controls).filter($0 => {
         this.form.get($0).markAsTouched({ onlySelf: true })
@@ -81,16 +83,25 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
 
   }
 
-  getBdayFormmated():string {
-    return this.dob_month + "/" + this.dob_day + "/" + this.dob_year;
+
+  afterCreateAccount(res:Response) {
+    this.memberService.afterCreateAccount(this.user.email, this.user.password)
+    .subscribe(session => this.afterLogin(session))
   }
 
-  setBday(user:User) {
-    let bday = this.user.dob.split("/")
-    this.dob_month = bday[0]
-    this.dob_day = bday[1]
-    this.dob_year = bday[2]
+
+  afterLogin(session:Response) {
+    this.memberService.saveAccessToken(session)
+    this.memberService.setLocalMemberObj(session)
+
+
+    if(!session["user"]["isShuftiproVerified"]){
+      this.router.navigate(['/verify'])
+    }else{
+      this.memberService.afterLoginRoute()
+    }
   }
+
 
   changeInputType() {
     if(this.showPassword) {
