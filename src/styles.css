@@ -355,6 +355,7 @@ body {
   padding-bottom: 10px;
   padding-left: 18px;
   padding-right: 18px;
+  box-shadow: 1px 1px 50px rgba(0,0,0,0.2);
 }
 
 .btn.btn-primary.btn-primary-i {
