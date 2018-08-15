@@ -84,6 +84,7 @@ import { MatExpansionModule, MatFormFieldModule } from '@angular/material';
 import { FormInputComponent } from './shared/common/form-input/form-input.component';
 import { InputAnimationDirective } from './shared/directives/input-animation.directive';
 import { DobInputDirective } from './shared/directives/dob-input.directive';
+import { CtPreloaderComponent } from './shared/ct-preloader/ct-preloader.component';
 
 @NgModule({
   exports: [
@@ -157,7 +158,8 @@ export class DemoMaterialModule {}
     FormInputComponent,
     InputAnimationDirective,
     DobInputDirective,
-    BountyComponent
+    BountyComponent,
+    CtPreloaderComponent
   ],
   imports: [
     BrowserModule,

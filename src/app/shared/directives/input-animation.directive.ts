@@ -9,7 +9,6 @@ declare var $:any;
 export class InputAnimationDirective {
 
   constructor(el: ElementRef, app:AppComponent) { 
-    console.log('foo car')
   	var $ele = $(el.nativeElement);
   	var ele = el.nativeElement;
   	var insideLabel = $ele.closest('.form-group').find('.top-label');
