@@ -3,6 +3,10 @@
   src: url(./assets/orange_kid.ttf) format("opentype");
 }
 
+.form-group {
+  margin-bottom: 30px;
+}
+
 .form-input-select {
     position: absolute;
     top: 6px;
@@ -14,17 +18,18 @@
     background-position: 0 8px;
     padding-left: 12px;
     font-weight: 300;
-    width: 40px;
+    width: 70px;
     border-right: thin solid #c5c5c5 !important;
     border-radius: 0;        
 }
 .form-error {
-    margin-bottom: 20px;
+    /*margin-bottom: 50px;*/
     text-align: left;
-    top: 40px;
-    position: absolute;
+    top: 34px;
+    /*position: absolute;*/
     width: 100%;
     font-size: 12px;  
+    line-height: 15px;
 }
 
 .btn-group-small button{
@@ -37,7 +42,20 @@ button:focus, select:focus {
 }
 
 .form-group input {
-  margin-bottom: 35px;
+  margin-bottom: 10px;
+}
+.form-group.form-group-error .remove_red_eye {
+  right: 20px !important;
+}
+.form-group.form-group-error .form-control.style1 {
+  border-bottom: thin solid red !important;
+}
+.form-group.form-group-error .top-label {
+  /*color: red !important;*/
+}
+.form-group.form-group-error .material-icons-error {
+  display: block !important;
+  color: red;
 }
 
 .no-padding-right-odd.row .col:nth-child(odd) {
@@ -50,6 +68,14 @@ button:focus, select:focus {
     top: 6px; 
     display: none; 
 }
+.form-group i.material-icons-error {
+    position: absolute;
+    z-index: 1000;
+    top: 8px;
+    right: 0;
+    font-size: 16px;
+    display: none;
+}
 
 .form-control.style1 {
   border: none;
@@ -58,7 +84,7 @@ button:focus, select:focus {
   border-bottom: thin solid #e2e2e2;
   padding-left: 0;
   padding-right: 0; 
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;  
   color: #000; 
 }
@@ -310,7 +336,7 @@ input[type="submit"] {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #F5F5F5;
+  /* background-color: #F5F5F5; */
 }
 
 .btn-group.btn-group-block {
@@ -329,6 +355,7 @@ body {
   padding-bottom: 10px;
   padding-left: 18px;
   padding-right: 18px;
+  box-shadow: 1px 1px 50px rgba(0,0,0,0.2);
 }
 
 .btn.btn-primary.btn-primary-i {

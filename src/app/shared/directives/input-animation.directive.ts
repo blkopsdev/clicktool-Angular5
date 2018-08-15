@@ -9,6 +9,7 @@ declare var $:any;
 export class InputAnimationDirective {
 
   constructor(el: ElementRef, app:AppComponent) { 
+    console.log('foo car')
   	var $ele = $(el.nativeElement);
   	var ele = el.nativeElement;
   	var insideLabel = $ele.closest('.form-group').find('.top-label');
@@ -21,7 +22,7 @@ export class InputAnimationDirective {
   		ele.setAttribute('placeholder', '');
   		insideLabel.show();
   		insideLabel.animate({
-  			top: -14,
+  			top: -11,
   			fontSize:12,
   			color:'#1eb8d3',
   			fontWeight:500
