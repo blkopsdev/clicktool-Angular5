@@ -9,44 +9,64 @@ declare var $:any;
 export class InputAnimationDirective {
 
   constructor(el: ElementRef, app:AppComponent) { 
-  	var $ele = $(el.nativeElement);
-  	var ele = el.nativeElement;
-  	var insideLabel = $ele.closest('.form-group').find('.top-label');
-  	var placeholder = $ele.attr('placeholder');
-  	var $bb = $ele.closest('.form-group').find('.active-border');
 
-  	// On Focus
+    $(document).ready(()=>{
+      this.init(el, app);
+    })	
 
-  	$ele.focus(()=>{
-  		ele.setAttribute('placeholder', '');
-  		insideLabel.show();
-  		insideLabel.animate({
-  			top: -11,
-  			fontSize:12,
-  			color:'#1eb8d3',
-  			fontWeight:500
-  		}, 200);
-  		this.animateFromCenter($bb);
-  	});
+  }
 
-  	// Focus out
 
-  	$ele.focusout(()=>{
-  		// If got text
-  		if( !$ele.val().length ) {
-			insideLabel.animate({
-				top: 6,
-				fontSize:15
-			}, 200, ()=>{
-				insideLabel.hide();
-				ele.setAttribute('placeholder', placeholder);
-			});
-  		}else{
-  			insideLabel.css({'color':'#908f8f'});
-  		}
-  		this.hideBorderBottom($bb); 
-  	});
-  	
+  init(el: ElementRef, app:AppComponent) {
+    var $ele = $(el.nativeElement);
+    var ele = el.nativeElement;
+    var insideLabel = $ele.closest('.form-group').find('.top-label');
+    var placeholder = $ele.attr('placeholder');
+    var $bb = $ele.closest('.form-group').find('.active-border');
+
+    // On Focus
+
+    console.log($ele);
+
+    if( $ele.val().length ) {
+      insideLabel.animate({
+        top: 6,
+        fontSize:15
+      }, 200, ()=>{
+        insideLabel.hide();
+        ele.setAttribute('placeholder', placeholder);
+      });
+    }
+
+    $ele.focus(()=>{
+      ele.setAttribute('placeholder', '');
+      insideLabel.show();
+      insideLabel.animate({
+        top: -11,
+        fontSize:12,
+        color:'#1eb8d3',
+        fontWeight:500
+      }, 200);
+      this.animateFromCenter($bb);
+    });
+
+    // Focus out
+
+    $ele.focusout(()=>{
+      // If got text
+      if( !$ele.val().length ) {
+        insideLabel.animate({
+          top: 6,
+          fontSize:15
+        }, 200, ()=>{
+          insideLabel.hide();
+          ele.setAttribute('placeholder', placeholder);
+        });
+      }else{
+        insideLabel.css({'color':'#908f8f'});
+      }
+      this.hideBorderBottom($bb); 
+    });
   }
 
 
