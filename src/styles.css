@@ -3,6 +3,15 @@
   src: url(./assets/orange_kid.ttf) format("opentype");
 }
 
+.gradient-background-blue {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#32cbf2+0,1da1e4+100 */
+background: #32cbf2; /* Old browsers */
+background: -moz-linear-gradient(top, #32cbf2 0%, #1da1e4 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #32cbf2 0%,#1da1e4 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #32cbf2 0%,#1da1e4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32cbf2', endColorstr='#1da1e4',GradientType=0 ); /* IE6-9 */ 
+}
+
 .form-group {
   margin-bottom: 30px;
 }
@@ -213,6 +222,12 @@ button:focus, select:focus {
 
 .search-input:focus {
   outline: none;
+}
+
+.btn.btn-lg.btn-primary {
+    font-size: 20px !important;
+    padding-left: 30px !important;
+    padding-right: 30px !important;  
 }
 
 .btn-lg-outline {
@@ -710,7 +725,7 @@ td img {
 }
 
 .chckbx {
-  display: inline-block;
+  display: block;
   margin: 14px 0;
 }
 
@@ -1236,24 +1251,32 @@ body {
 
 .checkmark {
     position: absolute;
-    top: 0;
+    top: 2px;
     left: 0;
     height: 25px;
     width: 25px;
     background-color: #eee;
 }
 
-.checkcontainer {
-  display: block;
+.checkcontainer  {
+    width: 100%;
     position: relative;
-    padding-left: 35px;
+    padding-left: 57px;
     margin-bottom: 12px;
     cursor: pointer;
-    font-size: 17px;
+    font-size: 14px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    display: block;
+    font-weight: normal;
+    color: #000;
+}
+
+.checkcontainer label {
+  font-weight: normal;
+  font-size: 12px;
 }
 
 .checkcontainer input {
@@ -1263,7 +1286,7 @@ body {
 }
 
 .checkcontainer input:checked ~ .checkmark {
-    background-color: #2196F3;
+    background-color: #2abded;
 }
 
 .checkcontainer input:checked ~ .checkmark:after {
