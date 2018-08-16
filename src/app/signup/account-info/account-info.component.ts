@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { User } from '../../shared/models/user'
 import { Util } from '../../shared/util/util'
 import { Router } from '@angular/router'
@@ -19,19 +19,17 @@ declare var $:any
   styleUrls: ['./account-info.component.css'],
   providers: [Util]
 })
-export class AccountInfoComponent implements OnInit, OnDestroy {
+export class AccountInfoComponent implements OnInit, OnDestroy, AfterViewInit {
   
   private user:User = new User()
   nextStepUrl:string = "/signup/contribution"
   form: FormGroup;
-  dob_month:string = ""
-  dob_day:string = ""
-  dob_year:string = ""
   showPassword:boolean = false;
   countryCode:string
   @ViewChild('passwordField') passwordField:ElementRef;
   @ViewChild('passwordConfirmField') passwordConfirmField:ElementRef;
   doPasswordsMatch:boolean = true;
+  isPreloaderHidden:boolean = true;
 
 
   constructor(private util:Util, private router:Router, private formBuilder: FormBuilder, private memberService:MemberService) { }
@@ -51,8 +49,12 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
       passwordConfirm:[null, Validators.required]
     })
 
-  	this.user = this.util.getLocalObject("user") as User
+  	//this.user = this.util.getLocalObject("user") as User
  
+  }
+
+  ngAfterViewInit() {
+
   }
 
   ngOnDestroy() {
@@ -61,19 +63,18 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
     }    
   }
 
-  onSelectDate() {
-     this.form.controls["dob"].setErrors(null)
-  }
 
   goToNext() {
 
-    this.form.updateValueAndValidity();
+    this.isPreloaderHidden = false;
 
-    console.log(this.form.valid);
+    this.form.updateValueAndValidity();
 
     if(this.form.valid){
       if(this.user.password != this.user.passwordConfirm){ this.doPasswordsMatch = false; } 
-      this.memberService.createAccount(this.user).subscribe(res=>this.afterCreateAccount(res))
+      
+      this.memberService.createAccount(this.user).subscribe(res=>this.afterCreateAccount(res), err => this.onError(err))
+
       this.util.setLocalObject("user", this.user)
     }else{
        Object.keys(this.form.controls).filter($0 => {
@@ -81,6 +82,10 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
       })     
     }  
 
+  }
+
+  onError(res:any) {
+    console.log(res);
   }
 
 
@@ -93,7 +98,6 @@ export class AccountInfoComponent implements OnInit, OnDestroy {
   afterLogin(session:Response) {
     this.memberService.saveAccessToken(session)
     this.memberService.setLocalMemberObj(session)
-
 
     if(!session["user"]["isShuftiproVerified"]){
       this.router.navigate(['/verify'])
