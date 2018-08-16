@@ -5,6 +5,7 @@ import { AffiliateComponent } from './affiliate/affiliate.component';
 import { SupportComponent } from './support/support.component';
 import { BountyComponent } from './bounty/bounty.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { TermsAndConditionComponent } from './terms-and-condition/terms-and-condition.component';
 import { AgreementsComponent } from './signup/agreements/agreements.component'
 import { AccountInfoComponent } from './signup/account-info/account-info.component';
 import { ContributionComponent } from './signup/contribution/contribution.component';
@@ -39,6 +40,7 @@ export const router: Routes = [
 	{ path: 'support', component: SupportComponent },
 	{ path: 'bounty', component: BountyComponent },
 	{ path: 'privacy', component: PrivacyComponent },
+	{ path: 'terms-and-condition', component: TermsAndConditionComponent },
 	{ path: 'signup', component: AgreementsComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/account', component: AccountInfoComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/contribution', component: ContributionComponent, canActivate:[IsLoggedInGuard] },
