@@ -130,10 +130,16 @@
     min-height: 53px !important;
 }
 
-#tab2 p{
+#tab2 p, #tab3 p{
     text-align: left;
+    font-size: 18px;
 }
 .column img {
     width: 100%; 
     height: initial;
+}
+
+.tab3 {
+    text-align: left;
+    font-size: 18px;
 }
