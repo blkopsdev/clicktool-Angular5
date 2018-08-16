@@ -226,8 +226,10 @@ button:focus, select:focus {
 
 .btn.btn-lg.btn-primary {
     font-size: 20px !important;
-    padding-left: 30px !important;
-    padding-right: 30px !important;  
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    padding-top: 15px;
+    padding-bottom: 15px; 
 }
 
 .btn-lg-outline {
