@@ -73,7 +73,7 @@ export class AccountInfoComponent implements OnInit, OnDestroy, AfterViewInit {
     if(this.form.valid){
       if(this.user.password != this.user.passwordConfirm){ this.doPasswordsMatch = false; } 
       
-      this.memberService.createAccount(this.user).subscribe(res=>this.afterCreateAccount(res), err => this.onError(err))
+      this.memberService.createAccount(this.user).subscribe(res=>this.afterCreateAccount(res))
 
       this.util.setLocalObject("user", this.user)
     }else{
