@@ -139,7 +139,8 @@
     height: initial;
 }
 
-.tab3 {
+#tab3 {
     text-align: left;
     font-size: 18px;
 }
+
