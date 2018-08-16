@@ -129,3 +129,11 @@
 .tab-header {
     min-height: 53px !important;
 }
+
+#tab2 p{
+    text-align: left;
+}
+.column img {
+    width: 100%; 
+    height: initial;
+}
