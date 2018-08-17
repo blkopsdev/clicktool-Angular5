@@ -5,8 +5,9 @@ import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router'
 import {Response} from '@angular/http'
 import { User } from '../models/user'
-
-
+import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/catch'
+import 'rxjs/add/observable/throw';
 
 export enum Roles {
 	ADMIN,
@@ -96,11 +97,10 @@ export class MemberService {
 
   setLocalMemberObj(res:any) {
     if(res["user"]){
-       this.cookieService.set("member", JSON.stringify(res["user"]))  
+       this.cookieService.set("member", JSON.stringify(res["user"]), null, '/');  
     }else{
-      this.cookieService.set("member", JSON.stringify(res)) 
-    }
-    
+      this.cookieService.set("member", JSON.stringify(res), null, '/');
+    } 
   }
 
   saveAccessToken(body){
@@ -122,10 +122,14 @@ export class MemberService {
     
   }
 
-  createAccount(user:User) {
+  createAccount(user:User, errorCallback?: any):Observable<any> {
     this.api.params = user
     this.api.setInstanceName("Members")      
-  	return this.api.fire(HTTPmethod.CREATE, false, true)
+  	return this.api.fire(HTTPmethod.CREATE, false, true).map(()=>{
+    }).catch((err:any)=>{
+      errorCallback();
+      return Observable.throw(err);
+    })
   }
 
   afterCreateAccount(email:string, password:string) {
@@ -187,6 +191,7 @@ export class MemberService {
     this.api.setInstanceName("Members/"+ userId +"/checkBackground?access_token=" + accessToken)
     return this.api.fire(HTTPmethod.CREATE, false, true)     
   }
+
 
 
 }

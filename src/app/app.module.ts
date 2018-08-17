@@ -85,6 +85,7 @@ import { FormInputComponent } from './shared/common/form-input/form-input.compon
 import { InputAnimationDirective } from './shared/directives/input-animation.directive';
 import { DobInputDirective } from './shared/directives/dob-input.directive';
 import { CtPreloaderComponent } from './shared/ct-preloader/ct-preloader.component';
+import { VorComponent } from './training/vor/vor.component';
 
 @NgModule({
   exports: [
@@ -159,7 +160,8 @@ export class DemoMaterialModule {}
     InputAnimationDirective,
     DobInputDirective,
     BountyComponent,
-    CtPreloaderComponent
+    CtPreloaderComponent,
+    VorComponent
   ],
   imports: [
     BrowserModule,
@@ -173,6 +175,7 @@ export class DemoMaterialModule {}
     BrowserAnimationsModule,
     DemoMaterialModule,
     MatFormFieldModule,
+
   ],
   providers: [
     MemberService,

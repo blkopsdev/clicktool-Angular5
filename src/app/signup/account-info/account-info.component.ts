@@ -30,6 +30,7 @@ export class AccountInfoComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('passwordConfirmField') passwordConfirmField:ElementRef;
   doPasswordsMatch:boolean = true;
   isPreloaderHidden:boolean = true;
+  isLoading:boolean = false;
 
 
   constructor(private util:Util, private router:Router, private formBuilder: FormBuilder, private memberService:MemberService) { }
@@ -66,16 +67,20 @@ export class AccountInfoComponent implements OnInit, OnDestroy, AfterViewInit {
 
   goToNext() {
 
-    this.isPreloaderHidden = false;
+     
 
     this.form.updateValueAndValidity();
 
     if(this.form.valid){
-      if(this.user.password != this.user.passwordConfirm){ this.doPasswordsMatch = false; } 
-      
-      this.memberService.createAccount(this.user).subscribe(res=>this.afterCreateAccount(res))
 
-      this.util.setLocalObject("user", this.user)
+      this.isPreloaderHidden = false;
+      this.isLoading = true;
+
+        this.memberService.createAccount(this.user, (err)=>{
+          this.isPreloaderHidden = true;
+          this.isLoading = false;
+        }).subscribe(res=>this.afterCreateAccount(res))
+
     }else{
        Object.keys(this.form.controls).filter($0 => {
         this.form.get($0).markAsTouched({ onlySelf: true })

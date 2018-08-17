@@ -106,9 +106,9 @@ export class VerifyComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.user)
     this.uploader.clearQueue()
   	this.user = this.util.getLocalObject("user") as User
-
 
     this.form = this.formBuilder.group({
       document_id_no:[null, Validators.required],
@@ -195,8 +195,9 @@ export class VerifyComponent implements OnInit {
       this.memberService.setLocalMemberObj(m);
       alert('You passed verification process');
       this.router.navigate(['/dashboard']);
+    }else if(res.status_code == "SP0"){
+      alert('We\'re unable to verify the account using the information you provided. Please try again.');
     }else{
-      console.log(res);
       alert(res.message);
     }
   }

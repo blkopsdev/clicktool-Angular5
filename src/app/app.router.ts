@@ -28,12 +28,14 @@ import { SecurityComponent } from './settings/security/security.component';
 import { WalletSettingsComponent } from './settings/wallet-settings/wallet-settings.component';
 import { IsIdVerifiedGuard } from './shared/guards/is-id-verified.guard'
 import { VerifyComponent } from './verify/verify.component'
+import { VorComponent } from './training/vor/vor.component';
 
 export const router: Routes = [
 
 
 	{ path: '', component: HomepageComponent, canActivate:[IsLoggedInGuard]},
 	{ path: 'login', component: LoginComponent, canActivate:[IsLoggedInGuard] },
+	{ path: 'vor', component: VorComponent },
 
 	{ path: 'affiliate', component: AffiliateComponent, canActivate:[IsLoggedInGuard]},
 	{ path: 'support', component: SupportComponent },
