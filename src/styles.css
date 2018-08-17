@@ -3,6 +3,8 @@
   src: url(./assets/orange_kid.ttf) format("opentype");
 }
 
+
+
 .gradient-background-blue {
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#32cbf2+0,1da1e4+100 */
 background: #32cbf2; /* Old browsers */
@@ -96,6 +98,11 @@ button:focus, select:focus {
   font-size: 16px;
   font-weight: 500;  
   color: #000; 
+}
+
+
+.form-control.style1:disabled {
+  background: transparent;
 }
 
 .form-group {

@@ -485,8 +485,8 @@
       <div class="col-sm-12" style="margin-top: 20px;">
         <a style="float: left; margin-top: 15px; font-weight: bold;" href="#">Sign in instead</a>
 
-        <button (click)="goToNext()" class="btn btn-primary" style="float: right; margin-left: 15px;">Create account</button>
-        <app-ct-preloader [isHidden]="true"></app-ct-preloader>
+        <button [disabled]="isLoading" (click)="goToNext()" class="btn btn-primary" style="float: right; margin-left: 15px;">Create account</button>
+        <app-ct-preloader [isHidden]="isPreloaderHidden"></app-ct-preloader>
          
       </div> 
       

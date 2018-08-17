@@ -6,6 +6,8 @@ import {Routes, RouterModule, Router} from '@angular/router'
 import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 
+//import { catchError } from 'rxjs/operators/catchError';
+
 export const enum HTTPmethod {
 	CREATE,
 	UPDATE,
@@ -36,8 +38,7 @@ export class ApiService{
     this.id = id
   }
 
-  public fire(method:HTTPmethod, auth:Boolean = false, ignoreRole?:boolean):Observable<any> {
-
+  public fire(method:HTTPmethod, auth:Boolean = false, ignoreRole?:boolean, callback?: any):Observable<any> {
     return this.sendRequest(method, auth, ignoreRole)
   }
 

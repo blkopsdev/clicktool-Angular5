@@ -18,3 +18,5 @@ export class User {
 	isContributionUsd:boolean
 	isShuftiproVerified:boolean
 }
+
+

@@ -97,7 +97,7 @@ export class AppComponent {
   }
 
   scrollToTop() {
-    console.log('Fooo')
+    
   }
 
 
