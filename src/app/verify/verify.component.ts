@@ -80,9 +80,8 @@ export class VerifyComponent implements OnInit {
   documentTypeLabel:string = "";
   verifyObj:Verify = new Verify()
   didBeginVerification:boolean = false;
-
   form: FormGroup;
-
+  isLoading:boolean = false;
   defaultUploadMessage:string = "To the right drag and drop, or click to browse needed files. We'll use these files to verify your identity."
 
   constructor(private util:Util, private router:Router, private memberService:MemberService, private app:AppComponent, private formBuilder: FormBuilder) {}
@@ -161,8 +160,10 @@ export class VerifyComponent implements OnInit {
     this.form.updateValueAndValidity();
 
     if(this.form.valid){
+     this.isLoading = true;
      this.memberService.verifyMember(this.app.getUserId() as string, this.app.getAccessToken(), this.verifyObj).subscribe(res=>this.afterVerify(res));
     }else{
+       this.isLoading = false;
        Object.keys(this.form.controls).filter($0 => {
         this.form.get($0).markAsTouched({ onlySelf: true })
       })  
@@ -189,6 +190,8 @@ export class VerifyComponent implements OnInit {
   }
 
   afterVerify(res:VerifyResponse) {
+    console.log(res);
+    this.isLoading = false;
   	if(res.status_code == "SP1"){
       var m = this.app.getMember();
       m.isShuftiproVerified = true
