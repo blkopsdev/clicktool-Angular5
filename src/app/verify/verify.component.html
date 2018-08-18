@@ -222,7 +222,7 @@
     					<div class="form-group">
                 <span class="active-border"></span>
                 <span class="top-label">Address</span>                
-    						<input appInputAnimation formControlName="address" name="address" required minlength="4" maxlength="24" ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" [(ngModel)]="verifyObj.address" class="form-control style1" type="text" name="" placeholder="Address">
+    						<input appInputAnimation formControlName="address" name="address" required minlength="4" maxlength="150" ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" [(ngModel)]="verifyObj.address" class="form-control style1" type="text" name="" placeholder="Address">
 
                    <div
                   class="text-danger"
