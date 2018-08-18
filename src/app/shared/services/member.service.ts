@@ -184,7 +184,7 @@ export class MemberService {
     return this.api.fire(HTTPmethod.CREATE, false, true)       
   }
 
-  verifyMember(userId:string, accessToken:string, params:any) {
+  verifyMember(userId:string, accessToken:string, params:any, errCallback?:any) {
     this.api.id = null;
     this.api.filter = null;
     this.api.params = params;

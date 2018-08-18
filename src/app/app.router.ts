@@ -45,7 +45,7 @@ export const router: Routes = [
 	{ path: 'signup/account', component: AccountInfoComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/contribution', component: ContributionComponent, canActivate:[IsLoggedInGuard] },
 	{ path: 'signup/wire', component: WireInfoComponent, canActivate:[AuthGuard] },
-	{ path: 'verify', component: VerifyComponent },
+	{ path: 'verify', component: VerifyComponent, canActivate:[AuthGuard] },
 	{ path: 'settings', component: SettingsComponent },
 	{ path: 'settings/security', component: SecurityComponent },
 	{ path: 'settings/wallet', component: WalletSettingsComponent },
