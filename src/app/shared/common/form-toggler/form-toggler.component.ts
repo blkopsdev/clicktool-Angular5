@@ -28,7 +28,6 @@ export class FormTogglerComponent implements OnInit {
   	$('.form-toggler-content.open-input').prev('.hoverable-row').show()
   	$('.form-toggler-content.open-input').hide()
 
-
   	var row = $(e.target).parent('.hoverable-row')
   	row.next('.form-toggler-content').show().addClass('open-input')
   	row.hide()

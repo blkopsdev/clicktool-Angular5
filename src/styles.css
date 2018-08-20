@@ -4,6 +4,10 @@
 }
 
 
+.cars-bottom {
+    position: absolute;
+    bottom: -11px;
+}
 
 .gradient-background-blue {
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#32cbf2+0,1da1e4+100 */
@@ -249,8 +253,7 @@ button:focus, select:focus {
 }
 
 .dash-logo {
-    margin-top: 10px;
-    margin-left: 10px;
+    margin-top: 19px;
 }
 
 .prim-btn-outline {
@@ -272,7 +275,15 @@ button:focus, select:focus {
     position: fixed;
     z-index: 1000;
     background: #FFF;
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 15px 0 rgba(0,0,0,0.15);
+    height: 71px;
+}
+.fixed-header .btn.btn-primary {
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 15px;
+    padding-top: 13px;
+    padding-bottom: 13px;
 }
 
 .fixed-header a {
@@ -283,7 +294,7 @@ button:focus, select:focus {
 }
 
 .main-nav {
-  margin-right: 10px;
+  margin-right: 0px;
 }
 
 .main-nav .dropdown-menu {
@@ -372,7 +383,7 @@ body {
 
 .btn.btn-primary {
   border-radius: 5px;
-  background: #29a6d3;
+  background: #1db1e6;
   border: none; 
   font-size: 16px;
   padding-top: 10px;
@@ -1487,7 +1498,7 @@ body {
 }
 
 .brand-color-bg {
-  background-color: #36A2CD;
+  background-color: #32afe0;
   color: #FFF;
 }
 .brand-color-txt {
@@ -1497,6 +1508,11 @@ body {
 .timeline-row .timeline-section{
   border-left: thin solid #8BD0EC;
 }
+
+.timeline-row .timeline-section:first-child {
+  border-left: none;
+}
+
 .timeline-row .timeline-section-top {
   border-bottom: 7px solid #FFF;
 }
@@ -1511,6 +1527,9 @@ body {
 
 .white-bg {
   background-color: #FFF;
+}
+.white-bg.white-bg-shadow {
+  box-shadow: 0px 1px 50px rgba(57, 133, 183, 0.15);
 }
 
 
