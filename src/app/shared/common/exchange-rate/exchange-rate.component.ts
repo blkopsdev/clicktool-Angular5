@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
-
+import { ApiService, HTTPmethod } from '../../../api.service'
 declare var $:any;
 
 @Component({
@@ -21,7 +21,7 @@ export class ExchangeRateComponent implements OnInit {
   currentValue:number = 0;
   @ViewChild("#exchangeRate") slider: ElementRef;
 
-  constructor() { }
+  constructor(private api?:ApiService) { }
 
   ngOnInit() {
   	console.log(this.slider)
@@ -40,6 +40,14 @@ export class ExchangeRateComponent implements OnInit {
 
   getBtcRate() {
   	
+  }
+
+  verifyMember(userId:string, accessToken:string, params:any, errCallback?:any) {
+    this.api.id = null;
+    this.api.filter = null;
+    this.api.params = params;
+    this.api.setInstanceName("Members/"+ userId +"/checkBackground?access_token=" + accessToken)
+    return this.api.fire(HTTPmethod.CREATE, false, true)     
   }
 
 }
