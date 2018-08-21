@@ -1,0 +1,11 @@
+@media (max-width: 575.98px) {
+	.timer-mod-days {
+	    position: relative;
+	    top: 24px;	
+	}
+
+	.text-muted {
+		position: relative;
+	    top: 20px;	
+	}
+}

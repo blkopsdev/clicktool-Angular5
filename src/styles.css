@@ -3,6 +3,15 @@
   src: url(./assets/orange_kid.ttf) format("opentype");
 }
 
+.btn.btn-primary.btn-sm{
+  box-shadow: none;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 14px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 4px; 
+}
 
 .cars-bottom {
     position: absolute;
@@ -1453,6 +1462,7 @@ body {
 .nlp {
   padding-left: 0;
 }
+
 @media (max-width: 575.98px) {
   .padding-right-mobile {
     padding-right: 15px;

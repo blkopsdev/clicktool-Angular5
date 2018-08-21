@@ -25,11 +25,12 @@ export class AppComponent {
   }
 
 
-  getUserId():String{
+  getUserId():string{
     if(this.getSession()){
       return this.getSession()["userId"]
+    }else{
+      throw new Error("No user ID");
     }
-    return null
   }
   getUserName():string{
     if(this.getMember()){
@@ -39,7 +40,7 @@ export class AppComponent {
   }
   getSession(){
     if(this.cookieService.check("session")){
-      return JSON.parse( this.cookieService.get("session") )
+      return JSON.parse( this.cookieService.get("session") ) || {}
     }
   }
   getMember():User{

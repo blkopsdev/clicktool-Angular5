@@ -15,7 +15,7 @@
 			
 			<div>
 				<label>{{ label }}</label>
-				<input value="{{ value }}" type="text" name="name">				
+				<input value="{{ value }}" type="text" name="{{ namel }}">				
 			</div>
 			<div style="margin-top: 10px;" *ngIf="verifyValue">
 				<label>Enter {{ label }} again</label>
@@ -23,7 +23,7 @@
 			</div>
 			<div class="clearfix" style="margin-top: 10px;">
 				<button class="btn btn-secondary pull-left form-toggler-close" (click)="close($event)" >Cancel</button>
-				<button class="btn btn-primary pull-right" (click)="save()">Save</button>
+				<button style="box-shadow: none;" class="btn btn-primary pull-right btn-sm" (click)="save()">Save</button>
 			</div>
 		</div>
 	</div>

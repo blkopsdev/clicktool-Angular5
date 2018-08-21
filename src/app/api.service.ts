@@ -18,7 +18,7 @@ export const enum HTTPmethod {
 @Injectable()
 export class ApiService{
 
-  private apiUrl:String = "http://18.221.203.247/api"
+  private apiUrl:String = "https://icoapi.clicktool.com/api"
   public instanceName:String 
   public params:Object = {}
   public options:Object = {}
