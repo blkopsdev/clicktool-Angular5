@@ -1,4 +1,15 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { AppComponent } from '../../../app.component';
+import { MemberService } from '../../../shared/services/member.service';
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Observable} from 'rxjs/Observable'
+
+export const enum HTTPmethod {
+  CREATE,
+  UPDATE,
+  DELETE,
+  GET
+}
 
 declare var $:any
 
@@ -9,18 +20,25 @@ declare var $:any
 })
 export class FormTogglerComponent implements OnInit {
 
+  private apiUrl:String = "http://18.221.203.247/api"
   @Input() verifyValue:boolean = false
-
   @Input() label:string
   @Input() value:string
   @Input() actionLabel:string = "edit"
   @Input() fields:Object
   @Output() onSave: EventEmitter<any> = new EventEmitter()
+  @Input() endpoint:string;
+  @Input() name:string;
+  headers = new HttpHeaders();
+  private options:Object = {};
+  
 
-  constructor() { }
+  constructor(private app:AppComponent, private memberService:MemberService, private http?:HttpClient) { }
 
   ngOnInit() {
-  	console.log(this.fields)
+
+    this.headers.set('Authorization', this.app.getAccessToken())
+    
   }
 
   toggleChild(e) {
@@ -41,7 +59,22 @@ export class FormTogglerComponent implements OnInit {
   }
 
   save() {
-  	this.onSave.emit(this.fields);
+    this.sendUpdate(this.value, this.endpoint).subscribe(res=>this.onSuccess(res));
   }
+
+  onSuccess(res:any){
+    console.log(res);
+  }
+
+  private sendUpdate(value:string, endPoint:string):Observable<any> {
+    var key:Object = {};
+
+    this.options["headers"] = this.headers;   
+
+    key[this.name] = value;
+    return this.http.put(this.apiUrl + endPoint, key, this.options);
+  }
+
+
 
 }
