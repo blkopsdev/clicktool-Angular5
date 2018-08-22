@@ -3,6 +3,10 @@
   src: url(./assets/orange_kid.ttf) format("opentype");
 }
 
+#settings-form .form-toggler-container {
+  margin-left: 225px;
+}
+
 .btn.btn-primary.btn-sm{
   box-shadow: none;
     padding-left: 30px;
@@ -142,8 +146,9 @@ button:focus, select:focus {
   margin-bottom: 0 !important;
 }
 
-.form-toggler-container app-form-toggler:last-child .bb {
-  border-bottom: 0;
+
+.form-toggler-container .form-toggler:last-child .bb {
+  border-bottom: 0 ;
 }
 
 .form-toggler-content {
@@ -181,7 +186,6 @@ button:focus, select:focus {
 .title-bb {
     display: block;
     padding: 15px;
-    font-weight: bold;
 }
 
 .mw-900 {
@@ -190,14 +194,16 @@ button:focus, select:focus {
 
 .sidenav-2 > li > a {
   display: block;
-  padding: 5px 12px;
-  color: #000;
+  padding: 8px 30px;
+  color: #FFF;
+  font-size: 16px;
 }
 
 .sidenav-2 > li > a > i {
     font-size: 16px;
     top: 2px;
     position: relative;
+    float: right;
 }
 .sidenav-2 > li > a.active-link {
   background: #1fa7d721;
@@ -211,13 +217,16 @@ button:focus, select:focus {
 }
 
 .br {
-  border-right: thin solid #dadada;
+  border-right: thin solid #e6e6e6;
 }
 .bb {
-  border-bottom: thin solid #dadada;
+  border-bottom: thin solid #e6e6e6;
 }
 .bl {
-  border-left: thin solid #dadada;
+  border-left: thin solid #e6e6e6;
+}
+.bt {
+  border-top: thin solid #e6e6e6;
 }
 
 .search-input {

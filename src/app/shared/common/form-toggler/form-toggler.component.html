@@ -1,29 +1,43 @@
 <div class="row bb hoverable-row p-rel" style="padding: 15px;">
-	<a (click)="toggleChild($event)" class="full-link toggle-link" href="#"></a>
-	<div class="col-md-3" style="font-size: 12px;">
+	<a href="#" #openBtn  (click)="toggleChild($event)" class="btn full-link toggle-link"></a>
+	<div class="col-xs-3 col-md-3" style="font-size: 12px;">
 		<strong>{{ label }}</strong>
 	</div>
-	<div class="col-md-6">
+	<div class="col-xs-6 col-md-6">
 		<span class="text-muted">{{ value }}</span>
 	</div>
-	<div class="col-md-3 text-right brand-color-txt"> {{ actionLabel }} </div>
+	<div class="col-xs-3 col-md-3 text-right brand-color-txt"> {{ actionLabel }} </div>
 </div>
 
-<div class="row form-toggler-content bb" style="display: none;">
+<div #formToggleContent class="row form-toggler-content bb" style="display: none;">
 	<div class="col-md-12">
 		<div style="padding: 20px;">
 			
-			<div>
-				<label>{{ label }}</label>
-				<input value="{{ value }}" type="text" name="{{ namel }}">				
-			</div>
+			
+				
+				
+				<div class="field-container" *ngIf='type == "string" || type == "number"' >
+					<label>{{ label }}</label>
+					<input (keyup)="updateValue($event)" value="{{ value }}" type="text" name="{{ name }}">
+				</div>
+
+				<div class="field-container" *ngIf='type == "boolean"' >
+					<label>
+						{{ label }}
+						<input [(ngModel)]="isChecked" (change)="updateValue(isChecked ? false : true)" type="checkbox" name="{{ name }}">
+					</label>
+					
+				</div>				
+
+			
+
 			<div style="margin-top: 10px;" *ngIf="verifyValue">
 				<label>Enter {{ label }} again</label>
 				<input type="text" name="name" placeholder="enter {{ label }} again">	
 			</div>
 			<div class="clearfix" style="margin-top: 10px;">
-				<button class="btn btn-secondary pull-left form-toggler-close" (click)="close($event)" >Cancel</button>
-				<button style="box-shadow: none;" class="btn btn-primary pull-right btn-sm" (click)="save()">Save</button>
+				<button class="btn btn-secondary pull-left form-toggler-close" (click)="close()" >Cancel</button>
+				<button #saveBtn style="box-shadow: none;" class="btn btn-primary pull-right btn-sm" (click)="save()">Save</button>
 			</div>
 		</div>
 	</div>

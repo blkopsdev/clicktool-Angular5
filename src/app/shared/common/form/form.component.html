@@ -1,0 +1,19 @@
+<div class="col-sm-9 col-md-9 form-toggler-container">
+	<div class="row">
+		<div class="col-md-12 bb">
+			<h4 class="title-bb">{{ title }}</h4>
+		</div>
+	</div>
+	<div *ngIf="formFields.length > 0">
+		<div class="form-toggler" *ngFor="let form of formFields">
+			<app-form-toggler 
+				label="{{ form.label }}" 
+				name="{{ form.name }}" 
+				endpoint="{{ form.endpoint }}" 
+				value="{{ form.value }}"
+				type="{{ form.type }}"
+				>
+			</app-form-toggler>					
+		</div>	
+	</div>
+</div>

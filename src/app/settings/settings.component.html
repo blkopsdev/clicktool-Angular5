@@ -1,33 +1,27 @@
 <app-dashboard-header></app-dashboard-header>
 
-<div class="container-fluid white-bg bb" style="margin-top: 72px; box-shadow: 1px 1px 1px rgba(0,0,0,0.1);">
-	<div class="container mw-900 br bl">
+<div id="settings-form" class="container-fluid white-bg bb" style="margin-top: 72px; min-height: 1500px; background-color: #f4fcff; box-shadow: 1px 1px 1px rgba(0,0,0,0.1);">
+	<div class="container mw-900" style="background-color: #FFF; position: relative; margin-top: 120px; box-shadow: 0px 1px 50px rgba(57, 133, 183, 0.15); border-radius: 5px;
+    overflow: hidden;">
 		<div class="row">
-			<div class="col-md-3 npr npl">
+			<div class="col-md-3 col-sm-3 npr npl" style="
+			    position: absolute;
+			    background: #1db1e6;
+			    width: 225px;
+			    bottom: 0;
+			    top: 0;
+			">
+			<div style="width: 100%;
+    background: #159ccc; padding: 30px 20px;text-align: center; color: #FFF;">
+				
+    			<img style="width: 50%; border: 5px solid #FFF;" class="img-circle img-rounded" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPj3ySefMiMNtK_8-agvue5Tp9fB-XxLyiXGbmg-ghiM8FR5W8"><br><br>
+
+    			<strong>Chris Kendrick</strong>
+
+			</div>			
 				<app-settings-nav></app-settings-nav>
 			</div>
-			<div class="col-md-9 bl form-toggler-container">
-				
-				<div class="row">
-					<div class="col-md-12 bb">
-						<h4 class="title-bb">General Account Setttings</h4>
-					</div>
-				</div>
-
-
-<!-- 				<app-form-toggler 
-					label="Full name" 
-					value="Christopher Kendrick"
-					[verifyValue]="false" 
-					[fields]="[{name:'chris'}]"
-					(onSave)="saveSettings($event)">		
-				</app-form-toggler>
-				<app-form-toggler label="Email" name="email" value="chris.kendricks07@gmai.com" endpoint="/Members/{{ app.getUserId() }}"></app-form-toggler>				
-				<app-form-toggler label="DOB" name="dob" value="07/30/1988" endpoint="/Members/{{ app.getUserId() }}"></app-form-toggler>
-				<app-form-toggler label="Country" name="country" value="USA" endpoint="/Members/{{ app.getUserId() }}"></app-form-toggler>
-				<app-form-toggler label="Wallet Address" name="wallet" value="0x624D5050b12154Eb29BEc54B8faAeC3A3c01bDD6" endpoint="/Members/{{ app.getUserId() }}"></app-form-toggler>
-				<app-form-toggler label="Company" name="company" value="Click Tool" endpoint="/Members/{{ app.getUserId() }}"></app-form-toggler> -->
-			</div>
+			<app-form-container title="Account Settings" *ngIf="fields && fields.length > 0" [formFields]='fields'></app-form-container>
 		</div>
 	</div>
 </div>

@@ -86,6 +86,7 @@ import { InputAnimationDirective } from './shared/directives/input-animation.dir
 import { DobInputDirective } from './shared/directives/dob-input.directive';
 import { CtPreloaderComponent } from './shared/ct-preloader/ct-preloader.component';
 import { VorComponent } from './training/vor/vor.component';
+import { FormComponent } from './shared/common/form/form.component';
 
 @NgModule({
   exports: [
@@ -161,7 +162,8 @@ export class DemoMaterialModule {}
     DobInputDirective,
     BountyComponent,
     CtPreloaderComponent,
-    VorComponent
+    VorComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
