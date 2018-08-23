@@ -35,7 +35,7 @@
 }
 .tab-content .tab-pane .tab-container {
     min-height: 315px;
-    margin-bottom: 150px;
+    margin-bottom: 35%;
     background: #f5f6f5;
 }
 .top-tab .tab-pane h2 {
@@ -129,3 +129,18 @@
 .tab-header {
     min-height: 53px !important;
 }
+
+#tab2 p, #tab3 p{
+    text-align: left;
+    font-size: 18px;
+}
+.column img {
+    width: 100%; 
+    height: initial;
+}
+
+#tab3 {
+    text-align: left;
+    font-size: 18px;
+}
+

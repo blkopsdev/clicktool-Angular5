@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SupportComponent } from './support/support.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { TermsAndConditionComponent } from './terms-and-condition/terms-and-condition.component';
 import { BountyComponent } from './bounty/bounty.component';
 
 import { AgreementsComponent } from './signup/agreements/agreements.component';
@@ -106,6 +107,7 @@ export class DemoMaterialModule {}
     AgreementsComponent,
     SupportComponent,
     PrivacyComponent,
+    TermsAndConditionComponent,
     AccountInfoComponent,
     HeaderComponent,
     FooterComponent,
